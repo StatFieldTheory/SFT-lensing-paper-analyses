@@ -1,0 +1,27 @@
+# .gitignore for the SFT-lensing-paper-analyses repository.
+# This folder is its own git repo (separate from the parent paper repo, which
+# git-ignores it). Keep the repo lean: code + small live data + docs only.
+
+# Python / tooling caches (regenerable)
+__pycache__/
+*.pyc
+*.pyo
+.ruff_cache/
+.pytest_cache/
+.ipynb_checkpoints/
+
+# OS cruft
+.DS_Store
+
+# sft-wick computation caches (regenerable; not needed once xi_*.npz exist)
+**/.cache_expand_*/
+**/.cache_propagators_*/
+
+# Frozen local archives — large, NOT for GitHub.
+# _archive/ holds the 773 MB superseded limber C-table and the 161 MB canoes
+# pipeline; both exceed GitHub's 100 MB per-file limit. Kept locally only.
+_archive/
+**/_cleanup_archive_*/
+
+# scratch
+*.npz.tmp
