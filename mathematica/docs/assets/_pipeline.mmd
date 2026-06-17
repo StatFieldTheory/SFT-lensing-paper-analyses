@@ -1,0 +1,9 @@
+flowchart TB
+  A["Metric g(τ,x;ε)<br/>+ null geodesic equation<br/>+ Sachs scalars"]
+  A --> B["Step 1 — Kinematics<br/>(script 1) ray_coord_map.wl<br/>Christoffels Γ, tetrad (u,n,X,Y,Z),<br/>photon k, Jacobian J<br/>(λ,Ω) ↦ (χ,n̂)"]
+  B --> C["Step 2 — Redshift evolution<br/>(script 2) affine_to_redshift_general.wl<br/>dz/dλ = (1/E0) k k ∇u<br/>Background + first-order SW/ISW"]
+  B --> D["Step 2' — Perturbed photon<br/>(script 3) affine_to_redshift_perturbed.wl<br/>δk via null + geodesic (Born integral)"]
+  B --> E
+  C --> E["Step 3 — Source fields<br/>(script 4) driving_fields_poisson.wl<br/>Φ00, Ψ0 on tetrad<br/>(scalar / vector / tensor)"]
+  E --> F["Step 4 — Harmonic projection<br/>(script 5) driving_fields_harmonics.wl<br/>Expand in Yℓm, ₂Yℓm<br/>T^{Φ00,Ψ0}_{X,ℓ}"]
+  F --> G["Cℓ^{AB}(χ,χ') = T·T·Cℓ^{XY}"]

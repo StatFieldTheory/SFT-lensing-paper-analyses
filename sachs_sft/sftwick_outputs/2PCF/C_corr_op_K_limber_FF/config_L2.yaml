@@ -1,0 +1,118 @@
+system:
+  field:
+    name: phi
+    n_components: 3
+  linear:
+    type: explicit
+    R_time_module: /Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/scripts/D_callable.py
+    R_time_attr: response_R
+    iso_R: true
+  noise:
+    kappa2:
+      type: callable_module
+      module: /Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/scripts/kappa2_callable.py
+      attr: kappa2
+  vertices:
+  - name: F
+    coupling_path: /Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/scripts/inputs/F_tensor.npy
+  nonlocal_vertices:
+  - name: K
+    order: 3
+    coupling_module: /Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/callables/kappa3_vertex/equal_time_limber/equal_time_limber_kappa3_callable.py
+    coupling_attr: coupling_fn_batch
+    coupling_vectorized: true
+    equal_time: true
+expand:
+  observable:
+  - "phi_a(x)"
+  - "phi_b(y)"
+  orders: [0, 2]
+  response_phase: true
+  ito: true
+  collect_topology: true
+  diag_R: true
+  diag_C: false
+  cache_path: /Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/sftwick_outputs/2PCF/C_corr_op_K_limber_FF/.cache_expand_C_corr_op_K_limber_FF
+  n_jobs: 1
+propagators:
+  t_max: 2360.0
+  dt: 2.0
+  homogeneity: rotation
+  n_grid_cos: 32
+  n_jobs: -1
+  cache_path: /Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/sftwick_outputs/2PCF/C_corr_op_K_limber_FF/.cache_propagators_C_corr_op_K_limber_FF
+  c_closed_form_module: /Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/callables/C_propagator/corr_op/corr_op_C_callable.py
+  c_closed_form_attr: C_fn_batch
+  c_closed_form_only: true
+  c_closed_form_vectorized: true
+  c_method: gauss_legendre
+  c_n_gauss: 20
+  diag_C: false
+sweep:
+  vertex_types:
+    - F
+  integrate_over: "all"
+
+  # 40 log-spaced gamma points from 0.5 to 5000 arcmin
+  positions_grid:
+    x:
+      - [0.0, 0.0, 1.0]
+    y:
+      - [0.0001454441, 0.0, 0.9999999894]    # gamma = 0.5000 arcmin
+      - [0.0001841875, 0.0, 0.9999999830]    # gamma = 0.6332 arcmin
+      - [0.0002332514, 0.0, 0.9999999728]    # gamma = 0.8019 arcmin
+      - [0.0002953850, 0.0, 0.9999999564]    # gamma = 1.0155 arcmin
+      - [0.0003740697, 0.0, 0.9999999300]    # gamma = 1.2860 arcmin
+      - [0.0004737144, 0.0, 0.9999998878]    # gamma = 1.6285 arcmin
+      - [0.0005999026, 0.0, 0.9999998201]    # gamma = 2.0623 arcmin
+      - [0.0007597047, 0.0, 0.9999997114]    # gamma = 2.6117 arcmin
+      - [0.0009620749, 0.0, 0.9999995372]    # gamma = 3.3074 arcmin
+      - [0.0012183524, 0.0, 0.9999992578]    # gamma = 4.1884 arcmin
+      - [0.0015428971, 0.0, 0.9999988097]    # gamma = 5.3041 arcmin
+      - [0.0019538939, 0.0, 0.9999980911]    # gamma = 6.7170 arcmin
+      - [0.0024743715, 0.0, 0.9999969387]    # gamma = 8.5063 arcmin
+      - [0.0031334931, 0.0, 0.9999950906]    # gamma = 10.7722 arcmin
+      - [0.0039681896, 0.0, 0.9999921267]    # gamma = 13.6417 arcmin
+      - [0.0050252287, 0.0, 0.9999873735]    # gamma = 17.2755 arcmin
+      - [0.0063638338, 0.0, 0.9999797506]    # gamma = 21.8774 arcmin
+      - [0.0080590002, 0.0, 0.9999675257]    # gamma = 27.7051 arcmin
+      - [0.0102056913, 0.0, 0.9999479206]    # gamma = 35.0852 arcmin
+      - [0.0129241497, 0.0, 0.9999164797]    # gamma = 44.4312 arcmin
+      - [0.0163666118, 0.0, 0.9998660580]    # gamma = 56.2668 arcmin
+      - [0.0207257940, 0.0, 0.9997851977]    # gamma = 71.2551 arcmin
+      - [0.0262456000, 0.0, 0.9996555249]    # gamma = 90.2361 arcmin
+      - [0.0332346033, 0.0, 0.9994475780]    # gamma = 114.2732 arcmin
+      - [0.0420829632, 0.0, 0.9991141197]    # gamma = 144.7133 arcmin
+      - [0.0532835274, 0.0, 0.9985794238]    # gamma = 183.2621 arcmin
+      - [0.0674579060, 0.0, 0.9977221211]    # gamma = 232.0794 arcmin
+      - [0.0853881735, 0.0, 0.9963477605]    # gamma = 293.9008 arcmin
+      - [0.1080543446, 0.0, 0.9941449887]    # gamma = 372.1902 arcmin
+      - [0.1366764224, 0.0, 0.9906157457]    # gamma = 471.3342 arcmin
+      - [0.1727567072, 0.0, 0.9849645273]    # gamma = 596.8883 arcmin
+      - [0.2181113145, 0.0, 0.9759238979]    # gamma = 755.8875 arcmin
+      - [0.2748657931, 0.0, 0.9614826030]    # gamma = 957.2410 arcmin
+      - [0.3453612628, 0.0, 0.9384698174]    # gamma = 1212.2310 arcmin
+      - [0.4318615238, 0.0, 0.9019399228]    # gamma = 1535.1453 arcmin
+      - [0.5358458514, 0.0, 0.8443158316]    # gamma = 1944.0776 arcmin
+      - [0.6564851133, 0.0, 0.7543389795]    # gamma = 2461.9413 arcmin
+      - [0.7876082933, 0.0, 0.6161762543]    # gamma = 3117.7537 arcmin
+      - [0.9121512874, 0.0, 0.4098536676]    # gamma = 3948.2614 arcmin
+      - [0.9932383577, 0.0, 0.1160929141]    # gamma = 5000.0000 arcmin
+
+  t_final_grid:
+  - 2313.0288751857356
+
+  component_pairs:
+    - [0, 0]   # kappa-kappa
+    - [0, 1]   # kappa-gamma_+
+    - [0, 2]   # kappa-gamma_x
+    - [1, 1]   # gamma_+-gamma_+
+    - [1, 2]   # gamma_+-gamma_x
+    - [2, 2]   # gamma_x-gamma_x
+
+  method: gauss_legendre
+  n_gauss: 24
+  n_jobs: -1
+output:
+- type: npz
+  path: /Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/sftwick_outputs/2PCF/C_corr_op_K_limber_FF/xi_C_corr_op_K_limber_FF.npz

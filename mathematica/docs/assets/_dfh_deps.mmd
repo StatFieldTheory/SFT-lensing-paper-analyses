@@ -1,0 +1,6 @@
+flowchart LR
+  DFP["driving_fields_poisson.wl<br/>(real-space)"] --> DFH[driving_fields_harmonics.wl]
+  DFH --> DUMP[("driving_fields_harmonics.m")]
+  DUMP --> PY["stf-transfer (Python)<br/>Cℓ^{AB}(χ,χ')"]
+  DUMP --> CI["CI regression<br/>test_kernels_against_mathematica.py"]
+  DFH --> PAPER["cosmology.tex + appendix<br/>eq: Phi00 scalar B LM<br/>... eq: Psi0 tensor LM"]

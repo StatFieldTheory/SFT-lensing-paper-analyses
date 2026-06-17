@@ -1,0 +1,6 @@
+flowchart LR
+  META[Poisson metric] --> DFP[driving_fields_poisson.wl]
+  RCM["ray_coord_map.wl<br/>(tetrad conventions)"] --> DFP
+  ATRG["affine_to_redshift_general.wl<br/>(tetrad conventions)"] --> DFP
+  DFP --> DFH[driving_fields_harmonics.wl]
+  DFP --> PAPER["cosmology.tex<br/>eq: Phi 00 from Ricci,<br/>eq: Psi0, eq: driving bg,<br/>eq: Psi0 tensor"]

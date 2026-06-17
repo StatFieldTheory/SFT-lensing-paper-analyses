@@ -1,0 +1,6 @@
+flowchart LR
+  META["Poisson metric<br/>(§2 of paper)"] --> RCM[ray_coord_map.wl]
+  RCM --> DFP[driving_fields_poisson.wl]
+  RCM --> ATRG[affine_to_redshift_general.wl]
+  RCM --> DUMP[("ray_coord_map.m")]
+  DUMP --> PY[stf-transfer / gevolution ingest]

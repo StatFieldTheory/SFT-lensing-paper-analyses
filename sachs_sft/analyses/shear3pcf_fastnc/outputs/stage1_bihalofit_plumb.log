@@ -1,0 +1,32 @@
+==============================================================================
+STAGE 1, STEP 1 (PLUMBING): BiHalofit large-gamma Gamma^0..3
+fastnc 1.2.3; projection=cent; z_s=5.0
+==============================================================================
+  cosmology: Om0=0.3160919980475834, h=0.6711, w0=-1.0, n_s=0.97, sigma8=0.808988
+
+--- BiHalofit Gamma^0..3 (cent), large-gamma plumbing grid ---
+
+  gamma=100':
+    phi= 60.0deg: G0=+1.441441e-08  G1=+7.674893e-09  G2=(+5.256756e-09) + (-1.222911e-09)j
+    phi= 90.0deg: G0=+8.807005e-09  G1=+5.059812e-09  G2=(+3.447126e-09) + (-3.782362e-10)j
+
+  gamma=150':
+    phi= 60.0deg: G0=+6.036363e-09  G1=+2.891700e-09  G2=(+1.668943e-09) + (-5.759318e-10)j  <-- PINNED PLUMBING POINT
+    phi= 90.0deg: G0=+3.509156e-09  G1=+1.767771e-09  G2=(+1.130363e-09) + (-1.265818e-10)j
+
+  gamma=200':
+    phi= 60.0deg: G0=+3.047733e-09  G1=+1.384456e-09  G2=(+6.273376e-10) + (-3.302380e-10)j
+    phi= 90.0deg: G0=+1.700031e-09  G1=+7.665991e-10  G2=(+4.251164e-10) + (-7.574481e-11)j
+
+  gamma=300':
+    phi= 60.0deg: G0=+1.048839e-09  G1=+4.659456e-10  G2=(+1.110319e-10) + (-1.324592e-10)j
+    phi= 90.0deg: G0=+5.486885e-10  G1=+2.065130e-10  G2=(+6.884552e-11) + (-3.992634e-11)j
+
+[PINNED PLUMBING POINT] gamma=150', phi=60deg (BiHalofit, nonlinear):
+    Gamma0 = (+6.036363e-09) + (+2.778548e-24)j
+    Gamma1 = (+2.891700e-09) + (+9.168204e-26)j
+    Gamma2 = (+1.668943e-09) + (-5.759318e-10)j
+    Gamma3 = (+1.668943e-09) + (+5.759318e-10)j
+
+Saved BiHalofit plumbing grid -> /Users/zzhang/Documents/MyDrafts/STF_lensing/scripts/sachs_sft/analyses/shear3pcf_fastnc/outputs/stage1_fastnc_bihalofit_plumb.npz
+STAGE 1 STEP 1: DONE.

@@ -1,0 +1,12 @@
+flowchart LR
+  M["Poisson-gauge FLRW metric<br/>(Ψ, Φ, B, hij)"]
+  M --> RCM["1. ray_coord_map.wl<br/>u, n, k, J, dχ/dλ, dχ/dz"]
+  M --> ATRG["2. affine_to_redshift_general.wl<br/>dz/dλ via k k ∇u"]
+  M --> ATRP["3. affine_to_redshift_perturbed.wl<br/>δk by null + geodesic"]
+  RCM --> DFP["4. driving_fields_poisson.wl<br/>Φ00, Ψ0"]
+  ATRG --> DFP
+  DFP --> DFH["5. driving_fields_harmonics.wl<br/>T^{Φ00/Ψ0}_{X,ℓ}"]
+  DFH --> DUMP[("driving_fields_harmonics.m")]
+  DUMP --> PY["stf-transfer (Python)"]
+  RCM --> DUMPR[("ray_coord_map.m")]
+  DUMPR --> PY
