@@ -25,3 +25,18 @@ _archive/
 
 # scratch
 *.npz.tmp
+
+# Agent-generated scratch/handoff/prompt docs (kept locally, not for GitHub).
+# These are working notes from agent sessions, not pipeline artifacts.
+# NOTE: /docs/ is anchored to the repo root so it does NOT catch the tracked
+# proof docs under mathematica/docs/.
+/CLEANUP_HANDOFF.md
+/CLEANUP_REPORT.md
+/figure_manifest.md
+/docs/
+
+# Agent prompts and working notes co-located with analysis code.
+**/PROMPT*.md
+**/*_NOTES.md
+**/*_notes*.md
+sachs_sft/analyses/shear3pcf_fastnc/scripts/docs/

@@ -6,16 +6,19 @@ material. The manuscript and final figure PDFs live at the **repo root** (`main.
 `sections/`, `figures/`); this folder is git-ignored (repo-root `.gitignore`).
 
 Start here:
-- **`figure_manifest.md`** — the live dependency map: each of the 16 paper figures →
-  generator, inputs, env, copy step, one-line regen command. Read this first.
-- **`CLEANUP_REPORT.md`** — what the 2026-06-17 reorganization moved/deleted (before/after).
+- The **repo map** (below) and the **"Regenerating the paper figures"** section orient
+  you to the committed code and data.
+- Two working docs are kept on local disk but are **git-ignored** (agent notes, absent
+  from a fresh clone): `figure_manifest.md` (the live per-figure dependency map: each of
+  the 16 paper figures → generator, inputs, env, copy step, one-line regen command) and
+  `CLEANUP_REPORT.md` (the 2026-06-17 reorganization before/after).
 
 ## Repo map
 
 ```
 SFT-lensing-paper-analyses/
-  figure_manifest.md     # live figure -> generator/inputs/env/command map
-  CLEANUP_REPORT.md       # 2026-06-17 reorg report + AMBIGUOUS list
+  figure_manifest.md      # (local-only, git-ignored) figure -> generator/inputs/env/command map
+  CLEANUP_REPORT.md       # (local-only, git-ignored) 2026-06-17 reorg report + AMBIGUOUS list
   figures/                # Python generators for schematic/glyph/operator figures
                           #   (NOT the final PDFs; those are at repo-root figures/)
   sachs_sft/              # production sft-wick pipeline (since 2026-05-30)
@@ -31,7 +34,7 @@ SFT-lensing-paper-analyses/
                           #   spin_rotation) + gen_sftwick_configs + inputs/
     sftwick_outputs/2PCF/ # the 3 live sweep outputs (O0, K_limber_FF, K_limber_FK) + caches
   mathematica/            # symbolic proofs (.wl) backing the paper equations (CLAUDE.md SoT)
-  docs/                   # design records
+  docs/                   # (local-only, git-ignored) design records
   _archive/
     canoes_pipeline/                # old tangled pipeline (archived 2026-05-30, 161M)
     cleanup_2026-06-17/             # superseded material archived in this reorg (see its README)
@@ -48,7 +51,8 @@ Subagent shells cannot `conda activate`; use the absolute interpreter:
 
 ## Regenerating the paper figures
 
-See `figure_manifest.md` for the full per-figure table and commands. Quick notes:
+See `figure_manifest.md` (local-only working doc, git-ignored) for the full per-figure
+table and commands. Quick notes:
 - The `SFT-lensing-paper-analyses/figures/` schematic/glyph generators and the `equal_time_limber/plot_zeta_figures.py`
   zeta-slice generator **write straight into the repo-root `figures/`** — rerunning them
   overwrites the paper PDFs. Redirect (`--out-stem`) or work on a copy if you only want to test.
