@@ -20,7 +20,7 @@ from pathlib import Path
 import numpy as np
 
 _HERE = Path(__file__).resolve().parent
-_REPO = _HERE.parents[4]
+_REPO = _HERE.parents[3]
 _MC = _REPO / "SFT-lensing-paper-analyses" / "sachs_sft" / "analyses" / "mc_sachs_2pt"
 
 

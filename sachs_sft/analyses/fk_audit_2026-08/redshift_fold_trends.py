@@ -54,7 +54,7 @@ import D_callable as Dc  # noqa: E402
 
 from mc_crosscheck_dense import load_xi  # noqa: E402  (audited reader)
 
-MULTIZ = (HERE.parents[1] / "analysis3" / "inputs"
+MULTIZ = (HERE.parent / "analysis3" / "inputs"
           / "multiz_components_talk_2026-06-10.npz")
 T_FINAL_PROD = 2313.029          # production z_s = 5 baseline
 ARCMIN = np.pi / (180.0 * 60.0)

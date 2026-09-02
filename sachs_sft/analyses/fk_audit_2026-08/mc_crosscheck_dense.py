@@ -25,7 +25,7 @@ from pathlib import Path
 
 import numpy as np
 
-SS = (Path(__file__).resolve().parents[1])
+SS = (Path(__file__).resolve().parents[2])
 MC = SS / "analyses" / "mc_sachs_2pt"
 K3 = SS / "callables" / "kappa3_vertex" / "equal_time_limber"
 for p in (str(MC), str(K3), str(SS / "callables" / "C_propagator" / "corr_op")):

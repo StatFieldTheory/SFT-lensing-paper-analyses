@@ -31,7 +31,7 @@ import sys
 from pathlib import Path
 
 _HERE = Path(__file__).resolve().parent
-_REPO = _HERE.parents[4]
+_REPO = _HERE.parents[3]
 _ETL = (_REPO / "SFT-lensing-paper-analyses" / "sachs_sft" / "callables"
         / "kappa3_vertex" / "equal_time_limber")
 _OUT_NPZ = _ETL / "outputs" / "zeta_bands_cut15360.npz"

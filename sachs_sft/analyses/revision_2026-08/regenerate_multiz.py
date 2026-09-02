@@ -22,7 +22,7 @@ import sys
 from pathlib import Path
 
 _HERE = Path(__file__).resolve().parent
-_REPO = _HERE.parents[4]
+_REPO = _HERE.parents[3]
 _A3 = (_REPO / "SFT-lensing-paper-analyses" / "sachs_sft" / "analyses" / "analysis3")
 _TALK = _A3  # multiz_sweep.py lives beside the compute script since 2026-09-02
 

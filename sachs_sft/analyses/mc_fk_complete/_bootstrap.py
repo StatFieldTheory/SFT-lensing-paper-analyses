@@ -13,10 +13,10 @@ import sys
 from pathlib import Path
 
 _HERE = Path(__file__).resolve().parent
-REPO = _HERE.parents[4]
+REPO = _HERE.parents[3]
 MC_DIR = REPO / "SFT-lensing-paper-analyses" / "sachs_sft" / "analyses" / "mc_sachs_2pt"
-FIX_DIR = _HERE.parents[2] / "callables" / "kappa3_vertex" / "equal_time_limber_cut15360_permaware"
-PRODUCTS = _HERE.parents[2] / "sftwick_outputs" / "2PCF" / "C_corr_op_K_limber_FK_cut15360_permfix"
+FIX_DIR = _HERE.parents[1] / "callables" / "kappa3_vertex" / "equal_time_limber_cut15360_permaware"
+PRODUCTS = _HERE.parents[1] / "sftwick_outputs" / "2PCF" / "C_corr_op_K_limber_FK_cut15360_permfix"
 
 TABLE = FIX_DIR / "table_permclosed.npz"
 FOLD = PRODUCTS / "xi_C_corr_op_K_limber_FK_cut15360_permfix.npz"
