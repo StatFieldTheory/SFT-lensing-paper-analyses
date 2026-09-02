@@ -42,9 +42,38 @@ from typing import Final
 import numpy as np
 from numpy.typing import NDArray
 
-_CANOES_ROOT = Path("/Users/zzhang/projects/canoes")
-if str(_CANOES_ROOT) not in sys.path:
-    sys.path.insert(0, str(_CANOES_ROOT))
+def _resolve_canoes_root() -> Path:
+    """Locate the canoes checkout, tolerating repository moves.
+
+    The repository was renamed (projects/canoes -> projects/AngStats ->
+    projects/angular_statistics/canoes), so a single hardcoded path rots.
+    Order: CANOES_ROOT env var, an importable canoes, then known locations.
+    """
+    import os
+
+    env = os.environ.get("CANOES_ROOT")
+    if env:
+        return Path(env)
+    try:
+        import canoes  # already importable: use its own location
+        return Path(canoes.__file__).resolve().parents[2]
+    except Exception:
+        pass
+    for candidate in (
+        Path("/Users/zzhang/projects/angular_statistics/canoes"),
+        Path("/Users/zzhang/projects/canoes"),
+    ):
+        if (candidate / "src" / "canoes").is_dir() or (candidate / "canoes").is_dir():
+            return candidate
+    raise RuntimeError(
+        "canoes checkout not found; set CANOES_ROOT or pip install -e it"
+    )
+
+
+_CANOES_ROOT = _resolve_canoes_root()
+for _p in (_CANOES_ROOT / "src", _CANOES_ROOT):
+    if _p.is_dir() and str(_p) not in sys.path:
+        sys.path.insert(0, str(_p))
 
 _HERE = Path(__file__).resolve().parent
 TABLE_PATH = _HERE / "equal_time_limber_kappa3_z5covgrid16_omega0316_h06711.npz"

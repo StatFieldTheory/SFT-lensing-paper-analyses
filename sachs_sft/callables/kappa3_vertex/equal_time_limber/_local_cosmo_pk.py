@@ -27,7 +27,20 @@ from canoes.cosmo.background import H_DEFAULT, OMEGA_M_DEFAULT
 from canoes.cosmo.pk import _CambTablePk
 
 # The +3.08e-5 baseline P(k) table (canoes examples).
-_DEFAULT_CAMB_TABLE = Path("/Users/zzhang/projects/canoes/examples/data/PCAMBz0.txt")
+def _canoes_examples_data() -> Path:
+    """canoes examples/data directory, following the package rather than a
+    hardcoded checkout path (the repository has been moved twice)."""
+    import os
+
+    env = os.environ.get("CANOES_ROOT")
+    if env:
+        return Path(env) / "examples" / "data"
+    import canoes
+
+    return Path(canoes.__file__).resolve().parents[2] / "examples" / "data"
+
+
+_DEFAULT_CAMB_TABLE = _canoes_examples_data() / "PCAMBz0.txt"
 
 
 @dataclass(frozen=True)
