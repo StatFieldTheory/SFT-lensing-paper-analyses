@@ -45,11 +45,39 @@ def main() -> int:
     z = np.asarray(d["z"], float)
     gamma = np.asarray(d["gamma"], float)              # arcmin
     o0, ff, fk = (np.asarray(d[k], float) for k in ("o0", "ff", "fk"))
+
+    # The FF slices of the multi-z table shipped as a placeholder: the
+    # talk-era cache filled them with the exact z=5 FF scaled by the
+    # PER-GAMMA ratio fk(z)/fk(5) (build_multiz_from_cache.py step 5), and at
+    # large separation fk sits on its numerical floor, so that ratio was noise
+    # over noise -- the tails carried 1e-7-level dips and went negative at
+    # z_s=1, which the FF moment (connected part plus <kappa>^2 > 0) cannot do.
+    # They are replaced here by a genuine per-redshift sweep of the FF channel
+    # (driver_field_emulators/code/figures_corrected/run_ff_one_lambda.py, one
+    # single-threaded process per source distance, ~3.2 h each). Cross-check:
+    # each slice's large-separation plateau matches the deterministic
+    # <kappa>^2(z_s) of code/rebuild/mean_kappa_z.py to 0.1-2.2%.
+    _FF_REAL = (Path(__file__).resolve().parents[4] / "driver_field_emulators"
+                / "products" / "multiz_ff_real_all5.npz")
+    if _FF_REAL.exists():
+        _r = np.load(_FF_REAL, allow_pickle=True)
+        if not np.allclose(np.asarray(_r["z"], float), z, rtol=1e-6):
+            raise SystemExit(f"{_FF_REAL.name}: redshift grid mismatch")
+        if not np.allclose(np.asarray(_r["gamma"], float), gamma, rtol=1e-4):
+            raise SystemExit(f"{_FF_REAL.name}: gamma grid mismatch")
+        ff = np.asarray(_r["ff"], float)
+        print(f"[multiz] FF <- {_FF_REAL.name} (real per-z sweeps)", flush=True)
+    else:
+        raise SystemExit(f"missing {_FF_REAL}; run the per-z FF sweeps first")
+
     full = o0 + ff + fk
     nz = len(z)
 
     # one curved-sky operator (kappa-kappa -> Legendre d^l_{00}); gamma shared.
-    setup = C.build_curved_matrix(gamma, ELL, 0, 0)
+    # The transform grid is extended to 180 deg at the (constant) FF plateau so
+    # the DC subtraction sees the true asymptote.
+    gamma_ext = np.concatenate([gamma, [7000.0, 9000.0, 10800.0]])
+    setup = C.build_curved_matrix(gamma_ext, ELL, 0, 0)
     pref = ELL * (ELL + 1.0) / (2.0 * np.pi)           # band power D_ell
 
     apply_rcparams()
@@ -84,8 +112,9 @@ def main() -> int:
 
         # --- row 2: C_ell^{kk} (curved-sky transform, monopole removed) ---
         axc = axes[1, j]
-        cl_o0 = C.forward_curved(o0[j], setup)
-        cl_full = C.forward_curved(full[j], setup)
+        ext = lambda a: np.concatenate([a, [a[-1]] * 3])
+        cl_o0 = C.forward_curved(ext(o0[j]), setup)
+        cl_full = C.forward_curved(ext(full[j]), setup)
         cl_o0_all.append(cl_o0); cl_full_all.append(cl_full)
         plot_signed_line(axc, ELL, pref * cl_full, label="Full (O0+FF+FK)")
         plot_signed_markers(axc, ELL, pref * cl_o0, color=COLOR_O0,

@@ -110,6 +110,8 @@ def plot_signed_line(
     label=None,
     zorder_line=1,
     zorder_markers=2,
+    faint_outside=None,
+    faint_alpha=0.28,
 ):
     """Continuous ``|arr|`` line plus same-color sign markers.
 
@@ -123,13 +125,37 @@ def plot_signed_line(
     arr = np.asarray(arr, dtype=float)
     abs_arr = np.abs(arr)
 
-    ax.loglog(
-        gamma, abs_arr, linestyle="-", color=color,
-        lw=lw, alpha=alpha, solid_capstyle="round",
-        label=label, zorder=zorder_line,
-    )
-    pos = arr > 0
-    neg = arr < 0
+    # ``faint_outside=(lo, hi)`` draws the curve outside that window dashed and
+    # translucent: the values are shown but are not the ones being quoted.
+    # Used for the FK channel, whose multipole sum stops converging beyond
+    # about a degree.  Default None reproduces the previous single-style call
+    # exactly.
+    keep = np.ones(gamma.size, dtype=bool)
+    if faint_outside is not None:
+        lo, hi = faint_outside
+        if lo is not None:
+            keep &= gamma >= lo
+        if hi is not None:
+            keep &= gamma <= hi
+        ax.loglog(
+            gamma, abs_arr, linestyle=(0, (3, 2)), color=color,
+            lw=lw, alpha=alpha * faint_alpha, solid_capstyle="round",
+            zorder=zorder_line,
+        )
+        g_main = np.where(keep, gamma, np.nan)
+        ax.loglog(
+            g_main, abs_arr, linestyle="-", color=color,
+            lw=lw, alpha=alpha, solid_capstyle="round",
+            label=label, zorder=zorder_line,
+        )
+    else:
+        ax.loglog(
+            gamma, abs_arr, linestyle="-", color=color,
+            lw=lw, alpha=alpha, solid_capstyle="round",
+            label=label, zorder=zorder_line,
+        )
+    pos = (arr > 0) & keep
+    neg = (arr < 0) & keep
     if pos.any():
         ax.loglog(
             gamma[pos], abs_arr[pos],
@@ -159,6 +185,8 @@ def plot_signed_markers(
     size=MARKER_SIZE,
     alpha=0.92,
     zorder=3,
+    faint_outside=None,
+    faint_alpha=0.25,
 ):
     """Sign-aware ``|arr|`` markers (no connecting line).
 
@@ -168,25 +196,40 @@ def plot_signed_markers(
     """
     gamma = np.asarray(gamma, dtype=float)
     arr = np.asarray(arr, dtype=float)
-    pos = arr > 0
-    neg = arr < 0
-    if pos.any():
-        ax.loglog(
-            gamma[pos], arr[pos],
-            marker=marker, linestyle="none", color=color,
-            mfc=color, mec=color, mew=MARKER_LW_FILLED,
-            markersize=size, alpha=alpha,
-            label=label, zorder=zorder,
-        )
-    if neg.any():
-        neg_label = label if not pos.any() else None
-        ax.loglog(
-            gamma[neg], -arr[neg],
-            marker=marker, linestyle="none", color=color,
-            mfc="white", mec=color, mew=MARKER_LW_HOLLOW,
-            markersize=size, alpha=alpha,
-            label=neg_label, zorder=zorder,
-        )
+    # ``faint_outside=(lo, hi)`` renders points outside that window at reduced
+    # opacity: shown, but not the values being quoted. Default None is the
+    # previous behaviour exactly.
+    keep = np.ones(gamma.size, dtype=bool)
+    if faint_outside is not None:
+        lo, hi = faint_outside
+        if lo is not None:
+            keep &= gamma >= lo
+        if hi is not None:
+            keep &= gamma <= hi
+    for sel, a, lbl in ((keep, alpha, label),
+                        (~keep, alpha * faint_alpha, None)):
+        if not sel.any():
+            continue
+        pos = (arr > 0) & sel
+        neg = (arr < 0) & sel
+        used = False
+        if pos.any():
+            ax.loglog(
+                gamma[pos], arr[pos],
+                marker=marker, linestyle="none", color=color,
+                mfc=color, mec=color, mew=MARKER_LW_FILLED,
+                markersize=size, alpha=a,
+                label=lbl, zorder=zorder,
+            )
+            used = True
+        if neg.any():
+            ax.loglog(
+                gamma[neg], -arr[neg],
+                marker=marker, linestyle="none", color=color,
+                mfc="white", mec=color, mew=MARKER_LW_HOLLOW,
+                markersize=size, alpha=a,
+                label=None if used else lbl, zorder=zorder,
+            )
 
 
 def annotate_sign_legend(ax, *, loc=(0.98, 0.98), fontsize=None):

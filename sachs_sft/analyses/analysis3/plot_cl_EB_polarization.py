@@ -13,7 +13,11 @@ itself): the FK cross [1,2] is identically zero; the FF cross is a small, smooth
 Order-2 residual (~1e-8 of the signal, ~8 orders below it), not random roundoff
 -- O0 and the FF kappa-B cross reach machine zero (~1e-19/1e-31) on the same
 pipeline, so this is a mild parity-breaking systematic of the FF spin-2 cross,
-negligible here.  FK splits equally, C^EE_FK = C^BB_FK; FF is E-dominated.
+negligible here.  FK feeds BOTH polarizations but NOT equally: measured on the
+deployed cut15360 fold, C^BB/C^EE = 0.95 at l=60 falling to 0.42 at l=1500
+(median 0.63 over 50<=l<=1500).  An earlier version of this docstring claimed
+C^EE_FK = C^BB_FK; that was stale and had propagated into the paper.  FF is
+E-dominated, C^BB/C^EE ~ 0.032 (median), i.e. a factor ~31, not ~10.
 
 Reuses the curved-sky Wigner-d transform of plot_analysis3_cl_decomposition.
 Run with the PyCCL interpreter.  Output: outputs/cl_EB_polarization.{png,pdf}
@@ -79,19 +83,30 @@ def main() -> int:
     for ax, ff, fk, title in ((axes[0], ee_ff, ee_fk, r"$\Delta C_\ell^{EE}$"),
                               (axes[1], bb_ff, bb_fk, r"$\Delta C_\ell^{BB}$")):
         plot_signed_markers(ax, ELL, PREF * ff, color=COL_FF, marker=MK_FF, label="FF")
-        plot_signed_markers(ax, ELL, PREF * fk, color=COL_FK, marker=MK_FK, label="FK")
+        # Below ell ~ 50 the FK values come from the large-separation part of
+        # its 2PCF, where the multipole sum no longer converges; drawn faint
+        # and not quoted.
+        plot_signed_markers(ax, ELL, PREF * fk, color=COL_FK, marker=MK_FK,
+                            label="FK", faint_outside=(50.0, None))
         ax.set_title(title)
         if handles is None:
             handles = ax.get_legend_handles_labels()
 
-    # --- EB panel: parity null.  FK is identically zero; FF at the floor. ---
+    # --- EB panel: parity null. ------------------------------------------
+    # FK is identically zero here as a THEOREM, not as a measurement: under a
+    # reflection about the separation axis Re Psi_0 is even and Im Psi_0 is
+    # odd, so <Phi_00 Psi_+ Psi_x> equals minus itself. The vertex callable
+    # encodes that structurally, leaving every coupling-tensor entry with an
+    # odd number of Im slots at zero. The panel therefore demonstrates that
+    # the transform and the fold do not leak E or B power into EB, which is a
+    # useful check but a different statement; the label says so.
     axeb = axes[2]
     axeb.loglog(ELL, PREF * np.abs(eb_ff), color=COL_FF, lw=1.6, ls="--",
                 marker=MK_FF, ms=5, label="FF")
     axeb.set_title(r"$\Delta C_\ell^{EB}$")
     axeb.text(0.5, 0.5,
               "parity null\n"
-              r"FK:  $\Delta C_\ell^{EB}=0$ (exact)" + "\n"
+              r"FK:  $\Delta C_\ell^{EB}=0$ by parity" + "\n"
               r"FF:  residual $\lesssim10^{-8}$ of signal",
               transform=axeb.transAxes, ha="center", va="center", fontsize=14,
               bbox=dict(boxstyle="round", fc="white", ec="0.7", alpha=0.9))

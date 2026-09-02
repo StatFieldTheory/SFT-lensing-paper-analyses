@@ -373,17 +373,23 @@ def main() -> int:
             ax.set_ylabel(r"$\ell(\ell+1)\,C_\ell/2\pi$")
 
         # --- ratio panel: fractional Order-2 correction (full - O0)/O0 ---
-        corr = (Cl_full - Cl_o0) / Cl_o0
+        # percent units so the strip reads directly as "size of the correction"
+        corr = 100.0 * (Cl_full - Cl_o0) / Cl_o0
+        # The Order-2 correction is itself one to two percent of Order-0, so
+        # below ell ~ 50 it is comparable to the residual of the finite-range
+        # transform and to the unconverged large-separation tail of FK; the
+        # strip is drawn faint there and no ratio is quoted below it.
         plot_signed_line(axr, ELL, corr, color=COLOR_FK, lw=1.6, alpha=0.95,
-                         sign_marker_size=4.0, sign_marker_alpha=0.75)
-        axr.axhline(1.0, color="0.55", lw=0.8, ls=":")   # correction = Order-0
+                         sign_marker_size=4.0, sign_marker_alpha=0.75,
+                         faint_outside=(50.0, None))
+        axr.axhline(100.0, color="0.55", lw=0.8, ls=":")  # correction = Order-0
         axr.set_xscale("log"); axr.set_yscale("log")
         axr.set_xlim(ELL.min(), ELL.max())
-        axr.set_ylim(1e-3, 1e2)
+        axr.set_ylim(0.1, 100.0)
         axr.set_xlabel(r"$\ell$")
         axr.tick_params(labelsize=12)
         if c == 0:
-            axr.set_ylabel(r"$\frac{\mathrm{full}-\mathrm{O0}}{\mathrm{O0}}$", fontsize=15)
+            axr.set_ylabel(r"$\frac{\mathrm{full}-\mathrm{O0}}{\mathrm{O0}}\;[\%]$", fontsize=15)
 
         if legend_handles is None:
             handles, labels = ax.get_legend_handles_labels()

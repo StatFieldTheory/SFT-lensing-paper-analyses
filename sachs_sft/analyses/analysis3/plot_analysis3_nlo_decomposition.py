@@ -60,6 +60,11 @@ MARKER_O0, MARKER_FF, MARKER_FK = "o", "^", "s"
 # Shared y-range matched to analysis1 (the 3j-suppressed FK in the spin-2
 # panels falls below this floor; that suppression is discussed in the text).
 Y_LIM = (1e-9, 2e-3)
+# The separation range over which FK is quoted in the text: the range current
+# cosmic-shear analyses retain after their small-scale cuts (KiDS-Legacy and
+# DES Y3 cut at ~2', HSC Y3 at 7', UNIONS at 12'). Shaded in every panel so the
+# quoted range is visible rather than asserted.
+QUOTE_RANGE_ARCMIN = (2.0, 12.0)
 
 # Sachs-scalar -> observable SIGN CONVENTION.
 # The sft-wick output legs are the RAW Sachs-scalar LoS integrals ∫X_i (sign not
@@ -167,10 +172,15 @@ def main() -> int:
         print(f"  FF range = [{ff.min():+.3e}, {ff.max():+.3e}]  FF(0.5')={ff[0]:+.4e}  FF/O0(0.5')={ff[0]/o0[0]:+.3e}")
         print(f"  FK range = [{fk.min():+.3e}, {fk.max():+.3e}]  FK(0.5')={fk[0]:+.4e}  FK/O0(0.5')={fk[0]/o0[0]:+.3e}")
 
+        ax.axvspan(*QUOTE_RANGE_ARCMIN, color="0.85", alpha=0.55, lw=0, zorder=0)
         plot_signed_line(ax, gamma, full, label="Full (O0+FF+FK)")
         plot_signed_markers(ax, gamma, o0, color=COLOR_O0, marker=MARKER_O0, label="Order-0")
         plot_signed_markers(ax, gamma, ff, color=COLOR_FF, marker=MARKER_FF, label="Order-2 FF")
-        plot_signed_markers(ax, gamma, fk, color=COLOR_FK, marker=MARKER_FK, label="Order-2 FK")
+        # Beyond ~1 degree the FK multipole sum stops converging (the low- and
+        # high-ell branches cancel); those points are drawn faint and are not
+        # quoted anywhere. See the cutoff subsection of the insights section.
+        plot_signed_markers(ax, gamma, fk, color=COLOR_FK, marker=MARKER_FK,
+                            label="Order-2 FK", faint_outside=(None, 60.0))
         ax.set_title(title)
         if i // 2 == 1:  # bottom row only (x shared)
             ax.set_xlabel(r"$\gamma\;[\mathrm{arcmin}]$")

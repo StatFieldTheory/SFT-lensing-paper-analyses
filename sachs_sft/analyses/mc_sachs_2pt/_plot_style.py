@@ -110,6 +110,8 @@ def plot_signed_line(
     label=None,
     zorder_line=1,
     zorder_markers=2,
+    faint_outside=None,
+    faint_alpha=0.28,
 ):
     """Continuous ``|arr|`` line plus same-color sign markers.
 
@@ -123,13 +125,34 @@ def plot_signed_line(
     arr = np.asarray(arr, dtype=float)
     abs_arr = np.abs(arr)
 
-    ax.loglog(
-        gamma, abs_arr, linestyle="-", color=color,
-        lw=lw, alpha=alpha, solid_capstyle="round",
-        label=label, zorder=zorder_line,
-    )
-    pos = arr > 0
-    neg = arr < 0
+    # ``faint_outside=(lo, hi)`` draws the curve outside that window dashed and
+    # translucent: shown, but not the values being quoted. Default None
+    # reproduces the previous single-style call exactly.
+    keep = np.ones(gamma.size, dtype=bool)
+    if faint_outside is not None:
+        lo, hi = faint_outside
+        if lo is not None:
+            keep &= gamma >= lo
+        if hi is not None:
+            keep &= gamma <= hi
+        ax.loglog(
+            gamma, abs_arr, linestyle=(0, (3, 2)), color=color,
+            lw=lw, alpha=alpha * faint_alpha, solid_capstyle="round",
+            zorder=zorder_line,
+        )
+        ax.loglog(
+            np.where(keep, gamma, np.nan), abs_arr, linestyle="-", color=color,
+            lw=lw, alpha=alpha, solid_capstyle="round",
+            label=label, zorder=zorder_line,
+        )
+    else:
+        ax.loglog(
+            gamma, abs_arr, linestyle="-", color=color,
+            lw=lw, alpha=alpha, solid_capstyle="round",
+            label=label, zorder=zorder_line,
+        )
+    pos = (arr > 0) & keep
+    neg = (arr < 0) & keep
     if pos.any():
         ax.loglog(
             gamma[pos], abs_arr[pos],
