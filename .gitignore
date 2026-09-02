@@ -28,15 +28,50 @@ _archive/
 
 # Agent-generated scratch/handoff/prompt docs (kept locally, not for GitHub).
 # These are working notes from agent sessions, not pipeline artifacts.
-# NOTE: /docs/ is anchored to the repo root so it does NOT catch the tracked
-# proof docs under mathematica/docs/.
-/CLEANUP_HANDOFF.md
-/CLEANUP_REPORT.md
-/figure_manifest.md
-/docs/
 
 # Agent prompts and working notes co-located with analysis code.
 **/PROMPT*.md
 **/*_NOTES.md
 **/*_notes*.md
-sachs_sft/analyses/shear3pcf_fastnc/scripts/docs/
+sachs_sft/analyses/shear3pcf_fastnc/scripts
+# driver_field_emulators, imported 2026-09-02 during the reproducibility reorganisation.
+# Large regenerable products, exploratory variants and private material stay out of git;
+# every excluded file is listed with its md5 in reorg_2026-09/dfe_manifest_2026-09-02.txt.
+driver_field_emulators/products/pieces/
+driver_field_emulators/products/_ff_caches/
+driver_field_emulators/products/_ff_dt1/
+driver_field_emulators/products/cutoff_vertex.npz
+driver_field_emulators/products/cutoff_vertex_tree.npz
+driver_field_emulators/products/cutoff_study_partial.npz
+driver_field_emulators/products/_variant_collapsed_dense_*/
+driver_field_emulators/products/collapsed_dense_*
+driver_field_emulators/products/collapsed_triples_dense.npz
+driver_field_emulators/products/_low_cache_collapsed_dense.npz
+driver_field_emulators/products/table_tree_cut1000_r*
+driver_field_emulators/products/_variant_table_tree_cut1000_*/
+driver_field_emulators/products/table_permclosed_cut1000*
+driver_field_emulators/products/_variant_table_permclosed_cut1000_*/
+driver_field_emulators/products/table_reproduce_deployed*
+driver_field_emulators/products/_variant_table_reproduce_deployed/
+driver_field_emulators/products/triples_full_r1.npz
+driver_field_emulators/products/triples_full_r2.npz
+driver_field_emulators/products/triples_permclosed_r1.npz
+driver_field_emulators/products/triples_permclosed_r2.npz
+driver_field_emulators/products/triples_collapsed_only.npz
+driver_field_emulators/products/triples_production_only.npz
+driver_field_emulators/products/triples_permutation_probe.npz
+driver_field_emulators/products/xi_FF_dt1.npz
+driver_field_emulators/products/_l2_lambda_grid_*.npz
+driver_field_emulators/products/xi_kappa_channels_preRevision.pdf
+driver_field_emulators/products/multiz_kappa_2pcf_5z_preRevision.npz
+driver_field_emulators/figures/corrected/
+driver_field_emulators/papers/
+driver_field_emulators/revision_plan/
+driver_field_emulators/code/mc_fk_complete/psd_fix/**/*.npz
+driver_field_emulators/note/*.aux
+driver_field_emulators/note/*.log
+driver_field_emulators/note/*.fdb_latexmk
+driver_field_emulators/note/*.fls
+driver_field_emulators/note/*.out
+driver_field_emulators/note/*.toc
+**/.benchmarks/
