@@ -14,8 +14,9 @@ import copy
 from pathlib import Path
 import yaml
 
-ARCHIVE = Path("/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/_archive/canoes_pipeline")
-BASE = ARCHIVE / "scripts" / "config_FK_LIMBER_z5.yaml"
+# The base geometry travels with this script since 2026-09-02; the
+# canoes_pipeline archive it used to be read from was retired.
+BASE = Path(__file__).resolve().parent / "inputs" / "config_FK_LIMBER_z5_archived_2026-05.yaml"
 SACHS = Path("/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft")
 CALL = SACHS / "callables"
 OUT = SACHS / "sftwick_outputs"
