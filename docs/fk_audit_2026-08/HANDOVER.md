@@ -1,5 +1,10 @@
 # Handover
 
+> **Correction, 2026-09-02.** Absolute FK amplitudes below are `ell_max = 1000`
+> values unless stated otherwise; the manuscript uses `ell_max = 15360` with the
+> permutation-aware callable (`+1.9480e-5` at `gamma = 0.5'`, 2.31% of Order-0).
+> See [`FK_BASELINE_NUMBERS.md`](FK_BASELINE_NUMBERS.md).
+
 Written 2026-08-25. Three tasks, in order. Task A must be done FIRST and
 BLIND: do not read the rest of this folder's findings before finishing it,
 and do not tell the reviewer what to expect.

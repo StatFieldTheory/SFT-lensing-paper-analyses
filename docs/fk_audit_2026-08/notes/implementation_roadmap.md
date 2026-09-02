@@ -1,5 +1,15 @@
 # Roadmap: Nonlinear-Bispectrum FK Rebuild (tree SPT -> BiHalofit x bacco boost)
 
+> **Correction, 2026-09-02.** The absolute FK amplitudes in this note are
+> `ell_max = 1000` values obtained with the sorting callable and the production
+> linear-in-lambda fold. The manuscript's FK is evaluated at `ell_max = 15360`
+> with the permutation-aware callable, where the same quantity is `+1.9480e-5`
+> at `gamma = 0.5'` (2.31% of Order-0), a factor 4.5 larger. Ratios between
+> variants at a fixed cutoff are unaffected. See
+> [`../FK_BASELINE_NUMBERS.md`](../FK_BASELINE_NUMBERS.md) for the full key and
+> `sftwick_outputs/2PCF/C_corr_op_K_limber_FK_cut15360_permfix/` for the
+> current product.
+
 Goal: recompute the FK term (three-point cumulant leakage into the lensing 2PCF) with a nonlinear matter bispectrum, replacing the tree-level SPT `2 F2 P P + cyc` inside the `equal_time_limber` kappa3 vertex. Options in increasing sophistication: (A) BiHalofit gravity-only; (B) BiHalofit x baccoemu baryonic boost; (C) response-function squeezed model `R_1(k_h) P_lin(k_s) P_NL(k_h)` as a targeted cross-check of the collapsed FK corner.
 
 Design decision up front: build-level integration (patch canoes' B assembly) as the compute path, table-level as the deployment surface. The patched build emits the SAME NPZ schema the deployed callable already reads, so sft-wick, the callable, and the FK 2PCF drivers see only a new `TABLE_PATH`. Pure table-level post-processing is impossible anyway: the nonlinear B is not separable as `D(z)^4 B(0)`, and the table stores zeta (already ell-integrated), not B.

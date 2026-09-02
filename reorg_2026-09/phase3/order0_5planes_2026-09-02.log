@@ -1,0 +1,8 @@
+[run_FF_single] kappa2 = kappa2_grid_lcut0_low_empty.npz
+[run_FF_single] sigma2 = disabled
+[run_FF_single] sweep.n_gauss = 24
+[run_FF_single] expand.orders = (0,)
+[run_FF_single] -> /private/tmp/claude-501/-Users-zzhang-Documents-MyDrafts-STF-lensing/58fd681a-480f-4860-a212-3d176f65b575/scratchpad/p3/o0multiz/xi_o0_5planes.npz
+[run_FF_single] done in 79.3 s
+[fk] /opt/homebrew/Caskroom/miniconda/base/envs/sft-wick/bin/python /Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/scripts/run_FF_single.py /Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/scripts/inputs/kappa2_grid_lcut0_low_empty.npz /private/tmp/claude-501/-Users-zzhang-Documents-MyDrafts-STF-lensing/58fd681a-480f-4860-a212-3d176f65b575/scratchpad/p3/o0multiz/xi_o0_5planes.npz
+[fk] wrote /private/tmp/claude-501/-Users-zzhang-Documents-MyDrafts-STF-lensing/58fd681a-480f-4860-a212-3d176f65b575/scratchpad/p3/o0multiz/xi_o0_5planes.npz

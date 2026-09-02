@@ -1,5 +1,15 @@
 # Does this change the draft's qualitative discussion?
 
+> **Correction, 2026-09-02.** The absolute FK amplitudes in this note are
+> `ell_max = 1000` values obtained with the sorting callable and the production
+> linear-in-lambda fold. The manuscript's FK is evaluated at `ell_max = 15360`
+> with the permutation-aware callable, where the same quantity is `+1.9480e-5`
+> at `gamma = 0.5'` (2.31% of Order-0), a factor 4.5 larger. Ratios between
+> variants at a fixed cutoff are unaffected. See
+> [`../FK_BASELINE_NUMBERS.md`](../FK_BASELINE_NUMBERS.md) for the full key and
+> `sftwick_outputs/2PCF/C_corr_op_K_limber_FK_cut15360_permfix/` for the
+> current product.
+
 Assessment only. The draft was not modified, and no draft figure was
 regenerated. Line references are to the current text, read read-only.
 

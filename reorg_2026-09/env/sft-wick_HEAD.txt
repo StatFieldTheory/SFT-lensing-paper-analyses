@@ -1,0 +1,2 @@
+53a3631bce01cb9cd086246fab2320faf0a34f1a
+53a3631bce01cb9cd086246fab2320faf0a34f1a 2026-09-02 17:00:11 +0100 docs: measured cost of always preferring Gauss-Legendre

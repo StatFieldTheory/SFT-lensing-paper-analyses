@@ -1,5 +1,15 @@
 # Finding: the deployed cosine grid freezes the FK vertex at the (1,1,1) corner
 
+> **Correction, 2026-09-02.** The absolute FK amplitudes in this note are
+> `ell_max = 1000` values obtained with the sorting callable and the production
+> linear-in-lambda fold. The manuscript's FK is evaluated at `ell_max = 15360`
+> with the permutation-aware callable, where the same quantity is `+1.9480e-5`
+> at `gamma = 0.5'` (2.31% of Order-0), a factor 4.5 larger. Ratios between
+> variants at a fixed cutoff are unaffected. See
+> [`../FK_BASELINE_NUMBERS.md`](../FK_BASELINE_NUMBERS.md) for the full key and
+> `sftwick_outputs/2PCF/C_corr_op_K_limber_FK_cut15360_permfix/` for the
+> current product.
+
 Measured 2026-08-25 by building a kappa3 table densified on the collapsed
 family and comparing it, at the vertex level, against the deployed
 covgrid16 table as the callable actually reads it.
