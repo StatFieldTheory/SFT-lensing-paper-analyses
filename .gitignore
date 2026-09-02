@@ -82,3 +82,9 @@ driver_field_emulators/note/*.toc
 
 # vertex-level cutoff study (audit-note data, 6 MB, regenerable from the band pieces)
 **/fk_audit_2026-08/products/cutoff_*.npz
+
+# docs/: the agent briefs are tracked here although PROMPT*.md is ignored elsewhere;
+# the arXiv PDFs and the editor correspondence stay out of git.
+!docs/agent_briefs/*.md
+docs/papers/
+docs/private/
