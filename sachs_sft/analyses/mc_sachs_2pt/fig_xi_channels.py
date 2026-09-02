@@ -18,13 +18,13 @@ was those two errors summing through unity at the tuned value.  That diagnosis
 stands, and `simulate_fk_vr` must never be used for FK markers again.
 
 They are restored from a different estimator:
-`driver_field_emulators/code/mc_fk_complete/`, which is placement-complete (all
+`analyses/mc_fk_complete/`, which is placement-complete (all
 three legs of the deformation reach the vertex; proved as a symbolic identity)
 and variance-controlled, and whose sigma_lambda -> 0 extrapolation reproduces
 the folded FK channel to about a percent.  `_plot` draws FK markers only when
 the caller supplies g_fk/fk_mc/fk_se; `_compute` does not produce them, so the
 paper figure is built through
-`driver_field_emulators/code/figures_corrected/make_val_figure.py`.
+`analyses/revision_2026-08/make_val_figure.py`.
 
 Output: figures/xi_kappa_channels.pdf
 """

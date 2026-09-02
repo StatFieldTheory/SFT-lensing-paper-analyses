@@ -79,3 +79,6 @@ driver_field_emulators/note/*.toc
 # vertex-rebuild intermediates (octave-band pieces, hours of canoes builds; regenerable, listed with md5 in reorg_2026-09/dfe_manifest_2026-09-02.txt)
 **/products/pieces/
 **/_ff_caches/
+
+# vertex-level cutoff study (audit-note data, 6 MB, regenerable from the band pieces)
+**/fk_audit_2026-08/products/cutoff_*.npz

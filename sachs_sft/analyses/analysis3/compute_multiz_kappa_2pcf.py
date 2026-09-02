@@ -4,8 +4,8 @@ the five source redshifts of the multi-z kappa figure (z_s = 1, 1.7, 2.5, 3.2,
 
 Only the per-z source distance lambda(z_s) (= sweep t_final) changes; the
 propagator / kappa3 callable tables are z-independent and reused.  The heavy
-lifting (run_vertex_sweep, z->lambda mapping) is imported from the talk's
-``run_multiz_components.py``.
+lifting (run_vertex_sweep, z->lambda mapping) is imported from ``multiz_sweep.py``
+in this folder (the talk repository's ``run_multiz_components.py`` until 2026-09-02).
 
 Run with the sft-wick env:
   <sft-wick python> compute_multiz_kappa_2pcf.py
@@ -19,9 +19,8 @@ from pathlib import Path
 import numpy as np
 
 HERE = Path(__file__).resolve().parent
-TALK_SCRIPTS = "/Users/zzhang/Documents/MyDrafts/STF_lensing/talk/scripts"
-sys.path.insert(0, TALK_SCRIPTS)
-import run_multiz_components as R  # noqa: E402
+sys.path.insert(0, str(HERE))
+import multiz_sweep as R  # noqa: E402  (moved here from talk/scripts/run_multiz_components.py, 2026-09-02)
 
 Z = np.array([1.0, 1.7, 2.5, 3.2, 4.0])
 OUT = HERE / "outputs" / "multiz_kappa_2pcf_5z.npz"

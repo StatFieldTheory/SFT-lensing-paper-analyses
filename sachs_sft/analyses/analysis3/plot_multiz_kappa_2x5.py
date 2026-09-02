@@ -53,12 +53,12 @@ def main() -> int:
     # over noise -- the tails carried 1e-7-level dips and went negative at
     # z_s=1, which the FF moment (connected part plus <kappa>^2 > 0) cannot do.
     # They are replaced here by a genuine per-redshift sweep of the FF channel
-    # (driver_field_emulators/code/figures_corrected/run_ff_one_lambda.py, one
+    # (analyses/revision_2026-08/run_ff_one_lambda.py, one
     # single-threaded process per source distance, ~3.2 h each). Cross-check:
     # each slice's large-separation plateau matches the deterministic
-    # <kappa>^2(z_s) of code/rebuild/mean_kappa_z.py to 0.1-2.2%.
-    _FF_REAL = (Path(__file__).resolve().parents[4] / "driver_field_emulators"
-                / "products" / "multiz_ff_real_all5.npz")
+    # <kappa>^2(z_s) of callables/kappa3_vertex/rebuild/mean_kappa_z.py to 0.1-2.2%.
+    _FF_REAL = (Path(__file__).resolve().parents[2] / "sftwick_outputs" / "2PCF"
+                / "multiz" / "multiz_ff_real_all5.npz")
     if _FF_REAL.exists():
         _r = np.load(_FF_REAL, allow_pickle=True)
         if not np.allclose(np.asarray(_r["z"], float), z, rtol=1e-6):
