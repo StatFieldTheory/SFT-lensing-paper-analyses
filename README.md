@@ -1,71 +1,81 @@
-# `SFT-lensing-paper-analyses/` — code & data behind the STF_lensing paper
+# SFT-lensing-paper-analyses
 
-Path-integral weak-lensing pipeline. This folder holds every generator, callable, and
-data product reachable from the finalized paper, plus a dated archive of superseded
-material. The manuscript and final figure PDFs live at the **repo root** (`main.tex`,
-`sections/`, `figures/`); this folder is git-ignored (repo-root `.gitignore`).
+The reproduction package of *Statistical Field Theory for Weak Gravitational Lensing*:
+every generator, callable and data product the manuscript's figures and numbers come from.
+The manuscript itself lives one level up (`main.tex`, `sections/`, `figures/`, `biblio.bib`)
+and is read-only from here.
 
-Start here:
-- The **repo map** (below) and the **"Regenerating the paper figures"** section orient
-  you to the committed code and data.
-- Two working docs are kept on local disk but are **git-ignored** (agent notes, absent
-  from a fresh clone): `figure_manifest.md` (the live per-figure dependency map: each of
-  the 16 paper figures → generator, inputs, env, copy step, one-line regen command) and
-  `CLEANUP_REPORT.md` (the 2026-06-17 reorganization before/after).
+**Start with [`REPRODUCE.md`](REPRODUCE.md).** Three commands rebuild all 17 figures,
+check them against the deployed PDFs, and recompute every quantitative claim:
 
-## Repo map
-
-```
-SFT-lensing-paper-analyses/
-  figure_manifest.md      # (local-only, git-ignored) figure -> generator/inputs/env/command map
-  CLEANUP_REPORT.md       # (local-only, git-ignored) 2026-06-17 reorg report + AMBIGUOUS list
-  figures/                # Python generators for schematic/glyph/operator figures
-                          #   (NOT the final PDFs; those are at repo-root figures/)
-  sachs_sft/              # production sft-wick pipeline (since 2026-05-30)
-    callables/            # the 2 live callables that drive sft-wick:
-      C_propagator/corr_op/          #   correlation propagator C = <Phi Phi>
-      kappa3_vertex/equal_time_limber/ #  non-local kappa3 vertex K (+ zeta-slice figure)
-    analyses/             # one folder per analysis
-      analysis1/          #   -> analysis1_O0_vs_pyccl.pdf
-      analysis3/          #   -> analysis3_NLO_FFFK / analysis3_cl_full_vs_O0 / cl_EB_polarization / multiz_kappa_xi_cl
-      mc_sachs_2pt/       #   -> appendix_mc_workflow.pdf (Monte-Carlo Sachs 2pt cross-check)
-      shear3pcf_fastnc/   #   BACKUP (removed from paper; see BACKUP_NOT_IN_PAPER.md)
-    scripts/              # shared production code (D_callable, kappa2_callable, c_fast_gl,
-                          #   spin_rotation) + gen_sftwick_configs + inputs/
-    sftwick_outputs/2PCF/ # the 3 live sweep outputs (O0, K_limber_FF, K_limber_FK) + caches
-  mathematica/            # symbolic proofs (.wl) backing the paper equations (CLAUDE.md SoT)
-  docs/                   # (local-only, git-ignored) design records
-  _archive/
-    canoes_pipeline/                # old tangled pipeline (archived 2026-05-30, 161M)
-    cleanup_2026-06-17/             # superseded material archived in this reorg (see its README)
-  sachs_sft/_cleanup_archive_2026-06-09/   # earlier h^4-fix archive
+```bash
+python reproduce/regen_figure.py --all      # about 90 seconds
+python reproduce/check_figures.py           # IDENTICAL(raw) for all 17
+python reproduce/check_numbers.py           # 35 claims, each next to its products
 ```
 
-## Environments
+Then:
 
-Subagent shells cannot `conda activate`; use the absolute interpreter:
-- **PyCCL** (analysis/plotting, scipy, camb): `/opt/homebrew/Caskroom/miniconda/base/envs/PyCCL/bin/python`
-- **sft-wick** (L2 framework / 2PCF sweeps): `/opt/homebrew/Caskroom/miniconda/base/envs/sft-wick/bin/python`
-- LaTeX: `latexmk -pdf main.tex` (from repo root)
-- Mathematica: `wolframscript -file SFT-lensing-paper-analyses/mathematica/<name>.wl`
+* [`figure_manifest.md`](figure_manifest.md): figure by figure, generator, inputs,
+  environment, runtime.
+* [`MOVED_PATHS.md`](MOVED_PATHS.md): old path to new path for the 2026-09 reorganisation,
+  for anything holding a reference into this tree.
+* [`CHANGELOG_REORG_2026-09.md`](CHANGELOG_REORG_2026-09.md): what changed, why, and how to
+  roll it back.
+* [`docs/`](docs/README.md): the 2026-08 FK audit that drove the revision, and the design
+  records.
 
-## Regenerating the paper figures
+## Map
 
-See `figure_manifest.md` (local-only working doc, git-ignored) for the full per-figure
-table and commands. Quick notes:
-- The `SFT-lensing-paper-analyses/figures/` schematic/glyph generators and the `equal_time_limber/plot_zeta_figures.py`
-  zeta-slice generator **write straight into the repo-root `figures/`** — rerunning them
-  overwrites the paper PDFs. Redirect (`--out-stem`) or work on a copy if you only want to test.
-- `analysis*` and `mc_sachs_2pt` generators write to their own `outputs/`/`figures/` dir under
-  a slightly different name, which was then **copied** into `figures/` (the paper renames drop
-  suffixes like `_fkem`, `_nlo_O0_FF_FK`, `_2x5`). `fig_xi_channels.py --replot` re-plots from
-  the cached `outputs/appendix_mc_curve.npz` without redoing the Monte Carlo.
-- `multiz_kappa_xi_cl.pdf` is 2-stage (sft-wick compute → PyCCL plot); the expensive
-  intermediate `analysis3/outputs/multiz_kappa_2pcf_5z.npz` is kept so the plot can be redone cheaply.
-- 2 figures have **no in-repo generator** (`FeynDiag_2pt_order2.pdf`, `FeynDiag_3pt_order1.pdf`,
-  likely hand-made vector art) and `cosmology_coord_maps.pdf`'s generator lives only in
-  `_archive/canoes_pipeline/` and needs the external `~/projects/canoes/src`. The PDFs are present.
+```
+reproduce/            regen_figure.py, check_figures.py, check_numbers.py, deploy.py,
+                      pdfcmp.py, deployed_md5.txt, numbers.json, logs/
+figures/              generators for the schematic and operator figures (+ the coordinate
+                      maps and the Feynman diagrams); outputs/ holds their renders
+sachs_sft/
+  callables/          what sft-wick is driven by: two kinds of callable object
+    C_propagator/corr_op/                    correlation propagator C = <Phi Phi> + table
+    kappa3_vertex/
+      equal_time_limber_cut15360_permaware/  PRODUCTION vertex (permutation-aware, ell_max 15360)
+      equal_time_limber/                     the superseded cut1000 vertex (DEPRECATED.md),
+                                             the build script, the ell-band decomposition,
+                                             the figure-7 generator and its outputs
+      rebuild/                               factored vertex rebuild: LOW branch, octave bands,
+                                             assembly, the fold runner, probes, products/, logs/
+      b_model/                               matter-bispectrum models (tree, BiHalofit)
+  sftwick_outputs/2PCF/                      one folder per sft-wick run, each with its config
+    C_corr_op_O0/                              Order-0                       (PRODUCTION)
+    C_corr_op_K_limber_FF/                     nonlinear propagation         (PRODUCTION)
+    C_corr_op_K_limber_FK_cut15360_permfix/    the paper's FK                (PRODUCTION)
+    C_corr_op_K_limber_FK/                     the superseded June FK        (SUPERSEDED)
+    cutoff_ladder/                             the ten folds behind figure 17
+    multiz/                                    the source-redshift sweeps behind figure 5
+  analyses/           analysis1, analysis3, mc_sachs_2pt, mc_fk_complete,
+                      revision_2026-08 (the drivers that built the 2026-08 figures),
+                      fk_audit_2026-08 (the audit probes), shear3pcf_fastnc (backup)
+  scripts/            shared code and the sweep runner
+docs/                 fk_audit_2026-08 (notes + the 22-page audit note), agent_briefs,
+                      the (1+z)^4 design records; papers/ and private/ are local only
+mathematica/          symbolic proofs backing the manuscript's equations
+reorg_2026-09/        the 2026-09 reorganisation: plan, evidence, scripts, environment pins
+```
 
-## Conventions
-English in code/comments/commits. Archive, do not delete, old artifacts. Do not edit
-`sections/*.tex`, `main.tex`, or `figures/*.pdf` — consume them as ground truth.
+## Rules that keep this reproducible
+
+* **One folder per callable implementation**, and configs name a callable folder by path.
+  This is what makes a result traceable to one file; it replaced an environment-variable
+  scheme that lost provenance twice.
+* **A run folder marked `PRODUCTION` is protected.** `scripts/run_FF_single.py` refuses to
+  overwrite its output unless `SFT_WICK_FORCE_OVERWRITE=1` is set. A variant config that
+  inherited a production output path destroyed the deployed FK sweep once, on 2026-08-25.
+  Use `rebuild/run_fk_variant.py` to fold anything experimental.
+* **Generators never write into the manuscript.** Each writes into its own `outputs/`;
+  `reproduce/deploy.py` is the single path into `../figures/`.
+* **Never quote an FK amplitude without its multipole cutoff.** The same quantity appears
+  in this repository as five different numbers; `docs/fk_audit_2026-08/FK_BASELINE_NUMBERS.md`
+  is the key.
+* **`--n-jobs` is a memory control**, not a speed knob: sft-wick forks with loky and every
+  worker reloads the inputs. Never run two folds at once, and never fan out the canoes
+  vertex builds; that cost this machine two out-of-memory reboots in August.
+* English in code, comments and commits. Archive rather than delete. Do not edit
+  `sections/*.tex`, `main.tex` or `biblio.bib` from here.
