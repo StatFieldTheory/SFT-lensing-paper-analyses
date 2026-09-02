@@ -2,9 +2,9 @@
 
 Reorganised `STF_lensing` so that a reader holding the manuscript and this repository can
 reproduce every figure and every quoted number without oral tradition. Executed against
-`reorg_2026-09/REORG_PLAN.md` with the operator's sign-off on decisions D1 to D16
-(D16 deferred: the push to GitHub waits until the analysis and the results have been
-checked for consistency).
+`reorg_2026-09/REORG_PLAN.md` with the operator's sign-off on decisions D1 to D16. All
+three repositories were pushed the same day: the analysis package and the talk to GitHub,
+the manuscript to Overleaf.
 
 Follows the format of the 2026-06-17 `CLEANUP_REPORT.md`.
 
