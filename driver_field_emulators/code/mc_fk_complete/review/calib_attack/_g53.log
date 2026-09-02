@@ -1,0 +1,38 @@
+gamma = 5.3042'   fold = 6.698400e-06  (exact node: True)
+[perm-aware] 2142 unordered rows, 16 shells, key 12 decimals, permutation closure 99.8%, from table_permclosed_cut15360.npz
+  N=500 dlam=3.8217 sigma=16.0 s/dl=4.187   [3 s]
+           smeared  tot=+6.405026e-06  /fold=+0.956202  T1share=+0.0807
+            kernel  tot=+6.447867e-06  /fold=+0.962598  T1share=+0.0803
+         rtrunc3.0  tot=+6.385233e-06  /fold=+0.953248  T1share=+0.0812
+         kernel_fk  tot=+7.690371e-06  /fold=+1.148091  T1share=+0.2376
+           causal2  tot=+5.441619e-06  /fold=+0.812376  T1share=+0.0784
+           nominal  tot=+5.670515e-05  /fold=+8.465477  T1share=+0.0152
+  N=1000 dlam=1.9089 sigma=8.0 s/dl=4.191   [6 s]
+           smeared  tot=+6.547522e-06  /fold=+0.977476  T1share=+0.0813
+            kernel  tot=+6.557986e-06  /fold=+0.979038  T1share=+0.0812
+         rtrunc3.0  tot=+6.568305e-06  /fold=+0.980578  T1share=+0.0817
+         kernel_fk  tot=+6.739579e-06  /fold=+1.006148  T1share=+0.1101
+           causal2  tot=+5.411339e-06  /fold=+0.807855  T1share=+0.0801
+           nominal  tot=+2.785822e-05  /fold=+4.158937  T1share=+0.0757
+  N=1999 dlam=0.9545 sigma=4.0 s/dl=4.191   [19 s]
+           smeared  tot=+6.617076e-06  /fold=+0.987859  T1share=+0.0818
+            kernel  tot=+6.619314e-06  /fold=+0.988193  T1share=+0.0818
+         rtrunc3.0  tot=+6.663425e-06  /fold=+0.994779  T1share=+0.0820
+         kernel_fk  tot=+6.635068e-06  /fold=+0.990545  T1share=+0.0855
+           causal2  tot=+5.383787e-06  /fold=+0.803742  T1share=+0.0812
+           nominal  tot=+1.176789e-05  /fold=+1.756820  T1share=+0.0662
+  N=3997 dlam=0.4772 sigma=2.0 s/dl=4.191   [60 s]
+           smeared  tot=+6.652015e-06  /fold=+0.993075  T1share=+0.0825
+            kernel  tot=+6.652633e-06  /fold=+0.993167  T1share=+0.0825
+         rtrunc3.0  tot=+7.304829e-06  /fold=+1.090533  T1share=+0.1042
+         kernel_fk  tot=+6.652261e-06  /fold=+0.993112  T1share=+0.0828
+           causal2  tot=+5.365029e-06  /fold=+0.800942  T1share=+0.0820
+           nominal  tot=+1.103785e-05  /fold=+1.647834  T1share=+0.1612
+
+linear sigma->0 extrapolations (2*r(s/2) - r(s)):
+       smeared:  [16,8]->+0.99875 [8,4]->+0.99824 [4,2]->+0.99829
+        kernel:  [16,8]->+0.99548 [8,4]->+0.99735 [4,2]->+0.99814
+     rtrunc3.0:  [16,8]->+1.00791 [8,4]->+1.00898 [4,2]->+1.18629
+     kernel_fk:  [16,8]->+0.86420 [8,4]->+0.97494 [4,2]->+0.99568
+       causal2:  [16,8]->+0.80333 [8,4]->+0.79963 [4,2]->+0.79814
+       nominal:  [16,8]->-0.14760 [8,4]->-0.64530 [4,2]->+1.53885

@@ -1,0 +1,8 @@
+/Users/zzhang/Documents/MyDrafts/STF_lensing/driver_field_emulators/code/mc_fk_complete/review/stats/runblock.py:60: RuntimeWarning: divide by zero encountered in scalar divide
+  f"{b.mean():.4e}   ratio(seed sd / batchSE)={v.std(ddof=1)/b.mean():.3f}")
+[perm-aware] 2142 unordered rows, 16 shells, key 12 decimals, permutation closure 99.8%, from table_permclosed_cut15360.npz
+gamma=1.0 sigma=8.0 N=1000 n_real=2000 batch=2000 seeds=480 base=555000111 [191s]
+  exact=1.554705e-05  analytic=1.597716e-05
+  MC   =1.549806e-05 +/- 7.059e-08   MC/exact=0.9968 +/- 0.0045   MC/analytic=0.9700 +/- 0.0044
+  seed sd=1.5465e-06   mean within-seed batchSE=0.0000e+00   ratio(seed sd / batchSE)=inf
+  -> _batchdist_s8.npz

@@ -1,0 +1,62 @@
+/Users/zzhang/Documents/MyDrafts/STF_lensing/driver_field_emulators/code/mc_fk_complete/review/stats/a1_existing_blocks.py:79: FutureWarning: As of SciPy 1.17, users must choose a p-value calculation method by providing the `method` parameter. `method='interpolate'` interpolates the p-value from pre-calculated tables; `method` may also be an instance of `MonteCarloMethod` to approximate the p-value via Monte Carlo simulation. When `method` is specified, the result object will include a `pvalue` attribute and not attributes `critical_value`, `significance_level`, or `fit_result`. Beginning in 1.19.0, these other attributes will no longer be available, and a p-value will always be computed according to one of the available `method` options.
+  ad = stats.anderson(res / res.std(ddof=1), dist="norm")
+====================================================================================
+sigma_lambda = 8.0   gamma = 1'   exact = 1.554705e-05   analytic = 1.597716e-05
+====================================================================================
+             block    n          mean          sd         sem    skew   exkurt    SW p  mean/exact
+   A base 20260827   32  1.569859e-05  3.0527e-07  5.3964e-08    0.17    -0.59   0.539      1.0097
+  B base 314159001   32  1.550322e-05  3.7730e-07  6.6698e-08   -0.56     0.50   0.329      0.9972
+   C base 20260828   24  1.551807e-05  4.1714e-07  8.5148e-08   -0.63     0.34   0.269      0.9981
+
+  inverse-variance mean over blocks : 1.560113e-05
+  chi2 between blocks               : 6.37 for 2 dof   p = 0.0414
+  -> scale factor on the error bar  : sqrt(chi2/dof) = 1.78
+        A base 20260827 vs B base 314159001   diff = +1.9536e-07  (+2.28 sigma)
+        A base 20260827 vs C base 20260828    diff = +1.8052e-07  (+1.79 sigma)
+       B base 314159001 vs C base 20260828    diff = -1.4841e-08  (-0.14 sigma)
+
+  POOLED n=88  mean=1.557831e-05 +/- 3.965e-08   ratio/exact = 1.0020 +/- 0.0026   ratio/analytic = 0.9750 +/- 0.0025
+
+  pooled within-block residuals (n=88):
+    skew = -0.445   excess kurtosis = +0.436
+    Shapiro-Wilk  p = 0.2035
+    D'Agostino K2 p = 0.1140
+    Anderson-Darling A2 = 0.366 (5% crit 0.745)
+    Jarque-Bera   p = 0.1656
+    standardised quantiles 1/5/25/50/75/95/99: -2.66 -1.56 -0.55 +0.06 +0.60 +1.54 +1.78
+    max |z| = 2.97 (Gaussian expectation for n=88: ~2.53)
+
+  bootstrap over seeds (40k):  sd = 3.955e-08 vs seed SEM 3.965e-08   ratio = 0.998
+    percentile 95% CI on MC/exact: [0.9969, 1.0069]   (normal-theory: [0.9970, 1.0070])
+    jackknife SE = 3.965e-08   ratio to seed SEM = 1.000
+
+====================================================================================
+sigma_lambda = 4.0   gamma = 1'   exact = 1.576621e-05   analytic = 1.597716e-05
+====================================================================================
+             block    n          mean          sd         sem    skew   exkurt    SW p  mean/exact
+   A base 20260827   32  1.589650e-05  4.3130e-07  7.6245e-08   -0.13     0.19   0.313      1.0083
+  B base 314159001   32  1.563488e-05  5.9535e-07  1.0524e-07   -0.61    -0.35   0.150      0.9917
+   C base 20260828   24  1.587418e-05  6.2815e-07  1.2822e-07   -0.20    -0.11   0.974      1.0068
+
+  inverse-variance mean over blocks : 1.581920e-05
+  chi2 between blocks               : 4.28 for 2 dof   p = 0.1177
+  -> scale factor on the error bar  : sqrt(chi2/dof) = 1.46
+        A base 20260827 vs B base 314159001   diff = +2.6162e-07  (+2.01 sigma)
+        A base 20260827 vs C base 20260828    diff = +2.2317e-08  (+0.15 sigma)
+       B base 314159001 vs C base 20260828    diff = -2.3930e-07  (-1.44 sigma)
+
+  POOLED n=88  mean=1.579528e-05 +/- 5.953e-08   ratio/exact = 1.0018 +/- 0.0038   ratio/analytic = 0.9886 +/- 0.0037
+
+  pooled within-block residuals (n=88):
+    skew = -0.386   excess kurtosis = +0.064
+    Shapiro-Wilk  p = 0.4418
+    D'Agostino K2 p = 0.2734
+    Anderson-Darling A2 = 0.341 (5% crit 0.745)
+    Jarque-Bera   p = 0.3330
+    standardised quantiles 1/5/25/50/75/95/99: -2.72 -1.66 -0.63 +0.06 +0.73 +1.47 +1.97
+    max |z| = 2.80 (Gaussian expectation for n=88: ~2.53)
+
+  bootstrap over seeds (40k):  sd = 5.905e-08 vs seed SEM 5.953e-08   ratio = 0.992
+    percentile 95% CI on MC/exact: [0.9945, 1.0091]   (normal-theory: [0.9944, 1.0092])
+    jackknife SE = 5.953e-08   ratio to seed SEM = 1.000
+

@@ -1,0 +1,10 @@
+[perm-aware] 2142 unordered rows, 16 shells, key 12 decimals, permutation closure 99.8%, from table_permclosed_cut15360.npz
+N=  500 dlam= 3.8217 sig=  0.10 r=  0.03 ref_true=1.61456082e-05 ref_inj=1.59830488e-05 inj/true=0.989932 |dz|/|z|=1.298e-03 [2s]
+N=  500 dlam= 3.8217 sig=  8.00 r=  2.09 ref_true=1.61456082e-05 ref_inj=1.60046587e-05 inj/true=0.991270 |dz|/|z|=9.495e-12 [2s]
+N= 1000 dlam= 1.9089 sig=  0.10 r=  0.05 ref_true=1.61118795e-05 ref_inj=1.59495283e-05 inj/true=0.989924 |dz|/|z|=1.304e-03 [3s]
+N= 1000 dlam= 1.9089 sig=  8.00 r=  4.19 ref_true=1.61118795e-05 ref_inj=1.59712166e-05 inj/true=0.991270 |dz|/|z|=9.501e-12 [3s]
+N= 2000 dlam= 0.9540 sig=  0.10 r=  0.10 ref_true=1.60959915e-05 ref_inj=1.59343121e-05 inj/true=0.989955 |dz|/|z|=1.327e-03 [6s]
+N= 2000 dlam= 0.9540 sig=  8.00 r=  8.39 ref_true=1.60959915e-05 ref_inj=1.59554634e-05 inj/true=0.991269 |dz|/|z|=9.505e-12 [6s]
+N= 4000 dlam= 0.4769 sig=  0.10 r=  0.21 ref_true=1.60882741e-05 ref_inj=1.59264410e-05 inj/true=0.989941 |dz|/|z|=1.313e-03 [13s]
+N= 4000 dlam= 0.4769 sig=  8.00 r= 16.78 ref_true=1.60882741e-05 ref_inj=1.59478113e-05 inj/true=0.991269 |dz|/|z|=9.507e-12 [13s]
+-> _refN.npz

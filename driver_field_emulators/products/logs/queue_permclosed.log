@@ -1,0 +1,5 @@
+[queue] start low_permclosed (free 76 GB, 1 running)
+[queue] low_permclosed: ok (1 done, 0 failed, 1 queued)
+[queue] start win_permclosed (free 76 GB, 1 running)
+[queue] win_permclosed: ok (2 done, 0 failed, 0 queued)
+[queue] finished: 2 ok, 0 failed

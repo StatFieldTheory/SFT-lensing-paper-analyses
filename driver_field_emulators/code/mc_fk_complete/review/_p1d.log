@@ -1,0 +1,17 @@
+gamma = 1.0'
+     N  sigma  |B-S2|/|S2| med  |Qs-Qn|/|Qn| med        p90  worst node       lam
+[perm-aware] 2142 unordered rows, 16 shells, key 12 decimals, permutation closure 99.8%, from table_permclosed_cut15360.npz
+   500   16.0           0.1591            0.4101     0.8622   1.354e+01    2313.0
+/Users/zzhang/Documents/MyDrafts/STF_lensing/driver_field_emulators/code/mc_fk_complete/review/p1d_Q_convergence.py:32: RuntimeWarning: overflow encountered in divide
+  d = num / den
+  1000    8.0           0.0976            0.2278     0.6654         inf    1308.9
+  1999    4.0           0.0512            0.1120     0.5074         inf    1308.9
+  3997    2.0           0.0241            0.0508     0.3149         inf    1308.9
+
+gamma = 17.3'
+     N  sigma  |B-S2|/|S2| med  |Qs-Qn|/|Qn| med        p90  worst node       lam
+   500   16.0           0.1591            0.4025     0.8483   1.328e+01    2313.0
+  1000    8.0           0.0976            0.2241     0.6613   6.955e+00    2313.0
+  1999    4.0           0.0512            0.1104     0.5023   4.346e+00    2313.0
+  3997    2.0           0.0241            0.0499     0.3145   5.557e+02    1311.8
+

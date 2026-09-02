@@ -1,0 +1,26 @@
+[
+ {
+  "name": "band_tree_00960_01000",
+  "out": "/Users/zzhang/Documents/MyDrafts/STF_lensing/driver_field_emulators/products/pieces/band_tree_r4_00960_01000.npz",
+  "log": "/Users/zzhang/Documents/MyDrafts/STF_lensing/driver_field_emulators/products/logs/band_tree_00960_01000.log",
+  "argv": [
+   "/Users/zzhang/projects/angular_statistics/canoes/.venv/bin/python",
+   "-u",
+   "build_band.py",
+   "--triples-npz",
+   "/Users/zzhang/Documents/MyDrafts/STF_lensing/driver_field_emulators/products/triples_full_r4.npz",
+   "--lo",
+   "960",
+   "--hi",
+   "1000",
+   "--n-ell",
+   "96",
+   "--b-model",
+   "tree",
+   "--chunk-rows",
+   "192",
+   "--out",
+   "/Users/zzhang/Documents/MyDrafts/STF_lensing/driver_field_emulators/products/pieces/band_tree_r4_00960_01000.npz"
+  ]
+ }
+]

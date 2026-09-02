@@ -1,0 +1,35 @@
+gamma = 1.0152'   fold = 1.587427e-05  (exact node: True)
+[perm-aware] 2142 unordered rows, 16 shells, key 12 decimals, permutation closure 99.8%, from table_permclosed_cut15360.npz
+  N=1000 dlam=1.9089 sigma=8.0 s/dl=4.191   [8 s]
+           smeared  tot=+1.544338e-05  /fold=+0.972856  T1share=+0.2175
+            kernel  tot=+1.547611e-05  /fold=+0.974918  T1share=+0.2174
+           causal2  tot=+1.282623e-05  /fold=+0.807988  T1share=+0.2171
+       anticausal2  tot=+1.340103e-05  /fold=+0.844198  T1share=+0.2189
+         rtrunc3.0  tot=+1.547398e-05  /fold=+0.974784  T1share=+0.2176
+         smeared_V  tot=+1.561989e-05  /fold=+0.983975  T1share=+0.2180
+         rtrunc2.0  tot=+1.561285e-05  /fold=+0.983532  T1share=+0.2178
+  N=2000 dlam=0.9540 sigma=8.0 s/dl=8.386   [23 s]
+           smeared  tot=+1.542586e-05  /fold=+0.971752  T1share=+0.2175
+            kernel  tot=+1.545878e-05  /fold=+0.973826  T1share=+0.2174
+           causal2  tot=+1.440363e-05  /fold=+0.907357  T1share=+0.2171
+       anticausal2  tot=+1.491202e-05  /fold=+0.939383  T1share=+0.2189
+         rtrunc3.0  tot=+1.546648e-05  /fold=+0.974311  T1share=+0.2176
+         smeared_V  tot=+1.565456e-05  /fold=+0.986159  T1share=+0.2181
+         rtrunc2.0  tot=+1.558272e-05  /fold=+0.981633  T1share=+0.2178
+  N=4000 dlam=0.4769 sigma=8.0 s/dl=16.776   [76 s]
+           smeared  tot=+1.541801e-05  /fold=+0.971258  T1share=+0.2175
+            kernel  tot=+1.545097e-05  /fold=+0.973334  T1share=+0.2174
+           causal2  tot=+1.531301e-05  /fold=+0.964643  T1share=+0.2170
+       anticausal2  tot=+1.577538e-05  /fold=+0.993770  T1share=+0.2189
+         rtrunc3.0  tot=+1.546062e-05  /fold=+0.973942  T1share=+0.2176
+         smeared_V  tot=+1.567997e-05  /fold=+0.987760  T1share=+0.2181
+         rtrunc2.0  tot=+1.558141e-05  /fold=+0.981551  T1share=+0.2178
+
+linear sigma->0 extrapolations (2*r(s/2) - r(s)):
+       smeared: 
+        kernel: 
+       causal2: 
+   anticausal2: 
+     rtrunc3.0: 
+     smeared_V: 
+     rtrunc2.0: 

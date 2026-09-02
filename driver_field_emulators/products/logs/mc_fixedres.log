@@ -1,0 +1,171 @@
+########## sigma_lambda = 4, n_lambda = 2000 (sigma/dlam = 4.2) ##########
+[probe] 24 runs = 2 gammas x 12 fresh seeds, n_real=24000, n_lambda=2000, sigma=4.0, 4 workers
+  [  1/24] gamma=    0.50 seed=  9 fk=+7.7866e-06 (batch se 2.0e-06)  35s
+  [  2/24] gamma=    0.50 seed= 10 fk=+1.2907e-05 (batch se 4.7e-06)  35s
+  [  3/24] gamma=    0.50 seed= 11 fk=+5.8711e-06 (batch se 3.3e-06)  35s
+  [  4/24] gamma=    0.50 seed= 12 fk=+7.3740e-06 (batch se 4.8e-06)  35s
+  [  5/24] gamma=    0.50 seed= 13 fk=+6.0117e-06 (batch se 6.5e-06)  35s
+  [  6/24] gamma=    0.50 seed= 14 fk=+1.4409e-05 (batch se 5.4e-06)  35s
+  [  7/24] gamma=    0.50 seed= 15 fk=+1.7854e-05 (batch se 8.8e-06)  35s
+  [  8/24] gamma=    0.50 seed= 16 fk=+1.6770e-05 (batch se 1.0e-05)  35s
+  [  9/24] gamma=    0.50 seed= 17 fk=+1.2041e-05 (batch se 4.9e-06)  34s
+  [ 10/24] gamma=    0.50 seed= 18 fk=+4.2050e-06 (batch se 6.9e-06)  34s
+  [ 11/24] gamma=    0.50 seed= 19 fk=+2.8950e-05 (batch se 4.7e-06)  34s
+  [ 12/24] gamma=    0.50 seed= 20 fk=+8.4024e-06 (batch se 5.7e-06)  34s
+  [ 13/24] gamma=    1.00 seed=  9 fk=+5.4469e-06 (batch se 2.5e-06)  34s
+  [ 14/24] gamma=    1.00 seed= 10 fk=+9.4484e-06 (batch se 4.3e-06)  34s
+  [ 15/24] gamma=    1.00 seed= 11 fk=+2.6601e-06 (batch se 3.0e-06)  34s
+  [ 16/24] gamma=    1.00 seed= 12 fk=+4.0906e-06 (batch se 4.0e-06)  34s
+  [ 17/24] gamma=    1.00 seed= 13 fk=+2.8050e-06 (batch se 5.4e-06)  34s
+  [ 18/24] gamma=    1.00 seed= 14 fk=+1.0521e-05 (batch se 4.7e-06)  34s
+  [ 19/24] gamma=    1.00 seed= 15 fk=+1.4689e-05 (batch se 7.4e-06)  34s
+  [ 20/24] gamma=    1.00 seed= 16 fk=+1.3082e-05 (batch se 8.6e-06)  34s
+  [ 21/24] gamma=    1.00 seed= 17 fk=+1.0504e-05 (batch se 4.1e-06)  34s
+  [ 22/24] gamma=    1.00 seed= 18 fk=+2.2717e-06 (batch se 5.7e-06)  34s
+  [ 23/24] gamma=    1.00 seed= 19 fk=+2.4321e-05 (batch se 4.4e-06)  34s
+  [ 24/24] gamma=    1.00 seed= 20 fk=+6.3375e-06 (batch se 5.7e-06)  34s
+[perm-aware] 2142 unordered rows, 16 shells, key 12 decimals, permutation closure 99.8%, from table_permclosed_cut15360.npz
+[perm-aware] 2142 unordered rows, 16 shells, key 12 decimals, permutation closure 99.8%, from table_permclosed_cut15360.npz
+[perm-aware] 2142 unordered rows, 16 shells, key 12 decimals, permutation closure 99.8%, from table_permclosed_cut15360.npz
+[perm-aware] 2142 unordered rows, 16 shells, key 12 decimals, permutation closure 99.8%, from table_permclosed_cut15360.npz
+[perm-aware] 2142 unordered rows, 16 shells, key 12 decimals, permutation closure 99.8%, from table_permclosed_cut15360.npz
+[perm-aware] 2142 unordered rows, 16 shells, key 12 decimals, permutation closure 99.8%, from table_permclosed_cut15360.npz
+[perm-aware] 2142 unordered rows, 16 shells, key 12 decimals, permutation closure 99.8%, from table_permclosed_cut15360.npz
+[perm-aware] 2142 unordered rows, 16 shells, key 12 decimals, permutation closure 99.8%, from table_permclosed_cut15360.npz
+[perm-aware] 2142 unordered rows, 16 shells, key 12 decimals, permutation closure 99.8%, from table_permclosed_cut15360.npz
+[perm-aware] 2142 unordered rows, 16 shells, key 12 decimals, permutation closure 99.8%, from table_permclosed_cut15360.npz
+[perm-aware] 2142 unordered rows, 16 shells, key 12 decimals, permutation closure 99.8%, from table_permclosed_cut15360.npz
+[perm-aware] 2142 unordered rows, 16 shells, key 12 decimals, permutation closure 99.8%, from table_permclosed_cut15360.npz
+[perm-aware] 2142 unordered rows, 16 shells, key 12 decimals, permutation closure 99.8%, from table_permclosed_cut15360.npz
+[perm-aware] 2142 unordered rows, 16 shells, key 12 decimals, permutation closure 99.8%, from table_permclosed_cut15360.npz
+[perm-aware] 2142 unordered rows, 16 shells, key 12 decimals, permutation closure 99.8%, from table_permclosed_cut15360.npz
+[perm-aware] 2142 unordered rows, 16 shells, key 12 decimals, permutation closure 99.8%, from table_permclosed_cut15360.npz
+[perm-aware] 2142 unordered rows, 16 shells, key 12 decimals, permutation closure 99.8%, from table_permclosed_cut15360.npz
+[perm-aware] 2142 unordered rows, 16 shells, key 12 decimals, permutation closure 99.8%, from table_permclosed_cut15360.npz
+[perm-aware] 2142 unordered rows, 16 shells, key 12 decimals, permutation closure 99.8%, from table_permclosed_cut15360.npz
+[perm-aware] 2142 unordered rows, 16 shells, key 12 decimals, permutation closure 99.8%, from table_permclosed_cut15360.npz
+[perm-aware] 2142 unordered rows, 16 shells, key 12 decimals, permutation closure 99.8%, from table_permclosed_cut15360.npz
+[perm-aware] 2142 unordered rows, 16 shells, key 12 decimals, permutation closure 99.8%, from table_permclosed_cut15360.npz
+[perm-aware] 2142 unordered rows, 16 shells, key 12 decimals, permutation closure 99.8%, from table_permclosed_cut15360.npz
+[perm-aware] 2142 unordered rows, 16 shells, key 12 decimals, permutation closure 99.8%, from table_permclosed_cut15360.npz
+[probe] done in 3.5 min
+
+gamma      n   mean          sem          spread(1sig)   mean/sem
+     0.5  12  +1.1882e-05  2.017e-06  6.987e-06   +5.89
+     1.0  12  +8.8481e-06  1.858e-06  6.438e-06   +4.76
+
+[probe] -> ../../products/mc_fixedres_s4.npz
+########## sigma_lambda = 8, n_lambda = 1000 (sigma/dlam = 4.2) ##########
+[probe] 24 runs = 2 gammas x 12 fresh seeds, n_real=24000, n_lambda=1000, sigma=8.0, 4 workers
+  [  1/24] gamma=    0.50 seed=  9 fk=+2.3776e-05 (batch se 4.1e-06)  17s
+  [  2/24] gamma=    0.50 seed= 10 fk=+2.3092e-05 (batch se 3.8e-06)  18s
+  [  3/24] gamma=    0.50 seed= 11 fk=+1.8420e-05 (batch se 1.7e-06)  18s
+  [  4/24] gamma=    0.50 seed= 12 fk=+2.1682e-05 (batch se 4.0e-06)  18s
+  [  5/24] gamma=    0.50 seed= 13 fk=+1.9744e-05 (batch se 2.5e-06)  17s
+  [  6/24] gamma=    0.50 seed= 14 fk=+2.1435e-05 (batch se 2.7e-06)  17s
+  [  7/24] gamma=    0.50 seed= 15 fk=+2.4526e-05 (batch se 4.7e-06)  17s
+  [  8/24] gamma=    0.50 seed= 16 fk=+1.5484e-05 (batch se 3.7e-06)  17s
+  [  9/24] gamma=    0.50 seed= 17 fk=+2.0288e-05 (batch se 3.9e-06)  17s
+  [ 10/24] gamma=    0.50 seed= 18 fk=+1.4972e-05 (batch se 2.3e-06)  17s
+  [ 11/24] gamma=    0.50 seed= 19 fk=+2.2479e-05 (batch se 3.1e-06)  17s
+  [ 12/24] gamma=    0.50 seed= 20 fk=+1.1891e-05 (batch se 2.1e-06)  17s
+  [ 13/24] gamma=    1.00 seed=  9 fk=+1.8820e-05 (batch se 4.1e-06)  17s
+  [ 14/24] gamma=    1.00 seed= 10 fk=+1.7001e-05 (batch se 3.3e-06)  17s
+  [ 15/24] gamma=    1.00 seed= 11 fk=+1.4024e-05 (batch se 1.8e-06)  17s
+  [ 16/24] gamma=    1.00 seed= 12 fk=+1.6517e-05 (batch se 3.7e-06)  17s
+  [ 17/24] gamma=    1.00 seed= 13 fk=+1.5010e-05 (batch se 2.7e-06)  17s
+  [ 18/24] gamma=    1.00 seed= 14 fk=+1.4017e-05 (batch se 2.2e-06)  17s
+  [ 19/24] gamma=    1.00 seed= 15 fk=+1.7969e-05 (batch se 4.5e-06)  17s
+  [ 20/24] gamma=    1.00 seed= 16 fk=+1.1133e-05 (batch se 4.2e-06)  17s
+  [ 21/24] gamma=    1.00 seed= 17 fk=+1.6794e-05 (batch se 3.6e-06)  17s
+  [ 22/24] gamma=    1.00 seed= 18 fk=+9.5885e-06 (batch se 1.6e-06)  17s
+  [ 23/24] gamma=    1.00 seed= 19 fk=+1.6958e-05 (batch se 2.7e-06)  17s
+  [ 24/24] gamma=    1.00 seed= 20 fk=+7.1560e-06 (batch se 2.6e-06)  17s
+[perm-aware] 2142 unordered rows, 16 shells, key 12 decimals, permutation closure 99.8%, from table_permclosed_cut15360.npz
+[perm-aware] 2142 unordered rows, 16 shells, key 12 decimals, permutation closure 99.8%, from table_permclosed_cut15360.npz
+[perm-aware] 2142 unordered rows, 16 shells, key 12 decimals, permutation closure 99.8%, from table_permclosed_cut15360.npz
+[perm-aware] 2142 unordered rows, 16 shells, key 12 decimals, permutation closure 99.8%, from table_permclosed_cut15360.npz
+[perm-aware] 2142 unordered rows, 16 shells, key 12 decimals, permutation closure 99.8%, from table_permclosed_cut15360.npz
+[perm-aware] 2142 unordered rows, 16 shells, key 12 decimals, permutation closure 99.8%, from table_permclosed_cut15360.npz
+[perm-aware] 2142 unordered rows, 16 shells, key 12 decimals, permutation closure 99.8%, from table_permclosed_cut15360.npz
+[perm-aware] 2142 unordered rows, 16 shells, key 12 decimals, permutation closure 99.8%, from table_permclosed_cut15360.npz
+[perm-aware] 2142 unordered rows, 16 shells, key 12 decimals, permutation closure 99.8%, from table_permclosed_cut15360.npz
+[perm-aware] 2142 unordered rows, 16 shells, key 12 decimals, permutation closure 99.8%, from table_permclosed_cut15360.npz
+[perm-aware] 2142 unordered rows, 16 shells, key 12 decimals, permutation closure 99.8%, from table_permclosed_cut15360.npz
+[perm-aware] 2142 unordered rows, 16 shells, key 12 decimals, permutation closure 99.8%, from table_permclosed_cut15360.npz
+[perm-aware] 2142 unordered rows, 16 shells, key 12 decimals, permutation closure 99.8%, from table_permclosed_cut15360.npz
+[perm-aware] 2142 unordered rows, 16 shells, key 12 decimals, permutation closure 99.8%, from table_permclosed_cut15360.npz
+[perm-aware] 2142 unordered rows, 16 shells, key 12 decimals, permutation closure 99.8%, from table_permclosed_cut15360.npz
+[perm-aware] 2142 unordered rows, 16 shells, key 12 decimals, permutation closure 99.8%, from table_permclosed_cut15360.npz
+[perm-aware] 2142 unordered rows, 16 shells, key 12 decimals, permutation closure 99.8%, from table_permclosed_cut15360.npz
+[perm-aware] 2142 unordered rows, 16 shells, key 12 decimals, permutation closure 99.8%, from table_permclosed_cut15360.npz
+[perm-aware] 2142 unordered rows, 16 shells, key 12 decimals, permutation closure 99.8%, from table_permclosed_cut15360.npz
+[perm-aware] 2142 unordered rows, 16 shells, key 12 decimals, permutation closure 99.8%, from table_permclosed_cut15360.npz
+[perm-aware] 2142 unordered rows, 16 shells, key 12 decimals, permutation closure 99.8%, from table_permclosed_cut15360.npz
+[perm-aware] 2142 unordered rows, 16 shells, key 12 decimals, permutation closure 99.8%, from table_permclosed_cut15360.npz
+[perm-aware] 2142 unordered rows, 16 shells, key 12 decimals, permutation closure 99.8%, from table_permclosed_cut15360.npz
+[perm-aware] 2142 unordered rows, 16 shells, key 12 decimals, permutation closure 99.8%, from table_permclosed_cut15360.npz
+[probe] done in 1.7 min
+
+gamma      n   mean          sem          spread(1sig)   mean/sem
+     0.5  12  +1.9816e-05  1.131e-06  3.919e-06   +17.51
+     1.0  12  +1.4582e-05  1.038e-06  3.597e-06   +14.04
+
+[probe] -> ../../products/mc_fixedres_s8.npz
+########## sigma_lambda = 16, n_lambda = 500 (sigma/dlam = 4.2) ##########
+[probe] 24 runs = 2 gammas x 12 fresh seeds, n_real=24000, n_lambda=500, sigma=16.0, 4 workers
+  [  1/24] gamma=    0.50 seed=  9 fk=+5.0134e-05 (batch se 4.3e-06)  9s
+  [  2/24] gamma=    0.50 seed= 10 fk=+4.3322e-05 (batch se 2.1e-06)  9s
+  [  3/24] gamma=    0.50 seed= 11 fk=+4.9552e-05 (batch se 3.6e-06)  9s
+  [  4/24] gamma=    0.50 seed= 12 fk=+4.5816e-05 (batch se 2.2e-06)  9s
+  [  5/24] gamma=    0.50 seed= 13 fk=+4.7560e-05 (batch se 5.6e-06)  8s
+  [  6/24] gamma=    0.50 seed= 14 fk=+4.6585e-05 (batch se 4.3e-06)  8s
+  [  7/24] gamma=    0.50 seed= 15 fk=+4.2724e-05 (batch se 3.2e-06)  9s
+  [  8/24] gamma=    0.50 seed= 16 fk=+4.2729e-05 (batch se 5.5e-06)  9s
+  [  9/24] gamma=    0.50 seed= 17 fk=+4.1023e-05 (batch se 3.2e-06)  9s
+  [ 10/24] gamma=    0.50 seed= 18 fk=+4.6228e-05 (batch se 5.0e-06)  9s
+  [ 11/24] gamma=    0.50 seed= 19 fk=+4.8202e-05 (batch se 5.0e-06)  9s
+  [ 12/24] gamma=    0.50 seed= 20 fk=+4.8496e-05 (batch se 5.0e-06)  9s
+  [ 13/24] gamma=    1.00 seed=  9 fk=+3.6869e-05 (batch se 4.8e-06)  9s
+  [ 14/24] gamma=    1.00 seed= 10 fk=+3.0581e-05 (batch se 2.7e-06)  9s
+  [ 15/24] gamma=    1.00 seed= 11 fk=+3.6670e-05 (batch se 3.6e-06)  9s
+  [ 16/24] gamma=    1.00 seed= 12 fk=+3.3213e-05 (batch se 2.9e-06)  9s
+  [ 17/24] gamma=    1.00 seed= 13 fk=+3.3530e-05 (batch se 5.3e-06)  9s
+  [ 18/24] gamma=    1.00 seed= 14 fk=+3.3624e-05 (batch se 4.2e-06)  9s
+  [ 19/24] gamma=    1.00 seed= 15 fk=+3.0264e-05 (batch se 3.8e-06)  9s
+  [ 20/24] gamma=    1.00 seed= 16 fk=+2.9370e-05 (batch se 4.0e-06)  9s
+  [ 21/24] gamma=    1.00 seed= 17 fk=+2.7290e-05 (batch se 3.1e-06)  8s
+  [ 22/24] gamma=    1.00 seed= 18 fk=+3.1834e-05 (batch se 3.7e-06)  8s
+  [ 23/24] gamma=    1.00 seed= 19 fk=+3.5768e-05 (batch se 4.5e-06)  8s
+  [ 24/24] gamma=    1.00 seed= 20 fk=+3.4056e-05 (batch se 4.5e-06)  8s
+[perm-aware] 2142 unordered rows, 16 shells, key 12 decimals, permutation closure 99.8%, from table_permclosed_cut15360.npz
+[perm-aware] 2142 unordered rows, 16 shells, key 12 decimals, permutation closure 99.8%, from table_permclosed_cut15360.npz
+[perm-aware] 2142 unordered rows, 16 shells, key 12 decimals, permutation closure 99.8%, from table_permclosed_cut15360.npz
+[perm-aware] 2142 unordered rows, 16 shells, key 12 decimals, permutation closure 99.8%, from table_permclosed_cut15360.npz
+[perm-aware] 2142 unordered rows, 16 shells, key 12 decimals, permutation closure 99.8%, from table_permclosed_cut15360.npz
+[perm-aware] 2142 unordered rows, 16 shells, key 12 decimals, permutation closure 99.8%, from table_permclosed_cut15360.npz
+[perm-aware] 2142 unordered rows, 16 shells, key 12 decimals, permutation closure 99.8%, from table_permclosed_cut15360.npz
+[perm-aware] 2142 unordered rows, 16 shells, key 12 decimals, permutation closure 99.8%, from table_permclosed_cut15360.npz
+[perm-aware] 2142 unordered rows, 16 shells, key 12 decimals, permutation closure 99.8%, from table_permclosed_cut15360.npz
+[perm-aware] 2142 unordered rows, 16 shells, key 12 decimals, permutation closure 99.8%, from table_permclosed_cut15360.npz
+[perm-aware] 2142 unordered rows, 16 shells, key 12 decimals, permutation closure 99.8%, from table_permclosed_cut15360.npz
+[perm-aware] 2142 unordered rows, 16 shells, key 12 decimals, permutation closure 99.8%, from table_permclosed_cut15360.npz
+[perm-aware] 2142 unordered rows, 16 shells, key 12 decimals, permutation closure 99.8%, from table_permclosed_cut15360.npz
+[perm-aware] 2142 unordered rows, 16 shells, key 12 decimals, permutation closure 99.8%, from table_permclosed_cut15360.npz
+[perm-aware] 2142 unordered rows, 16 shells, key 12 decimals, permutation closure 99.8%, from table_permclosed_cut15360.npz
+[perm-aware] 2142 unordered rows, 16 shells, key 12 decimals, permutation closure 99.8%, from table_permclosed_cut15360.npz
+[perm-aware] 2142 unordered rows, 16 shells, key 12 decimals, permutation closure 99.8%, from table_permclosed_cut15360.npz
+[perm-aware] 2142 unordered rows, 16 shells, key 12 decimals, permutation closure 99.8%, from table_permclosed_cut15360.npz
+[perm-aware] 2142 unordered rows, 16 shells, key 12 decimals, permutation closure 99.8%, from table_permclosed_cut15360.npz
+[perm-aware] 2142 unordered rows, 16 shells, key 12 decimals, permutation closure 99.8%, from table_permclosed_cut15360.npz
+[perm-aware] 2142 unordered rows, 16 shells, key 12 decimals, permutation closure 99.8%, from table_permclosed_cut15360.npz
+[perm-aware] 2142 unordered rows, 16 shells, key 12 decimals, permutation closure 99.8%, from table_permclosed_cut15360.npz
+[perm-aware] 2142 unordered rows, 16 shells, key 12 decimals, permutation closure 99.8%, from table_permclosed_cut15360.npz
+[perm-aware] 2142 unordered rows, 16 shells, key 12 decimals, permutation closure 99.8%, from table_permclosed_cut15360.npz
+[probe] done in 0.9 min
+
+gamma      n   mean          sem          spread(1sig)   mean/sem
+     0.5  12  +4.6031e-05  8.572e-07  2.970e-06   +53.70
+     1.0  12  +3.2756e-05  8.603e-07  2.980e-06   +38.08
+
+[probe] -> ../../products/mc_fixedres_s16.npz

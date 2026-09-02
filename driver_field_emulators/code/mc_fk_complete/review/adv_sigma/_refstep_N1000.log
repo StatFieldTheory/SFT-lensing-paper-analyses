@@ -1,0 +1,16 @@
+[perm-aware] 2142 unordered rows, 16 shells, key 12 decimals, permutation closure 99.8%, from table_permclosed_cut15360.npz
+N= 1000 dlam= 1.9089 sig=  8.00 r=  4.19 ref_true=1.61118795e-05 ref_inj=1.59712166e-05 inj/true=0.991270 |dz|/|z|=9.501e-12 [4s]
+N= 1000 dlam= 1.9089 sig=  4.00 r=  2.10 ref_true=1.61118795e-05 ref_inj=1.59712166e-05 inj/true=0.991270 |dz|/|z|=9.479e-12 [3s]
+N= 1000 dlam= 1.9089 sig=  3.00 r=  1.57 ref_true=1.61118795e-05 ref_inj=1.59712166e-05 inj/true=0.991270 |dz|/|z|=9.476e-12 [3s]
+N= 1000 dlam= 1.9089 sig=  2.50 r=  1.31 ref_true=1.61118795e-05 ref_inj=1.59712166e-05 inj/true=0.991270 |dz|/|z|=9.477e-12 [3s]
+N= 1000 dlam= 1.9089 sig=  2.00 r=  1.05 ref_true=1.61118795e-05 ref_inj=1.59719931e-05 inj/true=0.991318 |dz|/|z|=6.012e-05 [3s]
+N= 1000 dlam= 1.9089 sig=  1.80 r=  0.94 ref_true=1.61118795e-05 ref_inj=1.59603262e-05 inj/true=0.990594 |dz|/|z|=6.538e-04 [3s]
+N= 1000 dlam= 1.9089 sig=  1.60 r=  0.84 ref_true=1.61118795e-05 ref_inj=1.59610947e-05 inj/true=0.990641 |dz|/|z|=7.139e-04 [3s]
+N= 1000 dlam= 1.9089 sig=  1.50 r=  0.79 ref_true=1.61118795e-05 ref_inj=1.59495291e-05 inj/true=0.989924 |dz|/|z|=1.303e-03 [3s]
+N= 1000 dlam= 1.9089 sig=  1.25 r=  0.65 ref_true=1.61118795e-05 ref_inj=1.59495301e-05 inj/true=0.989924 |dz|/|z|=1.305e-03 [3s]
+N= 1000 dlam= 1.9089 sig=  1.00 r=  0.52 ref_true=1.61118795e-05 ref_inj=1.59495306e-05 inj/true=0.989924 |dz|/|z|=1.305e-03 [3s]
+N= 1000 dlam= 1.9089 sig=  0.75 r=  0.39 ref_true=1.61118795e-05 ref_inj=1.59495284e-05 inj/true=0.989924 |dz|/|z|=1.304e-03 [3s]
+N= 1000 dlam= 1.9089 sig=  0.50 r=  0.26 ref_true=1.61118795e-05 ref_inj=1.59495283e-05 inj/true=0.989924 |dz|/|z|=1.304e-03 [3s]
+N= 1000 dlam= 1.9089 sig=  0.25 r=  0.13 ref_true=1.61118795e-05 ref_inj=1.59495283e-05 inj/true=0.989924 |dz|/|z|=1.304e-03 [3s]
+N= 1000 dlam= 1.9089 sig=  0.10 r=  0.05 ref_true=1.61118795e-05 ref_inj=1.59495283e-05 inj/true=0.989924 |dz|/|z|=1.304e-03 [3s]
+-> _refstep_N1000.npz

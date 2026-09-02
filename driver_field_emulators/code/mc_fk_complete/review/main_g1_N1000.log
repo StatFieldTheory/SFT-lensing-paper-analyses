@@ -1,0 +1,15 @@
+[perm-aware] 2142 unordered rows, 16 shells, key 12 decimals, permutation closure 99.8%, from table_permclosed_cut15360.npz
+gamma=1.0'  N=1000  sigma_lambda=8.0  dlam=1.908938  rho=0.787716
+  O0 exact(AR1) = 7.852768e-04   O0 local = 8.261209e-04   ratio = 0.950559
+  median B00/Sigma2_00 = 0.919742  (-> 1 in the smeared limit)
+  LOCAL ref   total = +1.611188e-05   (A=+8.055940e-06)
+  nominal  T1=+1.417101e-05  T2=+4.836122e-05  T1+T2=+6.253223e-05   (T1A=+7.085506e-06 T1B=+7.085506e-06 T2A=+2.418061e-05 T2B=+2.418061e-05)
+  smeared  T1=+3.399549e-06  T2=+1.214750e-05  T1+T2=+1.554705e-05   (T1A=+1.699775e-06 T1B=+1.699775e-06 T2A=+6.073750e-06 T2B=+6.073750e-06)
+
+gamma=1.0'  N=1000  sigma_lambda=4.0  dlam=1.908938  rho=0.620497
+  O0 exact(AR1) = 8.209935e-04   O0 local = 8.261209e-04   ratio = 0.993793
+  median B00/Sigma2_00 = 0.978132  (-> 1 in the smeared limit)
+  LOCAL ref   total = +1.611188e-05   (A=+8.055940e-06)
+  nominal  T1=+5.973446e-06  T2=+2.069174e-05  T1+T2=+2.666519e-05   (T1A=+2.986723e-06 T1B=+2.986723e-06 T2A=+1.034587e-05 T2B=+1.034587e-05)
+  smeared  T1=+3.462680e-06  T2=+1.230353e-05  T1+T2=+1.576621e-05   (T1A=+1.731340e-06 T1B=+1.731340e-06 T2A=+6.151767e-06 T2B=+6.151767e-06)
+

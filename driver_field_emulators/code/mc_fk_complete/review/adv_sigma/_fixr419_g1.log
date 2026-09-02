@@ -1,0 +1,8 @@
+[perm-aware] 2142 unordered rows, 16 shells, key 12 decimals, permutation closure 99.8%, from table_permclosed_cut15360.npz
+   251 dlam= 7.6281 sig= 32.000 r=  4.20 exact=1.43744280e-05 ref_inj=1.60756720e-05 ex/refinj=0.89417276 [2s]
+   500 dlam= 3.8217 sig= 16.000 r=  4.19 exact=1.51433954e-05 ref_inj=1.60046587e-05 ex/refinj=0.94618672 [3s]
+  1000 dlam= 1.9089 sig=  8.000 r=  4.19 exact=1.55470499e-05 ref_inj=1.59712166e-05 ex/refinj=0.97344180 [6s]
+  1999 dlam= 0.9545 sig=  4.000 r=  4.19 exact=1.57456930e-05 ref_inj=1.59554681e-05 ex/refinj=0.98685246 [12s]
+  3996 dlam= 0.4774 sig=  2.000 r=  4.19 exact=1.58440271e-05 ref_inj=1.59483990e-05 ex/refinj=0.99345565 [29s]
+  7991 dlam= 0.2387 sig=  1.000 r=  4.19 exact=1.58948946e-05 ref_inj=1.59267027e-05 ex/refinj=0.99800284 [72s]
+-> _fixr419_g1.npz

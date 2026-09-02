@@ -1,0 +1,116 @@
+############ SYMBOLIC PROOF OF THE FK Q-PLACEMENT IDENTITY ############
+Wolfram Language version: 14.0.0 for Mac OS X ARM (64-bit) (December 13, 2023)
+
+Engine self-tests:
+  Wick engine self-test (2pt, 2pt-sym, 3pt-odd, 4pt-Isserlis): PASS
+
+===================================================================
+CASE  (n_comp, N) = (2, 2)
+===================================================================
+  kernel extraction consistent (s1 component-diagonal): PASS
+  kappa2 via kernels == kappa2 via recursion: PASS
+  T1, T2 built.  t = 0.02 s
+  Xi built.        t = 0.03 s
+  placement: M3 (Q on kappa1 leg)      == T1    : PASS
+  placement: M1+M2 (Q on F-vertex legs)== T2^T  : PASS
+  placement: M1 alone != T2^T, M2 alone != T2^T : True
+  TRUTH nonzero: True   (total monomials in TRUTH: 372)
+>>> MAIN IDENTITY  (T1+T2)+(T1+T2)^T - TRUTH  ==  0   ***PASS***
+>>> SHARP FORM     M - (T1 + T2^T)             ==  0   ***PASS***
+  teeth: T1-only  != TRUTH : True
+  teeth: T2-only  != TRUTH : True
+  teeth: (T1+T2) unsymmetrised != TRUTH : True
+  control A: unsymmetrised F in kappa_d2 BREAKS identity : True
+  control B: mismatched kappa_d1 kernel BREAKS identity   : True
+  elapsed: 0.06 s
+
+===================================================================
+CASE  (n_comp, N) = (2, 3)
+===================================================================
+  kernel extraction consistent (s1 component-diagonal): PASS
+  kappa2 via kernels == kappa2 via recursion: PASS
+  T1, T2 built.  t = 0.37 s
+  Xi built.        t = 0.42 s
+  placement: M3 (Q on kappa1 leg)      == T1    : PASS
+  placement: M1+M2 (Q on F-vertex legs)== T2^T  : PASS
+  placement: M1 alone != T2^T, M2 alone != T2^T : True
+  TRUTH nonzero: True   (total monomials in TRUTH: 2916)
+>>> MAIN IDENTITY  (T1+T2)+(T1+T2)^T - TRUTH  ==  0   ***PASS***
+>>> SHARP FORM     M - (T1 + T2^T)             ==  0   ***PASS***
+  teeth: T1-only  != TRUTH : True
+  teeth: T2-only  != TRUTH : True
+  teeth: (T1+T2) unsymmetrised != TRUTH : True
+  control A: unsymmetrised F in kappa_d2 BREAKS identity : True
+  control B: mismatched kappa_d1 kernel BREAKS identity   : True
+  elapsed: 0.81 s
+
+===================================================================
+CASE  (n_comp, N) = (2, 4)
+===================================================================
+  kernel extraction consistent (s1 component-diagonal): PASS
+  kappa2 via kernels == kappa2 via recursion: PASS
+  T1, T2 built.  t = 5.21 s
+  Xi built.        t = 5.34 s
+  placement: M3 (Q on kappa1 leg)      == T1    : PASS
+  placement: M1+M2 (Q on F-vertex legs)== T2^T  : PASS
+  placement: M1 alone != T2^T, M2 alone != T2^T : True
+  TRUTH nonzero: True   (total monomials in TRUTH: 11160)
+>>> MAIN IDENTITY  (T1+T2)+(T1+T2)^T - TRUTH  ==  0   ***PASS***
+>>> SHARP FORM     M - (T1 + T2^T)             ==  0   ***PASS***
+  teeth: T1-only  != TRUTH : True
+  teeth: T2-only  != TRUTH : True
+  teeth: (T1+T2) unsymmetrised != TRUTH : True
+  control A: unsymmetrised F in kappa_d2 BREAKS identity : True
+  control B: mismatched kappa_d1 kernel BREAKS identity   : True
+  elapsed: 9.93 s
+
+===================================================================
+CASE  (n_comp, N) = (3, 3)
+===================================================================
+  kernel extraction consistent (s1 component-diagonal): PASS
+  kappa2 via kernels == kappa2 via recursion: PASS
+  T1, T2 built.  t = 31.8 s
+  Xi built.        t = 32.12 s
+  placement: M3 (Q on kappa1 leg)      == T1    : PASS
+  placement: M1+M2 (Q on F-vertex legs)== T2^T  : PASS
+  placement: M1 alone != T2^T, M2 alone != T2^T : True
+  TRUTH nonzero: True   (total monomials in TRUTH: 41805)
+>>> MAIN IDENTITY  (T1+T2)+(T1+T2)^T - TRUTH  ==  0   ***PASS***
+>>> SHARP FORM     M - (T1 + T2^T)             ==  0   ***PASS***
+  teeth: T1-only  != TRUTH : True
+  teeth: T2-only  != TRUTH : True
+  teeth: (T1+T2) unsymmetrised != TRUTH : True
+  control A: unsymmetrised F in kappa_d2 BREAKS identity : True
+  control B: mismatched kappa_d1 kernel BREAKS identity   : True
+  elapsed: 55.53 s
+
+===================================================================
+CASE  (n_comp, N) = (3, 4)
+===================================================================
+  kernel extraction consistent (s1 component-diagonal): PASS
+  kappa2 via kernels == kappa2 via recursion: PASS
+  T1, T2 built.  t = 649.6800000000001 s
+  Xi built.        t = 650.41 s
+  placement: M3 (Q on kappa1 leg)      == T1    : PASS
+  placement: M1+M2 (Q on F-vertex legs)== T2^T  : PASS
+  placement: M1 alone != T2^T, M2 alone != T2^T : True
+  TRUTH nonzero: True   (total monomials in TRUTH: 159390)
+>>> MAIN IDENTITY  (T1+T2)+(T1+T2)^T - TRUTH  ==  0   ***PASS***
+>>> SHARP FORM     M - (T1 + T2^T)             ==  0   ***PASS***
+  teeth: T1-only  != TRUTH : True
+  teeth: T2-only  != TRUTH : True
+  teeth: (T1+T2) unsymmetrised != TRUTH : True
+  control A: unsymmetrised F in kappa_d2 BREAKS identity : True
+  control B: mismatched kappa_d1 kernel BREAKS identity   : True
+  elapsed: 1052.6200000000001 s
+
+===================================================================
+SUMMARY
+===================================================================
+  (n_comp,N) = {2, 2}   main=PASS  sharp=PASS  placement(M3=T1, M1+M2=T2^T)={PASS, PASS}  nontrivial=True  teeth={True, True, True}  single-leg-insufficient={True, True}  controls={True, True}  checks={True, True}
+  (n_comp,N) = {2, 3}   main=PASS  sharp=PASS  placement(M3=T1, M1+M2=T2^T)={PASS, PASS}  nontrivial=True  teeth={True, True, True}  single-leg-insufficient={True, True}  controls={True, True}  checks={True, True}
+  (n_comp,N) = {2, 4}   main=PASS  sharp=PASS  placement(M3=T1, M1+M2=T2^T)={PASS, PASS}  nontrivial=True  teeth={True, True, True}  single-leg-insufficient={True, True}  controls={True, True}  checks={True, True}
+  (n_comp,N) = {3, 3}   main=PASS  sharp=PASS  placement(M3=T1, M1+M2=T2^T)={PASS, PASS}  nontrivial=True  teeth={True, True, True}  single-leg-insufficient={True, True}  controls={True, True}  checks={True, True}
+  (n_comp,N) = {3, 4}   main=PASS  sharp=PASS  placement(M3=T1, M1+M2=T2^T)={PASS, PASS}  nontrivial=True  teeth={True, True, True}  single-leg-insufficient={True, True}  controls={True, True}  checks={True, True}
+
+OVERALL: ***PASS*** - the identity holds identically in generic symbols.

@@ -1,0 +1,19 @@
+/Users/zzhang/Documents/MyDrafts/STF_lensing/driver_field_emulators/code/mc_fk_complete/review/p5_gridstability.py:21: RuntimeWarning: invalid value encountered in log
+  f = float(np.exp(np.interp(np.log(GAM), np.log(fg), np.log(fv))))
+gamma = 17.3'  sigma_lambda = 8.0 FIXED;  paper fold = 1.965389e-06
+   calib      N    dlam   s/dl      exact FK  exact/fold     local ref   sec
+[perm-aware] 2142 unordered rows, 16 shells, key 12 decimals, permutation closure 99.8%, from table_permclosed_cut15360.npz
+ nominal    500  3.8217   2.09   5.01754e-06      2.5530   2.12987e-06     4
+ nominal    707  2.7012   2.96   3.73640e-06      1.9011   2.12636e-06     4
+ nominal   1000  1.9089   4.19   3.64678e-06      1.8555   2.12390e-06     6
+ nominal   1414  1.3496   5.93   1.28786e-04     65.5270   2.12220e-06     9
+ nominal   2000  0.9540   8.39   6.26179e-05     31.8603   2.12101e-06    13
+ nominal   2828  0.6746  11.86   5.47402e-06      2.7852   2.12017e-06    19
+ nominal   4000  0.4769  16.78   7.81887e-06      3.9783   2.11959e-06    30
+ smeared    500  3.8217   2.09   1.94634e-06      0.9903   2.12987e-06     3
+ smeared    707  2.7012   2.96   1.94238e-06      0.9883   2.12636e-06     4
+ smeared   1000  1.9089   4.19   1.93975e-06      0.9870   2.12390e-06     6
+ smeared   1414  1.3496   5.93   1.93801e-06      0.9861   2.12220e-06     9
+ smeared   2000  0.9540   8.39   1.93683e-06      0.9855   2.12101e-06    13
+ smeared   2828  0.6746  11.86   1.93602e-06      0.9851   2.12017e-06    19
+ smeared   4000  0.4769  16.78   1.93546e-06      0.9848   2.11959e-06    31

@@ -1,0 +1,79 @@
+\section{What remains uncertain}
+\label{sec:uncertain}
+
+\subsection{Open, and quantified}
+
+\paragraph{The permutation handling of the spin channels.} Measured in
+Table~\ref{tab:perm} and now fixed, see Section~\ref{sec:callablefix}. It
+is listed here because the residual is not zero: the corrected lookup
+requires the table to be closed under the leg permutations it queries, and
+while the production mesh and the densified collapsed family both are, a
+table built without that closure would fall back silently. The callable
+checks the closure at load and warns.
+
+\paragraph{The angular floor of the lookup.} Fixed, see
+Section~\ref{sec:callablefix}. It was a floor at $\gamma = 0.344'$ against
+a smallest plotted separation of $0.5'$, so the published points survived
+it by about a factor two, but ten of the 157 refined collapsed nodes were
+being absorbed by it. The floor is now $0.0034'$ and the refinement is no
+longer capped by the callable.
+
+\paragraph{The source redshift label.} All three production runs use
+\code{t\_final = 2313.0289} Mpc, described everywhere as $z_s = 5$. On the
+vertex table's own $\lambda\leftrightarrow z$ mapping that affine distance
+is $z = 4.70$; $\lambda(z{=}5)$ is $2317.96$ Mpc. The three runs share the
+value, so every comparison between them is internally consistent and no
+conclusion here is affected, but the quoted source redshift and the value
+used do not correspond. It is worth reconciling before the numbers are
+quoted again.
+
+\subsection{Open, and not quantified here}
+
+\paragraph{The collapsed corner of the vertex.} The absolute normalisation
+of the transfer chain is no longer open: Section~\ref{sec:normalisation}
+shows it reduces to the standard Limber convergence bispectrum exactly.
+What that argument cannot reach is the coincident configuration the FK term
+actually samples. A measured convergence bispectrum lives on resolvable
+triangles with a finite soft leg, and the analytic assembly is a statement
+about the projection rather than about the driving-field cumulant at zero
+separation. Closing this needs a direct measurement of the collapsed
+three-point cumulant of the driving fields on N-body lightcones, which
+nobody has done. The existing internal checks cannot substitute: the
+Order-0 comparison against PyCCL validates the two-point chain and never
+touches the three-point vertex, the \code{fastnc} closure test covers open
+triangles only, and the Monte-Carlo cross-check reads the same table as the
+production fold.
+
+\paragraph{The empirical anchor was not turned into a ratio.} The
+comparison against the published ray-traced measurement in
+Section~\ref{sec:normalisation} confirms the prediction lies in the right
+decade with the right shape, but quoting a ratio needs the digitised
+measurement points. That is the one part of the specified normalisation
+study left undone.
+
+\paragraph{The smoothing scale of the observable.} This is now the sharpest
+open question, and Section~\ref{sec:uv} states it. The FK term samples a
+coincident-point moment, which is finite for the linear spectrum and not
+for a nonlinear one, and the formalism carries no scale that would make it
+finite. Beam averaging supplies one, and its algebra checks out, but which
+physical scale to adopt is undetermined: the source's angular size, the
+instrument's resolution element and the smoothing of the convergence map
+differ by orders of magnitude and give correspondingly different cutoffs.
+Until that is settled, no nonlinear FK amplitude can be quoted. The
+tree-level amplitude is unaffected.
+
+\paragraph{Finite-beam optics beyond averaged drivers.} Averaging the
+drivers is not the same as solving the Sachs system for a beam of finite
+width, because the system is nonlinear in the optical scalars and averaging
+does not commute with the quadratic terms. The difference is second order
+in the optical scalars and has not been evaluated.
+
+\paragraph{Cross-shell against equal-shell.} The tabulated vertex is
+equal-shell by construction. The error made by collapsing the cross-shell
+cumulant onto equal shells scales as $O[(\Delta\chi/\chi_s)^2]$ under
+Limber, which is the justification the draft gives, and it has not been
+measured directly.
+
+\paragraph{Wide angles.} Beyond about $1500'$ every curve here is at the
+cancellation floor and changes sign. Ratios in that region carry no
+information and none is quoted.

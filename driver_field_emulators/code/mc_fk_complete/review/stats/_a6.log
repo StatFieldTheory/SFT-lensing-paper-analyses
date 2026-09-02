@@ -1,0 +1,14 @@
+=== sigma=8.0: 96 seeds (blocks D,E,F), 93 dof ===
+  observed within-block seed sd            = 4.38584e-07
+  predicted from the within-seed 12 batches= 4.60583e-07
+  ratio = 0.9522   chi2 = 84.3/93  P(chi2 larger) = 0.7282   P(smaller) = 0.2718
+  -> the seed-level SEM is HONEST (no excess between-seed variance); a seed SEM understating by 20% would need ratio 1.20 (chi2 = 134, p = 0.0035)
+  95% CI on the true sd / predicted sd: [0.833, 1.112]
+
+=== sigma=4.0: 96 seeds (blocks D,E,F), 93 dof ===
+  observed within-block seed sd            = 6.27121e-07
+  predicted from the within-seed 12 batches= 7.11034e-07
+  ratio = 0.8820   chi2 = 72.3/93  P(chi2 larger) = 0.9445   P(smaller) = 0.0555
+  -> the seed-level SEM is HONEST (no excess between-seed variance); a seed SEM understating by 20% would need ratio 1.20 (chi2 = 134, p = 0.0035)
+  95% CI on the true sd / predicted sd: [0.771, 1.030]
+

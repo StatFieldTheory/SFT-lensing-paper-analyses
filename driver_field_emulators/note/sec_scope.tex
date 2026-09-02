@@ -1,0 +1,66 @@
+\section{What was checked, and how}
+\label{sec:scope}
+
+This note reports a numerical audit of the Order-2 ``FK'' contribution to
+the lensing two-point function, the term the draft plots in
+\code{figures/analysis3\_NLO\_FFFK.pdf} and
+\code{figures/analysis3\_cl\_full\_vs\_O0.pdf} and quotes in
+\code{sections/insights.tex} and \code{sections/conclusion.tex}.
+
+Six questions were asked, in this order.
+
+\begin{enumerate}
+\item Does the plotted FK curve evaluate the quantity the paper defines?
+      (Section~\ref{sec:sampling})
+\item Is the multipole cutoff in the vertex build converged, and if not,
+      what does the converged answer rest on? (Section~\ref{sec:cutoff})
+\item Does the line-of-sight floor $\lammin$ of the tabulated vertex bias
+      the result, and does the bias depend on source redshift?
+      (Section~\ref{sec:lambdamin})
+\item Is the absolute normalisation of the vertex right, having never been
+      compared against anything external? (Section~\ref{sec:normalisation})
+\item Do the draft's statements about the E and B polarization structure
+      survive a resolved vertex? (Section~\ref{sec:eb})
+\item Does a nonlinear bispectrum give a more realistic prediction?
+      (Section~\ref{sec:nonlinear}), and if the answer is no, what exactly
+      is missing? (Section~\ref{sec:uv})
+\end{enumerate}
+
+The first is the one that changes published numbers. The fourth is the one
+whose answer is unreservedly positive. The rest fall in between.
+
+The first was settled by an independent reviewer who was given the figure
+production path and nothing else. That reviewer was not told what any
+earlier work had concluded, was blocked from reading the earlier notes, and
+was told explicitly that finding nothing wrong would be a useful result. It
+worked forward from the figure manifest through the generator scripts, the
+folded \code{xi\_*.npz} files, the run configuration, the vertex callable
+and the tabulated vertex, testing rather than assuming at each step. Its
+conclusion agreed with the earlier work, and it added several results the
+earlier work did not have. The comparison is recorded in
+\code{notes/task\_a\_blind\_audit\_comparison.md}.
+
+Two controls make the rest of the note interpretable.
+
+\paragraph{The pipeline is reproducible.} Re-running the production FK fold
+from a redirected copy of its own configuration reproduces the deployed
+result bit for bit, with maximum relative difference zero across all six
+component pairs. Every comparison below therefore isolates exactly one
+change.
+
+\paragraph{The rebuild machinery is exact.} The vertex table is rebuilt
+here in pieces: one radial-and-multipole LOW branch, and a set of HIGH
+multipole windows that are summed. This is only legitimate if the pieces
+are independent, so that was tested rather than assumed. Table rows are
+bit-exactly independent of one another in both branches: computing a row in
+a table of six rows and in a table of two rows gives identical doubles
+(\code{np.array\_equal} true, maximum relative difference $0.000$). The
+multipole windows are disjoint in maximum leg, so their sum is the same
+integral. Together these mean one build at the finest grid yields every
+coarser grid by row selection, and every smaller cutoff by partial
+summation, with no approximation. The reimplementation of the production
+triple mesh reproduces the deployed table's 1671 rows exactly and in the
+same order.
+
+All commands are in \code{driver\_field\_emulators/code/}, and every number
+quoted below names the script that produced it.

@@ -1,0 +1,14 @@
+(1+z) over the grid: 1.103 .. 5.698
+
+zeta modification (ESTIMATOR SIDE ONLY)                   s=8      s=4   r(s->0)
+[perm-aware] 2142 unordered rows, 16 shells, key 12 decimals, permutation closure 99.8%, from table_permclosed_cut15360.npz
+none                                                   0.9731   0.9868    1.0005
+zeta *= (1+z)^-4   (the 2026-06-09 bug)                0.0853   0.0861    0.0868
+zeta *= (1+z)^-2                                       0.2582   0.2609    0.2637
+zeta *= (1+z)^+2                                       4.7510   4.8473    4.9436
+
+BUT: driver_stats.zeta_tensor -- 'lambda-density, per-leg (1+z)^4 Sachs
+prefactor already baked in' -- so this factor is INSIDE the shared table.
+Applied to both sides the ratio is invariant EXACTLY (estimator is linear
+in zeta node-by-node; the order-2 fold carries one K insertion, also
+linear).  A factor of this size is therefore invisible to the test.

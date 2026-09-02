@@ -1,0 +1,17 @@
+  t_final    lam quartiles of FK integrand             none    acausal_both          U_pow1    F_no_leg_sym  no_end_weights       resp_pow1
+[perm-aware] 2142 unordered rows, 16 shells, key 12 decimals, permutation closure 99.8%, from table_permclosed_cut1000.npz
+   1330.7        636/784/933 Mpc                  0.9998          1.0037          1.1328          0.6326          1.0019          2.0111
+   1822.7        921/1135/1339 Mpc                  1.0041          1.0090          1.1263          0.6356          1.0069          1.9211
+   2095.0       1136/1398/1620 Mpc                  1.0049          1.0108          1.1079          0.6361          1.0089          1.7259
+   2216.8       1281/1552/1776 Mpc                  1.0050          1.0119          1.0909          0.6361          1.0103          1.5584
+   2266.6       1356/1637/1862 Mpc                  1.0041          1.0119          1.0784          0.6355          1.0108          1.4490
+   2297.3       1413/1697/1919 Mpc                  1.0032          1.0120          1.0670          0.6350          1.0117          1.3536
+   2318.0       1462/1750/1968 Mpc                  1.0017          1.0116          1.0551          0.6340          1.0127          1.2628
+
+spread of each defect's ratio across the 7 source distances:
+  none             min 0.9998  max 1.0050  peak-to-peak 0.0051
+  acausal_both     min 1.0037  max 1.0120  peak-to-peak 0.0083
+  U_pow1           min 1.0551  max 1.1328  peak-to-peak 0.0777
+  F_no_leg_sym     min 0.6326  max 0.6361  peak-to-peak 0.0035
+  no_end_weights   min 1.0019  max 1.0127  peak-to-peak 0.0108
+  resp_pow1        min 1.2628  max 2.0111  peak-to-peak 0.7483

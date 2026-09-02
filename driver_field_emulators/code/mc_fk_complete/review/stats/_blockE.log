@@ -1,0 +1,12 @@
+[perm-aware] 2142 unordered rows, 16 shells, key 12 decimals, permutation closure 99.8%, from table_permclosed_cut15360.npz
+gamma=1.0 sigma=8.0 N=1000 n_real=24000 batch=2000 seeds=32 base=271828183 [145s]
+  exact=1.554705e-05  analytic=1.597716e-05
+  MC   =1.564397e-05 +/- 6.786e-08   MC/exact=1.0062 +/- 0.0044   MC/analytic=0.9791 +/- 0.0042
+  seed sd=3.8385e-07   mean within-seed batchSE=4.3328e-07   ratio(seed sd / batchSE)=0.886
+  -> _blockE_s8.npz
+[perm-aware] 2142 unordered rows, 16 shells, key 12 decimals, permutation closure 99.8%, from table_permclosed_cut15360.npz
+gamma=1.0 sigma=4.0 N=1000 n_real=24000 batch=2000 seeds=32 base=271828183 [150s]
+  exact=1.576621e-05  analytic=1.597716e-05
+  MC   =1.594073e-05 +/- 9.353e-08   MC/exact=1.0111 +/- 0.0059   MC/analytic=0.9977 +/- 0.0059
+  seed sd=5.2908e-07   mean within-seed batchSE=6.8794e-07   ratio(seed sd / batchSE)=0.769
+  -> _blockE_s4.npz

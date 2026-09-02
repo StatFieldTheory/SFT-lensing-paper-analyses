@@ -1,0 +1,9 @@
+D warp (estimator side only)                  s=8      s=4   r(s->0)
+[perm-aware] 2142 unordered rows, 16 shells, key 12 decimals, permutation closure 99.8%, from table_permclosed_cut15360.npz
+none                                       0.9731   0.9868    1.0005
+D -> D (1 + +0.02 u), u=const              0.9731   0.9868    1.0005
+D -> D (1 + +0.05 u), u=const              0.9731   0.9868    1.0005
+D -> D (1 + +0.01 u), u=linear             0.9653   0.9789    0.9926
+D -> D (1 + +0.02 u), u=linear             0.9576   0.9712    0.9849
+D -> D (1 + +0.05 u), u=linear             0.9359   0.9494    0.9628
+D -> D (1 + -0.05 u), u=linear             1.0156   1.0296    1.0436

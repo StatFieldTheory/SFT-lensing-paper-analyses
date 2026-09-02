@@ -1,0 +1,4 @@
+[band] (60, 1000]  model=internal_tree  n_ell=96  n_phi=64  triples=41
+[band]   rows 0-41 (1/1) at 46s
+[band] all rows in 45.8s
+[band] total 45.8s -> win_collapsed_mid_00060_01000.npz

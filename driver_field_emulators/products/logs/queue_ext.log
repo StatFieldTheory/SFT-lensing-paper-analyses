@@ -1,0 +1,5 @@
+[queue] start low_r4_ext (free 62 GB, 1 running)
+[queue] low_r4_ext: ok (1 done, 0 failed, 1 queued)
+[queue] start win_tree_ext (free 65 GB, 1 running)
+[queue] win_tree_ext: ok (2 done, 0 failed, 0 queued)
+[queue] finished: 2 ok, 0 failed

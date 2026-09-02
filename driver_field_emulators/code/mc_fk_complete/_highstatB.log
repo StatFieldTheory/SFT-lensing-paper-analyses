@@ -1,0 +1,6 @@
+N=1000 dlam=1.909 n_real=24000 seeds=32 calib=smeared
+  gamma  sigma           MC    seedSEM  scat%        exact  MC/exact      ref_inj     analytic   MC/ana exact/ref  vr/ana full/pert
+[perm-aware] 2142 unordered rows, 16 shells, key 12 decimals, permutation closure 99.8%, from table_permclosed_cut15360.npz
+   1.00    8.0  1.55032e-05   6.67e-08   2.43  1.55470e-05    0.9972  1.59712e-05  1.59772e-05   0.9703    0.9734  0.2084    1.0031 [142s]
+   1.00    4.0  1.56349e-05   1.05e-07   3.81  1.57662e-05    0.9917  1.59712e-05  1.59772e-05   0.9786    0.9872  0.2098    1.0029 [142s]
+-> _gate2_highstat_B.npz

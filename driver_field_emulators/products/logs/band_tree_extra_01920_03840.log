@@ -1,0 +1,5 @@
+[band] (1920, 3840]  model=tree  n_ell=96  n_phi=64  triples=314
+[band]   rows 0-160 (1/2) at 178s
+[band]   rows 160-314 (2/2) at 341s
+[band] all rows in 340.7s
+[band] total 340.7s -> band_tree_extra_01920_03840.npz

@@ -1,0 +1,7 @@
+gamma=1.0' N=1000 dlam=1.9089
+[perm-aware] 2142 unordered rows, 16 shells, key 12 decimals, permutation closure 99.8%, from table_permclosed_cut15360.npz
+sig=  8.00 r=  4.19 | V neg-nodes=  2 (worst 1.00e+00) A neg-nodes=  0 A_floored neg=  0 | exact=1.55470499e-05 MC-field=1.55491543e-05 ratio=1.000135 (+0.014%) [5s]
+sig=  4.00 r=  2.10 | V neg-nodes=  2 (worst 1.00e+00) A neg-nodes=  1 A_floored neg=  0 | exact=1.57662136e-05 MC-field=1.57715148e-05 ratio=1.000336 (+0.034%) [4s]
+sig=  2.00 r=  1.05 | V neg-nodes=  2 (worst 1.00e+00) A neg-nodes=  2 A_floored neg=  0 | exact=1.58806107e-05 MC-field=1.63370286e-05 ratio=1.028741 (+2.874%) [4s]
+sig=  1.00 r=  0.52 | V neg-nodes=  2 (worst 1.00e+00) A neg-nodes=  2 A_floored neg=  0 | exact=1.59174819e-05 MC-field=1.59181095e-05 ratio=1.000039 (+0.004%) [4s]
+sig=  0.50 r=  0.26 | V neg-nodes=  2 (worst 1.00e+00) A neg-nodes=  2 A_floored neg=  0 | exact=1.59447281e-05 MC-field=1.59447935e-05 ratio=1.000004 (+0.000%) [4s]

@@ -1,0 +1,7 @@
+gamma = 1.0'   calibration = nominal
+     N    dlam   sigma   s/dl      ref_inj        T1+T2    ratio   share   vr/ref     ref_true   sec
+[perm-aware] 2142 unordered rows, 16 shells, key 12 decimals, permutation closure 99.8%, from table_permclosed_cut15360.npz
+  1000   1.909     8.0   4.19  1.59495e-05  6.25322e-05   3.9206  0.2266   0.8885  1.61119e-05     7
+  1999   0.954     4.0   4.19  1.59339e-05  2.79356e-05   1.7532  0.2254   0.3952  1.60960e-05    12
+  3997   0.477     2.0   4.19  1.59293e-05  2.93532e-04  18.4272  0.3265   6.0162  1.60883e-05    26
+  7993   0.239     1.0   4.19  1.59240e-05  3.61930e-05   2.2729  0.2799   0.6361  1.60845e-05    66

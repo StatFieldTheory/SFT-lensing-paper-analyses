@@ -1,0 +1,149 @@
+\section{What changes in the draft}
+\label{sec:draft}
+
+Statements are grouped by whether the measurements support them. Nothing in
+\code{sections/} was edited; this is a list, not a patch.
+
+\subsection{Statements that survive}
+
+\begin{itemize}
+\item The arcminute FK amplitude. \code{insights.tex} line~193: ``at small
+separation, FK reaches a few $\times10^{-6}$, about $0.5\%$ of Order-0 and
+roughly twice the FF term''. Corrected: $+4.28\times10^{-6}$, $0.51\%$ of
+Order-0, $2.1$ times FF. This is the number the draft leans on most and it
+is unaffected, because at $0.5'$ the queried configuration really does sit
+on the tabulated corner.
+
+\item The selection rule and its mechanism. \code{insights.tex} lines
+188--192, that FK concentrates in the modulus pair $\xi_\kappa$ and
+$\xi_+$ and is suppressed in the other two. The corrected calculation
+preserves the ordering: FK is $0.5$ to $1\%$ of Order-0 in the modulus pair
+and $0.5$ to $0.8\%$ in the other two, having been $10^{-16}$ to $10^{-9}$
+there before. The rule is a statement about which combinations FK enters
+strongly, and that survives; the claim that it vanishes does not.
+
+\item The channel algebra of \code{conclusion.tex} lines 50--58, that
+$\xi_+$ is sourced by the sum
+$\langle\Phi_{00}\Psi_+\Psi_+\rangle+\langle\Phi_{00}\Psi_\times\Psi_\times\rangle$
+and $\xi_-$ by the difference. That is a statement about the vertex
+structure and is untouched.
+
+\item Figure~7, the driving-field $\zeta$ slices. It is built from
+$\gamma$-resolved data and is correct as printed.
+
+\item The parity null. $C_\ell^{EB}$ remains zero identically in the
+corrected run, as it must by parity.
+
+\item The Monte-Carlo validation, read as the draft states it: ``with the
+input statistics held fixed''. It validates the diagram assembly. It is
+structurally blind to this error, because it reads the same table.
+\end{itemize}
+
+\subsection{Statements that do not survive}
+
+\begin{itemize}
+\item \code{insights.tex} lines 194--196: FK ``overtakes the falling
+Order-0 signal beyond $\sim2^\circ$''. There is no crossover. The corrected
+ratio is flat at $0.5$ to $1\%$ across the whole range.
+
+\item \code{insights.tex} lines 119--122, the caption of the draft's
+two-point decomposition figure: ``overtakes Order-0 in absolute
+amplitude beyond $\gamma\sim2^\circ$''. Same artefact.
+
+\item \code{insights.tex} lines 196--199: in $\xi_-$ and
+$\xi_{\kappa\gamma_t}$, ``FK drops to the numerical floor''. It does so at
+$\gamma\to0$ only. At the plotted separations the corrected FK is $0.5$ to
+$0.8\%$ of Order-0 in both.
+
+\item \code{insights.tex} lines 202--204 and the caption of the
+$C_\ell$ figure: ``the $\gamma$-flat FK term shows up as a low-$\ell$
+excess''. The flatness is the interpolation weight. The excess, a factor 18
+over Order-0 at $\ell=3$, becomes $-0.20$ with a resolved vertex; FK
+instead appears as a steady $0.8\%$ correction over $39\le\ell\le800$.
+
+\item \code{conclusion.tex} lines 34--36: the leakage ``lifts the
+convergence and the parity-even shear at the few-percent level and
+overtakes the linear signal in absolute amplitude beyond roughly
+$2^\circ$''. The lift is a few tenths of a percent to one percent, not a
+few percent, and there is no crossover.
+
+\item \code{conclusion.tex} lines 60--62: ``The FK power therefore splits
+equally between the two polarizations,
+$\Delta C_\ell^{EE}=\Delta C_\ell^{BB}$''. The isotropy argument that
+supports it is exact at zero separation, where $\Psi_+$ and $\Psi_\times$
+are statistically equivalent. At finite separation the separation vector
+picks out an axis and they are not, so the equality does not extend to the
+plotted range. In the corrected run
+$\max|\Delta C_\ell^{EE}| = 1.69\times10^{-6}$ against
+$\max|\Delta C_\ell^{BB}| = 7.03\times10^{-7}$, that is $B/E\simeq0.42$ in
+power.
+
+\item \code{conclusion.tex} lines 133--136: ``the large-angle FK excess
+sits at low multipoles ($\ell\lesssim10$)''. There is no large-angle
+excess. The surrounding caveat about the relativistic Poisson source and
+the observed-redshift correction remains worth making, but it is no longer
+attached to a feature in the data.
+
+\item \code{appendix.tex} lines 601--603, the caption of the validation
+figure: ``FK its decay toward the sign change at $\gamma\simeq32^\circ$''.
+That is where the four-neighbour set drops the $(1,1,1)$ node. It is an
+interpolation switch described as physics.
+
+\item \code{conclusion.tex} line 36: the leakage ``strengthens steadily
+with source redshift''. This is not refuted here, it is untested. Two
+separate effects bias it in exactly that direction, and both are addressed
+in Section~\ref{sec:lambdamin}.
+\end{itemize}
+
+\subsection{Figures that must be replaced}
+
+Six of the sixteen figures depend on the vertex.
+
+\begin{table}[h]
+\centering
+\begin{tabular}{llp{6.6cm}}
+\toprule
+\# & figure & status \\
+\midrule
+2 & \code{analysis3\_NLO\_FFFK.pdf} & regenerated; FK no longer crosses
+Order-0, and the two lower panels now carry a visible FK curve \\
+3 & \code{analysis3\_cl\_full\_vs\_O0.pdf} & regenerated; the low-$\ell$
+excess is gone \\
+4 & \code{cl\_EB\_polarization.pdf} & regenerated; $EE$ and $BB$ no longer
+coincide, $EB$ still zero \\
+5 & \code{multiz\_kappa\_xi\_cl.pdf} & needs regeneration; its cached FK
+slice comes from the same table. The corrected redshift dependence it
+should show is measured in Section~\ref{sec:lambdamin} and plotted in
+Figure~\ref{fig:redshift}, including the $\lammin$ bias on its lowest
+slice \\
+6 & \code{appendix\_mc\_workflow.pdf} & its FK curve moves with the
+corrected table, but the agreement it demonstrates does not, because the
+Monte-Carlo reads the same vertex through \code{driver\_stats.py} and both
+sides move together. Regenerating it re-plots the corrected values; it does
+not test the correction. Its caption separately needs the $32^\circ$
+sentence removed, since that feature is the interpolation-weight zero \\
+7 & \code{zeta\_driving\_field\_slices\_draft.pdf} & unchanged as printed,
+being built from resolved data. Worth re-examining only for the cutoff
+question of Section~\ref{sec:cutoff} \\
+\bottomrule
+\end{tabular}
+\caption{The vertex-dependent figures. Figures 1 and 8 to 16 do not depend
+on the vertex and are unaffected.}
+\label{tab:figures}
+\end{table}
+
+Two cautions carried over from the figure manifest. The generator for
+Figure~7 writes directly into the repository \code{figures/} directory with
+a hardcoded path, so it overwrites the paper's file if run. Figure~5
+depends on an external cache under \code{talk/}, so its FK slice must be
+regenerated rather than reused. The regenerations here were produced by
+\code{code/figures\_corrected/regenerate.py}, which imports each paper
+generator, rebinds only its FK input and output paths, and calls its
+\code{main()}. The plotting, styling and observable definitions are
+therefore the paper's own, unmodified, and nothing was written into
+\code{figures/}. The regenerated files are in
+\code{driver\_field\_emulators/figures/corrected/}, named after the
+generator's own output stem. The \code{\_permfix} versions are the ones to
+use: they carry both the grid correction and the callable corrections of
+Section~\ref{sec:callablefix}. The \code{\_corrected} versions carry the
+grid correction only and are kept for comparison.

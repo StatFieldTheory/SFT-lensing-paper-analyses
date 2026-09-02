@@ -1,0 +1,4 @@
+[low] triples=2142  shells=16  ell_cut=60  Nmax=128  measure=lambda
+[low] four channels in 144.9s
+[low] Bmod/Dmod in 43.5s
+[low] total 188.4s -> /Users/zzhang/Documents/MyDrafts/STF_lensing/driver_field_emulators/products/pieces/low_permclosed_r4.npz (1.7 MB)

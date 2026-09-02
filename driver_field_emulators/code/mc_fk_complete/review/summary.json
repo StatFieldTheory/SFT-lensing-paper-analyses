@@ -1,0 +1,126 @@
+{
+ "config": {
+  "gamma_arcmin": 1.0,
+  "N": 1000,
+  "lam_min": 406.0,
+  "lam_f": 2313.029,
+  "n_real_per_seed": 24000,
+  "seeds": 64,
+  "batch_size": 2000,
+  "q_basis": "chat (M = Chat[k], the AR chain's own integrated covariance)",
+  "c_sub": "P (exact AR node variance -> <g> = 0)"
+ },
+ "analytic_denominator_used": 1.598e-05,
+ "my_continuum_quadrature_SPEC_sec3": 1.6080661696571883e-05,
+ "my_discrete_kernel_white_noise_limit_N1000": 1.6111879477190566e-05,
+ "mc": {
+  "8.0": {
+   "fk": 1.5560923422868004e-05,
+   "seed_sem": 7.096888101872501e-08,
+   "ratio_to_1.598e-5": 0.973774932594994,
+   "ratio_sem": 0.0044411064467287245,
+   "n_total": 1536000
+  },
+  "4.0": {
+   "fk": 1.5757181802707873e-05,
+   "seed_sem": 9.836560514036156e-08,
+   "ratio_to_1.598e-5": 0.9860564332107555,
+   "ratio_sem": 0.006155544752212864,
+   "n_total": 1536000
+  }
+ },
+ "exact_wick_same_estimator": {
+  "32.0": {
+   "fk": 1.4277184003697535e-05,
+   "ratio_to_1.598e-5": 0.8934408012326368,
+   "X_vertex_leg_placements": 1.1210862011887464e-05,
+   "Y_free_leg_placement": 3.06632199181007e-06
+  },
+  "16.0": {
+   "fk": 1.510776266335253e-05,
+   "ratio_to_1.598e-5": 0.9454169376315726,
+   "X_vertex_leg_placements": 1.1827187872978256e-05,
+   "Y_free_leg_placement": 3.280574790374274e-06
+  },
+  "8.0": {
+   "fk": 1.554705190498921e-05,
+   "ratio_to_1.598e-5": 0.9729068776588993,
+   "X_vertex_leg_placements": 1.214761497661017e-05,
+   "Y_free_leg_placement": 3.3994369283790398e-06
+  },
+  "4.0": {
+   "fk": 1.5766217470077514e-05,
+   "ratio_to_1.598e-5": 0.9866218692163651,
+   "X_vertex_leg_placements": 1.2303828381013552e-05,
+   "Y_free_leg_placement": 3.4623890890639626e-06
+  },
+  "2.0": {
+   "fk": 1.5878387540237175e-05,
+   "ratio_to_1.598e-5": 0.9936412728558933,
+   "X_vertex_leg_placements": 1.2381073682371184e-05,
+   "Y_free_leg_placement": 3.4973138578659914e-06
+  },
+  "1.0": {
+   "fk": 1.5939087127036117e-05,
+   "ratio_to_1.598e-5": 0.9974397451211587,
+   "X_vertex_leg_placements": 1.2418597418875982e-05,
+   "Y_free_leg_placement": 3.520489708160135e-06
+  },
+  "0.5": {
+   "fk": 1.5966372303396827e-05,
+   "ratio_to_1.598e-5": 0.9991472029660092,
+   "X_vertex_leg_placements": 1.2434013848167038e-05,
+   "Y_free_leg_placement": 3.53235845522979e-06
+  }
+ },
+ "reference_NOTES_gate2": {
+  "8.0": {
+   "mc": 1.56009e-05,
+   "mc_sem": 4.4e-08,
+   "ratio": 0.9765,
+   "ratio_sem": 0.0028,
+   "exact": 1.554705e-05
+  },
+  "4.0": {
+   "mc": 1.57657e-05,
+   "mc_sem": 6.7e-08,
+   "ratio": 0.9868,
+   "ratio_sem": 0.0042,
+   "exact": 1.57662e-05
+  }
+ },
+ "variants_exact_ratio_to_target": {
+  "q_basis=sigma2 (literal 2*sigma*V)": {
+   "8.0": 3.9136,
+   "4.0": 1.6688
+  },
+  "q_basis=sv (S*V)": {
+   "8.0": 3.8767,
+   "4.0": 1.6075
+  },
+  "q_basis=chat, Sigma2 pre-smoothed 15 Mpc": {
+   "8.0": 0.9723,
+   "4.0": 0.9864
+  },
+  "q_basis=chat, Sigma2 pre-smoothed 40 Mpc": {
+   "8.0": 0.972,
+   "4.0": 0.9863
+  },
+  "N=500": {
+   "8.0": 0.9756,
+   "4.0": 0.9899
+  },
+  "N=2000": {
+   "8.0": 0.9718,
+   "4.0": 0.9853
+  }
+ },
+ "mc_with_nominal_V_as_subtraction_constant": {
+  "8.0": {
+   "fk": 2.908742e-06,
+   "ratio": 0.182,
+   "ratio_sem": 0.0082,
+   "seeds": 12
+  }
+ }
+}

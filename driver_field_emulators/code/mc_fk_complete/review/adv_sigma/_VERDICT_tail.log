@@ -1,0 +1,35 @@
+
+    PAIRED test for a sigma-dependent MC bias between the two anchors:
+      (MC/exact)|_4 - (MC/exact)|_8 = +0.00161 +/- 0.00204   (+0.79 sigma), n=112
+
+================================================================================
+3.  THE MC *DOES* DEVELOP A SYSTEMATIC AS THE REGULATOR IS REMOVED --
+    but only BELOW the anchors.  (MC floors the non-PSD tabulated V;
+    the exact evaluator does not.  Same Q, different field.)
+================================================================================
+      sigma      A neg-eig nodes    exact(MC's field)/exact(as evaluated)
+        8.00            0                      1.000135   (+0.013%)
+        4.00            1                      1.000336   (+0.034%)
+        2.00            2                      1.028741   (+2.874%)
+        1.00            2                      1.000039   (+0.004%)
+        0.50            2                      1.000004   (+0.000%)
+      -> +0.014% at sigma = 8 and +0.034% at sigma = 4 (the anchors),
+         but +2.87% at sigma = 2.  The observed MC/exact = 1.045 at
+         sigma = 2 is therefore mostly SYSTEMATIC, not seed scatter.
+
+================================================================================
+4.  THE CORRECTED NUMBER
+================================================================================
+    MC/exact (sigma-independent, tested above) = 1.00183 +/- 0.00355
+    exact(sigma->0)/analytic, DIRECT, N=1000   = 0.99826
+    => MC(sigma->0)/analytic at N=1000         = 1.0001 +/- 0.0035
+       (paper quotes 1.002 +/- 0.006 in two places and 0.997 +/- 0.006 in one)
+
+    grid dependence of that limit (regulator off, ref_inj/analytic):
+       N=  500  1.000369
+       N= 1000  0.998271
+       N= 2000  0.997318
+       N= 4000  0.996826
+       1/N Richardson (dlam -> 0)     0.996333
+    => in the JOINT limit the exact estimator sits -0.37% from the fold,
+       so MC/analytic would read 0.9982, not 1.0001.

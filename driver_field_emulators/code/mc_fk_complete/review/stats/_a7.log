@@ -1,0 +1,15 @@
+lag-1 autocorrelation of the per-seed value along s (seed = base + 991*s):
+  block A: n= 32  r(lag1) = -0.464 (|r|>0.35 would be 2 sigma)   runs z = -1.08
+  block B: n= 32  r(lag1) = -0.257 (|r|>0.35 would be 2 sigma)   runs z = +0.72
+  block C: n= 24  r(lag1) = +0.058 (|r|>0.41 would be 2 sigma)   runs z = -1.25
+  block D: n= 32  r(lag1) = -0.310 (|r|>0.35 would be 2 sigma)   runs z = +0.00
+  block E: n= 32  r(lag1) = +0.152 (|r|>0.35 would be 2 sigma)   runs z = -0.72
+  block F: n= 32  r(lag1) = +0.029 (|r|>0.35 would be 2 sigma)   runs z = -0.72
+  mean lag-1 over the 6 blocks = -0.1320 +/- 0.1000   -> no evidence of stream correlation
+
+480 single-batch runs, seed = 555000111 + 7*i (adjacent seeds only 7 apart):
+  lag  1: r = -0.0053  (2 sigma = 0.091)
+  lag  2: r = -0.0495  (2 sigma = 0.091)
+  lag  3: r = -0.0292  (2 sigma = 0.092)
+  lag  5: r = +0.0002  (2 sigma = 0.092)
+  lag 10: r = -0.0401  (2 sigma = 0.092)

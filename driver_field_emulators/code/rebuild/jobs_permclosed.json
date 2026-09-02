@@ -1,0 +1,40 @@
+[
+ {
+  "name": "low_permclosed",
+  "out": "/Users/zzhang/Documents/MyDrafts/STF_lensing/driver_field_emulators/products/pieces/low_permclosed_r4.npz",
+  "log": "/Users/zzhang/Documents/MyDrafts/STF_lensing/driver_field_emulators/products/logs/low_permclosed.log",
+  "argv": [
+   "/Users/zzhang/projects/angular_statistics/canoes/.venv/bin/python",
+   "-u",
+   "build_low.py",
+   "--triples-npz",
+   "/Users/zzhang/Documents/MyDrafts/STF_lensing/driver_field_emulators/products/triples_permclosed_r4.npz",
+   "--out",
+   "/Users/zzhang/Documents/MyDrafts/STF_lensing/driver_field_emulators/products/pieces/low_permclosed_r4.npz"
+  ]
+ },
+ {
+  "name": "win_permclosed",
+  "out": "/Users/zzhang/Documents/MyDrafts/STF_lensing/driver_field_emulators/products/pieces/win_internal_tree_permclosed_00060_01000.npz",
+  "log": "/Users/zzhang/Documents/MyDrafts/STF_lensing/driver_field_emulators/products/logs/win_permclosed.log",
+  "argv": [
+   "/Users/zzhang/projects/angular_statistics/canoes/.venv/bin/python",
+   "-u",
+   "build_band.py",
+   "--triples-npz",
+   "/Users/zzhang/Documents/MyDrafts/STF_lensing/driver_field_emulators/products/triples_permclosed_r4.npz",
+   "--lo",
+   "60",
+   "--hi",
+   "1000",
+   "--n-ell",
+   "96",
+   "--b-model",
+   "internal_tree",
+   "--chunk-rows",
+   "192",
+   "--out",
+   "/Users/zzhang/Documents/MyDrafts/STF_lensing/driver_field_emulators/products/pieces/win_internal_tree_permclosed_00060_01000.npz"
+  ]
+ }
+]

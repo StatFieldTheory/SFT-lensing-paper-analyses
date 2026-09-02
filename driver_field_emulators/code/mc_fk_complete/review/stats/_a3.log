@@ -1,0 +1,24 @@
+=== sigma=8 ===
+  block means: A=0.0000  B=0.0000  C=0.0000  D=0.0000  E=0.0000  F=0.0000
+  chi2 = 9.04 (5 dof)  asymptotic p = 0.1077  PERMUTATION p = 0.1405
+  ANOVA F = 1.552  asymptotic p = 0.1759  PERMUTATION p = 0.1815
+  pooled residual normality: skew -0.196 exkurt +0.489 SW p 0.3626
+  POOLED n=184: 0.00002 +/- 0.00000   /exact = 1.0020
+  observed var(block means) = 8.1252e-15;  predicted from within-block = 5.3620e-15;  ratio = 1.52
+
+=== sigma=4 ===
+  block means: A=0.0000  B=0.0000  C=0.0000  D=0.0000  E=0.0000  F=0.0000
+  chi2 = 10.40 (5 dof)  asymptotic p = 0.0646  PERMUTATION p = 0.0795
+  ANOVA F = 2.200  asymptotic p = 0.0563  PERMUTATION p = 0.0523
+  pooled residual normality: skew +0.111 exkurt +0.984 SW p 0.1065
+  POOLED n=184: 0.00002 +/- 0.00000   /exact = 1.0024
+  observed var(block means) = 2.4329e-14;  predicted from within-block = 1.1494e-14;  ratio = 2.12
+
+=== sigma->0 extrapolated ===
+  block means: A=1.0073  B=0.9868  C=1.0158  D=0.9824  E=1.0163  F=1.0151
+  chi2 = 11.57 (5 dof)  asymptotic p = 0.0411  PERMUTATION p = 0.0570
+  ANOVA F = 2.517  asymptotic p = 0.0314  PERMUTATION p = 0.0326
+  pooled residual normality: skew +0.210 exkurt +0.691 SW p 0.1929
+  POOLED n=184: 1.00344 +/- 0.00407
+  observed var(block means) = 2.3720e-04;  predicted from within-block = 9.5970e-05;  ratio = 2.47
+

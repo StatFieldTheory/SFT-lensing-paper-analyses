@@ -1,0 +1,123 @@
+\section{Findings that came later}
+\label{sec:afterwards}
+
+The sections above were written before the revision was carried out. Four
+things were found while carrying it out, each of which changed what was done.
+They are recorded here rather than folded into the earlier sections, so that
+the order in which the evidence arrived stays legible.
+
+\subsection{The FK Monte-Carlo does not measure the FK diagram}
+
+Section~\ref{sec:sampling} treats the appendix Monte-Carlo as a check that
+could not have caught the interpolation error, because it reads the same
+tabulated cumulant. That is true, but it understates the situation. With the
+corrected vertex the Monte-Carlo points depart from the analytic channel by a
+factor two at $2'$ and carry the wrong sign beyond $6'$, which sent us to the
+estimator itself.
+
+Its expectation can be computed exactly at the diagram's order, by pure linear
+algebra with no realisations, and doing so reproduces all $21$ probe points to
+about $1.5$ seed standard errors. It decomposes into two terms, neither of
+which is the FK diagram. First, the variance-reduced estimator injects the
+third cumulant only on the observable-side leg of the vertex, so of the three
+placements that make up $\zeta = Q\!:\!VV + \text{perms}$ it captures one; in
+the eigenbasis of the node covariance the captured fraction is
+$d_q d_r/(d_p d_q + d_q d_r + d_r d_p)$, which kernel-weighted comes to
+$0.245$ at $0.5'$, passes through zero near $10'$ and is negative beyond.
+Second, a finite-$\sigma_\lambda$ term enters because the AR(1) smearing
+decoheres the node-local vertex from the smeared covariance, releasing the
+cancellation of the tabulated tensors' $\lambda$-grid graininess; smoothing
+both tensors makes the model $\sigma_\lambda$-flat at exactly the share
+prediction, which is the attribution.
+
+The historical agreement at $\sigma_\lambda=8$ was these two errors summing
+through unity at a value that had itself been chosen so that the ratio came
+out one. The FK amplitude also scales close to linearly with
+$\sigma_\lambda$ ($8.70$, $19.8$ and $37.9\times10^{-6}$ at $0.5'$ for
+$\sigma_\lambda=4,8,16$), with an intercept consistent with zero, so no range
+of that estimator is a converged measurement of FK.
+
+The FK points were therefore withdrawn from the figure. The channel is now
+checked by a direct quadrature contraction of the tabulated cumulant with the
+FK kernel,
+\[
+  \mathrm{FK}(\gamma) = 2\!\int\!\mathrm{d}v\, W(v)\,H(v)\,
+     \Bigl[-\!\sum_c \zeta^{(6)}_{cc B}(\gamma; v)\Bigr],
+  \qquad
+  H(v) = D(v)^4\!\!\int_v^{\lambda_s}\!\!\frac{W(u)}{D(u)^4}\,\mathrm{d}u ,
+\]
+which shares only the vertex table with the workflow and reproduces the folded
+channel to $0.99$--$1.02$ over $0.5'$--$5'$ and $1.07$ at $17.3'$. The FF
+channel keeps its Monte-Carlo points: FF is a term in the equation of motion
+and can be differenced at a fixed random draw, so its noise scales with the
+effect itself, whereas a third moment measured from realisations scatters
+according to the Gaussian fluctuations of the field however small the cumulant
+is.
+
+\subsection{The multi-redshift FF slices had never been computed}
+
+The apparent low-$\ell$ excess at $z_s=1.7$ in the multi-redshift figure was
+not physics and not the interpolation error either. The cache filled the FF
+slices at $z_s<5$ with the exact $z_s=5$ result scaled by the \emph{per-%
+$\gamma$} ratio $f_K(z)/f_K(5)$. At large separation $f_K$ sits on its
+numerical floor, so that ratio is noise over noise: the tails carried
+$10^{-7}$-level dips and went negative at $z_s=1$, which the FF moment cannot
+do, being a connected part plus $\langle\kappa\rangle^2>0$. Through the
+truncated-range transform this became an excess of order the Order-0 signal.
+
+Five genuine per-redshift sweeps were run in its place, one single-threaded
+process per source distance, about $3.2$ hours each. Two checks: each slice's
+large-separation plateau matches the deterministic $\langle\kappa\rangle^2(z_s)$,
+obtained by propagating the expectation of the same recursions with no
+Monte-Carlo, to $1.022$, $1.005$, $1.005$, $0.999$ and $1.008$ at
+$z_s=1,\,1.7,\,2.5,\,3.2,\,4$; and a $z_s=5$ control, run the same way with
+fresh caches, reproduces the production FF \emph{bit-identically} at all forty
+separations. The production path is a real computation, deterministically
+reproducible, and this is the same path.
+
+\subsection{The multipole sum stops converging beyond about a degree}
+
+Separation enters the cumulant only through $P_{\ell_3}(\cos\gamma)$. That
+factor is unity for every term at coincidence, so the sum is coherent there
+and each doubling of the cutoff adds to it. Once $\ell_3\gamma\gtrsim1$ it
+instead oscillates with period $\Delta\ell_3=2\pi/\gamma$ and is damped as
+$(\ell_3\gamma)^{-1/2}$, so the high-multipole terms alternate in sign and
+largely cancel. The low-multipole branch, where $\ell_3\gamma\ll1$, stays
+almost constant: measured on the $z=5.7$ shell, $\zeta_{TTT}$ for $\ell\le60$
+is $+1.33\times10^{-16}$ at every separation, while the $\ell>60$ part falls
+from $-3.7\times10^{-13}$ at $0.5'$ to $-1.5\times10^{-16}$ at $232'$. The two
+necessarily cross, and near the crossing $\zeta$ is a small difference of two
+comparable numbers computed by different methods.
+
+Three independent symptoms follow, and all three place the boundary near a
+degree. Two evaluations of the same multipole sum, one wide window against
+eight disjoint ones, agree to $3$--$6\%$ below $85'$ and differ by factors of
+several to several tens beyond $117'$. Two independent evaluations of
+$\xi_{\rm FK}$, the quadrature above against the workflow fold, agree to
+$0.4$--$6\%$ below $20'$ and differ by a factor $5.2$ at $114'$. And raising
+the cutoff from $7680$ to $15360$ changes $\xi_{\rm FK}$ by a uniform
+$1.08$--$1.14$ for $\gamma\le56'$ but by $0.69$, $0.28$, $2.59$ and $0.73$ at
+$114'$, $294'$, $597'$ and $1535'$.
+
+The consequence for the harmonic-space numbers is direct, because low
+multipoles are dominated by the large-separation part of the two-point
+function. Zeroing $\xi_{\rm FK}$ beyond a cut and re-transforming moves the
+$\ell=2$ correction between $-10.9\%$ and $+2.7\%$ as the cut is varied, while
+$\ell=100$ stays at $1.14$--$1.24\%$ throughout. FK is therefore quoted only
+for $\gamma\lesssim1^\circ$ and $\ell\gtrsim50$, and drawn faint outside that
+range.
+
+\subsection{The $\zeta$-slices figure was still at the old cutoff}
+
+It was the last product drawn at $\ell_{\max}=1000$ while everything else had
+moved to $15360$, and the cutoff changes the panels rather than only their
+normalisation: at the $z=3.1$ shell the peak $|\zeta_{TTT}|$ grows by $13.7$
+and the normalised value at $5'$ moves from $-0.87$ to $-0.27$, so the printed
+panels showed a cumulant falling about three times more slowly in angle than
+the one the numbers come from. Rebuilt at the converged cutoff by appending
+four flat-sky Born-Limber windows to $(8000,15360]$, the exact Wigner-3j ladder
+staying at $\ell\le60$, and clipped to $\gamma\le85'$ for the reason above.
+Its caption also carried a blanket ``change sign with angular scale'' which is
+not true at the converged cutoff: within the plotted range $\zeta_{TTP}$ never
+changes sign, $\zeta_{TTT}$ and $\zeta_{B}$ change sign at $59'$ only for
+$z\gtrsim4$, and $\zeta_{D}$ from $z\simeq1$.

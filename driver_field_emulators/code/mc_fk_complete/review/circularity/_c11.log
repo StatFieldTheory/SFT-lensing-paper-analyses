@@ -1,0 +1,7 @@
+gamma node 1.0155'  fold 1.587427e-05
+      N    dlam      s=8      s=4   r(s->0)
+[perm-aware] 2142 unordered rows, 16 shells, key 12 decimals, permutation closure 99.8%, from table_permclosed_cut15360.npz
+    500    3.82   0.9755   0.9898    1.0041
+   1000    1.91   0.9729   0.9866    1.0002
+   2000    0.95   0.9718   0.9853    0.9988
+   4000    0.48   0.9713   0.9847    0.9982

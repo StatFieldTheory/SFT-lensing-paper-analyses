@@ -1,0 +1,120 @@
+========================================================================================================
+gamma = 1.0 arcmin
+========================================================================================================
+
+[A] fixed sigma/dlam = 4.19 (the requested scan)
+    sigma      N       ratio     deficit     def/sig   local exponent q
+    32.00    251   0.8941728   0.1058272   0.0033071                   
+    16.00    500   0.9461867   0.0538133   0.0033633             0.9757
+     8.00   1000   0.9734418   0.0265582   0.0033198             1.0188
+     4.00   1999   0.9868525   0.0131475   0.0032869             1.0144
+     2.00   3997   0.9934523   0.0065477   0.0032739             1.0057
+  global power-law exponent over sigma = 32 -> 2 :  q = 1.0062
+
+[B] same sigma at TWICE the resolution (sigma/dlam = 8.39): the lattice contribution
+    sigma   d(r=4.19)   d(r=8.39)   d(extrap)   lattice bias at r=4.19
+    16.00   0.0538133   0.0540633   0.0541466                -0.6155%
+     8.00   0.0265582   0.0267011   0.0267487                -0.7122%
+     4.00   0.0131475   0.0132228   0.0132478                -0.7570%
+     2.00   0.0065477   0.0065877   0.0066011                -0.8083%
+
+  lattice-converged deficit/sigma: 16:0.003384  8:0.003344  4:0.003312  2:0.003301
+  -> continuum slope c1 = lim deficit/sigma = 0.003289 (2-point Richardson in sigma from sigma = 4, 2)
+
+[C] parameter-free prediction of the slope (no fitted parameter)
+    sigma  meas d1/sig   pred 3/4      p/m  meas d2/sig   pred 1/2      p/m  tot pred/meas
+    16.00     0.004174   0.004341   1.0401     0.003155   0.003006   0.9530         0.9767
+     8.00     0.004229   0.004324   1.0226     0.003086   0.002994   0.9702         0.9848
+     4.00     0.004263   0.004315   1.0124     0.003035   0.002988   0.9845         0.9924
+     2.00     0.004262   0.004309   1.0110     0.003020   0.002985   0.9886         0.9950
+
+[D] discrimination against the alternatives (at the smallest sigma)
+    DERIVED  (3/4 , 1/2)             pred/meas  T1 =  1.0110   T2 =  0.9886
+    both 3/4  (wrong)                pred/meas  T1 =  1.0110   T2 =  1.4830
+    both 1/2  (wrong)                pred/meas  T1 =  0.6740   T2 =  0.9886
+    both 1    (wrong)                pred/meas  T1 =  1.3480   T2 =  1.9773
+    no O(sigma) term  (quadratic)    pred/meas  T1 =  0.0000   T2 =  0.0000
+
+[E] the intercept: is there anything left at sigma = 0?
+    r = 4.19 series     linear fit, all points : intercept = 0.999916   (theory 1 exactly)
+    r = 4.19 series  quadratic fit, all points : intercept = 1.000493   (theory 1 exactly)
+    r = 8.39 series     linear fit, all points : intercept = 1.000316   (theory 1 exactly)
+    r = 8.39 series  quadratic fit, all points : intercept = 1.000049   (theory 1 exactly)
+
+[F] the extrapolation the paper actually quotes (production grid N = 1000, sigma = 8 and 4, 2-point linear)
+    ratio(8) = 0.973442   ratio(4) = 0.987164   ratio(2) = 0.994279
+    2 r(4) - r(8) = 1.000887      bias = +0.08866%
+    2 r(2) - r(4) = 1.001393      bias = +0.13930%
+    lattice-converged: 2 r(4)-r(8) = 1.000253   bias = +0.02531%   (pure sigma^2 curvature)
+                       2 r(2)-r(4) = 1.000046   bias = +0.00457%
+
+[G] what the sigma->0 intercept is measured AGAINST
+    ref (injected zeta, N=8000)  = 1.594452e-05
+    ref (tabulated zeta, N=8000) = 1.608445e-05   injection fidelity = 0.9913
+
+========================================================================================================
+gamma = 5.0 arcmin
+========================================================================================================
+
+[A] fixed sigma/dlam = 4.19 (the requested scan)
+    sigma      N       ratio     deficit     def/sig   local exponent q
+    32.00    251   0.9072229   0.0927771   0.0028993                   
+    16.00    500   0.9533115   0.0466885   0.0029180             0.9907
+     8.00   1000   0.9770560   0.0229440   0.0028680             1.0250
+     4.00   1999   0.9886653   0.0113347   0.0028337             1.0174
+     2.00   3997   0.9943343   0.0056657   0.0028328             1.0004
+  global power-law exponent over sigma = 32 -> 2 :  q = 1.0109
+
+[B] same sigma at TWICE the resolution (sigma/dlam = 8.39): the lattice contribution
+    sigma   d(r=4.19)   d(r=8.39)   d(extrap)   lattice bias at r=4.19
+    16.00   0.0466885   0.0469407   0.0470248                -0.7151%
+     8.00   0.0229440   0.0230834   0.0231298                -0.8034%
+     4.00   0.0113347   0.0114073   0.0114314                -0.8462%
+     2.00   0.0056657   0.0056945   0.0057040                -0.6724%
+
+  lattice-converged deficit/sigma: 16:0.002939  8:0.002891  4:0.002858  2:0.002852
+  -> continuum slope c1 = lim deficit/sigma = 0.002846 (2-point Richardson in sigma from sigma = 4, 2)
+
+[C] parameter-free prediction of the slope (no fitted parameter)
+    sigma  meas d1/sig   pred 3/4      p/m  meas d2/sig   pred 1/2      p/m  tot pred/meas
+    16.00     0.003056   0.003140   1.0272     0.002922   0.002805   0.9598         0.9660
+     8.00     0.003102   0.003150   1.0154     0.002864   0.002794   0.9756         0.9794
+     4.00     0.003132   0.003156   1.0075     0.002824   0.002789   0.9876         0.9896
+     2.00     0.003154   0.003155   1.0005     0.002817   0.002787   0.9894         0.9905
+
+[D] discrimination against the alternatives (at the smallest sigma)
+    DERIVED  (3/4 , 1/2)             pred/meas  T1 =  1.0005   T2 =  0.9894
+    both 3/4  (wrong)                pred/meas  T1 =  1.0005   T2 =  1.4842
+    both 1/2  (wrong)                pred/meas  T1 =  0.6670   T2 =  0.9894
+    both 1    (wrong)                pred/meas  T1 =  1.3340   T2 =  1.9789
+    no O(sigma) term  (quadratic)    pred/meas  T1 =  0.0000   T2 =  0.0000
+
+[E] the intercept: is there anything left at sigma = 0?
+    r = 4.19 series     linear fit, all points : intercept = 1.000189   (theory 1 exactly)
+    r = 4.19 series  quadratic fit, all points : intercept = 1.000388   (theory 1 exactly)
+    r = 8.39 series     linear fit, all points : intercept = 1.000346   (theory 1 exactly)
+    r = 8.39 series  quadratic fit, all points : intercept = 1.000018   (theory 1 exactly)
+
+[F] the extrapolation the paper actually quotes (production grid N = 1000, sigma = 8 and 4, 2-point linear)
+    ratio(8) = 0.977056   ratio(4) = 0.988962   ratio(2) = 0.995090
+    2 r(4) - r(8) = 1.000867      bias = +0.08673%
+    2 r(2) - r(4) = 1.001219      bias = +0.12188%
+    lattice-converged: 2 r(4)-r(8) = 1.000267   bias = +0.02669%   (pure sigma^2 curvature)
+                       2 r(2)-r(4) = 1.000023   bias = +0.00234%
+
+[G] what the sigma->0 intercept is measured AGAINST
+    ref (injected zeta, N=8000)  = 7.014941e-06
+    ref (tabulated zeta, N=8000) = 7.202402e-06   injection fidelity = 0.9740
+
+========================================================================================================
+[H] normalisation-free discriminator: the RATIO of the two placement slopes
+    (independent of C3, C12 overall scale; tests 3/4 : 1/2 = 3:2 directly)
+========================================================================================================
+  gamma=1.0'  sigma=2.0:  measured slope ratio d1/d2 = 1.4114
+      DERIVED (3/4 vs 1/2)      predicts 1.4433   -> off by 2.26%
+      EQUAL coefficients        predicts 0.9622   -> off by 31.83%
+      REVERSED (1/2 vs 3/4)     predicts 0.6415   -> off by 54.55%
+  gamma=5.0'  sigma=2.0:  measured slope ratio d1/d2 = 1.1197
+      DERIVED (3/4 vs 1/2)      predicts 1.1322   -> off by 1.11%
+      EQUAL coefficients        predicts 0.7548   -> off by 32.59%
+      REVERSED (1/2 vs 3/4)     predicts 0.5032   -> off by 55.06%

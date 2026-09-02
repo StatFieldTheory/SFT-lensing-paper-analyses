@@ -1,0 +1,28 @@
+gamma = 1.0152'   fold = 1.587427e-05  (exact node: True)
+[perm-aware] 2142 unordered rows, 16 shells, key 12 decimals, permutation closure 99.8%, from table_permclosed_cut15360.npz
+  N=500 dlam=3.8217 sigma=16.0 s/dl=4.187   [3 s]
+           smeared  tot=+1.504301e-05  /fold=+0.947634  T1share=+0.2160
+          causal2t  tot=+1.660752e-05  /fold=+1.046191  T1share=+0.2151
+      anticausal2t  tot=+1.552302e-05  /fold=+0.977873  T1share=+0.2174
+            kernel  tot=+1.517120e-05  /fold=+0.955710  T1share=+0.2158
+  N=1000 dlam=1.9089 sigma=8.0 s/dl=4.191   [6 s]
+           smeared  tot=+1.544338e-05  /fold=+0.972856  T1share=+0.2175
+          causal2t  tot=+1.632913e-05  /fold=+1.028654  T1share=+0.2170
+      anticausal2t  tot=+1.677288e-05  /fold=+1.056608  T1share=+0.2189
+            kernel  tot=+1.547611e-05  /fold=+0.974918  T1share=+0.2174
+  N=1999 dlam=0.9545 sigma=4.0 s/dl=4.191   [16 s]
+           smeared  tot=+1.564038e-05  /fold=+0.985266  T1share=+0.2184
+          causal2t  tot=+1.612887e-05  /fold=+1.016038  T1share=+0.2182
+      anticausal2t  tot=+2.123788e-05  /fold=+1.337881  T1share=+0.2385
+            kernel  tot=+1.564779e-05  /fold=+0.985733  T1share=+0.2184
+  N=3997 dlam=0.4772 sigma=2.0 s/dl=4.191   [44 s]
+           smeared  tot=+1.573766e-05  /fold=+0.991394  T1share=+0.2192
+          causal2t  tot=+1.599806e-05  /fold=+1.007798  T1share=+0.2190
+      anticausal2t  tot=+1.683347e-05  /fold=+1.060424  T1share=+0.2244
+            kernel  tot=+1.573971e-05  /fold=+0.991523  T1share=+0.2192
+
+linear sigma->0 extrapolations (2*r(s/2) - r(s)):
+       smeared:  [16,8]->+0.99808 [8,4]->+0.99768 [4,2]->+0.99752
+      causal2t:  [16,8]->+1.01112 [8,4]->+1.00342 [4,2]->+0.99956
+  anticausal2t:  [16,8]->+1.13534 [8,4]->+1.61915 [4,2]->+0.78297
+        kernel:  [16,8]->+0.99413 [8,4]->+0.99655 [4,2]->+0.99731

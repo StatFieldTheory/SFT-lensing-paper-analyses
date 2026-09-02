@@ -1,0 +1,199 @@
+system:
+  field:
+    name: phi
+    n_components: 3
+  linear:
+    type: explicit
+    R_time_module: /Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/scripts/D_callable.py
+    R_time_attr: response_R
+    iso_R: true
+  noise:
+    kappa2:
+      type: callable_module
+      module: /Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/scripts/kappa2_callable.py
+      attr: kappa2
+  vertices:
+  - name: F
+    coupling_path: /Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/scripts/inputs/F_tensor.npy
+expand:
+  observable:
+  - phi_a(x)
+  - phi_b(y)
+  orders:
+  - 0
+  response_phase: true
+  ito: true
+  collect_topology: true
+  diag_R: true
+  diag_C: false
+  cache_path: /Users/zzhang/Documents/MyDrafts/STF_lensing/driver_field_emulators/products/_variant_order0_multiz/.cache_expand_C_corr_op_O0
+  n_jobs: 1
+propagators:
+  t_max: 2360.0
+  dt: 1.0
+  homogeneity: rotation
+  n_grid_cos: 32
+  n_jobs: 4
+  cache_path: /Users/zzhang/Documents/MyDrafts/STF_lensing/driver_field_emulators/products/_variant_order0_multiz/.cache_propagators_C_corr_op_O0
+  c_closed_form_module: /Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/callables/C_propagator/corr_op/corr_op_C_callable.py
+  c_closed_form_attr: C_fn
+  c_closed_form_only: true
+  c_closed_form_vectorized: false
+  c_method: gauss_legendre
+  c_n_gauss: 20
+  diag_C: false
+sweep:
+  integrate_over: all
+  positions_grid:
+    x:
+    - - 0.0
+      - 0.0
+      - 1.0
+    y:
+    - - 0.0001454441
+      - 0.0
+      - 0.9999999894
+    - - 0.0001841875
+      - 0.0
+      - 0.999999983
+    - - 0.0002332514
+      - 0.0
+      - 0.9999999728
+    - - 0.000295385
+      - 0.0
+      - 0.9999999564
+    - - 0.0003740697
+      - 0.0
+      - 0.99999993
+    - - 0.0004737144
+      - 0.0
+      - 0.9999998878
+    - - 0.0005999026
+      - 0.0
+      - 0.9999998201
+    - - 0.0007597047
+      - 0.0
+      - 0.9999997114
+    - - 0.0009620749
+      - 0.0
+      - 0.9999995372
+    - - 0.0012183524
+      - 0.0
+      - 0.9999992578
+    - - 0.0015428971
+      - 0.0
+      - 0.9999988097
+    - - 0.0019538939
+      - 0.0
+      - 0.9999980911
+    - - 0.0024743715
+      - 0.0
+      - 0.9999969387
+    - - 0.0031334931
+      - 0.0
+      - 0.9999950906
+    - - 0.0039681896
+      - 0.0
+      - 0.9999921267
+    - - 0.0050252287
+      - 0.0
+      - 0.9999873735
+    - - 0.0063638338
+      - 0.0
+      - 0.9999797506
+    - - 0.0080590002
+      - 0.0
+      - 0.9999675257
+    - - 0.0102056913
+      - 0.0
+      - 0.9999479206
+    - - 0.0129241497
+      - 0.0
+      - 0.9999164797
+    - - 0.0163666118
+      - 0.0
+      - 0.999866058
+    - - 0.020725794
+      - 0.0
+      - 0.9997851977
+    - - 0.0262456
+      - 0.0
+      - 0.9996555249
+    - - 0.0332346033
+      - 0.0
+      - 0.999447578
+    - - 0.0420829632
+      - 0.0
+      - 0.9991141197
+    - - 0.0532835274
+      - 0.0
+      - 0.9985794238
+    - - 0.067457906
+      - 0.0
+      - 0.9977221211
+    - - 0.0853881735
+      - 0.0
+      - 0.9963477605
+    - - 0.1080543446
+      - 0.0
+      - 0.9941449887
+    - - 0.1366764224
+      - 0.0
+      - 0.9906157457
+    - - 0.1727567072
+      - 0.0
+      - 0.9849645273
+    - - 0.2181113145
+      - 0.0
+      - 0.9759238979
+    - - 0.2748657931
+      - 0.0
+      - 0.961482603
+    - - 0.3453612628
+      - 0.0
+      - 0.9384698174
+    - - 0.4318615238
+      - 0.0
+      - 0.9019399228
+    - - 0.5358458514
+      - 0.0
+      - 0.8443158316
+    - - 0.6564851133
+      - 0.0
+      - 0.7543389795
+    - - 0.7876082933
+      - 0.0
+      - 0.6161762543
+    - - 0.9121512874
+      - 0.0
+      - 0.4098536676
+    - - 0.9932383577
+      - 0.0
+      - 0.1160929141
+  t_final_grid:
+  - 1330.6833
+  - 1822.719691
+  - 2095.037735
+  - 2216.791659
+  - 2266.579043
+  - 2297.288107
+  - 2317.959476
+  component_pairs:
+  - - 0
+    - 0
+  - - 0
+    - 1
+  - - 0
+    - 2
+  - - 1
+    - 1
+  - - 1
+    - 2
+  - - 2
+    - 2
+  method: gauss_legendre
+  n_gauss: 24
+  n_jobs: 4
+output:
+- type: npz
+  path: /Users/zzhang/Documents/MyDrafts/STF_lensing/driver_field_emulators/products/_variant_order0_multiz/xi_C_corr_op_O0.npz

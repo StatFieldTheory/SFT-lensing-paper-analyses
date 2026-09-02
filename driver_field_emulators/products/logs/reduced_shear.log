@@ -1,0 +1,11 @@
+z_s = 5.0,  chi_s = 5349.5 Mpc/h,  140 shells, L in [2, 20000]
+
+    ell        C_l^kk    dC_l reduced       dC/C
+     93    5.7305e-08      4.7000e-10     0.820%
+    218    2.3301e-08      2.0821e-10     0.894%
+    415    9.6719e-09      1.0157e-10     1.050%
+    789    3.8262e-09      5.1150e-11     1.337%
+   1500    1.5653e-09      3.1459e-11     2.010%
+   3000    6.1549e-10      1.7604e-11     2.860%
+
+-> /Users/zzhang/Documents/MyDrafts/STF_lensing/driver_field_emulators/products/reduced_shear_zs5.npz

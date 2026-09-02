@@ -1,0 +1,6 @@
+[ff-real] lam_source = 1822.721 ...
+[ff] vertex_types=['F'] orders=(0, 2) n_lambda=1 sweep.n_jobs=1 props.n_jobs=1
+[ff] run_workflow done in 9765.6 s
+[ff-real] lam_source = 1822.721 done in 9767 s; xi(0.5')=+1.2781e-08  xi(5000')=+3.5574e-09
+[ff-real] lam_source = 2094.894 ...
+[ff] vertex_types=['F'] orders=(0, 2) n_lambda=1 sweep.n_jobs=1 props.n_jobs=1

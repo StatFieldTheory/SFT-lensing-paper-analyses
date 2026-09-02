@@ -1,0 +1,21 @@
+[mc] Monte-Carlo vertex -> table_permclosed_cut15360.npz via the permutation-aware callable
+[mc] analytic FK -> table_permclosed_cut15360_permfix_xi.npz
+[mc] 24000 realisations, n_lambda 1000, sigma_lambda 8.0
+[perm-aware] 2142 unordered rows, 16 shells, key 12 decimals, permutation closure 99.8%, from table_permclosed_cut15360.npz
+  gamma=   1.00: FK_mc=1.436e-05 +/-1.2e-06, FF_mc(full)=1.573e-06
+  gamma=   2.60: FK_mc=3.816e-06 +/-1.2e-06, FF_mc(full)=1.396e-06
+  gamma=   6.70: FK_mc=-2.682e-06 +/-9.8e-07, FF_mc(full)=1.089e-06
+  gamma=  17.30: FK_mc=-6.041e-06 +/-9.2e-07, FF_mc(full)=8.073e-07
+  gamma=  44.40: FK_mc=-4.392e-06 +/-7.4e-07, FF_mc(full)=6.529e-07
+  gamma= 114.30: FK_mc=-2.683e-06 +/-7.1e-07, FF_mc(full)=6.086e-07
+  gamma= 293.90: FK_mc=-1.913e-06 +/-7.2e-07, FF_mc(full)=6.038e-07
+  gamma= 372.20: FK_mc=-1.918e-06 +/-7.2e-07, FF_mc(full)=6.040e-07
+  gamma= 471.30: FK_mc=-1.990e-06 +/-7.3e-07, FF_mc(full)=6.043e-07
+  gamma= 596.90: FK_mc=-2.099e-06 +/-7.3e-07, FF_mc(full)=6.044e-07
+  gamma= 755.90: FK_mc=-2.128e-06 +/-7.3e-07, FF_mc(full)=6.045e-07
+  gamma= 957.20: FK_mc=-2.077e-06 +/-7.4e-07, FF_mc(full)=6.044e-07
+  gamma=1212.20: FK_mc=-2.131e-06 +/-7.4e-07, FF_mc(full)=6.043e-07
+  gamma=1535.20: FK_mc=-2.101e-06 +/-7.4e-07, FF_mc(full)=6.045e-07
+  gamma=1944.10: FK_mc=-2.027e-06 +/-7.4e-07, FF_mc(full)=6.043e-07
+[cache -> /Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/mc_sachs_2pt/outputs/appendix_mc_curve.npz]
+[fig -> /Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/mc_sachs_2pt/figures/xi_kappa_channels.pdf]

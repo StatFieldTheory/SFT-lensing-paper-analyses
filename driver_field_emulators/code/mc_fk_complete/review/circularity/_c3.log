@@ -1,0 +1,25 @@
+fold gamma nodes: ["1.0155'", "5.3041'", "17.2755'"]
+
+table / fold pair                                  1.02'     5.30'    17.28'   fold@1arcmin
+------------------------------------------------------------------------------------------------
+[perm-aware] 2142 unordered rows, 16 shells, key 12 decimals, permutation closure 99.8%, from table_permclosed_cut15360.npz
+permclosed_cut15360 (PRODUCTION, perm-aware)      1.0002    1.0011    1.0021     1.5874e-05
+[perm-aware] 2142 unordered rows, 16 shells, key 12 decimals, permutation closure 99.8%, from table_permclosed_cut1000.npz
+permclosed_cut1000  (perm-aware)                  1.0017    1.0017    1.0025     4.2654e-06
+[perm-aware] 1791 unordered rows, 16 shells, key 12 decimals, permutation closure 99.8%, from table_permclosed_cut1000_r1.npz
+permclosed_cut1000_r1 (perm-aware, coarse radial)    1.0017    1.0017    1.0025     4.2654e-06
+[perm-aware] 1908 unordered rows, 16 shells, key 12 decimals, permutation closure 99.8%, from table_permclosed_cut1000_r2.npz
+permclosed_cut1000_r2 (perm-aware)                1.0017    1.0017    1.0025     4.2654e-06
+[etl-callable] loaded 6/6 nonzero channels ('zeta_TTT', 'zeta_TTP', 'zeta_TPP', 'zeta_PPP', 'zeta_Bmod', 'zeta_Dmod') (U=498, N_lam=16) from table_permclosed_cut1000.npz
+permclosed_cut1000  (LEGACY sorted-leg callable)    1.0017    1.0017    1.0025     4.2654e-06
+[etl-callable] loaded 6/6 nonzero channels ('zeta_TTT', 'zeta_TTP', 'zeta_TPP', 'zeta_PPP', 'zeta_Bmod', 'zeta_Dmod') (U=498, N_lam=16) from table_tree_cut1000_r4.npz
+tree_cut1000_r4     (legacy)                      1.0017    1.0017    1.0025     4.2655e-06
+[etl-callable] loaded 6/6 nonzero channels ('zeta_TTT', 'zeta_TTP', 'zeta_TPP', 'zeta_PPP', 'zeta_Bmod', 'zeta_Dmod') (U=498, N_lam=16) from table_tree_cut15360_r4.npz
+tree_cut15360_r4    (legacy)                      1.0002    1.0010    1.0018     1.6473e-05
+[etl-callable] loaded 6/6 nonzero channels ('zeta_TTT', 'zeta_TTP', 'zeta_TPP', 'zeta_PPP', 'zeta_Bmod', 'zeta_Dmod') (U=498, N_lam=16) from table_bihalofit_cut960_r4.npz
+bihalofit_cut960_r4 (legacy, NONLINEAR Bk)        1.0023    1.0023    1.0024     6.5760e-06
+[etl-callable] loaded 6/6 nonzero channels ('zeta_TTT', 'zeta_TTP', 'zeta_TPP', 'zeta_PPP', 'zeta_Bmod', 'zeta_Dmod') (U=498, N_lam=16) from table_bihalofit_cut15360_r4.npz
+bihalofit_cut15360_r4 (legacy, NONLINEAR Bk)      1.0033    1.0027    1.0029     1.7062e-04
+
+all 27 (table, gamma) cells: median 1.0017  min 1.0002  max 1.0033
+fold amplitude at 1' spans 40.00x across tables

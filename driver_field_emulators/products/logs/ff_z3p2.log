@@ -1,0 +1,4 @@
+[z3p2] lam_source = 2266.582, private caches at /Users/zzhang/Documents/MyDrafts/STF_lensing/driver_field_emulators/products/_ff_caches/z3p2
+[ff_z3p2] vertex_types=['F'] orders=(0, 2) n_lambda=1 sweep.n_jobs=1 props.n_jobs=1
+[ff_z3p2] run_workflow done in 11706.1 s
+[z3p2] done in 195.1 min; xi(0.5')=+8.1174e-07  xi(5000')=+2.2998e-07  -> /Users/zzhang/Documents/MyDrafts/STF_lensing/driver_field_emulators/products/multiz_ff_real_z3p2.npz

@@ -1,0 +1,18 @@
+=== sigma=8.0, 480 independent batches ===
+  normal logL=5741.58 (2 par)   t.fit dof=1.98 logL=5716.72 (3 par)   Delta AIC (t - normal) = +51.73
+    -> t is NOT preferred; note sample excess kurtosis is only +0.42, a real t(dof=2) has INFINITE kurtosis
+  Hill tail index (top 48 of 480 |z|) alpha = 3.56   (alpha>4 => finite kurtosis; Gaussian => very large)
+  DISJOINT real 'seeds' of 12 batches (n=40 of them):
+    coverage of the +/-1.96*SEM interval about the 480-batch mean: 0.975 (nominal 0.950)
+    coverage using the t_11 critical value: 1.000 (nominal 0.950)
+    scatter of the 40 group means / mean group SEM = 0.772  (1.000 if the SEM is honest)
+
+=== sigma=4.0, 480 independent batches ===
+  normal logL=5534.49 (2 par)   t.fit dof=1.98 logL=5502.46 (3 par)   Delta AIC (t - normal) = +66.07
+    -> t is NOT preferred; note sample excess kurtosis is only +0.31, a real t(dof=2) has INFINITE kurtosis
+  Hill tail index (top 48 of 480 |z|) alpha = 3.64   (alpha>4 => finite kurtosis; Gaussian => very large)
+  DISJOINT real 'seeds' of 12 batches (n=40 of them):
+    coverage of the +/-1.96*SEM interval about the 480-batch mean: 0.975 (nominal 0.950)
+    coverage using the t_11 critical value: 0.975 (nominal 0.950)
+    scatter of the 40 group means / mean group SEM = 0.801  (1.000 if the SEM is honest)
+
