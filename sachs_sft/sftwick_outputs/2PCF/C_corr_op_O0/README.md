@@ -27,3 +27,7 @@ SFT_WICK_CONFIG_YAML=<abs path to this config_L2.yaml> \
 
 ## Validation target
 Order-0 κκ / ξ± should match PyCCL at 5-10% (the corr_op C path's validated regime).
+
+## Status (2026-09-02)
+
+Live production sweep of the manuscript (unchanged since 2026-06-01). The `+3.086e-5 baseline geometry` wording refers to the 40-point gamma grid, t_final = 2313.029 and n_gauss = 24 shared by every run; the number itself is a pre-2026-06-09 stamp of the FK kappa-kappa value. `PRODUCTION` marks this folder for the runner's overwrite guard.

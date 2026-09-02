@@ -41,3 +41,13 @@ LOW+HIGH table (unlike the archived run which summed two NPZs at runtime via env
 
 ## Validation target
 κκ(0.5′) ≈ **+3.086e-5**; SPT tree-level cross-check ~30%.
+
+## SUPERSEDED (2026-09-02)
+
+This is the cut1000 sweep of the June 2026 draft, made with the corner-frozen vertex table and the
+sorting callable. It is kept byte-identical because SFT-WL-B vendored it (sha256 prefix
+`c3eae8cb8515668`) and because its config is the template `run_fk_variant.py` copies. The
+manuscript's FK is `../C_corr_op_K_limber_FK_cut15360_permfix/`. The `+3.086e-5` figure above is a
+pre-2026-06-09 stamp (before the h^4 and (1+z)^-4 fixes); this file's own kappa-kappa value at 0.5'
+is `+4.2877e-6`, and the manuscript's converged value is `+1.9480e-5`. The byte-identical twin
+`xi_C_corr_op_K_limber_FK_PROD_REF_2026-06-10.npz` was removed (history at tag pre-reorg-2026-09).

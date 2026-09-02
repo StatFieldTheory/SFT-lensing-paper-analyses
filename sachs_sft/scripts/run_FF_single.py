@@ -85,11 +85,15 @@ def main() -> None:
     cfg_yaml_name = os.environ.get(
         "SFT_WICK_CONFIG_YAML", "config_FF_canoes.yaml"
     )
-    cfg_path = here / cfg_yaml_name
-    os.chdir(here)
+    cfg_path = (here / cfg_yaml_name).resolve()
+    # Everything relative in the YAML resolves against the YAML's own folder:
+    # sft-wick resolves module and data paths that way at load time, and its
+    # output and cache paths are CWD-relative, so the CWD is set to that folder.
+    base = cfg_path.parent
+    os.chdir(base)
     cfg = load_workflow_config(cfg_path)
-    _clear_cache(cfg.expand.cache_path, here)
-    _clear_cache(cfg.propagators.cache_path, here)
+    _clear_cache(cfg.expand.cache_path, base)
+    _clear_cache(cfg.propagators.cache_path, base)
     sweep_n_gauss = os.environ.get("SFT_WICK_SWEEP_N_GAUSS")
     if sweep_n_gauss:
         cfg = replace(
@@ -108,8 +112,15 @@ def main() -> None:
     # rather than only the dense-canoes default. YAML output paths are
     # relative to the YAML's parent dir (we already chdir'd to ``here``).
     yaml_out = Path(cfg.output[0].path)
-    default_out = yaml_out if yaml_out.is_absolute() else (here / yaml_out).resolve()
+    default_out = yaml_out if yaml_out.is_absolute() else (base / yaml_out).resolve()
     if default_out.exists():
+        # A run folder carrying a PRODUCTION marker holds a deployed result:
+        # refuse to unlink it unless the caller says so explicitly. A variant
+        # config that inherited a production output path destroyed the
+        # deployed FK sweep on 2026-08-25.
+        if (default_out.parent / "PRODUCTION").exists() and not os.environ.get("SFT_WICK_FORCE_OVERWRITE"):
+            sys.exit(f"[run_FF_single] refusing to overwrite {default_out}: its folder is marked "
+                     "PRODUCTION; set SFT_WICK_FORCE_OVERWRITE=1 to override")
         default_out.unlink()
 
     print(f"[run_FF_single] kappa2 = {kappa2_path.name}")

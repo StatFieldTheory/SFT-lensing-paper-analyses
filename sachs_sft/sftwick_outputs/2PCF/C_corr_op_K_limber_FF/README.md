@@ -65,3 +65,7 @@ Do NOT set `SFT_WICK_EXPAND_ORDERS` / `SFT_WICK_SWEEP_N_GAUSS` — let the confi
 Order-2 (F) κκ should match `C_corr_op_K_contracted_FF`'s Order-2 (F) κκ once that
 sibling is corrected to `vertex_types: ["F"]` (κ³-wiring-independent). Output is
 Order-2 only (see Expectations).
+
+## Status (2026-09-02)
+
+Live production sweep of the manuscript (unchanged since 2026-06-01). The `+3.086e-5 baseline geometry` wording refers to the 40-point gamma grid, t_final = 2313.029 and n_gauss = 24 shared by every run; the number itself is a pre-2026-06-09 stamp of the FK kappa-kappa value. `PRODUCTION` marks this folder for the runner's overwrite guard.
