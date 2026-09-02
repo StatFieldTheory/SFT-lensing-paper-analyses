@@ -141,15 +141,23 @@ manuscript's `figures/` folder now holds exactly the 17 live PDFs.
 | one group of moves | `git revert <commit>`; each phase-2 group is a single commit |
 | a retired file | copy it back from `~/.Trash/STF_lensing_reorg_2026-09-02/` using the path in the manifest, while the Trash is unemptied |
 | a figure | `git checkout pre-reorg-2026-09 -- figures/<name>.pdf` in the paper repository |
+| the archived and orphan figure PDFs | `git checkout 1f0ec58 -- figures/archived_2026-08-26 figures/archived_2026-08-28 figures/appendix_3cumulant_fastnc.pdf figures/cumulant_hierarchy.pdf` |
+
+Overleaf's git bridge accepts only the `master` branch and rejects tags, so the paper
+repository's rollback point is the commit `1f0ec58` rather than the tag name. The tag
+exists locally and the commit is on Overleaf, so either works from a local clone.
 
 The scripts that performed each phase are in `reorg_2026-09/phase1/`, `phase2/` and
 `phase3/`, so any step can be read back exactly as it ran.
 
 ## Open items
 
-* **D16**: the analysis package has not been pushed to GitHub. It is 21 commits ahead of
-  `origin/main` and would add about 24 MB. The operator asked to check the consistency of
-  the analysis and the results first.
+* **D16 is closed.** All three repositories were pushed on 2026-09-02: the analysis
+  package and the talk to GitHub (both with the `pre-reorg-2026-09` tag), the manuscript
+  to Overleaf. Before the package push, the rendered figures under `outputs/` were
+  untracked: `regen_figure.py` rewrites them on every run, and tracking them alongside
+  the deployed copies is what let three of them go stale in the first place. Every data
+  file under `outputs/` is still tracked.
 * The four wording nuances of REPRODUCE.md section 5 are for the operator to decide on;
   this reorganisation proposes no manuscript edit.
 * `rebuild/products/pieces/` (50 MB of octave-band builds) and the arXiv PDFs are local
