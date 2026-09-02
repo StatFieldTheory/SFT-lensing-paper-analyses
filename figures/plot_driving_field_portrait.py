@@ -24,7 +24,7 @@ from matplotlib.patches import Circle
 
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[1]
-FIGURES = ROOT / "figures"
+FIGURES = HERE / "outputs"   # deployed by reproduce/deploy.py
 
 sys.path.insert(0, str(HERE))
 from _plot_style import apply_rcparams  # noqa: E402

@@ -42,7 +42,10 @@ _TABLE = _HERE / "equal_time_limber_kappa3_z5covgrid16_omega0316_h06711.npz"
 # ℓ-band edges. LOW (exact Wigner, ℓ≤60) via the ell_max ladder; HIGH (flat-sky,
 # (60,1000]) via disjoint windows.
 _LOW_LADDER = [30, 60]                       # cumulative ell_max -> bands [≤30],(30,60]
-_HIGH_WINDOWS = [(60, 125), (125, 250), (250, 500), (500, 1000)]
+# Eight disjoint Born-Limber windows to the converged cutoff (2026-08-27); the first
+# four alone reproduce the June cut1000 decomposition.
+_HIGH_WINDOWS = [(60, 125), (125, 250), (250, 500), (500, 1000),
+                 (1000, 2000), (2000, 4000), (4000, 8000), (8000, 15360)]
 _CHANNELS = ("TTT", "TTP", "TPP", "PPP")
 
 
@@ -57,7 +60,7 @@ def main() -> int:
     ap.add_argument("--smoke", action="store_true",
                     help="3 γ + 1 HIGH window — wiring/timing/sign check.")
     ap.add_argument("--n-gamma", type=int, default=28)
-    ap.add_argument("--out", type=Path, default=_HERE / "ell_band_decomp_results.npz")
+    ap.add_argument("--out", type=Path, default=_HERE / "outputs" / "zeta_bands_cut15360.npz")
     args = ap.parse_args()
 
     from canoes.sachs import (  # noqa: E402

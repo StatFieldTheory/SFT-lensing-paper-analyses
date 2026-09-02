@@ -22,8 +22,9 @@ They are restored from a different estimator:
 three legs of the deformation reach the vertex; proved as a symbolic identity)
 and variance-controlled, and whose sigma_lambda -> 0 extrapolation reproduces
 the folded FK channel to about a percent.  `_plot` draws FK markers only when
-the caller supplies g_fk/fk_mc/fk_se; `_compute` does not produce them, so the
-paper figure is built through
+the caller supplies g_fk/fk_mc/fk_se; since 2026-09-02 `_compute` takes
+`--fk-markers` (default: the pooled markers) so a fresh run reproduces the deployed
+figure; the August deployment went through
 `analyses/revision_2026-08/make_val_figure.py`.
 
 Output: figures/xi_kappa_channels.pdf
@@ -44,6 +45,7 @@ LF = 2313.0288751857356
 # FF Monte-Carlo sample points (on the analytic [0.5',5000'] grid nodes),
 # spanning Figure 11's displayed range; the FF comparison stays clean over the
 # whole grid.
+FK_MARKERS_DEFAULT = Path(__file__).resolve().parents[1] / "mc_fk_complete" / "_markers_pooled.npz"
 GAMMA_MC = (1.0, 2.6, 6.7, 17.3, 44.4, 114.3, 293.9,
             372.2, 471.3, 596.9, 755.9, 957.2, 1212.2, 1535.2, 1944.1)
 
@@ -68,13 +70,13 @@ def _cache_path() -> Path:
     return p / "appendix_mc_curve.npz"
 
 
-def _compute(ff_real: int, ff_nl: int) -> dict:
+def _compute(ff_real: int, ff_nl: int, fk_markers: Path | None = None) -> dict:
     """Run the FF Monte-Carlo (deterministic given the fixed seed) plus the
     analysis-3 analytic channels, and cache the result so the figure can be
     restyled without recomputation (see ``--from-cache``)."""
     g, o0 = _load_kk("C_corr_op_O0")
     _, ff_mom = _load_kk("C_corr_op_K_limber_FF")
-    _, fk3 = _load_kk("C_corr_op_K_limber_FK")
+    _, fk3 = _load_kk("C_corr_op_K_limber_FK_cut15360_permfix")
 
     ffc_mc = np.zeros(len(GAMMA_MC)); ffc_se = np.zeros(len(GAMMA_MC))
     for i, gv in enumerate(GAMMA_MC):
@@ -87,6 +89,12 @@ def _compute(ff_real: int, ff_nl: int) -> dict:
 
     D = dict(g=g, o0=o0, ff_mom=ff_mom, fk3=fk3, g_mc=np.array(GAMMA_MC),
              ffc_mc=ffc_mc, ffc_se=ffc_se)
+    if fk_markers is not None and Path(fk_markers).exists():
+        # Placement-complete FK Monte-Carlo markers (analyses/mc_fk_complete/).
+        m = np.load(fk_markers)
+        D.update(g_fk=np.asarray(m["gamma"], float), fk_mc=np.asarray(m["fk"], float),
+                 fk_se=np.asarray(m["err"], float))
+        print(f"[fk markers <- {fk_markers}]")
     np.savez(_cache_path(), **D)
     print(f"[cache -> {_cache_path()}]")
     return D
@@ -147,12 +155,12 @@ def _plot(D: dict) -> None:
     print(f"[fig -> {out_dir / 'xi_kappa_channels.pdf'}]")
 
 
-def main(ff_real: int, ff_nl: int, from_cache: bool) -> None:
+def main(ff_real: int, ff_nl: int, from_cache: bool, fk_markers=None) -> None:
     if from_cache and _cache_path().exists():
         D = dict(np.load(_cache_path(), allow_pickle=True))  # our own cache, safe
         print(f"[from cache {_cache_path()}]")
     else:
-        D = _compute(ff_real, ff_nl)
+        D = _compute(ff_real, ff_nl, fk_markers)
     _plot(D)
 
 
@@ -163,5 +171,8 @@ if __name__ == "__main__":
     ap.add_argument("--from-cache", action="store_true",
                     help="skip the MC and re-plot from outputs/appendix_mc_curve.npz "
                          "(for fast figure-style iteration)")
+    ap.add_argument("--fk-markers", type=Path, default=FK_MARKERS_DEFAULT,
+                    help="pooled FK Monte-Carlo markers npz (gamma, fk, err); "
+                         "default: analyses/mc_fk_complete/_markers_pooled.npz")
     a = ap.parse_args()
-    main(a.ff_real, a.ff_nl, a.from_cache)
+    main(a.ff_real, a.ff_nl, a.from_cache, a.fk_markers)

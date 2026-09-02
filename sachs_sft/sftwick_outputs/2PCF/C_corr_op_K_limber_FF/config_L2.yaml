@@ -1,24 +1,28 @@
+# Paths are relative to this folder since 2026-09-02: sft-wick resolves module and data
+# paths against the YAML directory, and scripts/run_FF_single.py changes into it before
+# running, so output and cache paths resolve here too. Values are otherwise unchanged
+# from the 2026-06 production run (absolute paths of that machine before this date).
 system:
   field:
     name: phi
     n_components: 3
   linear:
     type: explicit
-    R_time_module: /Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/scripts/D_callable.py
+    R_time_module: ../../../scripts/D_callable.py
     R_time_attr: response_R
     iso_R: true
   noise:
     kappa2:
       type: callable_module
-      module: /Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/scripts/kappa2_callable.py
+      module: ../../../scripts/kappa2_callable.py
       attr: kappa2
   vertices:
   - name: F
-    coupling_path: /Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/scripts/inputs/F_tensor.npy
+    coupling_path: ../../../scripts/inputs/F_tensor.npy
   nonlocal_vertices:
   - name: K
     order: 3
-    coupling_module: /Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/callables/kappa3_vertex/equal_time_limber/equal_time_limber_kappa3_callable.py
+    coupling_module: ../../../callables/kappa3_vertex/equal_time_limber/equal_time_limber_kappa3_callable.py
     coupling_attr: coupling_fn_batch
     coupling_vectorized: true
     equal_time: true
@@ -32,7 +36,7 @@ expand:
   collect_topology: true
   diag_R: true
   diag_C: false
-  cache_path: /Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/sftwick_outputs/2PCF/C_corr_op_K_limber_FF/.cache_expand_C_corr_op_K_limber_FF
+  cache_path: .cache_expand_C_corr_op_K_limber_FF
   n_jobs: 1
 propagators:
   t_max: 2360.0
@@ -40,8 +44,8 @@ propagators:
   homogeneity: rotation
   n_grid_cos: 32
   n_jobs: -1
-  cache_path: /Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/sftwick_outputs/2PCF/C_corr_op_K_limber_FF/.cache_propagators_C_corr_op_K_limber_FF
-  c_closed_form_module: /Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/callables/C_propagator/corr_op/corr_op_C_callable.py
+  cache_path: .cache_propagators_C_corr_op_K_limber_FF
+  c_closed_form_module: ../../../callables/C_propagator/corr_op/corr_op_C_callable.py
   c_closed_form_attr: C_fn_batch
   c_closed_form_only: true
   c_closed_form_vectorized: true
@@ -115,4 +119,4 @@ sweep:
   n_jobs: -1
 output:
 - type: npz
-  path: /Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/sftwick_outputs/2PCF/C_corr_op_K_limber_FF/xi_C_corr_op_K_limber_FF.npz
+  path: xi_C_corr_op_K_limber_FF.npz

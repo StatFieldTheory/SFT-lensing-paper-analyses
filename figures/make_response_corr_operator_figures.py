@@ -10,7 +10,7 @@ from scipy.ndimage import gaussian_filter, gaussian_filter1d
 
 
 ROOT = Path(__file__).resolve().parents[2]
-FIG_DIR = ROOT / "figures"
+FIG_DIR = Path(__file__).resolve().parent / "outputs"   # deployed by reproduce/deploy.py
 
 SACHS_SCRIPT_DIR = ROOT / "SFT-lensing-paper-analyses" / "sachs_sft" / "scripts"
 CORR_OP_DIR = ROOT / "SFT-lensing-paper-analyses" / "sachs_sft" / "callables" / "C_propagator" / "corr_op"

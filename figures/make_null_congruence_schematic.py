@@ -9,7 +9,7 @@ from matplotlib.patches import Circle, Ellipse, FancyArrowPatch
 
 
 ROOT = Path(__file__).resolve().parents[2]
-FIG_DIR = ROOT / "figures"
+FIG_DIR = Path(__file__).resolve().parent / "outputs"   # deployed by reproduce/deploy.py
 OUT_PDF = FIG_DIR / "null_geodesic_congruence.pdf"
 OUT_PNG = FIG_DIR / "null_geodesic_congruence.png"
 

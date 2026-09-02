@@ -26,7 +26,7 @@ from matplotlib import patheffects as pe
 from matplotlib.patches import FancyArrowPatch
 
 ROOT = Path(__file__).resolve().parents[2]
-FIGURES = ROOT / "figures"
+FIGURES = Path(__file__).resolve().parent / "outputs"   # deployed by reproduce/deploy.py
 
 # ----- muted schematic palette (cf. make_screen_basis_spin2_figure.py) -----
 INK = "#16202a"

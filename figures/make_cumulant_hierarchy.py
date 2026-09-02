@@ -22,7 +22,7 @@ import matplotlib.pyplot as plt
 from matplotlib.patches import FancyArrowPatch
 
 ROOT = Path(__file__).resolve().parents[2]
-FIGURES = ROOT / "figures"
+FIGURES = Path(__file__).resolve().parent / "outputs"   # orphan schematic, not in the paper
 
 # ----- muted schematic palette (cf. make_screen_basis_spin2_figure.py) -----
 INK = "#16202a"

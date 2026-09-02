@@ -26,8 +26,11 @@ import numpy as np
 from matplotlib.colors import SymLogNorm
 
 _HERE = Path(__file__).resolve().parent
-_NPZ = _HERE / "ell_band_decomp_results.npz"
-_FIGDIR = Path("/Users/zzhang/Documents/MyDrafts/STF_lensing/figures")
+# Converged cutoff (eight HIGH windows to ell = 15360, clipped at 85 arcmin), 2026-08-27;
+# the June cut1000 ell_band_decomp_results.npz next to this script is superseded.
+_NPZ = _HERE / "outputs" / "zeta_bands_cut15360_gmax85.npz"
+_FIGDIR = _HERE / "outputs"   # the paper copy is deployed by reproduce/deploy.py
+_FIGDIR.mkdir(parents=True, exist_ok=True)
 # Panels show the spin-0 channels (TTT, TTP) and, for the spin-2 sector, the
 # conjugate-helicity MODULUS channels Bmod=<Phi00 |Psi0|^2> and Dmod=<Psi0 |Psi0|^2>
 # that actually source the FK coupling (the all-+2 zeta_TPP/zeta_PPP are

@@ -76,6 +76,22 @@ def materialise_variant(table: Path | None, work_dir: Path,
             source.replace(marker, f'TABLE_PATH = Path(r"{table}")'))
 
     config = yaml.safe_load(base.read_text())
+    # The run folders write their configs with paths relative to the YAML folder
+    # (since 2026-09-02); the variant config lives elsewhere, so every inherited
+    # module and data path is made absolute here before anything is rewritten.
+    def _abs(p):
+        return p if Path(p).is_absolute() else str((base.parent / p).resolve())
+    sysd = config["system"]
+    sysd["linear"]["R_time_module"] = _abs(sysd["linear"]["R_time_module"])
+    sysd["noise"]["kappa2"]["module"] = _abs(sysd["noise"]["kappa2"]["module"])
+    for v in sysd.get("vertices", []):
+        if "coupling_path" in v:
+            v["coupling_path"] = _abs(v["coupling_path"])
+    for v in sysd.get("nonlocal_vertices", []):
+        if "coupling_module" in v:
+            v["coupling_module"] = _abs(v["coupling_module"])
+    if config.get("propagators", {}).get("c_closed_form_module"):
+        config["propagators"]["c_closed_form_module"] = _abs(config["propagators"]["c_closed_form_module"])
     if variant_callable is not None:
         for vertex in config["system"].get("nonlocal_vertices", []):
             if vertex.get("name") == "K":

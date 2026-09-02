@@ -106,13 +106,15 @@ import background as _bg
 # --- locate the project callables (corr_op propagator + kappa3 vertex) -------
 _SACHS_SFT = Path(__file__).resolve().parents[2]  # .../sachs_sft
 _CORR_OP_DIR = _SACHS_SFT / "callables" / "C_propagator" / "corr_op"
-_KAPPA3_DIR = _SACHS_SFT / "callables" / "kappa3_vertex" / "equal_time_limber"
+_KAPPA3_DIR = _SACHS_SFT / "callables" / "kappa3_vertex" / "equal_time_limber_cut15360_permaware"
 for _d in (_CORR_OP_DIR, _KAPPA3_DIR):
     if str(_d) not in sys.path:
         sys.path.insert(0, str(_d))
 
 import corr_op_C_callable as _corr_op  # noqa: E402  C_fn(n1, t1, n2, t2) -> (3,3)
-import equal_time_limber_kappa3_callable as _k3  # noqa: E402  coupling_fn -> (3,3,3)
+# Permutation-aware vertex at ell_max = 15360 since 2026-09-02 (was the cut1000
+# equal_time_limber_kappa3_callable); only a fresh Monte-Carlo run is affected.
+import perm_aware_kappa3_callable as _k3  # noqa: E402  coupling_fn -> (3,3,3)
 
 N_COMP: Final[int] = 3
 N_RAY: Final[int] = 2

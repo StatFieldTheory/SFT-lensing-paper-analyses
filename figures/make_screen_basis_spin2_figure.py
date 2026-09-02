@@ -10,7 +10,7 @@ from matplotlib.patches import Circle, FancyArrowPatch
 
 
 ROOT = Path(__file__).resolve().parents[2]
-FIG_DIR = ROOT / "figures"
+FIG_DIR = Path(__file__).resolve().parent / "outputs"   # deployed by reproduce/deploy.py
 
 INK = "#16202a"
 BLUE = "#2f6f9f"
