@@ -88,3 +88,21 @@ driver_field_emulators/note/*.toc
 !docs/agent_briefs/*.md
 docs/papers/
 docs/private/
+
+# Rendered figures produced by reproduce/regen_figure.py. They are rewritten on every
+# run and duplicate the deployed copies in the manuscript's figures/, whose md5 sums are
+# the contract in reproduce/deployed_md5.txt. Tracking them recreates the stale-twin
+# problem the 2026-09 reorganisation removed. The DATA under outputs/ stays tracked:
+# the npz intermediates cost minutes to hours to rebuild.
+figures/outputs/*.pdf
+figures/outputs/*.png
+sachs_sft/analyses/analysis1/outputs/*.pdf
+sachs_sft/analyses/analysis1/outputs/*.png
+sachs_sft/analyses/analysis3/outputs/*.pdf
+sachs_sft/analyses/analysis3/outputs/*.png
+sachs_sft/analyses/mc_sachs_2pt/figures/*.pdf
+sachs_sft/analyses/mc_sachs_2pt/figures/*.png
+sachs_sft/callables/kappa3_vertex/equal_time_limber/outputs/*.pdf
+sachs_sft/callables/kappa3_vertex/equal_time_limber/outputs/*.png
+sachs_sft/callables/kappa3_vertex/rebuild/outputs/*.pdf
+sachs_sft/callables/kappa3_vertex/rebuild/outputs/*.png
