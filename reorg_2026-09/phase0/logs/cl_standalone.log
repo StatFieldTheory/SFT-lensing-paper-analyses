@@ -1,0 +1,12 @@
+[harness] FK_NPZ = /Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/sftwick_outputs/2PCF/C_corr_op_K_limber_FK/xi_C_corr_op_K_limber_FK.npz
+[wigner-d self-test PASS: orthonormality 2/(2l+1) to machine prec.]
+gamma grid: 0.500..5000.0 arcmin (40 pts)
+
+=== Analysis 3 NLO C_ell breakdown (O0 / FF / FK), curved-sky ===
+kappa-kappa (d^l_{0,0}): D_ell^O0(peak)=2.532e-04  D_ell^full(peak)=2.536e-04  O0/PyCCL |ratio| median(l<=60)=0.990
+xi_plus (d^l_{2,2}): D_ell^O0(peak)=2.552e-04  D_ell^full(peak)=2.555e-04  O0/PyCCL |ratio| median(l<=60)=0.962
+xi_minus (d^l_{2,-2}): D_ell^O0(peak)=2.604e-04  D_ell^full(peak)=2.608e-04  O0/PyCCL |ratio| median(l<=60)=0.942
+kappa_gamma_t (d^l_{2,0}): D_ell^O0(peak)=2.707e-04  D_ell^full(peak)=2.711e-04  O0/PyCCL |ratio| median(l<=60)=0.970
+
+-> /private/tmp/claude-501/-Users-zzhang-Documents-MyDrafts-STF-lensing/58fd681a-480f-4860-a212-3d176f65b575/scratchpad/p0/env_pyccl/cl_standalone/analysis3_cl_O0_FF_FK.png
+[harness] OUTPUT /private/tmp/claude-501/-Users-zzhang-Documents-MyDrafts-STF-lensing/58fd681a-480f-4860-a212-3d176f65b575/scratchpad/p0/env_pyccl/cl_standalone/analysis3_cl_O0_FF_FK.pdf exists=True

@@ -1,0 +1,22 @@
+[harness] FK_NPZ = /Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/sftwick_outputs/2PCF/C_corr_op_K_limber_FK/xi_C_corr_op_K_limber_FK.npz
+
+=== Analysis 3 NLO breakdown (O0 / FF / FK) ===
+kappa-kappa:
+  O0 range = [-3.863e-07, +8.443e-04]  O0(0.5')=+8.4432e-04
+  FF range = [+5.774e-07, +2.010e-06]  FF(0.5')=+2.0102e-06  FF/O0(0.5')=+2.381e-03
+  FK range = [-1.324e-08, +4.288e-06]  FK(0.5')=+4.2877e-06  FK/O0(0.5')=+5.078e-03
+xi_plus:
+  O0 range = [-4.240e-07, +8.418e-04]  O0(0.5')=+8.4176e-04
+  FF range = [-1.010e-09, +1.297e-06]  FF(0.5')=+1.2974e-06  FF/O0(0.5')=+1.541e-03
+  FK range = [-1.322e-08, +4.288e-06]  FK(0.5')=+4.2878e-06  FK/O0(0.5')=+5.094e-03
+xi_minus:
+  O0 range = [+1.394e-08, +6.572e-05]  O0(0.5')=+2.4212e-08
+  FF range = [+9.804e-12, +9.538e-08]  FF(0.5')=+4.2273e-11  FF/O0(0.5')=+1.746e-03
+  FK range = [-3.551e-09, -9.894e-17]  FK(0.5')=-9.8940e-17  FK/O0(0.5')=-4.086e-09
+kappa_gamma_t:
+  O0 range = [+3.400e-09, +1.322e-04]  O0(0.5')=+5.6747e-06
+  FF range = [+2.523e-12, +2.157e-07]  FF(0.5')=+9.5810e-09  FF/O0(0.5')=+1.688e-03
+  FK range = [-7.614e-09, -7.312e-17]  FK(0.5')=-7.3117e-17  FK/O0(0.5')=-1.288e-11
+
+-> /private/tmp/claude-501/-Users-zzhang-Documents-MyDrafts-STF-lensing/58fd681a-480f-4860-a212-3d176f65b575/scratchpad/p0/env_pyccl/nlo_standalone/analysis3_nlo_O0_FF_FK.png
+[harness] OUTPUT /private/tmp/claude-501/-Users-zzhang-Documents-MyDrafts-STF-lensing/58fd681a-480f-4860-a212-3d176f65b575/scratchpad/p0/env_pyccl/nlo_standalone/analysis3_nlo_O0_FF_FK.pdf exists=True

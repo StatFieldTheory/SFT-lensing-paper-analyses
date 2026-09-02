@@ -1,0 +1,22 @@
+
+=== Analysis 1 Order-0: SFT corr_op (non-Limber) vs PyCCL FKEM ===
+kappa-kappa:
+  SFT  range = [-3.863e-07, +8.443e-04]  SFT(0.5')=+8.4432e-04
+  PyCCL range = [-3.547e-07, +8.462e-04]  PyCCL(0.5')=+8.4616e-04
+  SFT/PyCCL @ small gamma = 0.9978, 0.9978, 0.9978
+xi_plus:
+  SFT  range = [-4.240e-07, +8.418e-04]  SFT(0.5')=+8.4176e-04
+  PyCCL range = [-3.209e-07, +8.462e-04]  PyCCL(0.5')=+8.4616e-04
+  SFT/PyCCL @ small gamma = 0.9948, 0.9948, 0.9947
+xi_minus:
+  SFT  range = [+1.394e-08, +6.572e-05]  SFT(0.5')=+2.4212e-08
+  PyCCL range = [+2.157e-08, +6.639e-05]  PyCCL(0.5')=+2.4010e-08
+  SFT/PyCCL @ small gamma = 1.0084, 1.0083, 1.0080
+kappa_gamma_t:
+  SFT  range = [+3.400e-09, +1.322e-04]  SFT(0.5')=+5.6747e-06
+  PyCCL range = [+6.724e-09, +1.324e-04]  PyCCL(0.5')=+5.6752e-06
+  SFT/PyCCL @ small gamma = 0.9999, 0.9998, 0.9997
+
+-> /private/tmp/claude-501/-Users-zzhang-Documents-MyDrafts-STF-lensing/58fd681a-480f-4860-a212-3d176f65b575/scratchpad/p0/env_pyccl/analysis1/analysis1_O0_vs_pyccl_fkem.png
+-> /private/tmp/claude-501/-Users-zzhang-Documents-MyDrafts-STF-lensing/58fd681a-480f-4860-a212-3d176f65b575/scratchpad/p0/env_pyccl/analysis1/analysis1_O0_vs_pyccl_fkem.pdf
+[harness] OUTPUT /private/tmp/claude-501/-Users-zzhang-Documents-MyDrafts-STF-lensing/58fd681a-480f-4860-a212-3d176f65b575/scratchpad/p0/env_pyccl/analysis1/analysis1_O0_vs_pyccl_fkem.pdf exists=True

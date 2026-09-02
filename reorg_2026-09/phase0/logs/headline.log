@@ -1,0 +1,13 @@
+           block  sigma    n           MC  MC/exact   MC/ana
+   base 20260827    8.0   32  1.56986e-05    1.0097   0.9826
+   base 20260827    4.0   32  1.58965e-05    1.0083   0.9950
+  base 314159001    8.0   32  1.55032e-05    0.9972   0.9703
+  base 314159001    4.0   32  1.56349e-05    0.9917   0.9786
+   base 20260828    8.0   24  1.55181e-05    0.9981   0.9713
+   base 20260828    4.0   24  1.58742e-05    1.0068   0.9936
+
+POOLED sigma= 8.0  n=88  MC=1.55783e-05 +/- 3.96e-08   MC/exact=1.0020 +/- 0.0026   MC/analytic=0.9750 +/- 0.0025
+POOLED sigma= 4.0  n=88  MC=1.57953e-05 +/- 5.95e-08   MC/exact=1.0018 +/- 0.0038   MC/analytic=0.9886 +/- 0.0037
+
+POOLED sigma_lambda -> 0 (paired, 88 seeds):  MC / analytic FK = 1.0022 +/- 0.0056
+  exact expectation, same extrapolation = 1.0005
