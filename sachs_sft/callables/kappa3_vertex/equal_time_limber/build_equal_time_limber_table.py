@@ -88,11 +88,7 @@ _HERE = Path(__file__).resolve().parent
 OUTPUT = _HERE / "equal_time_limber_kappa3_z5covgrid16_omega0316_h06711.npz"
 
 # Fallback L2 grid if --l2-npz is not given (the archived deployed L2 NPZ).
-_ARCHIVED_L2 = (
-    Path("/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/_archive/"
-         "canoes_pipeline/inputs/l2_callables_2026_05_26/"
-         "windowed_squeezed_kappa3_lmax1000_z5_covgrid16_omega0316_h06711_physMpc.npz")
-)
+_ARCHIVED_L2 = Path(__file__).resolve().parent / "inputs" / "l2_lambda_grid_z5covgrid16.npz"
 
 
 def _load_l2_lambda_grid_h(l2_npz: Path, h: float) -> tuple[np.ndarray, np.ndarray]:

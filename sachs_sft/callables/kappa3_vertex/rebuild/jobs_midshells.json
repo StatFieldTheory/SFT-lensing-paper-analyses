@@ -1,0 +1,44 @@
+[
+ {
+  "name": "low_mid",
+  "out": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/callables/kappa3_vertex/rebuild/products/pieces/low_collapsed_mid.npz",
+  "log": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/callables/kappa3_vertex/rebuild/logs/low_collapsed_mid.log",
+  "argv": [
+   "/Users/zzhang/projects/angular_statistics/canoes/.venv/bin/python",
+   "-u",
+   "build_low.py",
+   "--triples-npz",
+   "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/callables/kappa3_vertex/rebuild/products/triples_collapsed_only.npz",
+   "--l2-npz",
+   "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/callables/kappa3_vertex/rebuild/products/_l2_lambda_grid_midpoints.npz",
+   "--out",
+   "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/callables/kappa3_vertex/rebuild/products/pieces/low_collapsed_mid.npz"
+  ]
+ },
+ {
+  "name": "win_mid",
+  "out": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/callables/kappa3_vertex/rebuild/products/pieces/win_collapsed_mid_00060_01000.npz",
+  "log": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/callables/kappa3_vertex/rebuild/logs/win_collapsed_mid.log",
+  "argv": [
+   "/Users/zzhang/projects/angular_statistics/canoes/.venv/bin/python",
+   "-u",
+   "build_band.py",
+   "--triples-npz",
+   "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/callables/kappa3_vertex/rebuild/products/triples_collapsed_only.npz",
+   "--l2-npz",
+   "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/callables/kappa3_vertex/rebuild/products/_l2_lambda_grid_midpoints.npz",
+   "--lo",
+   "60",
+   "--hi",
+   "1000",
+   "--n-ell",
+   "96",
+   "--b-model",
+   "internal_tree",
+   "--chunk-rows",
+   "64",
+   "--out",
+   "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/callables/kappa3_vertex/rebuild/products/pieces/win_collapsed_mid_00060_01000.npz"
+  ]
+ }
+]

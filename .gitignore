@@ -75,3 +75,7 @@ driver_field_emulators/note/*.fls
 driver_field_emulators/note/*.out
 driver_field_emulators/note/*.toc
 **/.benchmarks/
+
+# vertex-rebuild intermediates (octave-band pieces, hours of canoes builds; regenerable, listed with md5 in reorg_2026-09/dfe_manifest_2026-09-02.txt)
+**/products/pieces/
+**/_ff_caches/
