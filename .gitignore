@@ -106,3 +106,18 @@ sachs_sft/callables/kappa3_vertex/equal_time_limber/outputs/*.pdf
 sachs_sft/callables/kappa3_vertex/equal_time_limber/outputs/*.png
 sachs_sft/callables/kappa3_vertex/rebuild/outputs/*.pdf
 sachs_sft/callables/kappa3_vertex/rebuild/outputs/*.png
+
+# n_phi=512 vertex rebuild, 2026-09-06. Same convention as products/pieces/ above:
+# the octave-band intermediates are ~26 MB of regenerable canoes output (4.5 h at
+# 8-way), excluded and recorded with md5 in reorg_2026-09/nphi512_manifest_2026-09-06.txt.
+# The assembled table, the folds and the multi-z product ARE tracked: they are small
+# and they are what every downstream number reads.
+**/products/pieces_nphi512/band_tree_*.npz
+**/products/pieces_nphi512/ladder/table_tree_np512_cut*.npz
+# but keep the folds: they are 13 KB each and are the measured ladder rungs
+!**/products/pieces_nphi512/ladder/table_tree_np512_cut*_xi.npz
+**/products/pieces_nphi512/_variant_*/
+**/products/pieces_nphi512/ladder/_variant_*/
+# multiz_sweep.py's scratch area; the tracked multi-z deliverable is
+# pieces_nphi512/multiz_fk_np512_6planes.npz
+**/outputs/_multiz_scratch/

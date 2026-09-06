@@ -12,6 +12,15 @@ python reproduce/check_figures.py           # compare each with the deployed fig
 python reproduce/check_numbers.py           # recompute every quantitative claim
 ```
 
+> **2026-09-06.** The kappa3 vertex has been rebuilt at `n_phi = 512` with the
+> `zeta_Bmod` pair-phase fix, and it passes an acceptance test the deployed table
+> fails (864/864 cells). The deployed table is unchanged and everything below still
+> reproduces byte-for-byte, but the numbers it produces are known to be off: FK/Order-0
+> at 0.5' goes 2.31 -> 1.74 per cent. Read
+> [HANDOFF_2026-09-06_nphi512_vertex_rebuild.md](HANDOFF_2026-09-06_nphi512_vertex_rebuild.md)
+> before quoting any FK number. `check_numbers.py` verifies claim-vs-product
+> agreement, not product convergence, so it passes on both tables.
+
 `regen_figure.py --all` takes about 90 seconds. `check_figures.py` prints
 `IDENTICAL(raw)` for all 17: the deployed PDFs are byte-for-byte what these commands
 produce, and `reproduce/deployed_md5.txt` is that contract.

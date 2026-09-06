@@ -1,0 +1,17 @@
+[band] (240, 480]  model=tree  n_ell=96  n_phi=512  triples=314
+[band]   rows 0-24 (1/14) at 67s
+[band]   rows 24-48 (2/14) at 138s
+[band]   rows 48-72 (3/14) at 284s
+[band]   rows 72-96 (4/14) at 710s
+[band]   rows 96-120 (5/14) at 1048s
+[band]   rows 120-144 (6/14) at 1260s
+[band]   rows 144-168 (7/14) at 1384s
+[band]   rows 168-192 (8/14) at 1448s
+[band]   rows 192-216 (9/14) at 1516s
+[band]   rows 216-240 (10/14) at 1695s
+[band]   rows 240-264 (11/14) at 2073s
+[band]   rows 264-288 (12/14) at 2351s
+[band]   rows 288-312 (13/14) at 2565s
+[band]   rows 312-314 (14/14) at 2585s
+[band] all rows in 2584.9s
+[band] total 2584.9s -> band_tree_extra_00240_00480_np512.npz

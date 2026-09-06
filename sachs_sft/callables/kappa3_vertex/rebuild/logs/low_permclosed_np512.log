@@ -1,0 +1,4 @@
+[low] triples=2142  shells=16  ell_cut=60  Nmax=384  measure=lambda
+[low] four channels in 224.4s
+[low] Bmod/Dmod in 43.7s
+[low] total 268.2s -> /Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/callables/kappa3_vertex/rebuild/products/pieces_nphi512/low_permclosed_r4_np512.npz (1.7 MB)
