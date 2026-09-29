@@ -1,0 +1,69 @@
+{
+  "angle_config": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/sftwick_outputs/2PCF/C_corr_op_O0/config_L2.yaml",
+  "angle_config_sha256": "94f82602970b3a20ae5df41c8e03bacb2fba40812d17b627e6c7a65651c8958a",
+  "angular_spectra": "CCL convergence spectrum with exact CCL tracer angular factors for shear/cross",
+  "background": "canoes matter-plus-Lambda input arrays in physical Mpc",
+  "chi_source_mpc": 7971.183639083942,
+  "convergence_der_angles": 1,
+  "cosmology": {
+    "Neff": 0.0,
+    "Omega_b": 0.049003585255058775,
+    "Omega_g": 0.0,
+    "Omega_m": 0.3160919980475834,
+    "h": 0.6711,
+    "m_nu": 0.0,
+    "n_s": 0.97,
+    "sigma8_label_of_input_table": 0.81
+  },
+  "elapsed_seconds": 9.305630291928537,
+  "growth": "canoes.cosmo.growth.growth_D, normalized at z=0",
+  "integration": "FKEM for ell <= l_limber and Limber for ell > l_limber",
+  "kernel": "CCL get_kappa_kernel restricted to shared chi_min",
+  "optical_order": "linear projection, no Sachs F or driving-cumulant K insertions",
+  "power": "same tabulated z=0 linear CAMB power on both sides, scaled by D(a)^2",
+  "power_extrapolation": "CCL Pk2D defaults, low-k order 1, high-k order 2",
+  "power_k_range_inverse_mpc": [
+    6.711e-05,
+    138.494907
+  ],
+  "power_table": "/Users/zzhang/projects/angular_statistics/canoes/examples/data/PCAMB_pyccl_stf_fid_z0.txt",
+  "power_table_sha256": "2e5600748706ff4b67c99df7f9331b2a6ee1fa8623324e25dde836681f8f9776",
+  "power_table_units": {
+    "ccl_P": "Mpc^3",
+    "ccl_k": "1/Mpc",
+    "input_P": "(Mpc/h)^3",
+    "input_k": "h/Mpc"
+  },
+  "pyccl_version": "3.3.1",
+  "radial_support_mpc": [
+    50.0,
+    7971.183639083942
+  ],
+  "real_space_transform": "direct Legendre/Wigner-d sums, no flat-sky approximation",
+  "settings": {
+    "angle_file": null,
+    "background_nz": 5001,
+    "background_zmax": 1200.0,
+    "canoes_root": "/Users/zzhang/projects/angular_statistics/canoes",
+    "chi_min": 50.0,
+    "ell_max": 5000,
+    "fkem_nchi": 4096,
+    "kernel_samples": 4096,
+    "l_limber": 800,
+    "out": "sachs_sft/analyses/analysis1/r1_aligned/ccl_n4096.npz",
+    "power_na": 256,
+    "power_table": "/Users/zzhang/projects/angular_statistics/canoes/examples/data/PCAMB_pyccl_stf_fid_z0.txt",
+    "probe": false,
+    "taper_fraction": 0.2,
+    "z_s": 5.0
+  },
+  "shear_der_angles": 2,
+  "source_hashes": {
+    "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/analysis1/r1_aligned/ccl_reference.py": "88f6cd45a33f001f4e5e48333842a30f11a2f3adef93fd68d88e931c09a11c7e",
+    "/Users/zzhang/projects/angular_statistics/canoes/src/canoes/cosmo/growth.py": "c931cca5f6d66b4b3082a6a0a11924604d12583219bbe31ca8df804cd371e08c",
+    "/Users/zzhang/projects/angular_statistics/canoes/src/canoes/cosmo/lightcone.py": "69f57f5e95545c094a4ad95e70a603635f5a886178df5e82703191a849fb3d02"
+  },
+  "tracer_der_bessel": -1,
+  "warnings": [],
+  "z_s": 5.0
+}

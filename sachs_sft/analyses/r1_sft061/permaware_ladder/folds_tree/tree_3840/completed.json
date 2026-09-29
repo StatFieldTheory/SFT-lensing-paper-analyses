@@ -1,0 +1,15 @@
+{
+  "elapsed_seconds": 63.96466270799283,
+  "result": {
+    "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/permaware_ladder/folds_tree/tree_3840/xi_tree_3840.npz",
+    "sha256": "bc7d3558ab7d951594c4ad54be428d8fe69deb68c0a7cda352c105316298b631",
+    "bytes": 2794
+  },
+  "framework": {
+    "version": "0.6.1",
+    "commit": "6945815ad9e6efa2b9e768891d6bf92b1214670d",
+    "source": "/Users/zzhang/projects/SFT/sft-wick",
+    "python": "/opt/homebrew/Caskroom/miniconda/base/envs/sft-wick/bin/python"
+  },
+  "source_mode": "true-redshift"
+}

@@ -1,0 +1,15 @@
+{
+  "elapsed_seconds": 61.81051820900757,
+  "result": {
+    "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/permaware_ladder/folds_bihalofit/bihalofit_1920/xi_bihalofit_1920.npz",
+    "sha256": "98bece620962be2740bf08d6156065b0def0046ac334795f2c08a6269a363c46",
+    "bytes": 2794
+  },
+  "framework": {
+    "version": "0.6.1",
+    "commit": "6945815ad9e6efa2b9e768891d6bf92b1214670d",
+    "source": "/Users/zzhang/projects/SFT/sft-wick",
+    "python": "/opt/homebrew/Caskroom/miniconda/base/envs/sft-wick/bin/python"
+  },
+  "source_mode": "true-redshift"
+}

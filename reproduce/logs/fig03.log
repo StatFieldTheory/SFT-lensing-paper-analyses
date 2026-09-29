@@ -2,10 +2,10 @@
 gamma grid: 0.500..5000.0 arcmin (40 pts)
 
 === Analysis 3 NLO C_ell breakdown (O0 / FF / FK), curved-sky ===
-kappa-kappa (d^l_{0,0}): D_ell^O0(peak)=2.532e-04  D_ell^full(peak)=2.590e-04  O0/PyCCL |ratio| median(l<=60)=0.990
-xi_plus (d^l_{2,2}): D_ell^O0(peak)=2.552e-04  D_ell^full(peak)=2.606e-04  O0/PyCCL |ratio| median(l<=60)=0.962
-xi_minus (d^l_{2,-2}): D_ell^O0(peak)=2.604e-04  D_ell^full(peak)=2.626e-04  O0/PyCCL |ratio| median(l<=60)=0.942
-kappa_gamma_t (d^l_{2,0}): D_ell^O0(peak)=2.707e-04  D_ell^full(peak)=2.682e-04  O0/PyCCL |ratio| median(l<=60)=0.970
+kappa-kappa (d^l_{0,0}): D_ell^O0(peak)=2.540e-04  D_ell^full(peak)=2.585e-04  O0/PyCCL |ratio| median(l<=60)=1.008
+xi_plus (d^l_{2,2}): D_ell^O0(peak)=2.540e-04  D_ell^full(peak)=2.566e-04  O0/PyCCL |ratio| median(l<=60)=0.990
+xi_minus (d^l_{2,-2}): D_ell^O0(peak)=2.611e-04  D_ell^full(peak)=2.642e-04  O0/PyCCL |ratio| median(l<=60)=0.994
+kappa_gamma_t (d^l_{2,0}): D_ell^O0(peak)=2.627e-04  D_ell^full(peak)=2.595e-04  O0/PyCCL |ratio| median(l<=60)=0.999
 
 -> /Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/analysis3/outputs/analysis3_cl_O0_FF_FK.png
 

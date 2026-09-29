@@ -1,0 +1,317 @@
+{
+  "purpose": "Preserve deployed figures, affected generator outputs, pre-revision manuscript, and numerical records before the consistent R1 replacement. No originals removed.",
+  "files": [
+    {
+      "source": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/reproduce/deployed_md5.txt",
+      "archived": "paper_snapshot/SFT-lensing-paper-analyses/reproduce/deployed_md5.txt",
+      "sha256": "6cba366cd6db9ee1f3e4d3a13487f0a18bc94b07064a25adb3c9ef7157619217",
+      "bytes": 1104
+    },
+    {
+      "source": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/reproduce/logs/fig01.log",
+      "archived": "paper_snapshot/SFT-lensing-paper-analyses/reproduce/logs/fig01.log",
+      "sha256": "a364ff150df52d3ca3b1ce6c90d5d525bea77939ec1169d689c5ef2883196884",
+      "bytes": 1138
+    },
+    {
+      "source": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/reproduce/logs/fig02.log",
+      "archived": "paper_snapshot/SFT-lensing-paper-analyses/reproduce/logs/fig02.log",
+      "sha256": "514a1bc7bbedbcf6cae809f454674aa5c919a5fc98083a980b7b1b2df0bd7a12",
+      "bytes": 1164
+    },
+    {
+      "source": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/reproduce/logs/fig03.log",
+      "archived": "paper_snapshot/SFT-lensing-paper-analyses/reproduce/logs/fig03.log",
+      "sha256": "b4106653b3e708c985137625e8494162b2f180473c8553ea423400489a130256",
+      "bytes": 792
+    },
+    {
+      "source": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/reproduce/logs/fig04.log",
+      "archived": "paper_snapshot/SFT-lensing-paper-analyses/reproduce/logs/fig04.log",
+      "sha256": "294af85a004fe66e73359ec0aa06a1b853855ebc9b1e8f6755280fdfdf76c739",
+      "bytes": 374
+    },
+    {
+      "source": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/reproduce/logs/fig05.log",
+      "archived": "paper_snapshot/SFT-lensing-paper-analyses/reproduce/logs/fig05.log",
+      "sha256": "810d19e3097c90864419658ddd9de93a364a10e9d25fd5cfba450703c51b5ad9",
+      "bytes": 214
+    },
+    {
+      "source": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/reproduce/logs/fig06.log",
+      "archived": "paper_snapshot/SFT-lensing-paper-analyses/reproduce/logs/fig06.log",
+      "sha256": "e836180cb1a8406568e62589cf6ea8aa47a02d5f84e9ba406a4c141445bdb3ab",
+      "bytes": 306
+    },
+    {
+      "source": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/reproduce/logs/fig07.log",
+      "archived": "paper_snapshot/SFT-lensing-paper-analyses/reproduce/logs/fig07.log",
+      "sha256": "d7c129fbe67d7a071cf0970d03a9b3eea6fa1fc7903c91007126269db91b76a3",
+      "bytes": 196
+    },
+    {
+      "source": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/reproduce/logs/fig17.log",
+      "archived": "paper_snapshot/SFT-lensing-paper-analyses/reproduce/logs/fig17.log",
+      "sha256": "2b179d0fe3eadbc93a55a5b377ed9cfac6e893dcaccab604b11103b10d6f5926",
+      "bytes": 312
+    },
+    {
+      "source": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/reproduce/numbers.json",
+      "archived": "paper_snapshot/SFT-lensing-paper-analyses/reproduce/numbers.json",
+      "sha256": "7773b4642e880bfda079133433be2d40fe73b67e48fa1988ded548b0214bb7e4",
+      "bytes": 11159
+    },
+    {
+      "source": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/analysis1/outputs/analysis1_O0_vs_pyccl_fkem.pdf",
+      "archived": "paper_snapshot/SFT-lensing-paper-analyses/sachs_sft/analyses/analysis1/outputs/analysis1_O0_vs_pyccl_fkem.pdf",
+      "sha256": "ab5cae2724f071052a6c03ceeb95954adc64dc4583dca7b0992bae8adaf8dfa7",
+      "bytes": 42722
+    },
+    {
+      "source": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/analysis1/outputs/analysis1_O0_vs_pyccl_fkem.png",
+      "archived": "paper_snapshot/SFT-lensing-paper-analyses/sachs_sft/analyses/analysis1/outputs/analysis1_O0_vs_pyccl_fkem.png",
+      "sha256": "9b10a1a01baa4766aeb5499b76e925b32e2378508f68212f7a4f91586368ebe9",
+      "bytes": 418828
+    },
+    {
+      "source": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/analysis3/outputs/analysis3_cl_O0_FF_FK.pdf",
+      "archived": "paper_snapshot/SFT-lensing-paper-analyses/sachs_sft/analyses/analysis3/outputs/analysis3_cl_O0_FF_FK.pdf",
+      "sha256": "e2d6c3c82acfbe9ae86fac28f938b4f64d07bba8277f66f4badfed5cf75ab588",
+      "bytes": 49028
+    },
+    {
+      "source": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/analysis3/outputs/analysis3_cl_O0_FF_FK.png",
+      "archived": "paper_snapshot/SFT-lensing-paper-analyses/sachs_sft/analyses/analysis3/outputs/analysis3_cl_O0_FF_FK.png",
+      "sha256": "a74f43870a87f70be3018760f15d9beac2dc11abec6153a385a27f63cfef84e0",
+      "bytes": 552254
+    },
+    {
+      "source": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/analysis3/outputs/analysis3_nlo_O0_FF_FK.pdf",
+      "archived": "paper_snapshot/SFT-lensing-paper-analyses/sachs_sft/analyses/analysis3/outputs/analysis3_nlo_O0_FF_FK.pdf",
+      "sha256": "9f96ba4080e8d0236269e6577013637087ef0b43cacea1e03709f438890b5791",
+      "bytes": 49166
+    },
+    {
+      "source": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/analysis3/outputs/analysis3_nlo_O0_FF_FK.png",
+      "archived": "paper_snapshot/SFT-lensing-paper-analyses/sachs_sft/analyses/analysis3/outputs/analysis3_nlo_O0_FF_FK.png",
+      "sha256": "bf9ba64b025110f7ca2807386e56bae8cbc90874a40602f114face6effd50343",
+      "bytes": 490923
+    },
+    {
+      "source": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/analysis3/outputs/cl_EB_polarization.pdf",
+      "archived": "paper_snapshot/SFT-lensing-paper-analyses/sachs_sft/analyses/analysis3/outputs/cl_EB_polarization.pdf",
+      "sha256": "ca9c12c7a8b087da3a3a4c6bfd62dc2d0362520ae2e546c7db66db3be64ddec4",
+      "bytes": 29257
+    },
+    {
+      "source": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/analysis3/outputs/cl_EB_polarization.png",
+      "archived": "paper_snapshot/SFT-lensing-paper-analyses/sachs_sft/analyses/analysis3/outputs/cl_EB_polarization.png",
+      "sha256": "9224eb2fa63a869bfe924b8b525522eb71d7a6aaa9532074dd77fa5ba9d010e9",
+      "bytes": 171572
+    },
+    {
+      "source": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/analysis3/outputs/multiz_kappa_xi_cl_2x5.pdf",
+      "archived": "paper_snapshot/SFT-lensing-paper-analyses/sachs_sft/analyses/analysis3/outputs/multiz_kappa_xi_cl_2x5.pdf",
+      "sha256": "178e21b57290fadbc452168965e3afe405df3ef663ea1dbcfb8d71dade4903c3",
+      "bytes": 53842
+    },
+    {
+      "source": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/analysis3/outputs/multiz_kappa_xi_cl_2x5.png",
+      "archived": "paper_snapshot/SFT-lensing-paper-analyses/sachs_sft/analyses/analysis3/outputs/multiz_kappa_xi_cl_2x5.png",
+      "sha256": "4767caa92df484af63957c49d5d7ebbbd51b887f130868f443f4936be3021512",
+      "bytes": 613881
+    },
+    {
+      "source": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/mc_sachs_2pt/figures/xi_kappa_channels.pdf",
+      "archived": "paper_snapshot/SFT-lensing-paper-analyses/sachs_sft/analyses/mc_sachs_2pt/figures/xi_kappa_channels.pdf",
+      "sha256": "e4bdfc69541254635d13df67a10251934480baf68dcb789ec06369e636d19de8",
+      "bytes": 31741
+    },
+    {
+      "source": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/mc_sachs_2pt/figures/xi_kappa_channels.png",
+      "archived": "paper_snapshot/SFT-lensing-paper-analyses/sachs_sft/analyses/mc_sachs_2pt/figures/xi_kappa_channels.png",
+      "sha256": "8ecf10ab8d4ccbc92c2197c9980bf7d4f3a8cdc234ea389d3c442dbf369293a9",
+      "bytes": 117766
+    },
+    {
+      "source": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/callables/kappa3_vertex/equal_time_limber/outputs/zeta_driving_field_slices_draft.pdf",
+      "archived": "paper_snapshot/SFT-lensing-paper-analyses/sachs_sft/callables/kappa3_vertex/equal_time_limber/outputs/zeta_driving_field_slices_draft.pdf",
+      "sha256": "b78c39fad9350fdc5fc6f16d165aa88a9d559dbac428f36d322d30c8242aa6c3",
+      "bytes": 117968
+    },
+    {
+      "source": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/callables/kappa3_vertex/equal_time_limber/outputs/zeta_driving_field_slices_draft.png",
+      "archived": "paper_snapshot/SFT-lensing-paper-analyses/sachs_sft/callables/kappa3_vertex/equal_time_limber/outputs/zeta_driving_field_slices_draft.png",
+      "sha256": "bea86185bf5bdd4301dd618b3c6de8244b46399da0edf8ef0272819761a7be95",
+      "bytes": 238986
+    },
+    {
+      "source": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/callables/kappa3_vertex/rebuild/outputs/fk_cutoff_convergence.pdf",
+      "archived": "paper_snapshot/SFT-lensing-paper-analyses/sachs_sft/callables/kappa3_vertex/rebuild/outputs/fk_cutoff_convergence.pdf",
+      "sha256": "47fb7f575912d6063c205a7b08507d86c010ad789d7ad2bcd3ddb17c80e31cfb",
+      "bytes": 26356
+    },
+    {
+      "source": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/callables/kappa3_vertex/rebuild/outputs/fk_cutoff_convergence.png",
+      "archived": "paper_snapshot/SFT-lensing-paper-analyses/sachs_sft/callables/kappa3_vertex/rebuild/outputs/fk_cutoff_convergence.png",
+      "sha256": "b1bac088ef3806f9717ba7085da7a02726cb8fe2c0ea818a7189a38219a52bae",
+      "bytes": 80920
+    },
+    {
+      "source": "/Users/zzhang/Documents/MyDrafts/STF_lensing/figures/FeynDiag_2pt_order2.pdf",
+      "archived": "paper_snapshot/figures/FeynDiag_2pt_order2.pdf",
+      "sha256": "ca1a528a94ae7bc2c81af672f3394cb8f43562d46cafdb4db17910abf139e284",
+      "bytes": 26545
+    },
+    {
+      "source": "/Users/zzhang/Documents/MyDrafts/STF_lensing/figures/FeynDiag_3pt_order1.pdf",
+      "archived": "paper_snapshot/figures/FeynDiag_3pt_order1.pdf",
+      "sha256": "76684a837b090c0a9a0e04b63b2c0213975c7b67241a31e407b2d1cbdf5a6f87",
+      "bytes": 25861
+    },
+    {
+      "source": "/Users/zzhang/Documents/MyDrafts/STF_lensing/figures/analysis1_O0_vs_pyccl.pdf",
+      "archived": "paper_snapshot/figures/analysis1_O0_vs_pyccl.pdf",
+      "sha256": "e2e5037fe1b20a13fa96346e98d496eeaba3a91808b41cf31ec3d7bebec2a4f3",
+      "bytes": 42722
+    },
+    {
+      "source": "/Users/zzhang/Documents/MyDrafts/STF_lensing/figures/analysis3_NLO_FFFK.pdf",
+      "archived": "paper_snapshot/figures/analysis3_NLO_FFFK.pdf",
+      "sha256": "0558cc2429e46bf4327d4ab3264e0d7e990df5ee7f34cdb79e3edf2256797b39",
+      "bytes": 49166
+    },
+    {
+      "source": "/Users/zzhang/Documents/MyDrafts/STF_lensing/figures/analysis3_cl_full_vs_O0.pdf",
+      "archived": "paper_snapshot/figures/analysis3_cl_full_vs_O0.pdf",
+      "sha256": "3fd57639e1d7cc82c2dccd07555dc3a0a602c0d4da1c47ce80e48631c6469f6c",
+      "bytes": 49028
+    },
+    {
+      "source": "/Users/zzhang/Documents/MyDrafts/STF_lensing/figures/appendix_mc_workflow.pdf",
+      "archived": "paper_snapshot/figures/appendix_mc_workflow.pdf",
+      "sha256": "4842ea9fe97284227d21c6253c2e14a0feae2f3fb8777614d6d44b552d0087ca",
+      "bytes": 31741
+    },
+    {
+      "source": "/Users/zzhang/Documents/MyDrafts/STF_lensing/figures/cl_EB_polarization.pdf",
+      "archived": "paper_snapshot/figures/cl_EB_polarization.pdf",
+      "sha256": "290756bf43ab65de8f509d7cca6e0817ee4656804db05049b28def37f6526180",
+      "bytes": 29257
+    },
+    {
+      "source": "/Users/zzhang/Documents/MyDrafts/STF_lensing/figures/corr_operator_slices_draft.pdf",
+      "archived": "paper_snapshot/figures/corr_operator_slices_draft.pdf",
+      "sha256": "1f9a96cf602ec355d19a7f10f1faf347a5221bbea99052ad68c44684abfda97a",
+      "bytes": 172672
+    },
+    {
+      "source": "/Users/zzhang/Documents/MyDrafts/STF_lensing/figures/cosmology_coord_maps.pdf",
+      "archived": "paper_snapshot/figures/cosmology_coord_maps.pdf",
+      "sha256": "859197d171dddbf0a99d7a43556683f96d597859b619f56b5e709dc7b7c64d6b",
+      "bytes": 21032
+    },
+    {
+      "source": "/Users/zzhang/Documents/MyDrafts/STF_lensing/figures/driving_field_portrait.pdf",
+      "archived": "paper_snapshot/figures/driving_field_portrait.pdf",
+      "sha256": "bac86cae4f8ffa95d22e54704cb4dfe505decd5e0841113911bb63f940bcd7b0",
+      "bytes": 1976035
+    },
+    {
+      "source": "/Users/zzhang/Documents/MyDrafts/STF_lensing/figures/fk_cutoff_convergence.pdf",
+      "archived": "paper_snapshot/figures/fk_cutoff_convergence.pdf",
+      "sha256": "2aab229104c3d797238273dd1df0b1dbbf17c1b6c6716b6b16e3582d7bebbae7",
+      "bytes": 26356
+    },
+    {
+      "source": "/Users/zzhang/Documents/MyDrafts/STF_lensing/figures/multiz_kappa_xi_cl.pdf",
+      "archived": "paper_snapshot/figures/multiz_kappa_xi_cl.pdf",
+      "sha256": "7a398f1fde9d6e08cb2e5c5d88baf2ec20d572fc866fb87efe589796aa9071cc",
+      "bytes": 53842
+    },
+    {
+      "source": "/Users/zzhang/Documents/MyDrafts/STF_lensing/figures/null_geodesic_congruence.pdf",
+      "archived": "paper_snapshot/figures/null_geodesic_congruence.pdf",
+      "sha256": "2a6868721130fdeffb32472174ea9496ad9b1f9ef7fef0dc2bd6b9e6acf4d7ba",
+      "bytes": 15252
+    },
+    {
+      "source": "/Users/zzhang/Documents/MyDrafts/STF_lensing/figures/response_operator_draft.pdf",
+      "archived": "paper_snapshot/figures/response_operator_draft.pdf",
+      "sha256": "3d8cba8c50cdc149b651d9772eed5ac75ca348f8bc6a7d0946c43b61edd27e6b",
+      "bytes": 39540
+    },
+    {
+      "source": "/Users/zzhang/Documents/MyDrafts/STF_lensing/figures/screen_basis_spin2_pattern.pdf",
+      "archived": "paper_snapshot/figures/screen_basis_spin2_pattern.pdf",
+      "sha256": "af91b4474341d234aea9999db065314266f63390d371d861fa135cb8408d82e0",
+      "bytes": 117102
+    },
+    {
+      "source": "/Users/zzhang/Documents/MyDrafts/STF_lensing/figures/selection_rule_schematic.pdf",
+      "archived": "paper_snapshot/figures/selection_rule_schematic.pdf",
+      "sha256": "b9b4bf216d106228fc2a024e2fdfdcf8d3c06c2603539da82e32e912a23741e6",
+      "bytes": 51575
+    },
+    {
+      "source": "/Users/zzhang/Documents/MyDrafts/STF_lensing/figures/zeta_driving_field_slices_draft.pdf",
+      "archived": "paper_snapshot/figures/zeta_driving_field_slices_draft.pdf",
+      "sha256": "8c7930af1dcd7266fa1d5e4fef30b28f89e1b36e240a5db6407d0c5fb20a939f",
+      "bytes": 117968
+    },
+    {
+      "source": "/Users/zzhang/Documents/MyDrafts/STF_lensing/main.pdf",
+      "archived": "paper_snapshot/main.pdf",
+      "sha256": "7f2b13c46171ee965417fd58ec80570f44172d573784c5ea40ba633ae5eaa32f",
+      "bytes": 3398002
+    },
+    {
+      "source": "/Users/zzhang/Documents/MyDrafts/STF_lensing/main.tex",
+      "archived": "paper_snapshot/main.tex",
+      "sha256": "ec70681cd510053088680920b1aa3614da5c58eeac63723bb2f4269f0a8342f3",
+      "bytes": 7507
+    },
+    {
+      "source": "/Users/zzhang/Documents/MyDrafts/STF_lensing/sections/appendix.tex",
+      "archived": "paper_snapshot/sections/appendix.tex",
+      "sha256": "5ab54686b84f5c9ef0faa0428a3a195dcd4bc36113c7977f76e7ec0c959cbf1d",
+      "bytes": 33971
+    },
+    {
+      "source": "/Users/zzhang/Documents/MyDrafts/STF_lensing/sections/conclusion.tex",
+      "archived": "paper_snapshot/sections/conclusion.tex",
+      "sha256": "fab1f002459fbe1ad282a25c92525b4694fd128125a6c50ccb0ec021ca68efea",
+      "bytes": 12048
+    },
+    {
+      "source": "/Users/zzhang/Documents/MyDrafts/STF_lensing/sections/cosmology.tex",
+      "archived": "paper_snapshot/sections/cosmology.tex",
+      "sha256": "40019b5ad0cee34a776064d8cfd3a2cafe3a5b582248875ec03872e4b5a12bb5",
+      "bytes": 57681
+    },
+    {
+      "source": "/Users/zzhang/Documents/MyDrafts/STF_lensing/sections/insights.tex",
+      "archived": "paper_snapshot/sections/insights.tex",
+      "sha256": "a7a13cea879c54f1721267780ad5fa7aa340070f927cdf708b89b7412e810b62",
+      "bytes": 19540
+    },
+    {
+      "source": "/Users/zzhang/Documents/MyDrafts/STF_lensing/sections/intro.tex",
+      "archived": "paper_snapshot/sections/intro.tex",
+      "sha256": "7e8a5e251f6f2cbea4f4a31ddb26c9662ba491d1e3249bf5d58c5893b567340d",
+      "bytes": 12431
+    },
+    {
+      "source": "/Users/zzhang/Documents/MyDrafts/STF_lensing/sections/path_int.tex",
+      "archived": "paper_snapshot/sections/path_int.tex",
+      "sha256": "1c18e306fa4c1710c2940fa6b835b75aa6d8ae66d9d036f5006375a4d4d6ea1b",
+      "bytes": 29075
+    },
+    {
+      "source": "/Users/zzhang/Documents/MyDrafts/STF_lensing/sections/sachs_dynamics.tex",
+      "archived": "paper_snapshot/sections/sachs_dynamics.tex",
+      "sha256": "15ab00ca6cf97d618fe8a19a13ffb8621ab88523fb7856400e2ddb21afc7b876",
+      "bytes": 13581
+    }
+  ]
+}

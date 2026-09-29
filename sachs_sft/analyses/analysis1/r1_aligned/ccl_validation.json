@@ -1,0 +1,27 @@
+{
+  "accepted_candidate": "sachs_sft/analyses/analysis1/r1_aligned/ccl_padded_n4096.npz",
+  "accepted_sha256": "3d8d8a70535dd25306fd400b1b24be438d38915d7e4e8aefb35d13fc2453ad20",
+  "accepted_elapsed_seconds": 10.030181582900696,
+  "accepted_warnings": [],
+  "sampling_check": "sachs_sft/analyses/analysis1/r1_aligned/ccl_padded_sampling_convergence.json",
+  "angular_grid": "Exactly equal to SFT theta_arcmin decoded from original YAML directions",
+  "rejected_archived_artifacts": [
+    "sachs_sft/analyses/analysis1/r1_aligned/ccl_archive_unpadded_20260928/ccl_probe_n1024.npz",
+    "sachs_sft/analyses/analysis1/r1_aligned/ccl_archive_unpadded_20260928/ccl_probe_n1024.json",
+    "sachs_sft/analyses/analysis1/r1_aligned/ccl_archive_unpadded_20260928/ccl_probe_n1024.log",
+    "sachs_sft/analyses/analysis1/r1_aligned/ccl_archive_unpadded_20260928/ccl_n1024.npz",
+    "sachs_sft/analyses/analysis1/r1_aligned/ccl_archive_unpadded_20260928/ccl_n1024.json",
+    "sachs_sft/analyses/analysis1/r1_aligned/ccl_archive_unpadded_20260928/ccl_n1024.log",
+    "sachs_sft/analyses/analysis1/r1_aligned/ccl_archive_unpadded_20260928/ccl_n2048.npz",
+    "sachs_sft/analyses/analysis1/r1_aligned/ccl_archive_unpadded_20260928/ccl_n2048.json",
+    "sachs_sft/analyses/analysis1/r1_aligned/ccl_archive_unpadded_20260928/ccl_n2048.log",
+    "sachs_sft/analyses/analysis1/r1_aligned/ccl_archive_unpadded_20260928/ccl_n4096.npz",
+    "sachs_sft/analyses/analysis1/r1_aligned/ccl_archive_unpadded_20260928/ccl_n4096.json",
+    "sachs_sft/analyses/analysis1/r1_aligned/ccl_archive_unpadded_20260928/ccl_n4096.log",
+    "sachs_sft/analyses/analysis1/r1_aligned/ccl_archive_unpadded_20260928/ccl_sampling_convergence.json"
+  ],
+  "rejection_reason": "Setting FFTLog chi_min equal to the nonzero physical cutoff at 50 Mpc aliases the low-ell transform. These unpadded candidates are invalid and must not be used for manuscript plots.",
+  "fix": "Zero-pad the radial kernel below its physical cutoff, retain a 0.001 Mpc resolved transition at 50 Mpc, and set FKEM chi_min=1e-6 Mpc independently of physical support.",
+  "scope": "Conventional full-sky linear lensing projection. Does not include additional Ricci radial/time terms or any Sachs F/K vertices.",
+  "remaining_comparison_gap": "A roughly 6-8 percent SFT peak excess remains after matching prescribed inputs. Its cause has not been established by this CCL implementation audit."
+}

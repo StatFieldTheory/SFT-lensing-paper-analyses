@@ -1,0 +1,30 @@
+{
+  "angular_metrics": {
+    "kgt": {
+      "max_abs_over_peak": 0.00010392024943924113,
+      "max_relative_where_abs_above_1pct_peak": 0.0005029206159583577
+    },
+    "kk": {
+      "max_abs_over_peak": 3.6310250468496505e-05,
+      "max_relative_where_abs_above_1pct_peak": 0.0003648716932080909
+    },
+    "xim": {
+      "max_abs_over_peak": 0.00016158865344908748,
+      "max_relative_where_abs_above_1pct_peak": 0.00035635978022030557
+    },
+    "xip": {
+      "max_abs_over_peak": 3.459898508993448e-05,
+      "max_relative_where_abs_above_1pct_peak": 0.0003542589898557491
+    }
+  },
+  "final_covariance_max_pw2_over_ppww": 0.9999999999999893,
+  "method": "Insert independent withheld midpoints computed at half radial and k-grid resolutions into the original low-ell log-CubicSpline, retain original exact high-ell samples, and recompute all four angular2PCFs. This tests combined interpolation and quadrature sensitivity.",
+  "passed": true,
+  "reconstructed_covariance_max_pw2_over_ppww": 0.9999999999999893,
+  "spectral_max_relative_at_withheld": {
+    "cl_pp": 0.002982751993855004,
+    "cl_pw": 0.0029880755288722582,
+    "cl_ww": 0.002993400900227039
+  },
+  "target_max_abs_over_peak": 0.001
+}

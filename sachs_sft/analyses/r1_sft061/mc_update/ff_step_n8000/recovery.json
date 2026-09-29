@@ -1,0 +1,16 @@
+{
+  "original_manifest_sha256": "ab5a07e5a03bee19f8df9f24922bb1faecf0717da916617bae488614f306424e",
+  "original_checkpoint_sha256": "6c6e1adf073dc78f02b0ea7a9966db486cb316d89b9e2173bc4a8aad908672e5",
+  "resume_helper_sha256": "e380cd28c55f38ae5e0298ef3c99176c193376497735184ba68375896bf1bbcc",
+  "completed_seed_count": 6,
+  "missing_seed_indices": [
+    6,
+    7
+  ],
+  "missing_rng_seeds": [
+    7015947,
+    7016938
+  ],
+  "status": "complete",
+  "completed_checkpoint_sha256": "0969ddb28a8d05a10d49d333534cc6acdc874dac6607bba1ef71a637e4f6d174"
+}

@@ -1,0 +1,130 @@
+{
+  "channel_seconds": {
+    "cl_pp": 23.498063541133888
+  },
+  "derivative_order": "External window multiplies each field-derivative term. The operator acts on the field, not on the window. Existing low-ell IBP differentiates the complete weighted integrand.",
+  "direct_bessel_cache": {
+    "bytes": 335872000,
+    "helper_sha256": "5d88b8b7e09ccf45ba762c63c2b5fd3c561d9ae9bcfcd4225d91ac2fae9b3709",
+    "helper_source": "/Users/zzhang/projects/angular_statistics/canoes/src/canoes/nuell/cls/_compute_cl_windowed_sachs_low_ell.py",
+    "hits": 115,
+    "max_bytes": 536870912,
+    "misses": 25,
+    "observer_boundary": "included"
+  },
+  "elapsed_seconds": 23.902209167019464,
+  "interpolation": "none",
+  "low_ell_boundary_caveat": "Existing low-ell canoes IBP assumes negligible observer-boundary terms. The finite 50 Mpc inner cutoff needs a separate sensitivity check for Ricci derivatives.",
+  "observable_operator": "full",
+  "operator_policy": "Full registered Ricci and Weyl below split. ID-basis Limber above split. Transverse Ricci-only output is also saved separately.",
+  "peak_rss_bytes": 835076096,
+  "physical_chi_min_mpc": 50.0,
+  "power_table": "/Users/zzhang/projects/angular_statistics/canoes/examples/data/PCAMB_pyccl_stf_fid_z0.txt",
+  "power_table_sha256": "2e5600748706ff4b67c99df7f9331b2a6ee1fa8623324e25dde836681f8f9776",
+  "registration": "Fresh CoefVec plus SachsCoefTerm external weights, original lightcone M/calH/calHp unchanged",
+  "script_sha256": "0ce5650e4037b61899ad334bf88ff5330c96d3550d19bdd3daec6a3f0729f3f6",
+  "settings": {
+    "cached_direct": true,
+    "channels": "cl_pp",
+    "chi_min": 50.0,
+    "ell_block": 4,
+    "ells": "2,10,100,500,800",
+    "kmax": 50.0,
+    "kmin": 0.0001,
+    "limber_shift": 0.5,
+    "low_ell_kmax": 10.0,
+    "low_ell_kmin": 0.0001,
+    "low_ell_n_k": 2048,
+    "low_ell_threshold": 5,
+    "n_chi": 4096,
+    "n_fftlog": 256,
+    "n_t": 32,
+    "observable_operator": "full",
+    "observer_boundary": true,
+    "out": "sachs_sft/analyses/analysis1/r1_aligned/source_folded_multiz_z1p7_probe.npz",
+    "source_map": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/source_map.json",
+    "source_nchi": 100001,
+    "sparse_nodes": 49,
+    "split": 800,
+    "z_source": 1.7
+  },
+  "source": {
+    "chi_roundtrip_abs_error_mpc": 0.0,
+    "chi_source_mpc": 4855.798469579331,
+    "lambda_source_mpc": 2094.9023866944794,
+    "mapping_provenance": {
+      "C_table_path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/callables/C_propagator/corr_op/corr_op_table_zs5_21pt_stf_fid_omega03161_h06711.npz",
+      "C_table_sha256": "597d908dbef1520174d29848d79065bd090735c6e4526287e4de59b66774e33c",
+      "E0": 1.0,
+      "background_n_z": 5001,
+      "background_z_max": 1200.0,
+      "canoes_commit": "077a64c86788add650ece263b054e7803ca0c644",
+      "canoes_root": "/Users/zzhang/projects/angular_statistics/canoes",
+      "convention": "project",
+      "cosmology": {
+        "Omega_m": 0.3160919980475834,
+        "geometry": "flat matter-plus-Lambda, without radiation",
+        "h": 0.6711
+      },
+      "distance_unit": "physical Mpc",
+      "jacobi_identity_source": "sections/appendix.tex, appendix D equals a chi, verified by mathematica/derive_jacobi_flat_flrw.wl",
+      "max_affine_mpc": 2353.929874188644,
+      "native_knots": 5001,
+      "source_mapping": "Same public canoes lambda_of_chi, chi_of_lambda and z_of_chi as the C-table build, cached on their native interpolation knots",
+      "source_sha256": {
+        "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/aligned_response.py": "888f1593e55342f088ac486e7709688853b6827506d8d43f90ec35ee10e1c5f4",
+        "/Users/zzhang/projects/angular_statistics/canoes/src/canoes/cosmo/growth.py": "c931cca5f6d66b4b3082a6a0a11924604d12583219bbe31ca8df804cd371e08c",
+        "/Users/zzhang/projects/angular_statistics/canoes/src/canoes/cosmo/lightcone.py": "69f57f5e95545c094a4ad95e70a603635f5a886178df5e82703191a849fb3d02",
+        "/Users/zzhang/projects/angular_statistics/canoes/src/canoes/sachs/sft_input/corr_op/_limber.py": "d558f2731ef7c8d765ea8af93a54adc85331b0b4c6f3fe65b85cfa725556084f",
+        "/Users/zzhang/projects/angular_statistics/canoes/src/canoes/sachs/sft_input/corr_op/table.py": "241d96bf8960517044061e5a2442d1761d2ba714fa4d7cf0ded989faffc77fd5"
+      }
+    },
+    "z_source_recovered": 1.7,
+    "z_source_requested": 1.7
+  },
+  "source_chi_mpc": 4855.798469579331,
+  "source_floor": "Observer affine zero, no artificial 406 Mpc source floor",
+  "source_fold": "Numerical continuous outer affine integral before angular covariance, manuscript K affine kernel",
+  "source_lambda_mpc": 2094.9023866944794,
+  "source_map": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/source_map.json",
+  "source_metadata_sha256": "83a926ae4d52dc5435dbe9ab7d016dddbbbf25b149c5a640e419afcd842bdc2b",
+  "source_quadrature_check": [
+    {
+      "lower_chi_mpc": 50.0,
+      "quad_error": 4.122276431729165e-16,
+      "relative_error": 1.0469438649352014e-09
+    },
+    {
+      "lower_chi_mpc": 107.01820073324515,
+      "quad_error": 1.0187977587170159e-16,
+      "relative_error": 1.0469487499165098e-09
+    },
+    {
+      "lower_chi_mpc": 229.05790576362313,
+      "quad_error": 4.61824267266231e-17,
+      "relative_error": 1.0469467515150654e-09
+    },
+    {
+      "lower_chi_mpc": 490.267298770963,
+      "quad_error": 3.626878297832776e-14,
+      "relative_error": 1.0469469735596704e-09
+    },
+    {
+      "lower_chi_mpc": 1049.3504838563372,
+      "quad_error": 5.007584937004315e-16,
+      "relative_error": 1.0469436428905965e-09
+    },
+    {
+      "lower_chi_mpc": 2245.9920144173066,
+      "quad_error": 2.656743759329833e-18,
+      "relative_error": 1.04694786173809e-09
+    },
+    {
+      "lower_chi_mpc": 4807.240484883538,
+      "quad_error": 2.3094809342621386e-20,
+      "relative_error": 1.0469458633366457e-09
+    }
+  ],
+  "source_redshift": 1.7,
+  "warnings": []
+}

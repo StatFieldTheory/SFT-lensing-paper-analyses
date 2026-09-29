@@ -1,0 +1,670 @@
+{
+  "schema_version": 1,
+  "framework": {
+    "version": "0.6.1",
+    "commit": "6945815ad9e6efa2b9e768891d6bf92b1214670d",
+    "source": "/Users/zzhang/projects/SFT/sft-wick",
+    "python": "/opt/homebrew/Caskroom/miniconda/base/envs/sft-wick/bin/python"
+  },
+  "source_mode": "true-redshift",
+  "source_mapping": {
+    "z": [
+      1.0,
+      1.7,
+      2.5,
+      3.2,
+      4.0,
+      5.0
+    ],
+    "lambda_mpc": [
+      1822.7290713360132,
+      2094.9023866944794,
+      2216.8017129787445,
+      2266.590169124188,
+      2297.2976167427273,
+      2317.9695958203943
+    ],
+    "chi_mpc": [
+      3413.8078776661523,
+      4855.798469579331,
+      5989.922522963986,
+      6715.990936290299,
+      7356.080626903646,
+      7971.183639083942
+    ],
+    "D_mpc": [
+      1706.9039388330762,
+      1798.4438776219745,
+      1711.4064351325674,
+      1599.0454610214997,
+      1471.2161253807292,
+      1328.5306065139903
+    ],
+    "mapping_provenance": {
+      "cosmology": {
+        "Omega_m": 0.3160919980475834,
+        "h": 0.6711,
+        "geometry": "flat matter-plus-Lambda, without radiation"
+      },
+      "E0": 1.0,
+      "convention": "project",
+      "distance_unit": "physical Mpc",
+      "background_z_max": 1200.0,
+      "background_n_z": 5001,
+      "native_knots": 5001,
+      "max_affine_mpc": 2353.929874188644,
+      "source_mapping": "Same public canoes lambda_of_chi, chi_of_lambda and z_of_chi as the C-table build, cached on their native interpolation knots",
+      "canoes_root": "/Users/zzhang/projects/angular_statistics/canoes",
+      "canoes_commit": "077a64c86788add650ece263b054e7803ca0c644",
+      "source_sha256": {
+        "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/aligned_response.py": "888f1593e55342f088ac486e7709688853b6827506d8d43f90ec35ee10e1c5f4",
+        "/Users/zzhang/projects/angular_statistics/canoes/src/canoes/cosmo/lightcone.py": "69f57f5e95545c094a4ad95e70a603635f5a886178df5e82703191a849fb3d02",
+        "/Users/zzhang/projects/angular_statistics/canoes/src/canoes/cosmo/growth.py": "c931cca5f6d66b4b3082a6a0a11924604d12583219bbe31ca8df804cd371e08c",
+        "/Users/zzhang/projects/angular_statistics/canoes/src/canoes/sachs/sft_input/corr_op/table.py": "241d96bf8960517044061e5a2442d1761d2ba714fa4d7cf0ded989faffc77fd5",
+        "/Users/zzhang/projects/angular_statistics/canoes/src/canoes/sachs/sft_input/corr_op/_limber.py": "d558f2731ef7c8d765ea8af93a54adc85331b0b4c6f3fe65b85cfa725556084f"
+      },
+      "C_table_path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/callables/C_propagator/corr_op/corr_op_table_zs5_21pt_stf_fid_omega03161_h06711.npz",
+      "C_table_sha256": "597d908dbef1520174d29848d79065bd090735c6e4526287e4de59b66774e33c",
+      "jacobi_identity_source": "sections/appendix.tex, appendix D equals a chi, verified by mathematica/derive_jacobi_flat_flrw.wl"
+    },
+    "response_module": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/aligned_response.py",
+    "response_attr": "response_R",
+    "validation": {
+      "status": "passed",
+      "public_coordinate_maps": "Exact equality at observer, selected table nodes and all requested source planes",
+      "D_identity": "Exact equality to public chi/(1+z) at all probes",
+      "C_builder_response_max_abs_error": 2.220446049250313e-16,
+      "C_builder_helper": "canoes.sachs.sft_input.corr_op._limber._id_basis_windows with COEFS_PSI0, stripping its recorded growth and density factors",
+      "scalar_array_max_abs_error": 0.0,
+      "causal_and_observer_zero": "passed",
+      "coincident_positive_time_unity": "passed"
+    },
+    "source_file": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/source_map.json"
+  },
+  "targets": [
+    {
+      "id": "main",
+      "group": "main",
+      "nominal_z": [
+        5.0
+      ],
+      "historical_lambdas_mpc": [
+        2313.0288751857356
+      ],
+      "source_config": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/sftwick_outputs/2PCF/C_corr_op_K_limber_FK_cut15360_permfix/config_L2.yaml",
+      "record_config": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/sftwick_outputs/2PCF/C_corr_op_K_limber_FK_cut15360_permfix/config_record_2026-08-26.yaml",
+      "table": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/callables/kappa3_vertex/equal_time_limber_cut15360_permaware/table_permclosed.npz",
+      "callable": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/callables/kappa3_vertex/equal_time_limber_cut15360_permaware/perm_aware_kappa3_callable.py",
+      "historical_product": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/sftwick_outputs/2PCF/C_corr_op_K_limber_FK_cut15360_permfix/xi_C_corr_op_K_limber_FK_cut15360_permfix.npz",
+      "output_name": "xi_main.npz",
+      "reproduction_figure_ids": [
+        2,
+        3,
+        4,
+        6
+      ],
+      "provenance": "Production run README and path-migrated config_L2.yaml.",
+      "target_lambdas_mpc": [
+        2317.9695958203943
+      ],
+      "n_gauss": 24,
+      "n_jobs": 4,
+      "orders": "0,2"
+    },
+    {
+      "id": "multiz",
+      "group": "multiz",
+      "nominal_z": [
+        1.0,
+        1.7,
+        2.5,
+        3.2,
+        4.0
+      ],
+      "historical_lambdas_mpc": [
+        1822.7212584976535,
+        2094.894177427729,
+        2216.793394988101,
+        2266.5818220052397,
+        2297.2892568472157
+      ],
+      "source_config": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/sftwick_outputs/2PCF/multiz/configs/config_fk_cut15360_permfix_5planes_record_2026-08-26.yaml",
+      "record_config": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/sftwick_outputs/2PCF/multiz/configs/config_fk_cut15360_permfix_5planes_record_2026-08-26.yaml",
+      "table": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/callables/kappa3_vertex/equal_time_limber_cut15360_permaware/table_permclosed.npz",
+      "callable": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/callables/kappa3_vertex/equal_time_limber_cut15360_permaware/perm_aware_kappa3_callable.py",
+      "historical_product": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/analysis3/outputs/multiz_kappa_2pcf_5z.npz",
+      "output_name": "xi_multiz_fk.npz",
+      "reproduction_figure_ids": [
+        5
+      ],
+      "provenance": "multiz/README.md and revision_2026-08/regenerate_multiz.py identify the perm-aware production vertex. Exact runtime endpoints come from the deployed NPZ because the recorded YAML predates the runtime override.",
+      "target_lambdas_mpc": [
+        1822.7290713360132,
+        2094.9023866944794,
+        2216.8017129787445,
+        2266.590169124188,
+        2297.2976167427273
+      ],
+      "n_gauss": 24,
+      "n_jobs": 4,
+      "orders": "0,2"
+    },
+    {
+      "id": "tree_960",
+      "group": "ladder",
+      "nominal_z": [
+        5.0
+      ],
+      "historical_lambdas_mpc": [
+        2313.0288751857356
+      ],
+      "source_config": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/sftwick_outputs/2PCF/cutoff_ladder/configs/config_tree_cut960_r4_record.yaml",
+      "record_config": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/sftwick_outputs/2PCF/cutoff_ladder/configs/config_tree_cut960_r4_record.yaml",
+      "table": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/callables/kappa3_vertex/rebuild/products/table_tree_cut960_r4.npz",
+      "callable": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/callables/kappa3_vertex/equal_time_limber/equal_time_limber_kappa3_callable.py",
+      "historical_product": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/sftwick_outputs/2PCF/cutoff_ladder/table_tree_cut960_r4_xi.npz",
+      "output_name": "table_tree_cut960_r4_xi.npz",
+      "reproduction_figure_ids": [
+        17
+      ],
+      "provenance": "cutoff_ladder/README.md and rebuild/sweep_cutoff.sh identify the sorting callable and each saved r4 table. These inputs differ from the main permutation-aware run.",
+      "target_lambdas_mpc": [
+        2317.9695958203943
+      ],
+      "n_gauss": 24,
+      "n_jobs": 4,
+      "orders": "0,2"
+    },
+    {
+      "id": "tree_1920",
+      "group": "ladder",
+      "nominal_z": [
+        5.0
+      ],
+      "historical_lambdas_mpc": [
+        2313.0288751857356
+      ],
+      "source_config": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/sftwick_outputs/2PCF/cutoff_ladder/configs/config_tree_cut1920_r4_record.yaml",
+      "record_config": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/sftwick_outputs/2PCF/cutoff_ladder/configs/config_tree_cut1920_r4_record.yaml",
+      "table": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/callables/kappa3_vertex/rebuild/products/table_tree_cut1920_r4.npz",
+      "callable": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/callables/kappa3_vertex/equal_time_limber/equal_time_limber_kappa3_callable.py",
+      "historical_product": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/sftwick_outputs/2PCF/cutoff_ladder/table_tree_cut1920_r4_xi.npz",
+      "output_name": "table_tree_cut1920_r4_xi.npz",
+      "reproduction_figure_ids": [
+        17
+      ],
+      "provenance": "cutoff_ladder/README.md and rebuild/sweep_cutoff.sh identify the sorting callable and each saved r4 table. These inputs differ from the main permutation-aware run.",
+      "target_lambdas_mpc": [
+        2317.9695958203943
+      ],
+      "n_gauss": 24,
+      "n_jobs": 4,
+      "orders": "0,2"
+    },
+    {
+      "id": "tree_3840",
+      "group": "ladder",
+      "nominal_z": [
+        5.0
+      ],
+      "historical_lambdas_mpc": [
+        2313.0288751857356
+      ],
+      "source_config": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/sftwick_outputs/2PCF/cutoff_ladder/configs/config_tree_cut3840_r4_record.yaml",
+      "record_config": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/sftwick_outputs/2PCF/cutoff_ladder/configs/config_tree_cut3840_r4_record.yaml",
+      "table": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/callables/kappa3_vertex/rebuild/products/table_tree_cut3840_r4.npz",
+      "callable": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/callables/kappa3_vertex/equal_time_limber/equal_time_limber_kappa3_callable.py",
+      "historical_product": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/sftwick_outputs/2PCF/cutoff_ladder/table_tree_cut3840_r4_xi.npz",
+      "output_name": "table_tree_cut3840_r4_xi.npz",
+      "reproduction_figure_ids": [
+        17
+      ],
+      "provenance": "cutoff_ladder/README.md and rebuild/sweep_cutoff.sh identify the sorting callable and each saved r4 table. These inputs differ from the main permutation-aware run.",
+      "target_lambdas_mpc": [
+        2317.9695958203943
+      ],
+      "n_gauss": 24,
+      "n_jobs": 4,
+      "orders": "0,2"
+    },
+    {
+      "id": "tree_7680",
+      "group": "ladder",
+      "nominal_z": [
+        5.0
+      ],
+      "historical_lambdas_mpc": [
+        2313.0288751857356
+      ],
+      "source_config": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/sftwick_outputs/2PCF/cutoff_ladder/configs/config_tree_cut7680_r4_record.yaml",
+      "record_config": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/sftwick_outputs/2PCF/cutoff_ladder/configs/config_tree_cut7680_r4_record.yaml",
+      "table": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/callables/kappa3_vertex/rebuild/products/table_tree_cut7680_r4.npz",
+      "callable": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/callables/kappa3_vertex/equal_time_limber/equal_time_limber_kappa3_callable.py",
+      "historical_product": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/sftwick_outputs/2PCF/cutoff_ladder/table_tree_cut7680_r4_xi.npz",
+      "output_name": "table_tree_cut7680_r4_xi.npz",
+      "reproduction_figure_ids": [
+        17
+      ],
+      "provenance": "cutoff_ladder/README.md and rebuild/sweep_cutoff.sh identify the sorting callable and each saved r4 table. These inputs differ from the main permutation-aware run.",
+      "target_lambdas_mpc": [
+        2317.9695958203943
+      ],
+      "n_gauss": 24,
+      "n_jobs": 4,
+      "orders": "0,2"
+    },
+    {
+      "id": "tree_15360",
+      "group": "ladder",
+      "nominal_z": [
+        5.0
+      ],
+      "historical_lambdas_mpc": [
+        2313.0288751857356
+      ],
+      "source_config": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/sftwick_outputs/2PCF/cutoff_ladder/configs/config_tree_cut15360_r4_record.yaml",
+      "record_config": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/sftwick_outputs/2PCF/cutoff_ladder/configs/config_tree_cut15360_r4_record.yaml",
+      "table": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/callables/kappa3_vertex/rebuild/products/table_tree_cut15360_r4.npz",
+      "callable": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/callables/kappa3_vertex/equal_time_limber/equal_time_limber_kappa3_callable.py",
+      "historical_product": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/sftwick_outputs/2PCF/cutoff_ladder/table_tree_cut15360_r4_xi.npz",
+      "output_name": "table_tree_cut15360_r4_xi.npz",
+      "reproduction_figure_ids": [
+        17
+      ],
+      "provenance": "cutoff_ladder/README.md and rebuild/sweep_cutoff.sh identify the sorting callable and each saved r4 table. These inputs differ from the main permutation-aware run.",
+      "target_lambdas_mpc": [
+        2317.9695958203943
+      ],
+      "n_gauss": 24,
+      "n_jobs": 4,
+      "orders": "0,2"
+    },
+    {
+      "id": "bihalofit_960",
+      "group": "ladder",
+      "nominal_z": [
+        5.0
+      ],
+      "historical_lambdas_mpc": [
+        2313.0288751857356
+      ],
+      "source_config": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/sftwick_outputs/2PCF/cutoff_ladder/configs/config_bihalofit_cut960_r4_record.yaml",
+      "record_config": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/sftwick_outputs/2PCF/cutoff_ladder/configs/config_bihalofit_cut960_r4_record.yaml",
+      "table": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/callables/kappa3_vertex/rebuild/products/table_bihalofit_cut960_r4.npz",
+      "callable": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/callables/kappa3_vertex/equal_time_limber/equal_time_limber_kappa3_callable.py",
+      "historical_product": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/sftwick_outputs/2PCF/cutoff_ladder/table_bihalofit_cut960_r4_xi.npz",
+      "output_name": "table_bihalofit_cut960_r4_xi.npz",
+      "reproduction_figure_ids": [
+        17
+      ],
+      "provenance": "cutoff_ladder/README.md and rebuild/sweep_cutoff.sh identify the sorting callable and each saved r4 table. These inputs differ from the main permutation-aware run.",
+      "target_lambdas_mpc": [
+        2317.9695958203943
+      ],
+      "n_gauss": 24,
+      "n_jobs": 4,
+      "orders": "0,2"
+    },
+    {
+      "id": "bihalofit_1920",
+      "group": "ladder",
+      "nominal_z": [
+        5.0
+      ],
+      "historical_lambdas_mpc": [
+        2313.0288751857356
+      ],
+      "source_config": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/sftwick_outputs/2PCF/cutoff_ladder/configs/config_bihalofit_cut1920_r4_record.yaml",
+      "record_config": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/sftwick_outputs/2PCF/cutoff_ladder/configs/config_bihalofit_cut1920_r4_record.yaml",
+      "table": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/callables/kappa3_vertex/rebuild/products/table_bihalofit_cut1920_r4.npz",
+      "callable": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/callables/kappa3_vertex/equal_time_limber/equal_time_limber_kappa3_callable.py",
+      "historical_product": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/sftwick_outputs/2PCF/cutoff_ladder/table_bihalofit_cut1920_r4_xi.npz",
+      "output_name": "table_bihalofit_cut1920_r4_xi.npz",
+      "reproduction_figure_ids": [
+        17
+      ],
+      "provenance": "cutoff_ladder/README.md and rebuild/sweep_cutoff.sh identify the sorting callable and each saved r4 table. These inputs differ from the main permutation-aware run.",
+      "target_lambdas_mpc": [
+        2317.9695958203943
+      ],
+      "n_gauss": 24,
+      "n_jobs": 4,
+      "orders": "0,2"
+    },
+    {
+      "id": "bihalofit_3840",
+      "group": "ladder",
+      "nominal_z": [
+        5.0
+      ],
+      "historical_lambdas_mpc": [
+        2313.0288751857356
+      ],
+      "source_config": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/sftwick_outputs/2PCF/cutoff_ladder/configs/config_bihalofit_cut3840_r4_record.yaml",
+      "record_config": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/sftwick_outputs/2PCF/cutoff_ladder/configs/config_bihalofit_cut3840_r4_record.yaml",
+      "table": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/callables/kappa3_vertex/rebuild/products/table_bihalofit_cut3840_r4.npz",
+      "callable": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/callables/kappa3_vertex/equal_time_limber/equal_time_limber_kappa3_callable.py",
+      "historical_product": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/sftwick_outputs/2PCF/cutoff_ladder/table_bihalofit_cut3840_r4_xi.npz",
+      "output_name": "table_bihalofit_cut3840_r4_xi.npz",
+      "reproduction_figure_ids": [
+        17
+      ],
+      "provenance": "cutoff_ladder/README.md and rebuild/sweep_cutoff.sh identify the sorting callable and each saved r4 table. These inputs differ from the main permutation-aware run.",
+      "target_lambdas_mpc": [
+        2317.9695958203943
+      ],
+      "n_gauss": 24,
+      "n_jobs": 4,
+      "orders": "0,2"
+    },
+    {
+      "id": "bihalofit_7680",
+      "group": "ladder",
+      "nominal_z": [
+        5.0
+      ],
+      "historical_lambdas_mpc": [
+        2313.0288751857356
+      ],
+      "source_config": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/sftwick_outputs/2PCF/cutoff_ladder/configs/config_bihalofit_cut7680_r4_record.yaml",
+      "record_config": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/sftwick_outputs/2PCF/cutoff_ladder/configs/config_bihalofit_cut7680_r4_record.yaml",
+      "table": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/callables/kappa3_vertex/rebuild/products/table_bihalofit_cut7680_r4.npz",
+      "callable": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/callables/kappa3_vertex/equal_time_limber/equal_time_limber_kappa3_callable.py",
+      "historical_product": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/sftwick_outputs/2PCF/cutoff_ladder/table_bihalofit_cut7680_r4_xi.npz",
+      "output_name": "table_bihalofit_cut7680_r4_xi.npz",
+      "reproduction_figure_ids": [
+        17
+      ],
+      "provenance": "cutoff_ladder/README.md and rebuild/sweep_cutoff.sh identify the sorting callable and each saved r4 table. These inputs differ from the main permutation-aware run.",
+      "target_lambdas_mpc": [
+        2317.9695958203943
+      ],
+      "n_gauss": 24,
+      "n_jobs": 4,
+      "orders": "0,2"
+    },
+    {
+      "id": "bihalofit_15360",
+      "group": "ladder",
+      "nominal_z": [
+        5.0
+      ],
+      "historical_lambdas_mpc": [
+        2313.0288751857356
+      ],
+      "source_config": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/sftwick_outputs/2PCF/cutoff_ladder/configs/config_bihalofit_cut15360_r4_record.yaml",
+      "record_config": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/sftwick_outputs/2PCF/cutoff_ladder/configs/config_bihalofit_cut15360_r4_record.yaml",
+      "table": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/callables/kappa3_vertex/rebuild/products/table_bihalofit_cut15360_r4.npz",
+      "callable": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/callables/kappa3_vertex/equal_time_limber/equal_time_limber_kappa3_callable.py",
+      "historical_product": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/sftwick_outputs/2PCF/cutoff_ladder/table_bihalofit_cut15360_r4_xi.npz",
+      "output_name": "table_bihalofit_cut15360_r4_xi.npz",
+      "reproduction_figure_ids": [
+        17
+      ],
+      "provenance": "cutoff_ladder/README.md and rebuild/sweep_cutoff.sh identify the sorting callable and each saved r4 table. These inputs differ from the main permutation-aware run.",
+      "target_lambdas_mpc": [
+        2317.9695958203943
+      ],
+      "n_gauss": 24,
+      "n_jobs": 4,
+      "orders": "0,2"
+    }
+  ],
+  "inputs": [
+    {
+      "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/analysis3/outputs/multiz_kappa_2pcf_5z.npz",
+      "sha256": "e549a41a0d3e3642f9330bebce6fb9cd6b1e7cfa20d9f73db35466d73a826584",
+      "bytes": 6644
+    },
+    {
+      "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/aligned_response.py",
+      "sha256": "888f1593e55342f088ac486e7709688853b6827506d8d43f90ec35ee10e1c5f4",
+      "bytes": 10199
+    },
+    {
+      "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/framework_provenance.json",
+      "sha256": "b6e906874bffa594361d7f00ff2083a664c5679e8c76c0bac21efe271cc745e0",
+      "bytes": 1295
+    },
+    {
+      "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/source_map.json",
+      "sha256": "83a926ae4d52dc5435dbe9ab7d016dddbbbf25b149c5a640e419afcd842bdc2b",
+      "bytes": 3264
+    },
+    {
+      "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/callables/C_propagator/corr_op/corr_op_C_callable.py",
+      "sha256": "0d757821f7603c36cf59b77319e5d8e65b8d8bdd0991a4c78112c224754a863e",
+      "bytes": 9778
+    },
+    {
+      "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/callables/C_propagator/corr_op/corr_op_table_zs5_21pt_stf_fid_omega03161_h06711.npz",
+      "sha256": "597d908dbef1520174d29848d79065bd090735c6e4526287e4de59b66774e33c",
+      "bytes": 5506638
+    },
+    {
+      "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/callables/kappa3_vertex/equal_time_limber/equal_time_limber_kappa3_callable.py",
+      "sha256": "4b9c47cc8771ab3167f7d5d6ad262dcbaf1f1fa360eff271e740dcca69fcaa50",
+      "bytes": 14618
+    },
+    {
+      "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/callables/kappa3_vertex/equal_time_limber_cut15360_permaware/perm_aware_kappa3_callable.py",
+      "sha256": "4d7fefaa129e1f1e1947ad09bd3e1c3833b650cca225fd92fba0656316d54ce5",
+      "bytes": 13416
+    },
+    {
+      "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/callables/kappa3_vertex/equal_time_limber_cut15360_permaware/table_permclosed.npz",
+      "sha256": "b400dc5b11e1033bc53c3d59371208de1a54816ac7cd6a270c114487a91c9feb",
+      "bytes": 1702886
+    },
+    {
+      "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/callables/kappa3_vertex/rebuild/products/table_bihalofit_cut15360_r4.npz",
+      "sha256": "61c1f44b5ba9d75d650081efeb8a7f872156b08e7c3b72f20b69af204abff8a2",
+      "bytes": 1454197
+    },
+    {
+      "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/callables/kappa3_vertex/rebuild/products/table_bihalofit_cut1920_r4.npz",
+      "sha256": "c3790900465751ea497cb128b5126fb9be617191c03f2c69d1282e55d2794187",
+      "bytes": 1454105
+    },
+    {
+      "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/callables/kappa3_vertex/rebuild/products/table_bihalofit_cut3840_r4.npz",
+      "sha256": "e9d1017b6f3850226bc114d0701ed2fe59f8310edbb21bb5de22a2db08b43699",
+      "bytes": 1454134
+    },
+    {
+      "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/callables/kappa3_vertex/rebuild/products/table_bihalofit_cut7680_r4.npz",
+      "sha256": "ed1fc1acb41d823a942a416ef76f1d6c982efc4005688712db84e834fd9406b4",
+      "bytes": 1454163
+    },
+    {
+      "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/callables/kappa3_vertex/rebuild/products/table_bihalofit_cut960_r4.npz",
+      "sha256": "52cf790d02e856900ccde102b26f661921b0af7f97b3927afb56d6cdde3d75c6",
+      "bytes": 1454075
+    },
+    {
+      "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/callables/kappa3_vertex/rebuild/products/table_tree_cut15360_r4.npz",
+      "sha256": "5ee5a0ece58318e6a5818f5f81dd9ba0727e72e350eff3dc263c683fff6c94a0",
+      "bytes": 1454187
+    },
+    {
+      "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/callables/kappa3_vertex/rebuild/products/table_tree_cut1920_r4.npz",
+      "sha256": "2accc9de90ee112785de9c7b92274eb34a416fd1a5502e17ceabf6a66d3e15f0",
+      "bytes": 1454095
+    },
+    {
+      "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/callables/kappa3_vertex/rebuild/products/table_tree_cut3840_r4.npz",
+      "sha256": "95cc1f51e64e981e5f56acd43a8ef86c0d3c61963df92e3d06b42fb7100f73f2",
+      "bytes": 1454124
+    },
+    {
+      "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/callables/kappa3_vertex/rebuild/products/table_tree_cut7680_r4.npz",
+      "sha256": "300b83bf75368013458116431e97fdfc0debd8791ad56fa2311df7abc0c94704",
+      "bytes": 1454153
+    },
+    {
+      "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/callables/kappa3_vertex/rebuild/products/table_tree_cut960_r4.npz",
+      "sha256": "5c36bbc8113adfd417475e34310bd7b4e780973c682438da9c57102b4ccdecb7",
+      "bytes": 1454065
+    },
+    {
+      "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/callables/kappa3_vertex/rebuild/run_fk_variant.py",
+      "sha256": "0ea02c4ce96cd77f1c146a5cc38214a059530b8833f8a61b005b490ec84407b2",
+      "bytes": 9804
+    },
+    {
+      "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/scripts/D_callable.py",
+      "sha256": "4d1fdaee56789ec701d21f5fbc0ba1fb763ce4be577e932b55d29aff244e638f",
+      "bytes": 3945
+    },
+    {
+      "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/scripts/inputs/F_tensor.npy",
+      "sha256": "63b682be4315a5783d1554e7ea48364229e8bcf17181c6482d14269101e1d0db",
+      "bytes": 344
+    },
+    {
+      "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/scripts/inputs/kappa2_grid_lcut0_low_empty.npz",
+      "sha256": "1e03b492d46ed93db3a4ad6d953323325a20322470371412f1ac3587b1139e63",
+      "bytes": 6561
+    },
+    {
+      "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/scripts/kappa2_callable.py",
+      "sha256": "49372414bab52dce803f786c301c07219b638b39f5038f60e0bb9858ce18cb29",
+      "bytes": 23112
+    },
+    {
+      "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/scripts/run_FF_single.py",
+      "sha256": "5ca112bbcad3e38ff8ee6f6c6544661dc962eeeff7aea3423a0f5dd9abc7e443",
+      "bytes": 5651
+    },
+    {
+      "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/sftwick_outputs/2PCF/C_corr_op_K_limber_FK_cut15360_permfix/config_L2.yaml",
+      "sha256": "6669dc7d419f6207fa46c966e38e72d149275b6b363ed7dc40866685d0cd03c4",
+      "bytes": 5011
+    },
+    {
+      "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/sftwick_outputs/2PCF/C_corr_op_K_limber_FK_cut15360_permfix/config_record_2026-08-26.yaml",
+      "sha256": "7402c1020199f89b3b58b6180db7699db97e4b061b5c9c76dcda2b21e61dd09f",
+      "bytes": 4492
+    },
+    {
+      "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/sftwick_outputs/2PCF/C_corr_op_K_limber_FK_cut15360_permfix/xi_C_corr_op_K_limber_FK_cut15360_permfix.npz",
+      "sha256": "ef4e198ed6bb27903c483f5975a8510a53e5377fbfd23f81a97d12dd275d4a5e",
+      "bytes": 13653
+    },
+    {
+      "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/sftwick_outputs/2PCF/cutoff_ladder/configs/config_bihalofit_cut15360_r4_record.yaml",
+      "sha256": "71866fd5948e7e18bc6b30d91645f3be638c4ed2549d76d41ded50ff88c10049",
+      "bytes": 4462
+    },
+    {
+      "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/sftwick_outputs/2PCF/cutoff_ladder/configs/config_bihalofit_cut1920_r4_record.yaml",
+      "sha256": "342052593959d5c0bbbedd9fbbd53f996e6da6c2e7184a1251c226f94fcd8e96",
+      "bytes": 4457
+    },
+    {
+      "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/sftwick_outputs/2PCF/cutoff_ladder/configs/config_bihalofit_cut3840_r4_record.yaml",
+      "sha256": "188a209e7327868969dd5fdd62829c3f3c578a0c745143e405b326d528befb5b",
+      "bytes": 4457
+    },
+    {
+      "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/sftwick_outputs/2PCF/cutoff_ladder/configs/config_bihalofit_cut7680_r4_record.yaml",
+      "sha256": "d5686c964d58f3aef136024f48cd49943b9839b3e5acb3690d59872cf3371db4",
+      "bytes": 4457
+    },
+    {
+      "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/sftwick_outputs/2PCF/cutoff_ladder/configs/config_bihalofit_cut960_r4_record.yaml",
+      "sha256": "90693b5cb1f2ccf4af198cbb47c5fa5a44221e6110f5cddc5b9458fcd41a8b57",
+      "bytes": 4452
+    },
+    {
+      "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/sftwick_outputs/2PCF/cutoff_ladder/configs/config_tree_cut15360_r4_record.yaml",
+      "sha256": "3181188e695206511923bd382b9535a587056ee03a502b52cb4958e2fe0d35c5",
+      "bytes": 4437
+    },
+    {
+      "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/sftwick_outputs/2PCF/cutoff_ladder/configs/config_tree_cut1920_r4_record.yaml",
+      "sha256": "481c6bc821a27cb7e157fb657ca859d73271517945b5b6fb6b05f7e50a031c5a",
+      "bytes": 4432
+    },
+    {
+      "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/sftwick_outputs/2PCF/cutoff_ladder/configs/config_tree_cut3840_r4_record.yaml",
+      "sha256": "31bf9fc031a42c3ce19152b56090b60ac42ad1a6775fcc843b9c9ce93bfeb14f",
+      "bytes": 4432
+    },
+    {
+      "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/sftwick_outputs/2PCF/cutoff_ladder/configs/config_tree_cut7680_r4_record.yaml",
+      "sha256": "6c112b41ad4ab85bbb4d1ed22848e82a46c24a2c7616fb0f0b34608b3d37413f",
+      "bytes": 4432
+    },
+    {
+      "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/sftwick_outputs/2PCF/cutoff_ladder/configs/config_tree_cut960_r4_record.yaml",
+      "sha256": "014f90244fb5aa9b6c1615ec71543461a92859945aeb6b11d4321f432507b156",
+      "bytes": 4427
+    },
+    {
+      "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/sftwick_outputs/2PCF/cutoff_ladder/table_bihalofit_cut15360_r4_xi.npz",
+      "sha256": "0f65af3f915ccb044b6baa5cc46afe3ca1d7a594b38596eb9bab048b8e4fefa3",
+      "bytes": 13653
+    },
+    {
+      "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/sftwick_outputs/2PCF/cutoff_ladder/table_bihalofit_cut1920_r4_xi.npz",
+      "sha256": "72ac86e2f6c6794d0f6fd8935b186210232508d8b0cc6add3a7cf63827acf1df",
+      "bytes": 13653
+    },
+    {
+      "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/sftwick_outputs/2PCF/cutoff_ladder/table_bihalofit_cut3840_r4_xi.npz",
+      "sha256": "b6329adde7aba4e8311574e8125cab93b521243cbcc2e69c0978bbd650e8c0c6",
+      "bytes": 13653
+    },
+    {
+      "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/sftwick_outputs/2PCF/cutoff_ladder/table_bihalofit_cut7680_r4_xi.npz",
+      "sha256": "63703ba303bf94f3c861b69516acbb6255096b4e993b0a794f7c21db9e9feae7",
+      "bytes": 13653
+    },
+    {
+      "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/sftwick_outputs/2PCF/cutoff_ladder/table_bihalofit_cut960_r4_xi.npz",
+      "sha256": "b15c952ad175c690686e77b91ccb57fb1be2ca6e3fbec1b051a0054847c17fc0",
+      "bytes": 13653
+    },
+    {
+      "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/sftwick_outputs/2PCF/cutoff_ladder/table_tree_cut15360_r4_xi.npz",
+      "sha256": "f8c712347729dd4a0b78ae49904585b91abab12634f0b35b8a15922260c65943",
+      "bytes": 13653
+    },
+    {
+      "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/sftwick_outputs/2PCF/cutoff_ladder/table_tree_cut1920_r4_xi.npz",
+      "sha256": "81da3f4f4aea7e315f65c697d401e3a9f45738977c4fe2b9bf60aa9d30310e18",
+      "bytes": 13653
+    },
+    {
+      "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/sftwick_outputs/2PCF/cutoff_ladder/table_tree_cut3840_r4_xi.npz",
+      "sha256": "816cb1ae553f0f239b4b224cfe6c8b3ec72c1f831ce79c8b788c8f54bb5caf41",
+      "bytes": 13653
+    },
+    {
+      "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/sftwick_outputs/2PCF/cutoff_ladder/table_tree_cut7680_r4_xi.npz",
+      "sha256": "b1b2a40cae666a341fd353e0f2091b6191b57dd37662d3dc6ec022896f88ec9e",
+      "bytes": 13653
+    },
+    {
+      "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/sftwick_outputs/2PCF/cutoff_ladder/table_tree_cut960_r4_xi.npz",
+      "sha256": "bbb5b28ee38d8b99ec97149f797fe2096953e26fba05794015d4969a8feb1295",
+      "bytes": 13653
+    },
+    {
+      "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/sftwick_outputs/2PCF/multiz/configs/config_fk_cut15360_permfix_5planes_record_2026-08-26.yaml",
+      "sha256": "6daf8d1259c66a929f94d41de8938f7579146bd0c165185b49fbc73e71feac88",
+      "bytes": 4382
+    }
+  ],
+  "scope": "Only the installed framework changes in historical mode. True-redshift mode additionally replaces source endpoints and the explicitly supplied response module. Saved historical K tables and their original callable variants are retained in both modes.",
+  "excluded_input_update": "The September n_phi=512 pair-phase K-table correction is a separate comparison and is never selected implicitly.",
+  "prerequisites_for_publication": [
+    "Compare the historical-endpoint replay against archived arrays before interpreting the version effect.",
+    "True-redshift main and ladder plots require O0 and FF at the same new source endpoint and response convention.",
+    "True-redshift multi-z plots require matching O0 and FF for every changed source endpoint.",
+    "The multi-z cached ff field contains historical placeholders. Actual FF comes from multiz_ff_real_all5.npz and cannot be replaced with the placeholder.",
+    "The figure-6 Monte Carlo comparison requires matching source coordinates and driving input before its overlay can validate a changed prediction.",
+    "Re-render derived angular spectra and quoted ratios from the new arrays, and deploy only through reproduce/deploy.py."
+  ]
+}

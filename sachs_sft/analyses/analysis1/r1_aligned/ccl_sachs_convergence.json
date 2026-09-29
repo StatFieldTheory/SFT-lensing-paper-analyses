@@ -1,0 +1,81 @@
+{
+  "ell": [
+    2,
+    10,
+    100,
+    500,
+    800
+  ],
+  "low": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/analysis1/r1_aligned/ccl_sachs_smoke_lensing8192.npz",
+  "high": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/analysis1/r1_aligned/ccl_sachs_smoke_lensing16384.npz",
+  "sha256": {
+    "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/analysis1/r1_aligned/ccl_sachs_smoke_lensing8192.npz": "4cfb6bc132c2d41a72c7709fd1c0727e13e7e9ae6dc8e3259979e8316073029a",
+    "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/analysis1/r1_aligned/ccl_sachs_smoke_lensing16384.npz": "7613d5a8fb71ad5d9dd98dc56d78406c0548a6a586e13078987bc0fc0557ce9d"
+  },
+  "high_over_low_minus_one": {
+    "cl_pp": [
+      -0.00046864537706925447,
+      -5.298653413621235e-05,
+      -4.023738668923471e-07,
+      -9.665140854320242e-08,
+      -9.009075196964034e-08
+    ],
+    "cl_pw": [
+      0.00048788865286031324,
+      4.5768810774449165e-05,
+      -1.125791311729074e-06,
+      -1.6642170319602911e-07,
+      -7.785106370672423e-08
+    ],
+    "cl_ww": [
+      -3.219822486244528e-05,
+      2.31410612805405e-06,
+      -1.3574905102231583e-06,
+      -2.006887838135185e-07,
+      -7.219182029949422e-08
+    ],
+    "cl_tt": [
+      -3.21982248625563e-05,
+      2.31410612805405e-06,
+      -1.3574905102231583e-06,
+      -2.0068878392454081e-07,
+      -7.219182018847192e-08
+    ],
+    "cl_tw": [
+      -3.21982248625563e-05,
+      2.314106127832005e-06,
+      -1.3574905100011136e-06,
+      -2.0068878403556312e-07,
+      -7.219181996642732e-08
+    ],
+    "cl_standard_kk": [
+      -3.219895252137839e-05,
+      2.3137466673706086e-06,
+      -1.3583082880685993e-06,
+      -2.0209773810009324e-07,
+      -7.369156329595228e-08
+    ]
+  },
+  "high_tt_over_standard_minus_one": [
+    -2.3152892725253338e-07,
+    -7.464551932123697e-08,
+    -9.474287854249752e-08,
+    -1.556729911644794e-07,
+    -1.7449318101547817e-07
+  ],
+  "high_pp_over_tt_minus_one": [
+    0.07908748027677204,
+    0.008004059096195837,
+    0.0004370374309923264,
+    2.9273355163450532e-05,
+    1.2671808365949389e-05
+  ],
+  "high_covariance_ratio_pw2_over_ppww": [
+    0.9900888162098127,
+    0.9997055215735559,
+    0.9999984258376206,
+    0.9999999502836272,
+    0.9999999845130528
+  ],
+  "scope": "Five sparse multipoles only. Full Ricci low-ell derivative terms have residual sharp-inner-boundary/FKEM sensitivity. Not a converged full spectrum or real-space figure."
+}

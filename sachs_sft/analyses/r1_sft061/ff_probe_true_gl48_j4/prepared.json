@@ -1,0 +1,251 @@
+{
+  "schema_version": 1,
+  "suite": "companion",
+  "framework": {
+    "version": "0.6.1",
+    "commit": "6945815ad9e6efa2b9e768891d6bf92b1214670d",
+    "source": "/Users/zzhang/projects/SFT/sft-wick",
+    "python": "/opt/homebrew/Caskroom/miniconda/base/envs/sft-wick/bin/python"
+  },
+  "source_mode": "true-redshift",
+  "source_mapping": {
+    "z": [
+      1.0,
+      1.7,
+      2.5,
+      3.2,
+      4.0,
+      5.0
+    ],
+    "lambda_mpc": [
+      1822.7290713360132,
+      2094.9023866944794,
+      2216.8017129787445,
+      2266.590169124188,
+      2297.2976167427273,
+      2317.9695958203943
+    ],
+    "chi_mpc": [
+      3413.8078776661523,
+      4855.798469579331,
+      5989.922522963986,
+      6715.990936290299,
+      7356.080626903646,
+      7971.183639083942
+    ],
+    "D_mpc": [
+      1706.9039388330762,
+      1798.4438776219745,
+      1711.4064351325674,
+      1599.0454610214997,
+      1471.2161253807292,
+      1328.5306065139903
+    ],
+    "mapping_provenance": {
+      "cosmology": {
+        "Omega_m": 0.3160919980475834,
+        "h": 0.6711,
+        "geometry": "flat matter-plus-Lambda, without radiation"
+      },
+      "E0": 1.0,
+      "convention": "project",
+      "distance_unit": "physical Mpc",
+      "background_z_max": 1200.0,
+      "background_n_z": 5001,
+      "native_knots": 5001,
+      "max_affine_mpc": 2353.929874188644,
+      "source_mapping": "Same public canoes lambda_of_chi, chi_of_lambda and z_of_chi as the C-table build, cached on their native interpolation knots",
+      "canoes_root": "/Users/zzhang/projects/angular_statistics/canoes",
+      "canoes_commit": "077a64c86788add650ece263b054e7803ca0c644",
+      "source_sha256": {
+        "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/aligned_response.py": "888f1593e55342f088ac486e7709688853b6827506d8d43f90ec35ee10e1c5f4",
+        "/Users/zzhang/projects/angular_statistics/canoes/src/canoes/cosmo/lightcone.py": "69f57f5e95545c094a4ad95e70a603635f5a886178df5e82703191a849fb3d02",
+        "/Users/zzhang/projects/angular_statistics/canoes/src/canoes/cosmo/growth.py": "c931cca5f6d66b4b3082a6a0a11924604d12583219bbe31ca8df804cd371e08c",
+        "/Users/zzhang/projects/angular_statistics/canoes/src/canoes/sachs/sft_input/corr_op/table.py": "241d96bf8960517044061e5a2442d1761d2ba714fa4d7cf0ded989faffc77fd5",
+        "/Users/zzhang/projects/angular_statistics/canoes/src/canoes/sachs/sft_input/corr_op/_limber.py": "d558f2731ef7c8d765ea8af93a54adc85331b0b4c6f3fe65b85cfa725556084f"
+      },
+      "C_table_path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/callables/C_propagator/corr_op/corr_op_table_zs5_21pt_stf_fid_omega03161_h06711.npz",
+      "C_table_sha256": "597d908dbef1520174d29848d79065bd090735c6e4526287e4de59b66774e33c",
+      "jacobi_identity_source": "sections/appendix.tex, appendix D equals a chi, verified by mathematica/derive_jacobi_flat_flrw.wl"
+    },
+    "response_module": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/aligned_response.py",
+    "response_attr": "response_R",
+    "validation": {
+      "status": "passed",
+      "public_coordinate_maps": "Exact equality at observer, selected table nodes and all requested source planes",
+      "D_identity": "Exact equality to public chi/(1+z) at all probes",
+      "C_builder_response_max_abs_error": 2.220446049250313e-16,
+      "C_builder_helper": "canoes.sachs.sft_input.corr_op._limber._id_basis_windows with COEFS_PSI0, stripping its recorded growth and density factors",
+      "scalar_array_max_abs_error": 0.0,
+      "causal_and_observer_zero": "passed",
+      "coincident_positive_time_unity": "passed"
+    },
+    "source_file": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/source_map.json"
+  },
+  "profile": "probe",
+  "targets": [
+    {
+      "source_id": "main",
+      "z": 5.0,
+      "historical_lambda_mpc": 2313.0288751857356,
+      "historical_product": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/sftwick_outputs/2PCF/C_corr_op_K_limber_FF/xi_C_corr_op_K_limber_FF.npz",
+      "group": "main",
+      "component_pairs": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          2
+        ]
+      ],
+      "id": "ff_main",
+      "channel": "ff",
+      "source_config": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/sftwick_outputs/2PCF/C_corr_op_K_limber_FF/config_L2.yaml",
+      "target_lambdas_mpc": [
+        2317.9695958203943
+      ],
+      "n_jobs": 4,
+      "n_gauss": 48,
+      "orders": "0,2",
+      "angle_indices": [
+        0,
+        39
+      ],
+      "output_name": "xi_ff_main.npz",
+      "expected_order": 2,
+      "publication_role": "FF component",
+      "prepared_config": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/ff_probe_true_gl48_j4/ff_main/config_ff_main.yaml",
+      "result": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/ff_probe_true_gl48_j4/ff_main/xi_ff_main.npz"
+    }
+  ],
+  "inputs": [
+    {
+      "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/analysis3/outputs/multiz_kappa_2pcf_5z.npz",
+      "sha256": "e549a41a0d3e3642f9330bebce6fb9cd6b1e7cfa20d9f73db35466d73a826584",
+      "bytes": 6644
+    },
+    {
+      "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/aligned_response.py",
+      "sha256": "888f1593e55342f088ac486e7709688853b6827506d8d43f90ec35ee10e1c5f4",
+      "bytes": 10199
+    },
+    {
+      "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/companion_suite.py",
+      "sha256": "b44effeee7520c55887d3b1b14f0d0c218301025a10f42a6824a921b49a1e38d",
+      "bytes": 13975
+    },
+    {
+      "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/framework_provenance.json",
+      "sha256": "b6e906874bffa594361d7f00ff2083a664c5679e8c76c0bac21efe271cc745e0",
+      "bytes": 1295
+    },
+    {
+      "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/replay_suite.py",
+      "sha256": "c37ac4e3fcb6e89a7e8a1e2cefc602e31c301975a88cd89b2e8df2dbbf9800b8",
+      "bytes": 23501
+    },
+    {
+      "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/source_map.json",
+      "sha256": "83a926ae4d52dc5435dbe9ab7d016dddbbbf25b149c5a640e419afcd842bdc2b",
+      "bytes": 3264
+    },
+    {
+      "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/callables/C_propagator/corr_op/corr_op_C_callable.py",
+      "sha256": "0d757821f7603c36cf59b77319e5d8e65b8d8bdd0991a4c78112c224754a863e",
+      "bytes": 9778
+    },
+    {
+      "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/callables/C_propagator/corr_op/corr_op_table_zs5_21pt_stf_fid_omega03161_h06711.npz",
+      "sha256": "597d908dbef1520174d29848d79065bd090735c6e4526287e4de59b66774e33c",
+      "bytes": 5506638
+    },
+    {
+      "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/callables/kappa3_vertex/equal_time_limber/equal_time_limber_kappa3_callable.py",
+      "sha256": "4b9c47cc8771ab3167f7d5d6ad262dcbaf1f1fa360eff271e740dcca69fcaa50",
+      "bytes": 14618
+    },
+    {
+      "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/callables/kappa3_vertex/equal_time_limber/equal_time_limber_kappa3_z5covgrid16_omega0316_h06711.npz",
+      "sha256": "76342b35c5637465d964a3947288d84d2fb75c5714128e261ddc10c867e2693f",
+      "bytes": 1329921
+    },
+    {
+      "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/callables/kappa3_vertex/rebuild/run_fk_variant.py",
+      "sha256": "0ea02c4ce96cd77f1c146a5cc38214a059530b8833f8a61b005b490ec84407b2",
+      "bytes": 9804
+    },
+    {
+      "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/scripts/D_callable.py",
+      "sha256": "4d1fdaee56789ec701d21f5fbc0ba1fb763ce4be577e932b55d29aff244e638f",
+      "bytes": 3945
+    },
+    {
+      "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/scripts/inputs/F_tensor.npy",
+      "sha256": "63b682be4315a5783d1554e7ea48364229e8bcf17181c6482d14269101e1d0db",
+      "bytes": 344
+    },
+    {
+      "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/scripts/inputs/kappa2_grid_lcut0_low_empty.npz",
+      "sha256": "1e03b492d46ed93db3a4ad6d953323325a20322470371412f1ac3587b1139e63",
+      "bytes": 6561
+    },
+    {
+      "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/scripts/kappa2_callable.py",
+      "sha256": "49372414bab52dce803f786c301c07219b638b39f5038f60e0bb9858ce18cb29",
+      "bytes": 23112
+    },
+    {
+      "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/scripts/run_FF_single.py",
+      "sha256": "5ca112bbcad3e38ff8ee6f6c6544661dc962eeeff7aea3423a0f5dd9abc7e443",
+      "bytes": 5651
+    },
+    {
+      "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/sftwick_outputs/2PCF/C_corr_op_K_limber_FF/config_L2.yaml",
+      "sha256": "3db44d879e915a27dd6acab630c2f6c1c0319dd1cb9750d7a8955873a3eaacc4",
+      "bytes": 4908
+    },
+    {
+      "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/sftwick_outputs/2PCF/C_corr_op_K_limber_FF/xi_C_corr_op_K_limber_FF.npz",
+      "sha256": "cc3df79f8ea12427170f31af9c8d549f9c27cdf39d3d8ac228221b7ae921ac5a",
+      "bytes": 13653
+    },
+    {
+      "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/sftwick_outputs/2PCF/multiz/multiz_ff_real_all5.npz",
+      "sha256": "8e6ec3ea1fdc2b82530aaee05eeb42005d2f2d038258c715111213c72d6e30c5",
+      "bytes": 2694
+    }
+  ],
+  "covariance_limitation": "The historical 21-source-node C table is unchanged. Source alignment and outer quadrature convergence do not establish convergence of this tabulated input.",
+  "checkpoint_policy": "One source and channel per target, private caches, completed-result hash checked on resume. An interrupted target requires a fresh directory.",
+  "work_directory": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/ff_probe_true_gl48_j4",
+  "generated_inputs": [
+    {
+      "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/ff_probe_true_gl48_j4/ff_main/config_ff_main.yaml",
+      "sha256": "6ddd0f1ca9b86e0262309c3faf648e7d544c8c1a95b1af669af73d6783823692",
+      "bytes": 2487
+    },
+    {
+      "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/ff_probe_true_gl48_j4/ff_main/historical_config.yaml",
+      "sha256": "3db44d879e915a27dd6acab630c2f6c1c0319dd1cb9750d7a8955873a3eaacc4",
+      "bytes": 4908
+    }
+  ]
+}

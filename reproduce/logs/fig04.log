@@ -1,6 +1,6 @@
 === Order-2 polarization C_ell (z_s=5) ===
-  FF: max|D_EE|=3.87e-07  max|D_BB|=1.44e-08  max|D_EB|=4.52e-15  raw|<g+gx>|max=4.66e-15
-  FK: max|D_EE|=3.69e-06  max|D_BB|=1.73e-06  max|D_EB|=0.00e+00  raw|<g+gx>|max=0.00e+00
+  FF: max|D_EE|=4.42e-07  max|D_BB|=1.65e-08  max|D_EB|=5.04e-15  raw|<g+gx>|max=5.29e-15
+  FK: max|D_EE|=2.98e-06  max|D_BB|=1.73e-07  max|D_EB|=0.00e+00  raw|<g+gx>|max=0.00e+00
 -> /Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/analysis3/outputs/cl_EB_polarization.png
 
 --- stderr ---

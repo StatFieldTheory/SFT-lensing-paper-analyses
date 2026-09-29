@@ -1,0 +1,19 @@
+{
+  "status": "passed",
+  "scalar_tensor_comparisons": 2728,
+  "batch_tensor_comparisons": 2728,
+  "array_equal": true,
+  "rejections": [
+    "one_ulp",
+    "mixed_angles",
+    "nonfinite_time"
+  ],
+  "scope": "Full27components at88placements and31shell/midpoint positions. Actual fullfold agreement remains a separate gate.",
+  "sha256": {
+    "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/permaware_ladder/guard.py": "1fd24fc3d72ee012e5b4b755d7748e1c795a705f241858b966bbdff554cee7f6",
+    "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/permaware_ladder/contract.json": "ead17f4314037c6eeeb1310f7740440097da04cfd0e0f19dacb61f2675eb0f94",
+    "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/permaware_ladder/folds_tree/tree_15360/callable_tree_15360.py": "a86bbf76afe6a567771e1e60ab2be88c90817810875cf63c0704caebd6a02145",
+    "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/callables/kappa3_vertex/rebuild/products/pieces_nphi512/table_permclosed_np512.npz": "3a4e5e4ff4af56c23a151046e1cabc253e1eed854497b50c8688a3ee88effffe",
+    "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/permaware_ladder/table_tree_cut15360.npz": "4ac7f2887d004a14f7283d6a83e6462fffadbd6640689cdfdec2afc603138cc8"
+  }
+}

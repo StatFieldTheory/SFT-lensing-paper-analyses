@@ -1,12 +1,12 @@
-"""New figure: the full convergence 2-point decomposition xi_kk(gamma) into its
-O0 / FF / FK channels, with the direct Monte-Carlo overlay for the FF channel
-(replaces the archived apples/oranges 'mc_vs_analysis3_xi_kappa').
+"""Convergence reference curves and matched stochastic-Sachs Monte Carlo checks.
 
-Lines  = analysis-3 channels (O0, FF full moment, FK).
-Markers = Monte-Carlo FF full moment (simulate_ff_crn F-toggle).
-The FULL FF moment is compared directly (no connected/disconnected split). O0 is the
-dominant, separately-validated linear piece (anchor 0.881); its raw MC has a
-large-gamma variance floor, so it is shown as the analytic line only.
+Lines use the selected O0 and FK products. In the active revision, the FF line
+is the matched local-covariance reference, as its legend states. The historical
+fallback retains its original analysis-3 inputs.
+Markers show direct stochastic-Sachs estimates, including the FF full moment.
+The FULL FF moment is compared directly (no connected/disconnected split).
+O0 is shown as the independently calculated linear reference. The active
+revision applies no amplitude anchor.
 
 FK MARKERS: withdrawn 2026-08-26, restored 2026-08-28
 =====================================================
@@ -34,6 +34,7 @@ from __future__ import annotations
 import argparse
 import math
 from pathlib import Path
+import sys
 
 import numpy as np
 
@@ -46,6 +47,10 @@ LF = 2313.0288751857356
 # spanning Figure 11's displayed range; the FF comparison stays clean over the
 # whole grid.
 FK_MARKERS_DEFAULT = Path(__file__).resolve().parents[1] / "mc_fk_complete" / "_markers_pooled.npz"
+sys.path.insert(0, str(Path(__file__).resolve().parents[3] / "reproduce"))
+from product_paths import active_manifest, resolve_product  # noqa: E402
+
+FK_MARKERS_DEFAULT = resolve_product("mc_markers", FK_MARKERS_DEFAULT)
 GAMMA_MC = (1.0, 2.6, 6.7, 17.3, 44.4, 114.3, 293.9,
             372.2, 471.3, 596.9, 755.9, 957.2, 1212.2, 1535.2, 1944.1)
 
@@ -67,7 +72,7 @@ def _load_kk(name: str):
 def _cache_path() -> Path:
     p = Path(__file__).resolve().parent / "outputs"
     p.mkdir(parents=True, exist_ok=True)
-    return p / "appendix_mc_curve.npz"
+    return resolve_product("mc_cache", p / "appendix_mc_curve.npz")
 
 
 def _compute(ff_real: int, ff_nl: int, fk_markers: Path | None = None) -> dict:
@@ -101,9 +106,7 @@ def _compute(ff_real: int, ff_nl: int, fk_markers: Path | None = None) -> dict:
 
 
 def _plot(D: dict) -> None:
-    """Single-panel, house-style figure: the analysis-3 analytic channels
-    (O0/FF/FK, sign-aware lines) overlaid with the direct stochastic-Sachs Monte
-    Carlo of the FF channel (markers)."""
+    """Plot the selected reference curves and their matched Monte Carlo checks."""
     import sys
     sys.path.insert(0, str(Path(__file__).resolve().parent))
     from _plot_style import (PALETTE, annotate_sign_legend, apply_rcparams,  # noqa: E402
@@ -113,28 +116,29 @@ def _plot(D: dict) -> None:
 
     g = np.asarray(D["g"], float); o0 = np.asarray(D["o0"], float)
     ff_mom = np.asarray(D["ff_mom"], float); fk3 = np.asarray(D["fk3"], float)
+    g_ff = np.asarray(D.get("g_ff", g), float)
+    ff_label = str(D.get("ff_reference_label", "FF (workflow)"))
     g_mc = np.asarray(D["g_mc"], float)
     ffc_mc = np.asarray(D["ffc_mc"], float); ffc_se = np.asarray(D["ffc_se"], float)
     C_O0, C_FF, C_FK = PALETTE[0], PALETTE[1], PALETTE[2]
 
     fig, ax = plt.subplots(figsize=(6.4, 4.8), constrained_layout=True)
 
-    # analysis-3 analytic channels: sign-aware coloured lines.  O0 changes sign at
+    # Selected reference curves: sign-aware coloured lines. O0 changes sign at
     # large gamma (hollow sign markers there; see the filled/hollow note); the sign
     # markers are kept small so the positive FF/FK lines read cleanly.
     _smk = dict(sign_marker_size=3.2, sign_marker_alpha=0.45)
     plot_signed_line(ax, g, o0, color=C_O0, lw=1.7, alpha=0.95, label="O0 (workflow)", **_smk)
-    plot_signed_line(ax, g, ff_mom, color=C_FF, lw=1.7, alpha=0.95, label="FF (workflow)", **_smk)
+    plot_signed_line(ax, g_ff, ff_mom, color=C_FF, lw=1.7, alpha=0.95, label=ff_label, **_smk)
     # Faint beyond ~1 degree: the FK multipole sum stops converging there.
     plot_signed_line(ax, g, fk3, color=C_FK, lw=1.7, alpha=0.95,
                      label="FK (workflow)", faint_outside=(None, 60.0), **_smk)
 
     # direct Monte-Carlo overlay (positive in range -> filled markers, matching colour)
     ax.errorbar(g_mc, np.abs(ffc_mc), yerr=ffc_se, fmt="s", color=C_FF, ms=6.5,
-                mfc=C_FF, mec=C_FF, capsize=2.5, lw=1.1, zorder=5, label="FF (MC)")
-    # FK overlay, only where the analytic FK multipole sum has converged.  The
-    # error bars are sub-percent and therefore smaller than the symbols; the
-    # quoted agreement lives in the appendix text, not in the plot.
+                mfc=C_FF, mec=C_FF, capsize=2.5, lw=1.1, zorder=5,
+                label="FF (local MC)" if active_manifest() is not None else "FF (MC)")
+    # Matched FK Monte Carlo estimates and their measured standard errors.
     if D.get("g_fk") is not None and len(np.atleast_1d(D["g_fk"])):
         ax.errorbar(np.asarray(D["g_fk"], float), np.abs(np.asarray(D["fk_mc"], float)),
                     yerr=np.asarray(D["fk_se"], float), fmt="o", color=C_FK, ms=6.5,
@@ -156,6 +160,8 @@ def _plot(D: dict) -> None:
 
 
 def main(ff_real: int, ff_nl: int, from_cache: bool, fk_markers=None) -> None:
+    if active_manifest() is not None and not from_cache:
+        raise ValueError("The active revision uses isolated MC adapters. Regenerate its explicit cache before plotting.")
     if from_cache and _cache_path().exists():
         D = dict(np.load(_cache_path(), allow_pickle=True))  # our own cache, safe
         print(f"[from cache {_cache_path()}]")

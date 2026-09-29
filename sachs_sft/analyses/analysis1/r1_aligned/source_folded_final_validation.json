@@ -1,0 +1,162 @@
+{
+  "boundary_plus_nk_refinement_max_abs_over_peak": {
+    "kgt": 1.1734960037980557e-05,
+    "kk": 5.078190050204537e-06,
+    "xim": 1.764564191322658e-05,
+    "xip": 2.675378979606865e-06
+  },
+  "ccl_Nchi4096_to8192_max_relative_at_probes": {
+    "cl_ee": 2.075324968697778e-05,
+    "cl_ke": 2.075324968697778e-05,
+    "cl_kk": 2.0753249687088804e-05
+  },
+  "ccl_finite_k_range": [
+    {
+      "ell": 2,
+      "k_max_inverse_mpc": 3002243.5561153707,
+      "k_min_inverse_mpc": 0.0002223884115641013,
+      "n_k": 8192
+    },
+    {
+      "ell": 10,
+      "k_max_inverse_mpc": 11007756.03700447,
+      "k_min_inverse_mpc": 0.0008153893360744045,
+      "n_k": 8192
+    },
+    {
+      "ell": 100,
+      "k_max_inverse_mpc": 100944871.46740769,
+      "k_min_inverse_mpc": 0.007477397886474636,
+      "n_k": 8192
+    },
+    {
+      "ell": 800,
+      "k_max_inverse_mpc": 800055141.3602908,
+      "k_min_inverse_mpc": 0.05926334380446592,
+      "n_k": 8192
+    }
+  ],
+  "exact_angular_factor_relative_error": {
+    "TT_to_WW": 6.661338147750939e-16,
+    "TW_to_WW": 4.440892098500626e-16
+  },
+  "finite_k_diagnosis": {
+    "direct_tail_interval_lower_k": 0.0001,
+    "direct_ww_ell2": 3.672064505886104e-08,
+    "missing_tt_ell2_tail": 6.631353983e-10,
+    "note": "Independent bounded diagnosis from order0 agent using128/256 log-GL nodes. No tail fit or amplitude adjustment in selected CCL baseline.",
+    "original_ccl_ell2_kmin_inverse_mpc": 0.0003758620085,
+    "original_ccl_tt_ell2": 5.441912719e-08,
+    "relative_closure": 2.3510783581759398e-05,
+    "tail_corrected_ww_ell2": 3.672150839e-08
+  },
+  "full_vs_standard_ccl": {
+    "kgt": {
+      "angle_count": 40,
+      "mask_count": 30,
+      "max_abs_over_ccl_peak": 6.636606113620521e-05,
+      "max_relative_where_abs_ccl_above_1pct_peak": 0.002372867355968644
+    },
+    "kk": {
+      "angle_count": 40,
+      "mask_count": 23,
+      "max_abs_over_ccl_peak": 0.00012857478924488544,
+      "max_relative_where_abs_ccl_above_1pct_peak": 0.004986511085679268
+    },
+    "xim": {
+      "angle_count": 40,
+      "mask_count": 29,
+      "max_abs_over_ccl_peak": 2.1408230973281837e-05,
+      "max_relative_where_abs_ccl_above_1pct_peak": 4.0347995472811427e-05
+    },
+    "xip": {
+      "angle_count": 40,
+      "mask_count": 23,
+      "max_abs_over_ccl_peak": 1.5842303779266504e-05,
+      "max_relative_where_abs_ccl_above_1pct_peak": 5.3935925741099844e-05
+    }
+  },
+  "limitations": [
+    "FKEM still omits its finite low-k tail after upper zero padding through13500Mpc. Do not assign the full residual to Ricci physics.",
+    "Aboveell800 the Sachs projection uses the ID-only Limber approximation, omitting radial-derivative Ricci atoms, with k=(ell+0.5)/chi.",
+    "The withheld test establishes finite-grid observable convergence at the stated resolution, not an all-parameter/global proof.",
+    "Previous full-Ricci t-form probes failed covariance positivity and are rejected; only direct-k source-folded results are selected."
+  ],
+  "numerical_gate": {
+    "angular_metrics": {
+      "kgt": {
+        "max_abs_over_peak": 0.00010392024943924113,
+        "max_relative_where_abs_above_1pct_peak": 0.0005029206159583577
+      },
+      "kk": {
+        "max_abs_over_peak": 3.6310250468496505e-05,
+        "max_relative_where_abs_above_1pct_peak": 0.0003648716932080909
+      },
+      "xim": {
+        "max_abs_over_peak": 0.00016158865344908748,
+        "max_relative_where_abs_above_1pct_peak": 0.00035635978022030557
+      },
+      "xip": {
+        "max_abs_over_peak": 3.459898508993448e-05,
+        "max_relative_where_abs_above_1pct_peak": 0.0003542589898557491
+      }
+    },
+    "final_covariance_max_pw2_over_ppww": 0.9999999999999893,
+    "method": "Insert independent withheld midpoints computed at half radial and k-grid resolutions into the original low-ell log-CubicSpline, retain original exact high-ell samples, and recompute all four angular2PCFs. This tests combined interpolation and quadrature sensitivity.",
+    "passed": true,
+    "reconstructed_covariance_max_pw2_over_ppww": 0.9999999999999893,
+    "spectral_max_relative_at_withheld": {
+      "cl_pp": 0.002982751993855004,
+      "cl_pw": 0.0029880755288722582,
+      "cl_ww": 0.002993400900227039
+    },
+    "target_max_abs_over_peak": 0.001
+  },
+  "observer_boundary": "Included at physical chi_min50 in selected source-folded product. direct_bessel_cache.observer_boundary is authoritative. The generic low_ell_boundary_caveat template describes the original helper, not the accepted amended path.",
+  "products": {
+    "ccl": {
+      "path": "ccl_upperpad_n8192.npz",
+      "sha256": "e8a4c15e540c9074f2749752d7d1db9a2e784ad433bb0d838506f1241ae82c86"
+    },
+    "ccl_probe": {
+      "path": "ccl_upperpad_probe_n4096.npz",
+      "sha256": "5d3ecfeb1ea2f7493856eefffe768ebf0cefb5a3ab806e1af5dadeeed1bc28f3"
+    },
+    "source_folded": {
+      "path": "source_folded_full_boundary_n4096_k2048.npz",
+      "sha256": "6dbc612cddd2e9e29591e6b3465ac71bddfe2dbf8cc2b3a45d4b4756b8945a14"
+    },
+    "withheld": {
+      "path": "source_folded_withheld_n2048_k1024.npz",
+      "sha256": "540d93fd69da8a49614011f97959d3bff0502bdb8f3c392bd5044579bceae748"
+    }
+  },
+  "provenance": {
+    "cache_bitwise_validation": "source_folded_cache_validation.json",
+    "current_script_differs_only_by_later_output_suffix_guard": true,
+    "peak_rss_bytes": 1128103936,
+    "snapshot_hash_matches_run": true,
+    "source_script_snapshot": "source_folded_full_boundary_n4096_k2048.source.py",
+    "warnings_ccl": [],
+    "warnings_source": []
+  },
+  "scope": "Gaussian source-folded Sachs projection. No nonlinear optical F/K contributions. Standard CCL is a transverse lensing benchmark, not the same full Ricci operator.",
+  "setup": {
+    "angle_range_arcmin": [
+      0.4999999869114161,
+      5000.000000069409
+    ],
+    "angles_byte_identical": true,
+    "cosine_taper_fraction": 0.2,
+    "ell_max": 5000,
+    "ell_min": 2,
+    "limber_shift": 0.5,
+    "physical_chi_min_mpc": 50.0,
+    "source_chi_mpc": 7971.183639083942,
+    "source_lambda_mpc": 2317.9695958203943,
+    "split_inclusive": 800,
+    "taper_start": 4000.4,
+    "z_s": 5.0
+  },
+  "status": "accepted_for_figure10_numerical_comparison"
+}

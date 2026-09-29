@@ -1,0 +1,62 @@
+{
+  "GL24": {
+    "kk": {
+      "max_abs": 2.8675378253624094e-06,
+      "max_abs_over_peak": 0.003182512036694889,
+      "max_rel_above_1e3_peak": 0.06473285622344362,
+      "small_angle_signed": 0.00089816214950943,
+      "exact_table_small_angle_signed": 0.0009010296873347924
+    },
+    "xip": {
+      "max_abs": 2.8231470694395225e-06,
+      "max_abs_over_peak": 0.0031420376989555435,
+      "max_rel_above_1e3_peak": 0.06564784972048526,
+      "small_angle_signed": 0.0008956851904906017,
+      "exact_table_small_angle_signed": 0.0008985083375600412
+    },
+    "xim": {
+      "max_abs": 2.2682847371598884e-07,
+      "max_abs_over_peak": 0.00321643851674786,
+      "max_rel_above_1e3_peak": 0.0769581720522428,
+      "small_angle_signed": 2.3275742049347868e-08,
+      "exact_table_small_angle_signed": 2.3357166934465708e-08
+    },
+    "kgt": {
+      "max_abs": 4.5951461592720014e-07,
+      "max_abs_over_peak": 0.003235302166657035,
+      "max_rel_above_1e3_peak": 0.07203671479379023,
+      "small_angle_signed": 5.763482395809154e-06,
+      "exact_table_small_angle_signed": 5.783085313434221e-06
+    }
+  },
+  "GL48": {
+    "kk": {
+      "max_abs": 7.16515917914399e-07,
+      "max_abs_over_peak": 0.0007952189899911319,
+      "max_rel_above_1e3_peak": 0.0873866036017762,
+      "small_angle_signed": 0.0009006165702247404,
+      "exact_table_small_angle_signed": 0.0009010296873347924
+    },
+    "xip": {
+      "max_abs": 6.909729831669855e-07,
+      "max_abs_over_peak": 0.000769022338783598,
+      "max_rel_above_1e3_peak": 0.08942198028109598,
+      "small_angle_signed": 0.0008981427776241181,
+      "exact_table_small_angle_signed": 0.0008985083375600412
+    },
+    "xim": {
+      "max_abs": 6.143232183454915e-08,
+      "max_abs_over_peak": 0.0008711132376145172,
+      "max_rel_above_1e3_peak": 0.09630496277218993,
+      "small_angle_signed": 2.3377139217245144e-08,
+      "exact_table_small_angle_signed": 2.3357166934465708e-08
+    },
+    "kgt": {
+      "max_abs": 1.1582763898919081e-07,
+      "max_abs_over_peak": 0.0008155070554706071,
+      "max_rel_above_1e3_peak": 0.08903402726790516,
+      "small_angle_signed": 5.7875455821839625e-06,
+      "exact_table_small_angle_signed": 5.783085313434221e-06
+    }
+  }
+}

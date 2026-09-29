@@ -1,23 +1,81 @@
-
-=== Analysis 1 Order-0: SFT corr_op (non-Limber) vs PyCCL FKEM ===
-kappa-kappa:
-  SFT  range = [-3.863e-07, +8.443e-04]  SFT(0.5')=+8.4432e-04
-  PyCCL range = [-3.547e-07, +8.462e-04]  PyCCL(0.5')=+8.4616e-04
-  SFT/PyCCL @ small gamma = 0.9978, 0.9978, 0.9978
-xi_plus:
-  SFT  range = [-4.240e-07, +8.418e-04]  SFT(0.5')=+8.4176e-04
-  PyCCL range = [-3.209e-07, +8.462e-04]  PyCCL(0.5')=+8.4616e-04
-  SFT/PyCCL @ small gamma = 0.9948, 0.9948, 0.9947
-xi_minus:
-  SFT  range = [+1.394e-08, +6.572e-05]  SFT(0.5')=+2.4212e-08
-  PyCCL range = [+2.157e-08, +6.639e-05]  PyCCL(0.5')=+2.4010e-08
-  SFT/PyCCL @ small gamma = 1.0084, 1.0083, 1.0080
-kappa_gamma_t:
-  SFT  range = [+3.400e-09, +1.322e-04]  SFT(0.5')=+5.6747e-06
-  PyCCL range = [+6.724e-09, +1.324e-04]  PyCCL(0.5')=+5.6752e-06
-  SFT/PyCCL @ small gamma = 0.9999, 0.9998, 0.9997
-
--> /Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/analysis1/outputs/analysis1_O0_vs_pyccl_fkem.png
--> /Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/analysis1/outputs/analysis1_O0_vs_pyccl_fkem.pdf
+{
+  "kk": {
+    "reference_peak_abs": 0.0008463559239568431,
+    "max_abs_difference": 1.088200345489114e-07,
+    "max_abs_difference_theta_arcmin": 4.188388065109657,
+    "max_abs_difference_over_peak_percent": 0.012857478924488545,
+    "rms_difference_over_peak_percent": 0.009498499274338903,
+    "relative_mask_floor_fraction_of_peak": 0.01,
+    "relative_mask_included_samples": 23,
+    "relative_mask_excluded_fraction": 0.36111111111111116,
+    "max_abs_masked_relative_percent": 0.4986511085679373,
+    "median_abs_masked_relative_percent": 0.028636541209221666,
+    "sft_zero_crossings_arcmin": [
+      222.3059037334832
+    ],
+    "reference_zero_crossings_arcmin": [
+      220.7530387887834
+    ],
+    "zero_crossing_shifts_arcmin": [
+      1.5528649446997917
+    ],
+    "zero_crossing_method": "Linear signed interpolation in log angle on the displayed samples"
+  },
+  "xip": {
+    "reference_peak_abs": 0.000846234004326509,
+    "max_abs_difference": 1.340629616488568e-08,
+    "max_abs_difference_theta_arcmin": 0.4999999869114161,
+    "max_abs_difference_over_peak_percent": 0.0015842303779266503,
+    "rms_difference_over_peak_percent": 0.0008520513403349923,
+    "relative_mask_floor_fraction_of_peak": 0.01,
+    "relative_mask_included_samples": 23,
+    "relative_mask_excluded_fraction": 0.36111111111111116,
+    "max_abs_masked_relative_percent": 0.005393592574111246,
+    "median_abs_masked_relative_percent": 0.0021590380411570546,
+    "sft_zero_crossings_arcmin": [
+      219.04166339291706
+    ],
+    "reference_zero_crossings_arcmin": [
+      219.0265007667868
+    ],
+    "zero_crossing_shifts_arcmin": [
+      0.015162626130262424
+    ],
+    "zero_crossing_method": "Linear signed interpolation in log angle on the displayed samples"
+  },
+  "xim": {
+    "reference_peak_abs": 6.583667611561247e-05,
+    "max_abs_difference": 1.4094467687961795e-09,
+    "max_abs_difference_theta_arcmin": 44.431190871684066,
+    "max_abs_difference_over_peak_percent": 0.0021408230973281837,
+    "rms_difference_over_peak_percent": 0.0008583937568450248,
+    "relative_mask_floor_fraction_of_peak": 0.01,
+    "relative_mask_included_samples": 29,
+    "relative_mask_excluded_fraction": 0.19444444444444442,
+    "max_abs_masked_relative_percent": 0.004034799547279982,
+    "median_abs_masked_relative_percent": 0.001323009753915578,
+    "sft_zero_crossings_arcmin": [],
+    "reference_zero_crossings_arcmin": [],
+    "zero_crossing_shifts_arcmin": [],
+    "zero_crossing_method": "Linear signed interpolation in log angle on the displayed samples"
+  },
+  "kgt": {
+    "reference_peak_abs": 0.0001321439029005822,
+    "max_abs_difference": 8.769870338676803e-09,
+    "max_abs_difference_theta_arcmin": 144.7133062603701,
+    "max_abs_difference_over_peak_percent": 0.006636606113620522,
+    "rms_difference_over_peak_percent": 0.0031903819618076413,
+    "relative_mask_floor_fraction_of_peak": 0.01,
+    "relative_mask_included_samples": 30,
+    "relative_mask_excluded_fraction": 0.16666666666666663,
+    "max_abs_masked_relative_percent": 0.23728673559686672,
+    "median_abs_masked_relative_percent": 0.0007790899422752971,
+    "sft_zero_crossings_arcmin": [],
+    "reference_zero_crossings_arcmin": [],
+    "zero_crossing_shifts_arcmin": [],
+    "zero_crossing_method": "Linear signed interpolation in log angle on the displayed samples"
+  }
+}
 
 --- stderr ---
+Matplotlib is building the font cache; this may take a moment.

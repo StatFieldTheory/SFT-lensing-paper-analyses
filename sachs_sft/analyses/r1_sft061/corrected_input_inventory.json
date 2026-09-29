@@ -1,0 +1,507 @@
+{
+  "status": "main and multi-z inputs ready; matched-geometry tree ladder requires assembly; BiHalofit HIGH bands missing",
+  "ready_files": [
+    {
+      "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/callables/kappa3_vertex/rebuild/products/pieces_nphi512/table_permclosed_np512.npz",
+      "sha256": "3a4e5e4ff4af56c23a151046e1cabc253e1eed854497b50c8688a3ee88effffe",
+      "bytes": 1702926,
+      "md5": "75c2b707aadab4aebde6fa5d34b483be",
+      "sept6_md5": "75c2b707aadab4aebde6fa5d34b483be",
+      "matches_sept6": true
+    },
+    {
+      "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/callables/kappa3_vertex/rebuild/products/pieces_nphi512/low_permclosed_r4_np512.npz",
+      "sha256": "2095ecb21ba2405d3e58ed49dc6602b10f47e6bf8d624918fb8f4448a462725a",
+      "bytes": 1702296,
+      "md5": "a99126de3a3ffda34f36470eb552e876",
+      "sept6_md5": "a99126de3a3ffda34f36470eb552e876",
+      "matches_sept6": true
+    },
+    {
+      "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/callables/kappa3_vertex/rebuild/products/pieces_nphi512/ladder/table_tree_np512_cut15360.npz",
+      "sha256": "3a4e5e4ff4af56c23a151046e1cabc253e1eed854497b50c8688a3ee88effffe",
+      "bytes": 1702926,
+      "md5": "75c2b707aadab4aebde6fa5d34b483be",
+      "sept6_md5": "75c2b707aadab4aebde6fa5d34b483be",
+      "matches_sept6": true
+    },
+    {
+      "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/callables/kappa3_vertex/rebuild/products/pieces_nphi512/ladder/table_tree_np512_cut1920.npz",
+      "sha256": "bb240e064d55ede8daf20467e060363ec13a8f172bb968898dd6ca286e47c32c",
+      "bytes": 1702834,
+      "md5": "1075c18ed99d11623eb3ffa13a828ac4",
+      "sept6_md5": "1075c18ed99d11623eb3ffa13a828ac4",
+      "matches_sept6": true
+    },
+    {
+      "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/callables/kappa3_vertex/rebuild/products/pieces_nphi512/ladder/table_tree_np512_cut3840.npz",
+      "sha256": "643c455976f0226e11587a2c9f467e567fbed49767453f0ab8d62ec9c0fdbcaa",
+      "bytes": 1702863,
+      "md5": "faea2dc673a00361e9971c80f5bdb4df",
+      "sept6_md5": "faea2dc673a00361e9971c80f5bdb4df",
+      "matches_sept6": true
+    },
+    {
+      "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/callables/kappa3_vertex/rebuild/products/pieces_nphi512/ladder/table_tree_np512_cut7680.npz",
+      "sha256": "f9384bd75e3361a4554e1f08ea09b56096d7ab63dcb7d458c2b4baed300fb678",
+      "bytes": 1702892,
+      "md5": "d49fb3eaff3874c150119b6ee8b591a3",
+      "sept6_md5": "d49fb3eaff3874c150119b6ee8b591a3",
+      "matches_sept6": true
+    },
+    {
+      "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/callables/kappa3_vertex/rebuild/products/pieces_nphi512/ladder/table_tree_np512_cut960.npz",
+      "sha256": "084b4035729f332e968061c47ee3ac4ae8b2559f620d17c15ae3e2c5018f34c2",
+      "bytes": 1702804,
+      "md5": "cce019f2c2bda2f74c1416b34ded6bea",
+      "sept6_md5": "cce019f2c2bda2f74c1416b34ded6bea",
+      "matches_sept6": true
+    },
+    {
+      "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/callables/kappa3_vertex/rebuild/products/pieces_nphi512/band_tree_extra_00060_00120_np512.npz",
+      "sha256": "35a054ad2fd69c2637b946a29303f47d0e1cae48c682841c945881707a1a23b6",
+      "bytes": 255127,
+      "md5": "73f30ffb83ecde64f69d1c1c13e92c00",
+      "sept6_md5": "73f30ffb83ecde64f69d1c1c13e92c00",
+      "matches_sept6": true
+    },
+    {
+      "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/callables/kappa3_vertex/rebuild/products/pieces_nphi512/band_tree_extra_00120_00240_np512.npz",
+      "sha256": "595e88ec5b2f236a84f4cd8c85eefabb51216083a13943f377360cd9a4366400",
+      "bytes": 255129,
+      "md5": "3b3f9cdf38641fc8cad7c32d9c090868",
+      "sept6_md5": "3b3f9cdf38641fc8cad7c32d9c090868",
+      "matches_sept6": true
+    },
+    {
+      "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/callables/kappa3_vertex/rebuild/products/pieces_nphi512/band_tree_extra_00240_00480_np512.npz",
+      "sha256": "62be454220d79f058fc072dab863e29ddaac06e3731c82ed1a46fb2b32cd9f97",
+      "bytes": 255129,
+      "md5": "737d21ad783ca9061a822db5b15d1387",
+      "sept6_md5": "737d21ad783ca9061a822db5b15d1387",
+      "matches_sept6": true
+    },
+    {
+      "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/callables/kappa3_vertex/rebuild/products/pieces_nphi512/band_tree_extra_00480_00960_np512.npz",
+      "sha256": "261fc24975b182f8a6402a04d2ac909196f0c602db4029c4e4fcf3caee925b40",
+      "bytes": 255129,
+      "md5": "3c6f8af4fb62e40dda87199ac5e3eee1",
+      "sept6_md5": "3c6f8af4fb62e40dda87199ac5e3eee1",
+      "matches_sept6": true
+    },
+    {
+      "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/callables/kappa3_vertex/rebuild/products/pieces_nphi512/band_tree_extra_00960_01920_np512.npz",
+      "sha256": "18126fb40a04ba0f712fea92e34e6636f1cde0c056d54ce0a12a66bed3dba83a",
+      "bytes": 255132,
+      "md5": "ab57158706ee0706f3003f2e28c5a4a4",
+      "sept6_md5": "ab57158706ee0706f3003f2e28c5a4a4",
+      "matches_sept6": true
+    },
+    {
+      "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/callables/kappa3_vertex/rebuild/products/pieces_nphi512/band_tree_extra_01920_03840_np512.npz",
+      "sha256": "7b5a7f459d2d42a04798325dc9583e4515aaf15c6eaf0328029e23a657d9e7ec",
+      "bytes": 255134,
+      "md5": "780d6248343184fff20cfa9251b81e2c",
+      "sept6_md5": "780d6248343184fff20cfa9251b81e2c",
+      "matches_sept6": true
+    },
+    {
+      "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/callables/kappa3_vertex/rebuild/products/pieces_nphi512/band_tree_extra_03840_07680_np512.npz",
+      "sha256": "8e248b60ca60105c0b9ab7a5731d4d0ace2e3f5462a3e18cbe4a5173076e7c7a",
+      "bytes": 255134,
+      "md5": "f74e60453bda4f28ea71ffc1b61c5f5b",
+      "sept6_md5": "f74e60453bda4f28ea71ffc1b61c5f5b",
+      "matches_sept6": true
+    },
+    {
+      "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/callables/kappa3_vertex/rebuild/products/pieces_nphi512/band_tree_extra_07680_15360_np512.npz",
+      "sha256": "7aa9f16a5c0280c10c0c9da8e919fa7571e301de21d807ade651f3a8ad0c5cbe",
+      "bytes": 255137,
+      "md5": "db56cbe02084f8982694c4743fdde802",
+      "sept6_md5": "db56cbe02084f8982694c4743fdde802",
+      "matches_sept6": true
+    },
+    {
+      "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/callables/kappa3_vertex/rebuild/products/pieces_nphi512/band_tree_permclosed_00060_00120_np512.npz",
+      "sha256": "9da7f879dd0d6fb5fd0afcc32b16cfef11fded113c14bcd6d40e691f9283dbed",
+      "bytes": 1703007,
+      "md5": "2f577bcd5e280c6ffb47c05e575c603f",
+      "sept6_md5": "2f577bcd5e280c6ffb47c05e575c603f",
+      "matches_sept6": true
+    },
+    {
+      "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/callables/kappa3_vertex/rebuild/products/pieces_nphi512/band_tree_permclosed_00120_00240_np512.npz",
+      "sha256": "a5d56bf9d178f5bc410098b7f1234a0b6c00eb5bf64aa1813933c55b6a2381cd",
+      "bytes": 1703009,
+      "md5": "d8badec08205985065b04935bec492b6",
+      "sept6_md5": "d8badec08205985065b04935bec492b6",
+      "matches_sept6": true
+    },
+    {
+      "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/callables/kappa3_vertex/rebuild/products/pieces_nphi512/band_tree_permclosed_00240_00480_np512.npz",
+      "sha256": "055b6c699c4628f9f8695bd7e4e722cf5b8f0f5cbe4bbb7f639303fc3731f833",
+      "bytes": 1703009,
+      "md5": "c4c0f6e8cc36b58f5ce6831450e8e1b6",
+      "sept6_md5": "c4c0f6e8cc36b58f5ce6831450e8e1b6",
+      "matches_sept6": true
+    },
+    {
+      "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/callables/kappa3_vertex/rebuild/products/pieces_nphi512/band_tree_permclosed_00480_00960_np512.npz",
+      "sha256": "183577e2b550503817be17df4d8e94f17f48cf3acd72d0fd883588cbaac6d789",
+      "bytes": 1703009,
+      "md5": "0e2fad61e8908c81de5949aea1a1edfa",
+      "sept6_md5": "0e2fad61e8908c81de5949aea1a1edfa",
+      "matches_sept6": true
+    },
+    {
+      "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/callables/kappa3_vertex/rebuild/products/pieces_nphi512/band_tree_permclosed_00960_01920_np512.npz",
+      "sha256": "a77177a2d34e354905c90889dfc42174a366641288aad4c2e9182945024f4932",
+      "bytes": 1703012,
+      "md5": "2b73538af399ecaa255d2ab2d3c624c2",
+      "sept6_md5": "2b73538af399ecaa255d2ab2d3c624c2",
+      "matches_sept6": true
+    },
+    {
+      "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/callables/kappa3_vertex/rebuild/products/pieces_nphi512/band_tree_permclosed_01920_03840_np512.npz",
+      "sha256": "f10b967bfeb21ba2a41286d12155b44e4691bd79c5525d46de7285d9e28ec432",
+      "bytes": 1703014,
+      "md5": "55627755bfc21b26780ad45f5b2956d0",
+      "sept6_md5": "55627755bfc21b26780ad45f5b2956d0",
+      "matches_sept6": true
+    },
+    {
+      "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/callables/kappa3_vertex/rebuild/products/pieces_nphi512/band_tree_permclosed_03840_07680_np512.npz",
+      "sha256": "fed202191443855b522f36c453d670a04faacfbd7b6d4b795c8b7ba43ee6f18c",
+      "bytes": 1703014,
+      "md5": "908a7ba96aaec255bfbda5859a194526",
+      "sept6_md5": "908a7ba96aaec255bfbda5859a194526",
+      "matches_sept6": true
+    },
+    {
+      "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/callables/kappa3_vertex/rebuild/products/pieces_nphi512/band_tree_permclosed_07680_15360_np512.npz",
+      "sha256": "c2ae70fdd8b372965e86d50c5e33072bb2e05dd99a73f015c1b79b5cb138da50",
+      "bytes": 1703017,
+      "md5": "a37a5e2f7464fb0eac9c2a1b7470cb37",
+      "sept6_md5": "a37a5e2f7464fb0eac9c2a1b7470cb37",
+      "matches_sept6": true
+    },
+    {
+      "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/callables/kappa3_vertex/rebuild/products/pieces_nphi512/band_tree_r4_00060_00120_np512.npz",
+      "sha256": "1479433701eda21a38aaa1d4e9b6b8287b27d004d27de97a739c2d5bc2c85641",
+      "bytes": 1454208,
+      "md5": "78444c6f0901d5359a80fa69f621eaca",
+      "sept6_md5": "78444c6f0901d5359a80fa69f621eaca",
+      "matches_sept6": true
+    },
+    {
+      "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/callables/kappa3_vertex/rebuild/products/pieces_nphi512/band_tree_r4_00120_00240_np512.npz",
+      "sha256": "0b65d2f5dc1fc7a64f5498f88d1261f6b94d41420b6fed4fff0c4d2d554ab138",
+      "bytes": 1454210,
+      "md5": "f5f8d767d15320da3b160e4d37e9db09",
+      "sept6_md5": "f5f8d767d15320da3b160e4d37e9db09",
+      "matches_sept6": true
+    },
+    {
+      "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/callables/kappa3_vertex/rebuild/products/pieces_nphi512/band_tree_r4_00240_00480_np512.npz",
+      "sha256": "d366be53be9291349564b627a103137e84ebf64959e3c0b553c80b2e7be5e520",
+      "bytes": 1454210,
+      "md5": "f9dbb23a26673c395f3cad28352b2e35",
+      "sept6_md5": "f9dbb23a26673c395f3cad28352b2e35",
+      "matches_sept6": true
+    },
+    {
+      "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/callables/kappa3_vertex/rebuild/products/pieces_nphi512/band_tree_r4_00480_00960_np512.npz",
+      "sha256": "e4fb014b7dce913eb0f8feded57d7ed3c7e4266b2567d3025a77ee25d7dafc5f",
+      "bytes": 1454210,
+      "md5": "693fd7c853d92a0161950832fbd3d34b",
+      "sept6_md5": "693fd7c853d92a0161950832fbd3d34b",
+      "matches_sept6": true
+    },
+    {
+      "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/callables/kappa3_vertex/rebuild/products/pieces_nphi512/band_tree_r4_00960_01920_np512.npz",
+      "sha256": "6a6024b1beb3e2ce7b02186cdbe5b1061abe415efd1c2577fa37d900110a421f",
+      "bytes": 1454213,
+      "md5": "16526914a9a8e024c126dc7bd70f47ab",
+      "sept6_md5": "16526914a9a8e024c126dc7bd70f47ab",
+      "matches_sept6": true
+    },
+    {
+      "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/callables/kappa3_vertex/rebuild/products/pieces_nphi512/band_tree_r4_01920_03840_np512.npz",
+      "sha256": "0ac8c9c4aec87d3fb1684ac4408919c473462359228dadde00e64039af101cbc",
+      "bytes": 1454215,
+      "md5": "fe0c7e38068fa99cb309279997efee64",
+      "sept6_md5": "fe0c7e38068fa99cb309279997efee64",
+      "matches_sept6": true
+    },
+    {
+      "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/callables/kappa3_vertex/rebuild/products/pieces_nphi512/band_tree_r4_03840_07680_np512.npz",
+      "sha256": "0e69cbb857e8beb70acfe8013300c0e16a0dc3026a2a2660c516c97d34dc00b6",
+      "bytes": 1454215,
+      "md5": "6dd279c6ac3b53e9024b23d3db92e3b6",
+      "sept6_md5": "6dd279c6ac3b53e9024b23d3db92e3b6",
+      "matches_sept6": true
+    },
+    {
+      "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/callables/kappa3_vertex/rebuild/products/pieces_nphi512/band_tree_r4_07680_15360_np512.npz",
+      "sha256": "b58be8074fedf1663dad65cac53b89b6f48b6ac7c6a96b66973b6231bf2a4c74",
+      "bytes": 1454218,
+      "md5": "a72abe353806ec39ad21823f3f02c855",
+      "sept6_md5": "a72abe353806ec39ad21823f3f02c855",
+      "matches_sept6": true
+    }
+  ],
+  "corrected_bihalofit_piece_count": 0,
+  "geometry": {
+    "main_rows": 2142,
+    "historical_ladder_rows": 1828,
+    "corrected_ladder_rows_existing": 2142,
+    "historical_rows_are_subset": true,
+    "shells": 16
+  },
+  "main_acceptance": {
+    "command": [
+      "/Users/zzhang/projects/angular_statistics/canoes/.venv/bin/python",
+      "/Users/zzhang/projects/angular_statistics/canoes/scripts/check_vertex_leg_symmetry.py",
+      "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/callables/kappa3_vertex/rebuild/products/pieces_nphi512/table_permclosed_np512.npz"
+    ],
+    "checked": 864,
+    "failed": 0,
+    "status": "PASS",
+    "scope": "Internal TTT leg-permutation consistency within the documented tolerance, not an external ground-truth validation."
+  },
+  "runtime_evidence": {
+    "historical_bihalofit_nphi64_eight_bands_seconds": 14128.5,
+    "tree_nphi512_eight_r4_bands_seconds": 101091.9,
+    "bihalofit_linear_nphi_scaling_estimate_seconds": 113028.0,
+    "estimated_bihalofit_serial_hours": 31.39666666666667,
+    "existing_low_permclosed_seconds": 268.2,
+    "notes": "Measured logs are historical. Serial corrected BiHalofit estimate uses n_phi scaling and must be updated from the first band. Do not use the handoff concurrent wall time as a serial estimate."
+  },
+  "required_bihalofit_jobs": [
+    {
+      "name": "band_bihalofit_00060_00120_np512",
+      "out": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/corrected_kappa3/pieces/band_bihalofit_r4_00060_00120_np512.npz",
+      "log": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/corrected_kappa3/logs/band_bihalofit_00060_00120_np512.log",
+      "argv": [
+        "/Users/zzhang/projects/angular_statistics/canoes/.venv/bin/python",
+        "-u",
+        "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/callables/kappa3_vertex/rebuild/build_band.py",
+        "--triples-npz",
+        "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/callables/kappa3_vertex/rebuild/products/triples_full_r4.npz",
+        "--lo",
+        "60",
+        "--hi",
+        "120",
+        "--n-ell",
+        "96",
+        "--b-model",
+        "bihalofit",
+        "--chunk-rows",
+        "24",
+        "--out",
+        "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/corrected_kappa3/pieces/band_bihalofit_r4_00060_00120_np512.npz",
+        "--n-phi",
+        "512",
+        "--l2-npz",
+        "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/callables/kappa3_vertex/equal_time_limber/inputs/l2_lambda_grid_z5covgrid16.npz"
+      ]
+    },
+    {
+      "name": "band_bihalofit_00120_00240_np512",
+      "out": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/corrected_kappa3/pieces/band_bihalofit_r4_00120_00240_np512.npz",
+      "log": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/corrected_kappa3/logs/band_bihalofit_00120_00240_np512.log",
+      "argv": [
+        "/Users/zzhang/projects/angular_statistics/canoes/.venv/bin/python",
+        "-u",
+        "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/callables/kappa3_vertex/rebuild/build_band.py",
+        "--triples-npz",
+        "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/callables/kappa3_vertex/rebuild/products/triples_full_r4.npz",
+        "--lo",
+        "120",
+        "--hi",
+        "240",
+        "--n-ell",
+        "96",
+        "--b-model",
+        "bihalofit",
+        "--chunk-rows",
+        "24",
+        "--out",
+        "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/corrected_kappa3/pieces/band_bihalofit_r4_00120_00240_np512.npz",
+        "--n-phi",
+        "512",
+        "--l2-npz",
+        "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/callables/kappa3_vertex/equal_time_limber/inputs/l2_lambda_grid_z5covgrid16.npz"
+      ]
+    },
+    {
+      "name": "band_bihalofit_00240_00480_np512",
+      "out": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/corrected_kappa3/pieces/band_bihalofit_r4_00240_00480_np512.npz",
+      "log": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/corrected_kappa3/logs/band_bihalofit_00240_00480_np512.log",
+      "argv": [
+        "/Users/zzhang/projects/angular_statistics/canoes/.venv/bin/python",
+        "-u",
+        "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/callables/kappa3_vertex/rebuild/build_band.py",
+        "--triples-npz",
+        "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/callables/kappa3_vertex/rebuild/products/triples_full_r4.npz",
+        "--lo",
+        "240",
+        "--hi",
+        "480",
+        "--n-ell",
+        "96",
+        "--b-model",
+        "bihalofit",
+        "--chunk-rows",
+        "24",
+        "--out",
+        "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/corrected_kappa3/pieces/band_bihalofit_r4_00240_00480_np512.npz",
+        "--n-phi",
+        "512",
+        "--l2-npz",
+        "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/callables/kappa3_vertex/equal_time_limber/inputs/l2_lambda_grid_z5covgrid16.npz"
+      ]
+    },
+    {
+      "name": "band_bihalofit_00480_00960_np512",
+      "out": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/corrected_kappa3/pieces/band_bihalofit_r4_00480_00960_np512.npz",
+      "log": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/corrected_kappa3/logs/band_bihalofit_00480_00960_np512.log",
+      "argv": [
+        "/Users/zzhang/projects/angular_statistics/canoes/.venv/bin/python",
+        "-u",
+        "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/callables/kappa3_vertex/rebuild/build_band.py",
+        "--triples-npz",
+        "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/callables/kappa3_vertex/rebuild/products/triples_full_r4.npz",
+        "--lo",
+        "480",
+        "--hi",
+        "960",
+        "--n-ell",
+        "96",
+        "--b-model",
+        "bihalofit",
+        "--chunk-rows",
+        "24",
+        "--out",
+        "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/corrected_kappa3/pieces/band_bihalofit_r4_00480_00960_np512.npz",
+        "--n-phi",
+        "512",
+        "--l2-npz",
+        "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/callables/kappa3_vertex/equal_time_limber/inputs/l2_lambda_grid_z5covgrid16.npz"
+      ]
+    },
+    {
+      "name": "band_bihalofit_00960_01920_np512",
+      "out": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/corrected_kappa3/pieces/band_bihalofit_r4_00960_01920_np512.npz",
+      "log": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/corrected_kappa3/logs/band_bihalofit_00960_01920_np512.log",
+      "argv": [
+        "/Users/zzhang/projects/angular_statistics/canoes/.venv/bin/python",
+        "-u",
+        "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/callables/kappa3_vertex/rebuild/build_band.py",
+        "--triples-npz",
+        "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/callables/kappa3_vertex/rebuild/products/triples_full_r4.npz",
+        "--lo",
+        "960",
+        "--hi",
+        "1920",
+        "--n-ell",
+        "96",
+        "--b-model",
+        "bihalofit",
+        "--chunk-rows",
+        "24",
+        "--out",
+        "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/corrected_kappa3/pieces/band_bihalofit_r4_00960_01920_np512.npz",
+        "--n-phi",
+        "512",
+        "--l2-npz",
+        "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/callables/kappa3_vertex/equal_time_limber/inputs/l2_lambda_grid_z5covgrid16.npz"
+      ]
+    },
+    {
+      "name": "band_bihalofit_01920_03840_np512",
+      "out": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/corrected_kappa3/pieces/band_bihalofit_r4_01920_03840_np512.npz",
+      "log": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/corrected_kappa3/logs/band_bihalofit_01920_03840_np512.log",
+      "argv": [
+        "/Users/zzhang/projects/angular_statistics/canoes/.venv/bin/python",
+        "-u",
+        "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/callables/kappa3_vertex/rebuild/build_band.py",
+        "--triples-npz",
+        "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/callables/kappa3_vertex/rebuild/products/triples_full_r4.npz",
+        "--lo",
+        "1920",
+        "--hi",
+        "3840",
+        "--n-ell",
+        "96",
+        "--b-model",
+        "bihalofit",
+        "--chunk-rows",
+        "24",
+        "--out",
+        "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/corrected_kappa3/pieces/band_bihalofit_r4_01920_03840_np512.npz",
+        "--n-phi",
+        "512",
+        "--l2-npz",
+        "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/callables/kappa3_vertex/equal_time_limber/inputs/l2_lambda_grid_z5covgrid16.npz"
+      ]
+    },
+    {
+      "name": "band_bihalofit_03840_07680_np512",
+      "out": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/corrected_kappa3/pieces/band_bihalofit_r4_03840_07680_np512.npz",
+      "log": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/corrected_kappa3/logs/band_bihalofit_03840_07680_np512.log",
+      "argv": [
+        "/Users/zzhang/projects/angular_statistics/canoes/.venv/bin/python",
+        "-u",
+        "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/callables/kappa3_vertex/rebuild/build_band.py",
+        "--triples-npz",
+        "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/callables/kappa3_vertex/rebuild/products/triples_full_r4.npz",
+        "--lo",
+        "3840",
+        "--hi",
+        "7680",
+        "--n-ell",
+        "96",
+        "--b-model",
+        "bihalofit",
+        "--chunk-rows",
+        "24",
+        "--out",
+        "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/corrected_kappa3/pieces/band_bihalofit_r4_03840_07680_np512.npz",
+        "--n-phi",
+        "512",
+        "--l2-npz",
+        "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/callables/kappa3_vertex/equal_time_limber/inputs/l2_lambda_grid_z5covgrid16.npz"
+      ]
+    },
+    {
+      "name": "band_bihalofit_07680_15360_np512",
+      "out": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/corrected_kappa3/pieces/band_bihalofit_r4_07680_15360_np512.npz",
+      "log": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/corrected_kappa3/logs/band_bihalofit_07680_15360_np512.log",
+      "argv": [
+        "/Users/zzhang/projects/angular_statistics/canoes/.venv/bin/python",
+        "-u",
+        "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/callables/kappa3_vertex/rebuild/build_band.py",
+        "--triples-npz",
+        "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/callables/kappa3_vertex/rebuild/products/triples_full_r4.npz",
+        "--lo",
+        "7680",
+        "--hi",
+        "15360",
+        "--n-ell",
+        "96",
+        "--b-model",
+        "bihalofit",
+        "--chunk-rows",
+        "24",
+        "--out",
+        "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/corrected_kappa3/pieces/band_bihalofit_r4_07680_15360_np512.npz",
+        "--n-phi",
+        "512",
+        "--l2-npz",
+        "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/callables/kappa3_vertex/equal_time_limber/inputs/l2_lambda_grid_z5covgrid16.npz"
+      ]
+    }
+  ],
+  "no_build_or_fold_started": true
+}

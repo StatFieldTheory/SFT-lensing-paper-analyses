@@ -1,0 +1,54 @@
+{
+  "1024_vs4096": {
+    "max_cl_fractional_change": 0.004739528641015123,
+    "ell_at_max_cl_change": 4,
+    "observables": {
+      "kk": {
+        "max_abs_difference_over_peak": 2.494022679983284e-06,
+        "max_fractional_difference": 0.017205771256062513,
+        "fraction_at_smallest_angle": -1.7691519192952754e-06
+      },
+      "xip": {
+        "max_abs_difference_over_peak": 1.9675673742876656e-06,
+        "max_fractional_difference": 0.14331651611751048,
+        "fraction_at_smallest_angle": -1.2391002151002084e-06
+      },
+      "xim": {
+        "max_abs_difference_over_peak": 2.1478934587095226e-06,
+        "max_fractional_difference": 0.0007203285412475595,
+        "fraction_at_smallest_angle": 1.2381811131945142e-09
+      },
+      "kgt": {
+        "max_abs_difference_over_peak": 3.353514008191229e-06,
+        "max_fractional_difference": 0.002630553659320438,
+        "fraction_at_smallest_angle": 3.612904642125159e-08
+      }
+    }
+  },
+  "2048_vs4096": {
+    "max_cl_fractional_change": 0.0028830270470474595,
+    "ell_at_max_cl_change": 4,
+    "observables": {
+      "kk": {
+        "max_abs_difference_over_peak": 1.5847848729825134e-06,
+        "max_fractional_difference": 0.010979923546469232,
+        "fraction_at_smallest_angle": -1.32205312608491e-06
+      },
+      "xip": {
+        "max_abs_difference_over_peak": 1.2402490902584388e-06,
+        "max_fractional_difference": 0.09134286095185164,
+        "fraction_at_smallest_angle": -9.752443337340821e-07
+      },
+      "xim": {
+        "max_abs_difference_over_peak": 1.2840412924062266e-06,
+        "max_fractional_difference": 0.0004306226583586306,
+        "fraction_at_smallest_angle": 4.787377161363793e-10
+      },
+      "kgt": {
+        "max_abs_difference_over_peak": 2.1387598228822787e-06,
+        "max_fractional_difference": 0.0016776797307982766,
+        "fraction_at_smallest_angle": 1.3784937635819006e-08
+      }
+    }
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "kind": "Stored corrected-table collapsed slices",
+  "source": {
+    "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/callables/kappa3_vertex/rebuild/products/pieces_nphi512/table_permclosed_np512.npz",
+    "sha256": "3a4e5e4ff4af56c23a151046e1cabc253e1eed854497b50c8688a3ee88effffe"
+  },
+  "config": {
+    "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/sftwick_outputs/2PCF/C_corr_op_O0/config_L2.yaml",
+    "sha256": "94f82602970b3a20ae5df41c8e03bacb2fba40812d17b627e6c7a65651c8958a"
+  },
+  "ell_max": 15360,
+  "table_rows": [
+    1671,
+    1675,
+    1679,
+    1683,
+    1687,
+    1691,
+    1695,
+    1699,
+    1703,
+    1707,
+    1711,
+    1715,
+    1719,
+    1723,
+    1727,
+    1731,
+    1735,
+    1739,
+    1743,
+    1747,
+    1751,
+    1755
+  ],
+  "max_cosine_difference": 7.612799279854698e-13,
+  "geometry": "(1, cos(gamma), cos(gamma)), unchanged stored values, no interpolation",
+  "angle_policy": "Original 40-point observation grid restricted to gamma <= 85 arcmin",
+  "scope": "Driving-field shell statistics, not a source-plane lensing observable",
+  "output": {
+    "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/figure_products/zeta_slices.npz",
+    "sha256": "1fbfaa20bec5c4d9d2e2988bd254234580b3d932366098a65640970360120f72"
+  }
+}

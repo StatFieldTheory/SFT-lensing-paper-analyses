@@ -9,15 +9,11 @@ shear angular power spectra C_ell^{EE}, C_ell^{BB}, C_ell^{EB} (1x3 panels).
 
 The cross <g+ gx> carries C^EB via Im<gg> = 2 C^EB (same spin-4 kernel as xi_-).
 Both EB channels vanish by parity (an odd number of Psi_x legs reflects to minus
-itself): the FK cross [1,2] is identically zero; the FF cross is a small, smooth
-Order-2 residual (~1e-8 of the signal, ~8 orders below it), not random roundoff
--- O0 and the FF kappa-B cross reach machine zero (~1e-19/1e-31) on the same
-pipeline, so this is a mild parity-breaking systematic of the FF spin-2 cross,
-negligible here.  FK feeds BOTH polarizations but NOT equally: measured on the
-deployed cut15360 fold, C^BB/C^EE = 0.95 at l=60 falling to 0.42 at l=1500
-(median 0.63 over 50<=l<=1500).  An earlier version of this docstring claimed
-C^EE_FK = C^BB_FK; that was stale and had propagated into the paper.  FF is
-E-dominated, C^BB/C^EE ~ 0.032 (median), i.e. a factor ~31, not ~10.
+itself). The FK cross [1,2] is identically zero in the input construction.
+A nonzero transformed FF cross is a numerical parity residual whose amplitude
+is measured from the selected product. In the scalar example FK has one linear pure-E external
+leg, so its physical BB is zero. Its transformed nonzero BB is displayed
+as a numerical residual, not a signal. FF can generate BB at this order.
 
 Reuses the curved-sky Wigner-d transform of plot_analysis3_cl_decomposition.
 Run with the PyCCL interpreter.  Output: outputs/cl_EB_polarization.{png,pdf}
@@ -43,10 +39,10 @@ MK_FF, MK_FK = "^", "s"
 
 def polarization(grouped, s22, s2m2):
     """Return (C_EE, C_BB, C_EB, raw_cross_max) for one Order-2 term."""
-    ee_pbb = C.forward_curved(C._combine(grouped, [((1, 1), +1.0), ((2, 2), +1.0)]), s22)
-    ee_mbb = C.forward_curved(C._combine(grouped, [((1, 1), +1.0), ((2, 2), -1.0)]), s2m2)
+    ee_pbb = C.forward_curved(C._combine(grouped, [((1, 1), +1.0), ((2, 2), +1.0)]), s22, dc_subtract=False)
+    ee_mbb = C.forward_curved(C._combine(grouped, [((1, 1), +1.0), ((2, 2), -1.0)]), s2m2, dc_subtract=False)
     cross = C._combine(grouped, [((1, 2), +1.0)])
-    eb = C.forward_curved(cross, s2m2)
+    eb = C.forward_curved(cross, s2m2, dc_subtract=False)
     return 0.5 * (ee_pbb + ee_mbb), 0.5 * (ee_pbb - ee_mbb), eb, float(np.max(np.abs(cross)))
 
 
@@ -86,9 +82,14 @@ def main() -> int:
         # Below ell ~ 50 the FK values come from the large-separation part of
         # its 2PCF, where the multipole sum no longer converges; drawn faint
         # and not quoted.
-        plot_signed_markers(ax, ELL, PREF * fk, color=COL_FK, marker=MK_FK,
-                            label="FK", faint_outside=(50.0, None))
+        is_bb = ax is axes[1]
+        plot_signed_markers(ax, ELL, PREF * fk,
+                            color="0.55" if is_bb else COL_FK, marker=MK_FK,
+                            label="FK numerical residual" if is_bb else "FK",
+                            faint_outside=(50.0, None))
         ax.set_title(title)
+        if is_bb:
+            ax.legend(loc="best", fontsize=12)
         if handles is None:
             handles = ax.get_legend_handles_labels()
 
@@ -107,7 +108,7 @@ def main() -> int:
     axeb.text(0.5, 0.5,
               "parity null\n"
               r"FK:  $\Delta C_\ell^{EB}=0$ by parity" + "\n"
-              r"FF:  residual $\lesssim10^{-8}$ of signal",
+              "FF: numerical residual",
               transform=axeb.transAxes, ha="center", va="center", fontsize=14,
               bbox=dict(boxstyle="round", fc="white", ec="0.7", alpha=0.9))
 

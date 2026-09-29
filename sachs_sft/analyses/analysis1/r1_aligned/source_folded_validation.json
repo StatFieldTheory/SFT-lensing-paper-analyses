@@ -1,0 +1,35 @@
+{
+  "status": "Convergence in progress. Full-Ricci t-form failed covariance positivity and is not an accepted physical residual.",
+  "rows": [
+    {
+      "ell": 100,
+      "fractional_change_nt256_chi512_to_nt512_chi1024": {
+        "cl_pp": -0.0005008975013671702,
+        "cl_pw": -1.5795009093544365e-05,
+        "cl_ww": -3.3251136232759215e-05
+      },
+      "pw_squared_over_pp_ww": 1.000591612751903
+    },
+    {
+      "ell": 500,
+      "fractional_change_nt256_chi512_to_nt512_chi1024": {
+        "cl_pp": -0.0043963299634618425,
+        "cl_pw": -1.616677682125811e-05,
+        "cl_ww": -0.00011933115829432239
+      },
+      "pw_squared_over_pp_ww": 1.0051741970554724
+    },
+    {
+      "ell": 800,
+      "fractional_change_nt256_chi512_to_nt512_chi1024": {
+        "cl_pp": -0.01050923770507306,
+        "cl_pw": -8.692442526325728e-06,
+        "cl_ww": 0.00013748319904283157
+      },
+      "pw_squared_over_pp_ww": 1.0132519339962929
+    }
+  ],
+  "next_check": "Existing direct-k route through ell800, chi4096 and k1024, followed by independent CCL same-operator check.",
+  "accepted_standard_ccl": "ccl_padded_n4096.npz",
+  "source_folded_code": "source_folded_reference.py"
+}

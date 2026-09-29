@@ -1,10 +1,70 @@
 # REPRODUCE.md
 
 How to reproduce every figure and every quoted number of *Statistical Field Theory for
-Weak Gravitational Lensing* from this repository. Written 2026-09-02; every command below
-was run on that date and its result recorded.
+Weak Gravitational Lensing* from this repository. The original reproduction record
+dates from 2026-09-02. The revision section below describes the subsequent numerical
+update and distinguishes its validation from that historical record.
 
-Three commands do the whole job:
+## 2026-09-29 referee revision: product selection and validation
+
+The revision uses the actual source plane `z_s = 5`, with
+`lambda_s = 2317.9695958203943 Mpc`, sft-wick **0.6.1** at commit
+`6945815ad9e6efa2b9e768891d6bf92b1214670d`, and corrected kappa3 inputs with
+the pair-phase fix, `n_phi = 512`, and the permutation-aware vertex callable.
+The main FK result has `ell_max = 15360`. Lower source planes are evaluated at
+their corresponding affine endpoints. The eight affected reproduction IDs are
+**1, 2, 3, 4, 5, 6, 7, and 17** in section 3.
+
+`reproduce/active_products.json` selects the complete revision bundle. The figure
+and number readers verify its recorded SHA256 hashes, including the members of
+product directories. A selected missing or altered product raises an error rather
+than falling back to historical data. Without that manifest, the generators use
+their historical inputs. Activate the manifest only after all required products
+and acceptance checks are complete. The candidate manifest under
+`sachs_sft/analyses/r1_sft061/` is not an activation or deployment record.
+
+Revision products, source maps, run configurations, input hashes, numerical checks,
+and execution records are under `sachs_sft/analyses/r1_sft061/`. In particular,
+`framework_provenance.json` records the framework and canoes versions and working
+state, and `RUN_STATE.md` records completion and outstanding gates. The aligned
+Order-0/PyCCL comparison is under `sachs_sft/analyses/analysis1/r1_aligned/`.
+The exact tracked canoes patch matching `framework_provenance.json` is saved as
+`sachs_sft/analyses/r1_sft061/canoes_worktree.patch`; apply it with `git apply`
+to the recorded canoes commit in a separate checkout when reconstructing that
+runtime. The external repositories are not changed by this submission.
+Historical products are retained. The pre-update figure and manuscript copies
+are recorded in
+`sachs_sft/analyses/r1_sft061/deployment_archive_2026-09-28/manifest.json`.
+
+The validation scope is specific:
+
+- Order-0 uses the source-folded calculation accepted in the aligned PyCCL check.
+  FF retains the original 21-source-node correlation-propagator table, with its
+  evolution endpoint updated to the actual source plane. Its quadrature probes
+  test the outer integration, not convergence of that underlying table.
+- The FF Monte Carlo comparison uses its matched local covariance model. It does
+  not independently validate the full non-local cosmological FF input. The FK
+  comparison records finite-sample, source-grid and injection effects separately.
+- Physical FK BB vanishes at this order for the scalar inputs and observable map
+  used here. The recovered FK BB curve is a numerical residual. The finite-angle
+  transform produces leakage, but this check does not isolate every source of
+  numerical error. The pure-E recovery check is input-specific, not a universal error
+  bound. Finite cutoff increments likewise do not establish an infinite-cutoff
+  limit.
+
+The replacement cutoff ladder and all 12 active products were accepted on
+2026-09-29. The eight affected figures were regenerated, visually inspected and
+deployed through `reproduce/deploy.py`. All 17 figure comparisons passed: eight
+updated files are `IDENTICAL(raw)` and nine unchanged files are
+`IDENTICAL(content)`, with zero raster differences. The number checker completed
+with 33 entries. See `final_figure_check.txt` and `final_numbers.md` under
+`sachs_sft/analyses/r1_sft061/`. The revised manuscript compiled to 33 pages,
+with no undefined citations or references or multiply defined labels. Rendered
+page 1 and pages 19--25 and 30 were inspected. Template/layout and bibliography
+warnings remain, so this is not a warning-free build. The manuscript response
+and detailed build records are in the parent project's ignored `referee-r1/`.
+
+Regeneration and numerical checks use these commands:
 
 ```bash
 python reproduce/regen_figure.py --all      # rebuild all 17 figures into their outputs/ folders
@@ -12,20 +72,25 @@ python reproduce/check_figures.py           # compare each with the deployed fig
 python reproduce/check_numbers.py           # recompute every quantitative claim
 ```
 
-> **2026-09-06.** The kappa3 vertex has been rebuilt at `n_phi = 512` with the
-> `zeta_Bmod` pair-phase fix, and it passes an acceptance test the deployed table
-> fails (864/864 cells). The deployed table is unchanged and everything below still
-> reproduces byte-for-byte, but the numbers it produces are known to be off: FK/Order-0
-> at 0.5' goes 2.31 -> 1.74 per cent. Read
+> **Historical warning, recorded 2026-09-06.** The kappa3 vertex rebuilt at
+> `n_phi = 512` with the `zeta_Bmod` pair-phase fix passed an acceptance test that
+> the table deployed at that time failed (864/864 cells). That historical table
+> was left unchanged for reproduction. Its FK/Order-0 at 0.5' changed from 2.31
+> to 1.74 per cent in the comparison then performed. These are historical setup
+> numbers, not the actual-z_s=5, sft-wick 0.6.1 revision values above. Read
 > [HANDOFF_2026-09-06_nphi512_vertex_rebuild.md](HANDOFF_2026-09-06_nphi512_vertex_rebuild.md)
 > before quoting any FK number. `check_numbers.py` verifies claim-vs-product
 > agreement, not product convergence, so it passes on both tables.
 
-`regen_figure.py --all` takes about 90 seconds. `check_figures.py` prints
-`IDENTICAL(raw)` for all 17: the deployed PDFs are byte-for-byte what these commands
-produce, and `reproduce/deployed_md5.txt` is that contract.
+In the 2026-09-02 record, `regen_figure.py --all` took about 90 seconds and
+`check_figures.py` printed `IDENTICAL(raw)` for all 17 PDFs.
+`reproduce/deployed_md5.txt` records the deployed-byte contract. Repeat the checks
+after any revision deployment rather than treating the historical result as current.
 
 ## 1. Environments
+
+The following environment inventory and pins are the 2026-09-02 record. The
+revision's framework and input provenance is recorded separately above.
 
 Two conda environments, named here by their absolute interpreter. Override with the
 environment variables `STF_PYCCL`, `STF_SFTWICK` and `CANOES_ROOT`.
@@ -54,6 +119,9 @@ known locations, so no `PYTHONPATH` is needed for the figures. The vertex *build
 audit scripts do need `PYTHONPATH=$CANOES_ROOT/src` and the canoes virtualenv.
 
 ## 2. Repository map
+
+This is the historical production layout. Revision replacements are kept under
+`analyses/r1_sft061/` and selected by the manifest described above.
 
 ```
 SFT-lensing-paper-analyses/
@@ -89,6 +157,10 @@ SFT-lensing-paper-analyses/
 
 ## 3. The 17 figures
 
+The command table records the historical generators. With the revision manifest
+active, `regen_figure.py` routes figure 1 through the aligned comparison generator,
+and the affected readers select their hash-verified revision products.
+
 `Env` is the environment that reproduces the deployed bytes. `+canoes` means the run
 imports canoes (the resolver finds it; no `PYTHONPATH` needed). Times are from
 2026-09-02 on a 103 GB machine.
@@ -122,7 +194,9 @@ the bytes match exactly.
 
 ## 4. Data products the figures read
 
-Every product below is tracked. Sizes are on disk; provenance is the run folder's README.
+The table below records the historical products. Their run-folder READMEs give the
+original provenance. The active revision selects replacements through
+`reproduce/active_products.json`, rather than overwriting these arrays.
 
 | product | figures and numbers it feeds | how it was made | cost to remake |
 |---|---|---|---|
@@ -144,13 +218,16 @@ octave-band builds, untracked, listed with md5 in
 
 ## 5. The numbers
 
-`reproduce/check_numbers.py` recomputes 35 quantitative statements and prints, for each,
+`reproduce/check_numbers.py` recomputes the quantitative statements and prints, for each,
 what the manuscript says next to what the products give. Run it after changing any
 product. The table as of 2026-09-02 is `reorg_2026-09/phase3/numbers_after_moves.md`;
-every row agrees with the manuscript.
+every row in that historical record agrees with the manuscript then present. The
+active revision also labels harmonic residuals and finite-cutoff sensitivity as
+diagnostics rather than physical accuracy claims.
 
-Four statements are loose at the wording level rather than wrong, and are recorded here
-rather than changed, since the manuscript is not edited by this package:
+The following four discrepancies were recorded against the historical products.
+They are retained for traceability and do not describe the revised source-plane
+setup or establish the accuracy of the replacement products:
 
 * the nonlinear-propagation term overtakes Order-0 at 180 arcmin, where the text says
   "beyond about 200";
@@ -192,4 +269,21 @@ has the chunking and queueing rules.
 latexmk -g -pdf -halt-on-error main.tex
 ```
 
-from the repository root: 32 pages, 17 figures, no undefined references.
+from the repository root. The 2026-09-02 build had 32 pages, 17 figures, and no
+undefined references. Check the new build independently after revision.
+
+## Revision repository packaging (2026-09-29)
+
+The revision commit retains all selected arrays, comparison and convergence
+probes, run configurations, source snapshots, input manifests, and validation
+records. Local rollback manuscript copies, rendered previews, joblib caches,
+lock files and new execution logs are ignored; they remain on disk. The
+rollback archive manifest remains tracked. These ignored files are not needed
+to redraw the figures from the accepted numerical products.
+
+Recorded absolute paths are provenance for the original workstation. Replaying
+all numerical runs on a different machine requires rebasing those paths and
+installing the pinned external environments; the guards intentionally reject
+changed input or runtime hashes. Saved `*.source.py` files are immutable run
+snapshots, not additional entry points. Figure regeneration and claim checks
+were verified locally, not in a clean machine installation.

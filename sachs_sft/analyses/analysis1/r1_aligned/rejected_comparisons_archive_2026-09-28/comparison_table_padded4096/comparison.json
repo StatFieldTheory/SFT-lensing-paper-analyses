@@ -1,0 +1,123 @@
+{
+  "sft": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/analysis1/r1_aligned/outputs/order0_table_integral/order0_observables.npz",
+  "reference": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/analysis1/r1_aligned/ccl_padded_n4096.npz",
+  "sft_sha256": "ce11631834ad7f108f5d545bf5c678ba2a30ddaa14b838fd16be9332f47cf714",
+  "reference_sha256": "3d8d8a70535dd25306fd400b1b24be438d38915d7e4e8aefb35d13fc2453ad20",
+  "theta_arcmin": [
+    0.4999999869114161,
+    0.6331899869572177,
+    0.8018592549840653,
+    1.0154588442096926,
+    1.285956932937563,
+    1.6285102100005362,
+    2.0623133498406285,
+    2.611672630487536,
+    3.3073703908098615,
+    4.188388065109657,
+    5.3040916276170496,
+    6.716996719441146,
+    8.506271313998063,
+    10.77217341408055,
+    13.641666784874666,
+    17.275536445176535,
+    21.87739676406836,
+    27.705101815790563,
+    35.08519138364495,
+    44.431190871684066,
+    56.26677904966443,
+    71.25513338887754,
+    90.23608824764675,
+    114.27319328892636,
+    144.7133062603701,
+    183.2620617220186,
+    232.0794415764872,
+    293.9008036118212,
+    372.19015066921594,
+    471.3342276145419,
+    596.8883210337771,
+    755.8875352996708,
+    957.2409881650728,
+    1212.2310086987836,
+    1535.1453147743046,
+    1944.077590306169
+  ],
+  "rms_weighting": "Equal weights for the displayed logarithmic angular samples",
+  "channels": {
+    "kk": {
+      "reference_peak_abs": 0.0008463503615328634,
+      "max_abs_difference": 5.5368115007029916e-05,
+      "max_abs_difference_theta_arcmin": 1.0154588442096926,
+      "max_abs_difference_over_peak_percent": 6.54198515455824,
+      "rms_difference_over_peak_percent": 2.9733909773411886,
+      "relative_mask_floor_fraction_of_peak": 0.01,
+      "relative_mask_included_samples": 23,
+      "relative_mask_excluded_fraction": 0.36111111111111116,
+      "max_abs_masked_relative_percent": 6.814516354340001,
+      "median_abs_masked_relative_percent": 5.494617589618581,
+      "sft_zero_crossings_arcmin": [
+        222.3638386801234
+      ],
+      "reference_zero_crossings_arcmin": [
+        220.62740087315137
+      ],
+      "zero_crossing_shifts_arcmin": [
+        1.7364378069720203
+      ],
+      "zero_crossing_method": "Linear signed interpolation in log angle on the displayed samples"
+    },
+    "xip": {
+      "reference_peak_abs": 0.0008462285990155458,
+      "max_abs_difference": 5.296588442004835e-05,
+      "max_abs_difference_theta_arcmin": 1.0154588442096926,
+      "max_abs_difference_over_peak_percent": 6.259051570895364,
+      "rms_difference_over_peak_percent": 2.80374652230099,
+      "relative_mask_floor_fraction_of_peak": 0.01,
+      "relative_mask_included_samples": 23,
+      "relative_mask_excluded_fraction": 0.36111111111111116,
+      "max_abs_masked_relative_percent": 6.519834628275175,
+      "median_abs_masked_relative_percent": 4.838423993831983,
+      "sft_zero_crossings_arcmin": [
+        216.9825523979475
+      ],
+      "reference_zero_crossings_arcmin": [
+        218.90991118730233
+      ],
+      "zero_crossing_shifts_arcmin": [
+        -1.9273587893548267
+      ],
+      "zero_crossing_method": "Linear signed interpolation in log angle on the displayed samples"
+    },
+    "xim": {
+      "reference_peak_abs": 6.583667248302769e-05,
+      "max_abs_difference": 4.6849533882279e-06,
+      "max_abs_difference_theta_arcmin": 10.77217341408055,
+      "max_abs_difference_over_peak_percent": 7.116023959800906,
+      "rms_difference_over_peak_percent": 3.488841185791293,
+      "relative_mask_floor_fraction_of_peak": 0.01,
+      "relative_mask_included_samples": 29,
+      "relative_mask_excluded_fraction": 0.19444444444444442,
+      "max_abs_masked_relative_percent": 8.360451846951651,
+      "median_abs_masked_relative_percent": 5.095106343851505,
+      "sft_zero_crossings_arcmin": [],
+      "reference_zero_crossings_arcmin": [],
+      "zero_crossing_shifts_arcmin": [],
+      "zero_crossing_method": "Linear signed interpolation in log angle on the displayed samples"
+    },
+    "kgt": {
+      "reference_peak_abs": 0.00013214388614917155,
+      "max_abs_difference": 9.887550871750134e-06,
+      "max_abs_difference_theta_arcmin": 4.188388065109657,
+      "max_abs_difference_over_peak_percent": 7.482412663865888,
+      "rms_difference_over_peak_percent": 3.7710798747934104,
+      "relative_mask_floor_fraction_of_peak": 0.01,
+      "relative_mask_included_samples": 30,
+      "relative_mask_excluded_fraction": 0.16666666666666663,
+      "max_abs_masked_relative_percent": 26.132337712338526,
+      "median_abs_masked_relative_percent": 5.451459474511176,
+      "sft_zero_crossings_arcmin": [],
+      "reference_zero_crossings_arcmin": [],
+      "zero_crossing_shifts_arcmin": [],
+      "zero_crossing_method": "Linear signed interpolation in log angle on the displayed samples"
+    }
+  }
+}

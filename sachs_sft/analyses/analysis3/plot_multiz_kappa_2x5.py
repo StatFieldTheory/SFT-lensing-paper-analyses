@@ -2,7 +2,7 @@
 
   row 1 : convergence 2PCF  xi_kappa(gamma)
   row 2 : angular power spectrum  C_ell^{kappa kappa}  (curved-sky Wigner-d
-          transform of row 1, with the ell=0 monopole removed; see
+          transform of row 1, with scalar endpoint subtraction; see
           plot_analysis3_cl_decomposition)
   cols  : source redshift z_s = 1, 1.7, 2.5, 3.2, 4.0
 
@@ -33,6 +33,15 @@ import plot_analysis3_cl_decomposition as C  # noqa: E402
 
 NPZ = HERE / "outputs" / "multiz_kappa_2pcf_5z.npz"
 OUT_STEM = HERE / "outputs" / "multiz_kappa_xi_cl_2x5"
+
+sys.path.insert(0, str(HERE.parents[2] / "reproduce"))
+from product_paths import resolve_product  # noqa: E402
+
+NPZ = resolve_product("multiz", NPZ)
+FF_REAL = resolve_product(
+    "multiz_ff", HERE.parents[1] / "sftwick_outputs" / "2PCF"
+    / "multiz" / "multiz_ff_real_all5.npz",
+)
 LOAD_KW: dict[str, Any] = {"allow_pickle": True}
 
 COLOR_O0 = PALETTE[0]
@@ -57,8 +66,7 @@ def main() -> int:
     # single-threaded process per source distance, ~3.2 h each). Cross-check:
     # each slice's large-separation plateau matches the deterministic
     # <kappa>^2(z_s) of callables/kappa3_vertex/rebuild/mean_kappa_z.py to 0.1-2.2%.
-    _FF_REAL = (Path(__file__).resolve().parents[2] / "sftwick_outputs" / "2PCF"
-                / "multiz" / "multiz_ff_real_all5.npz")
+    _FF_REAL = FF_REAL
     if _FF_REAL.exists():
         _r = np.load(_FF_REAL, allow_pickle=True)
         if not np.allclose(np.asarray(_r["z"], float), z, rtol=1e-6):
@@ -74,8 +82,8 @@ def main() -> int:
     nz = len(z)
 
     # one curved-sky operator (kappa-kappa -> Legendre d^l_{00}); gamma shared.
-    # The transform grid is extended to 180 deg at the (constant) FF plateau so
-    # the DC subtraction sees the true asymptote.
+    # Extend the sampled endpoint as a constant to 180 deg. Endpoint subtraction
+    # estimates the scalar constant and is not an exact connected subtraction.
     gamma_ext = np.concatenate([gamma, [7000.0, 9000.0, 10800.0]])
     setup = C.build_curved_matrix(gamma_ext, ELL, 0, 0)
     pref = ELL * (ELL + 1.0) / (2.0 * np.pi)           # band power D_ell
@@ -110,11 +118,11 @@ def main() -> int:
         if j == 0:
             ax.set_ylabel(r"$\xi_\kappa(\gamma)$")
 
-        # --- row 2: C_ell^{kk} (curved-sky transform, monopole removed) ---
+        # --- row 2: C_ell^{kk} (curved-sky, scalar endpoint subtraction) ---
         axc = axes[1, j]
         ext = lambda a: np.concatenate([a, [a[-1]] * 3])
-        cl_o0 = C.forward_curved(ext(o0[j]), setup)
-        cl_full = C.forward_curved(ext(full[j]), setup)
+        cl_o0 = C.forward_curved(ext(o0[j]), setup, dc_subtract=True)
+        cl_full = C.forward_curved(ext(full[j]), setup, dc_subtract=True)
         cl_o0_all.append(cl_o0); cl_full_all.append(cl_full)
         plot_signed_line(axc, ELL, pref * cl_full, label="Full (O0+FF+FK)")
         plot_signed_markers(axc, ELL, pref * cl_o0, color=COLOR_O0,

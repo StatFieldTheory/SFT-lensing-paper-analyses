@@ -1,5 +1,5 @@
-[tree] 960:0.48%  1920:0.97%  3840:1.53%  7680:2.02%  15360:2.31%
-[bihalofit] 960:0.78%  1920:2.56%  3840:8.01%  7680:21.53%  15360:41.13%
+[tree] 960:0.36%  1920:0.74%  3840:1.20%  7680:1.63%  15360:1.91%
+[bihalofit] 960:0.53%  1920:1.72%  3840:5.30%  7680:14.40%  15360:29.63%
 [fig -> /Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/callables/kappa3_vertex/rebuild/outputs/fk_cutoff_convergence.pdf]
 
 --- stderr ---

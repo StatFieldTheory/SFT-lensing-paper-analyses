@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "status": "accepted_for_revised_figures",
+  "source_redshift": 5.0,
+  "sft_wick_version": "0.6.1",
+  "sft_wick_commit": "6945815ad9e6efa2b9e768891d6bf92b1214670d",
+  "kappa3_input": "pair-phase corrected, n_phi=512, permutation-aware",
+  "products": {
+    "order0": {
+      "path": "../sachs_sft/analyses/r1_sft061/figure_products/order0.npz",
+      "sha256": "975bd9564e1d503d096fd9d57d291d0987f2e35df51f861a39ffb04e35115c87"
+    },
+    "ff": {
+      "path": "../sachs_sft/analyses/r1_sft061/true_redshift_ff_gl24_all/ff_main/xi_ff_main.npz",
+      "sha256": "9874f29bb69075c59701cdac530057e7d590a3def2767195c567d3e6466d8697"
+    },
+    "fk": {
+      "path": "../sachs_sft/analyses/r1_sft061/true_redshift_fk_gl24_corrected_main/main/xi_main.npz",
+      "sha256": "892e1eb5e4f2f71e0033c39dd8a189cb8633ded6b8ffd73de99937f1c7b2555f"
+    },
+    "multiz": {
+      "path": "../sachs_sft/analyses/r1_sft061/figure_products/multiz/multiz.npz",
+      "sha256": "67bef6007d2f5a19c14009ec4fe7001e0656d3ebc9435a2b2c2b5af4a9b690a4"
+    },
+    "multiz_ff": {
+      "path": "../sachs_sft/analyses/r1_sft061/figure_products/multiz/multiz_ff.npz",
+      "sha256": "fb3edd7fd2a7cd8350684ca693ec60f5151d4af6ab6c210003858989cbaf0c82"
+    },
+    "mc_markers": {
+      "path": "../sachs_sft/analyses/r1_sft061/mc_update/fk_markers.npz",
+      "sha256": "1bd5fff53ac780c2f2e67ed30fba98e900cfd8fb55fd44a3e4ec869b0a98875f"
+    },
+    "mc_cache": {
+      "path": "../sachs_sft/analyses/r1_sft061/mc_update/appendix_mc_curve.npz",
+      "sha256": "f1532e2239a205d725995e84f33029bdbff356341fde2bbf9f70dcff12606eb0"
+    },
+    "kernel_crosscheck": {
+      "path": "../sachs_sft/analyses/r1_sft061/mc_update/fk_quadrature.json",
+      "sha256": "87448aeebc30ad744f289b866fdced937fcef2784751ad1a8a519ebf19c122d0"
+    },
+    "zeta_slices": {
+      "path": "../sachs_sft/analyses/r1_sft061/figure_products/zeta_slices.npz",
+      "sha256": "1fbfaa20bec5c4d9d2e2988bd254234580b3d932366098a65640970360120f72"
+    },
+    "order0_comparison": {
+      "path": "../sachs_sft/analyses/analysis1/r1_aligned/source_folded_full_boundary_n4096_k2048.npz",
+      "sha256": "6dbc612cddd2e9e29591e6b3465ac71bddfe2dbf8cc2b3a45d4b4756b8945a14"
+    },
+    "pyccl_reference": {
+      "path": "../sachs_sft/analyses/analysis1/r1_aligned/ccl_upperpad_n8192.npz",
+      "sha256": "e8a4c15e540c9074f2749752d7d1db9a2e784ad433bb0d838506f1241ae82c86"
+    },
+    "cutoff_ladder": {
+      "path": "../sachs_sft/analyses/r1_sft061/figure_products/cutoff_ladder",
+      "files": {
+        "assembly_manifest.json": "2a98fb3ce850ec531d3a77cf7c6992044b29c6c37d885d6af16c865b53c6638c",
+        "table_bihalofit_cut15360_r4_xi.npz": "813638a2c7f0a016c2532471f326287302a72a4f4e33268f6ccba45ec63403de",
+        "table_bihalofit_cut1920_r4_xi.npz": "c7a53d22ac6db908786a6e617820ded61adf08b90ead6d2cff5de6c9705157dc",
+        "table_bihalofit_cut3840_r4_xi.npz": "2de2dd26e864bbbc311d2c6a6e9613efdc4ef241f01a1909b7217e0fd99c904f",
+        "table_bihalofit_cut7680_r4_xi.npz": "059f4b9828f873aaeb43540aa9d14c100c57f4dc826be3b2a36eb2c135991fc9",
+        "table_bihalofit_cut960_r4_xi.npz": "27573b53170e4a1396e4a43337f5992daa3857c947446c933e43350ee44b86c3",
+        "table_tree_cut15360_r4_xi.npz": "3364bd185729bb68b47b896f2294706bfdc9e83caf611f70b2e4297197cc866c",
+        "table_tree_cut1920_r4_xi.npz": "d2eea68ca7366caf2f91de07655953c2d9b237106b266656447215a87ff7bade",
+        "table_tree_cut3840_r4_xi.npz": "453855f93d32302766c3da18348a4b5508a5199fedfd75740e4e00c0904c8cc0",
+        "table_tree_cut7680_r4_xi.npz": "5b154503d8817ae3d1f3b829132ace584d20d2dc6922e793cb911667d94f7866",
+        "table_tree_cut960_r4_xi.npz": "b5fafaa7bc630573b3ac2ed6d18a8cfb821768f211f3b217b29ee840213ee032"
+      }
+    }
+  }
+}

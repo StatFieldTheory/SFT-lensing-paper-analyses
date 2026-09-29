@@ -1,0 +1,14 @@
+{
+  "status": "passed",
+  "target_max_abs_over_peak": 0.001,
+  "max_abs_over_peak": 6.958952813717157e-06,
+  "rms_over_peak": 4.015593278912957e-06,
+  "max_relative_where_abs_coarse_above_1pct_peak": 2.1175808775036668e-05,
+  "mask_count": 26,
+  "angle_count": 40,
+  "method": "Insert fine4096chi/2048k withheld nodes and five fine probe nodes into the coarse2048chi/1024k positive spectrum interpolation, retain high-ell samples, and recompute the same40-angle scalar full-sky sum.",
+  "scope": "Representative z1 endpoint check plus previously accepted z5 refinement evidence, not a global proof over all redshifts or angles.",
+  "coarse": "source_folded_multiz_z1.npz",
+  "fine_withheld": "source_folded_multiz_z1_withheld_fine.npz",
+  "fine_probes": "source_folded_multiz_z1_probe.npz"
+}

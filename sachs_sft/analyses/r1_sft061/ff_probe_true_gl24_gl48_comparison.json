@@ -1,0 +1,155 @@
+{
+  "old_path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/ff_probe_true_gl24_j4/ff_main/xi_ff_main.npz",
+  "new_path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/ff_probe_true_gl48_j4/ff_main/xi_ff_main.npz",
+  "old_sha256": "28bd6e6a30cdcc41b4e03296040b871963c2a1cbb863242a7a30c27caf917622",
+  "new_sha256": "c88bef59b9a8f6daca8d9d05fcf01c6113219fa2c5d5fca8de17e9a84a8f7eb8",
+  "row_grid_exactly_equal": true,
+  "row_count": 12,
+  "components": [
+    {
+      "a": 0,
+      "b": 0,
+      "order": 2,
+      "lambda_source_mpc": 2317.9695958203943,
+      "samples": 2,
+      "array_equal": false,
+      "max_abs_difference": 2.444954279821978e-09,
+      "max_abs_difference_over_old_peak_percent": 0.10715638075456063,
+      "max_abs_relative_percent_above_0p1_percent_old_peak": 0.19747903447724746,
+      "relative_mask_excluded_fraction": 0.0,
+      "theta_arcmin": [
+        0.49999998691141617,
+        5000.000000069409
+      ],
+      "old": [
+        2.281669334672746e-06,
+        6.54862004731598e-07
+      ],
+      "new": [
+        2.2841142889525678e-06,
+        6.561552198957003e-07
+      ]
+    },
+    {
+      "a": 0,
+      "b": 1,
+      "order": 2,
+      "lambda_source_mpc": 2317.9695958203943,
+      "samples": 2,
+      "array_equal": false,
+      "max_abs_difference": 1.2897227405878563e-11,
+      "max_abs_difference_over_old_peak_percent": 0.11724082867830182,
+      "max_abs_relative_percent_above_0p1_percent_old_peak": 0.11724082867830184,
+      "relative_mask_excluded_fraction": 0.5,
+      "theta_arcmin": [
+        0.49999998691141617,
+        5000.000000069409
+      ],
+      "old": [
+        -1.1000627981969816e-08,
+        -2.7240172362670667e-12
+      ],
+      "new": [
+        -1.1013525209375695e-08,
+        -2.686114384061385e-12
+      ]
+    },
+    {
+      "a": 0,
+      "b": 2,
+      "order": 2,
+      "lambda_source_mpc": 2317.9695958203943,
+      "samples": 2,
+      "array_equal": false,
+      "max_abs_difference": 7.726195948459543e-34,
+      "max_abs_difference_over_old_peak_percent": 25.10030786134622,
+      "max_abs_relative_percent_above_0p1_percent_old_peak": 25.10030786134622,
+      "relative_mask_excluded_fraction": 0.5,
+      "theta_arcmin": [
+        0.49999998691141617,
+        5000.000000069409
+      ],
+      "old": [
+        3.078127962070804e-33,
+        -2.9961680458817956e-40
+      ],
+      "new": [
+        2.3055083672248497e-33,
+        -2.995613298782212e-40
+      ]
+    },
+    {
+      "a": 1,
+      "b": 1,
+      "order": 2,
+      "lambda_source_mpc": 2317.9695958203943,
+      "samples": 2,
+      "array_equal": false,
+      "max_abs_difference": 5.637435477248805e-10,
+      "max_abs_difference_over_old_peak_percent": 0.07645579125302251,
+      "max_abs_relative_percent_above_0p1_percent_old_peak": 0.07645579125302251,
+      "relative_mask_excluded_fraction": 0.5,
+      "theta_arcmin": [
+        0.49999998691141617,
+        5000.000000069409
+      ],
+      "old": [
+        7.373457765406281e-07,
+        5.1202056861209716e-12
+      ],
+      "new": [
+        7.37909520088353e-07,
+        5.079161218258108e-12
+      ]
+    },
+    {
+      "a": 1,
+      "b": 2,
+      "order": 2,
+      "lambda_source_mpc": 2317.9695958203943,
+      "samples": 2,
+      "array_equal": false,
+      "max_abs_difference": 4.046973049803599e-18,
+      "max_abs_difference_over_old_peak_percent": 0.07645191901231825,
+      "max_abs_relative_percent_above_0p1_percent_old_peak": 0.07645191901231825,
+      "relative_mask_excluded_fraction": 0.5,
+      "theta_arcmin": [
+        0.49999998691141617,
+        5000.000000069409
+      ],
+      "old": [
+        5.293487857579525e-15,
+        -3.8992800470760723e-20
+      ],
+      "new": [
+        5.297534830629329e-15,
+        -3.867487690910752e-20
+      ]
+    },
+    {
+      "a": 2,
+      "b": 2,
+      "order": 2,
+      "lambda_source_mpc": 2317.9695958203943,
+      "samples": 2,
+      "array_equal": false,
+      "max_abs_difference": 5.636777686293514e-10,
+      "max_abs_difference_over_old_peak_percent": 0.07645191901233787,
+      "max_abs_relative_percent_above_0p1_percent_old_peak": 0.07645191901233787,
+      "relative_mask_excluded_fraction": 0.5,
+      "theta_arcmin": [
+        0.49999998691141617,
+        5000.000000069409
+      ],
+      "old": [
+        7.372970828088497e-07,
+        -5.43106526568767e-12
+      ],
+      "new": [
+        7.37860760577479e-07,
+        -5.3867836651872605e-12
+      ]
+    }
+  ],
+  "interpretation": "Matched-input historical-versus-current framework replay. Input-table changes are excluded."
+}

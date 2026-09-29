@@ -1,0 +1,27 @@
+{
+  "sft_wick": {
+    "version": "0.6.1",
+    "source": "/Users/zzhang/projects/SFT/sft-wick",
+    "commit": "6945815ad9e6efa2b9e768891d6bf92b1214670d",
+    "working_state": {
+      "tracked_dirty": false,
+      "tracked_status": "",
+      "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "canoes": {
+    "source": "/Users/zzhang/projects/angular_statistics/canoes",
+    "commit": "077a64c86788add650ece263b054e7803ca0c644",
+    "working_state": {
+      "tracked_dirty": true,
+      "tracked_status": " M .gitignore\n M src/canoes/sachs/kappa3.py\n",
+      "tracked_diff_sha256": "c79ae10999b8a08023253c9c081d1df3aa81798cc3841a419458452e53fef4ad"
+    }
+  },
+  "remote_HEAD_verified": "6945815ad9e6efa2b9e768891d6bf92b1214670d",
+  "verification_date": "2026-09-28",
+  "input_sha256": {
+    "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/callables/C_propagator/corr_op/corr_op_table_zs5_21pt_stf_fid_omega03161_h06711.npz": "597d908dbef1520174d29848d79065bd090735c6e4526287e4de59b66774e33c",
+    "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/callables/C_propagator/corr_op/corr_op_C_callable.py": "0d757821f7603c36cf59b77319e5d8e65b8d8bdd0991a4c78112c224754a863e"
+  }
+}

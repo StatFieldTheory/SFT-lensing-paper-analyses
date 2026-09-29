@@ -1,0 +1,85 @@
+{
+  "status": "Historical plotted inputs only, not an aligned physical setup",
+  "inputs": {
+    "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/sftwick_outputs/2PCF/C_corr_op_O0/xi_C_corr_op_O0.npz": "517d19aa55c36aabc55488da0ee327e4b017ff158b4e5a6a96b840bd7c9d53f2",
+    "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/analysis1/pyccl_xi_shear_reference_fkem.npz": "8a4a151089550681bbaec8b2991fbd56872a976d613e05507fb4bcf9db1256ce"
+  },
+  "channels": {
+    "kappa-kappa": {
+      "reference_peak_abs": 0.0008461627739323093,
+      "max_abs_difference": 1.8438265182054011e-06,
+      "max_abs_difference_theta_arcmin": 0.4999999869114161,
+      "max_abs_difference_over_peak_percent": 0.21790447122091217,
+      "rms_difference_over_peak_percent": 0.10514889885865539,
+      "relative_mask_floor_fraction_of_peak": 0.01,
+      "relative_mask_included_samples": 23,
+      "relative_mask_excluded_fraction": 0.36111111111111116,
+      "max_abs_masked_relative_percent": 1.9680220075733494,
+      "median_abs_masked_relative_percent": 0.21949147187691978,
+      "sft_zero_crossings_arcmin": [
+        218.70596112596584
+      ],
+      "reference_zero_crossings_arcmin": [
+        222.7507267719549
+      ],
+      "zero_crossing_shifts_arcmin": [
+        -4.0447656459890595
+      ],
+      "zero_crossing_method": "Linear signed interpolation in log angle on the displayed samples"
+    },
+    "xi_plus": {
+      "reference_peak_abs": 0.0008461627919520823,
+      "max_abs_difference": 4.404595933742953e-06,
+      "max_abs_difference_theta_arcmin": 0.4999999869114161,
+      "max_abs_difference_over_peak_percent": 0.5205376525221145,
+      "rms_difference_over_peak_percent": 0.29055419857491466,
+      "relative_mask_floor_fraction_of_peak": 0.01,
+      "relative_mask_included_samples": 23,
+      "relative_mask_excluded_fraction": 0.36111111111111116,
+      "max_abs_masked_relative_percent": 2.71062122285858,
+      "median_abs_masked_relative_percent": 0.778737150954981,
+      "sft_zero_crossings_arcmin": [
+        213.63412513728184
+      ],
+      "reference_zero_crossings_arcmin": [
+        225.45038613170038
+      ],
+      "zero_crossing_shifts_arcmin": [
+        -11.816260994418542
+      ],
+      "zero_crossing_method": "Linear signed interpolation in log angle on the displayed samples"
+    },
+    "xi_minus": {
+      "reference_peak_abs": 6.638796568966175e-05,
+      "max_abs_difference": 1.1038575883460058e-06,
+      "max_abs_difference_theta_arcmin": 35.08519138364495,
+      "max_abs_difference_over_peak_percent": 1.6627374809255584,
+      "rms_difference_over_peak_percent": 0.47068832807281596,
+      "relative_mask_floor_fraction_of_peak": 0.01,
+      "relative_mask_included_samples": 29,
+      "relative_mask_excluded_fraction": 0.19444444444444442,
+      "max_abs_masked_relative_percent": 3.831570671484498,
+      "median_abs_masked_relative_percent": 0.7864462997751364,
+      "sft_zero_crossings_arcmin": [],
+      "reference_zero_crossings_arcmin": [],
+      "zero_crossing_shifts_arcmin": [],
+      "zero_crossing_method": "Linear signed interpolation in log angle on the displayed samples"
+    },
+    "kappa_gamma_t": {
+      "reference_peak_abs": 0.00013237866047072398,
+      "max_abs_difference": 1.883400390974616e-06,
+      "max_abs_difference_theta_arcmin": 10.77217341408055,
+      "max_abs_difference_over_peak_percent": 1.422737157391872,
+      "rms_difference_over_peak_percent": 0.43730697340857594,
+      "relative_mask_floor_fraction_of_peak": 0.01,
+      "relative_mask_included_samples": 30,
+      "relative_mask_excluded_fraction": 0.16666666666666663,
+      "max_abs_masked_relative_percent": 2.3114060593007903,
+      "median_abs_masked_relative_percent": 0.8060248906305802,
+      "sft_zero_crossings_arcmin": [],
+      "reference_zero_crossings_arcmin": [],
+      "zero_crossing_shifts_arcmin": [],
+      "zero_crossing_method": "Linear signed interpolation in log angle on the displayed samples"
+    }
+  }
+}

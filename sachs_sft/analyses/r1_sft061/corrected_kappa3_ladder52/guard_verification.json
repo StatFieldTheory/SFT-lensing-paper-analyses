@@ -1,0 +1,60 @@
+{
+  "status": "PASS",
+  "targets": [
+    {
+      "target": "tree_960",
+      "scalar_samples": 2728,
+      "batch_samples": 2728,
+      "max_absolute_difference": 0.0,
+      "invalid_scalar_and_batch_queries_rejected": 6,
+      "missing_channel_rejected": true
+    },
+    {
+      "target": "tree_1920",
+      "scalar_samples": 2728,
+      "batch_samples": 2728,
+      "max_absolute_difference": 0.0,
+      "invalid_scalar_and_batch_queries_rejected": 6,
+      "missing_channel_rejected": true
+    },
+    {
+      "target": "tree_3840",
+      "scalar_samples": 2728,
+      "batch_samples": 2728,
+      "max_absolute_difference": 0.0,
+      "invalid_scalar_and_batch_queries_rejected": 6,
+      "missing_channel_rejected": true
+    },
+    {
+      "target": "tree_7680",
+      "scalar_samples": 2728,
+      "batch_samples": 2728,
+      "max_absolute_difference": 0.0,
+      "invalid_scalar_and_batch_queries_rejected": 6,
+      "missing_channel_rejected": true
+    },
+    {
+      "target": "tree_15360",
+      "scalar_samples": 2728,
+      "batch_samples": 2728,
+      "max_absolute_difference": 0.0,
+      "invalid_scalar_and_batch_queries_rejected": 6,
+      "missing_channel_rejected": true
+    }
+  ],
+  "contract": {
+    "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/corrected_kappa3_ladder52/query_contract.json",
+    "sha256": "bd3cf5fde325e85a7eeda6bb61f4ee05d6e243cdad18591b62fef89be460b919",
+    "bytes": 13036
+  },
+  "guard": {
+    "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/restricted_kappa3_guard.py",
+    "sha256": "9c24561b2d7ee6b8c59e2dd0be725c1d0ae866e3cb5cebdc447f014996dd075c",
+    "bytes": 7859
+  },
+  "prepared": {
+    "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/true_redshift_fk_gl24_corrected_tree52/prepared.json",
+    "sha256": "c42ed2a2358f0c6a0f3c3126e7673655fea37327d0a1ecd39c116d65dce9096d",
+    "bytes": 39031
+  }
+}

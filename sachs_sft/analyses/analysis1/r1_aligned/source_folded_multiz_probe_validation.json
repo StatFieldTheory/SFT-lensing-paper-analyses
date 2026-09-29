@@ -1,0 +1,138 @@
+{
+  "status": "five_source_five_ell_probes_passed",
+  "probes": [
+    {
+      "z": 1.0,
+      "file": "source_folded_multiz_z1_probe.npz",
+      "sha256": "6a8122ae263f1833cb4388dfb9b8c2345098efa0cd2282bd437b4df8eed4a30a",
+      "ell": [
+        2,
+        10,
+        100,
+        500,
+        800
+      ],
+      "cl_pp": [
+        3.286080478358684e-08,
+        4.1810716645742216e-08,
+        7.53681340497403e-09,
+        4.445132697507622e-10,
+        1.6290686058128112e-10
+      ],
+      "elapsed_seconds": 23.1880057080416,
+      "peak_rss_bytes": 851787776,
+      "source_chi_mpc": 3413.8078776661523,
+      "source_lambda_mpc": 1822.7290713360132,
+      "warnings": [],
+      "snapshot_hash_matches": true
+    },
+    {
+      "z": 1.7,
+      "file": "source_folded_multiz_z1p7_probe.npz",
+      "sha256": "377622b78dfb9f6ae7d884216f132ed4b7df0c60bea3f75100442b8aa0b4d7bf",
+      "ell": [
+        2,
+        10,
+        100,
+        500,
+        800
+      ],
+      "cl_pp": [
+        4.198642593656438e-08,
+        6.293802979640817e-08,
+        1.7715068307463853e-08,
+        1.364838326515212e-09,
+        5.259688709431604e-10
+      ],
+      "elapsed_seconds": 23.902209167019464,
+      "peak_rss_bytes": 835076096,
+      "source_chi_mpc": 4855.798469579331,
+      "source_lambda_mpc": 2094.9023866944794,
+      "warnings": [],
+      "snapshot_hash_matches": true
+    },
+    {
+      "z": 2.5,
+      "file": "source_folded_multiz_z2p5_probe.npz",
+      "sha256": "ecadbdf9ff78f96d4785e0e1a799c6da44b37d7cc8b7cc91c78948ee9a799908",
+      "ell": [
+        2,
+        10,
+        100,
+        500,
+        800
+      ],
+      "cl_pp": [
+        4.840244887273789e-08,
+        7.835424099855946e-08,
+        2.862608117491212e-08,
+        2.6032279758935388e-09,
+        1.0381967409842884e-09
+      ],
+      "elapsed_seconds": 24.310947541962378,
+      "peak_rss_bytes": 867123200,
+      "source_chi_mpc": 5989.922522963986,
+      "source_lambda_mpc": 2216.8017129787445,
+      "warnings": [],
+      "snapshot_hash_matches": true
+    },
+    {
+      "z": 3.2,
+      "file": "source_folded_multiz_z3p2_probe.npz",
+      "sha256": "b8f66279f26b6cb463b957617fb3daa639521942b186c83c199ae406082bc3d4",
+      "ell": [
+        2,
+        10,
+        100,
+        500,
+        800
+      ],
+      "cl_pp": [
+        5.241328452859941e-08,
+        8.769338838609054e-08,
+        3.6889465119475195e-08,
+        3.678665285540069e-09,
+        1.4941489113300623e-09
+      ],
+      "elapsed_seconds": 24.59976024995558,
+      "peak_rss_bytes": 850149376,
+      "source_chi_mpc": 6715.990936290299,
+      "source_lambda_mpc": 2266.590169124188,
+      "warnings": [],
+      "snapshot_hash_matches": true
+    },
+    {
+      "z": 4.0,
+      "file": "source_folded_multiz_z4_probe.npz",
+      "sha256": "29f20a3803d80bbe25f94e767d62828fb7ae1d4910af6c802f6a023a82fb355e",
+      "ell": [
+        2,
+        10,
+        100,
+        500,
+        800
+      ],
+      "cl_pp": [
+        5.601811259708794e-08,
+        9.561420706315214e-08,
+        4.4940569149593433e-08,
+        4.8192543533515895e-09,
+        1.9880209877228214e-09
+      ],
+      "elapsed_seconds": 24.769748541992158,
+      "peak_rss_bytes": 850886656,
+      "source_chi_mpc": 7356.080626903646,
+      "source_lambda_mpc": 2297.2976167427273,
+      "warnings": [],
+      "snapshot_hash_matches": true
+    }
+  ],
+  "accepted_z5_products_unchanged": {
+    "ccl": true,
+    "ccl_probe": true,
+    "source_folded": true,
+    "withheld": true
+  },
+  "long_generation_started": false,
+  "remaining": "Independent code review, z1 coarse full/fine withheld angular gate, then remaining4sources serially."
+}

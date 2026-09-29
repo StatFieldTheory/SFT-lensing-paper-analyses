@@ -1,0 +1,102 @@
+{
+  "products": {
+    "1.0": {
+      "elapsed_seconds": 65.25775862496812,
+      "kk_at_first_angle": 6.717568214255846e-05,
+      "metadata_path": "source_folded_multiz_z1.json",
+      "metadata_sha256": "b3cdd2c1acc086e307f0782822b3d36a59931c391ca5dab442cbc48863b052d2",
+      "path": "source_folded_multiz_z1.npz",
+      "peak_rss_bytes": 880689152,
+      "sha256": "8e9ae5f767a5a4104bbe754d32c453cdfb00c9980d2ce06cf2f1476eeba8b63f",
+      "source_chi_mpc": 3413.8078776661523,
+      "source_lambda_mpc": 1822.7290713360132,
+      "source_snapshot_path": "source_folded_multiz_z1.source.py",
+      "source_snapshot_sha256": "47b855b1b438ca323f85e3bcf9fe9aee466d38dc9c5830423624eb7b70913424",
+      "z_source": 1.0
+    },
+    "1.7": {
+      "elapsed_seconds": 67.05783508298919,
+      "kk_at_first_angle": 0.00019474616026256763,
+      "metadata_path": "source_folded_multiz_z1p7.json",
+      "metadata_sha256": "67cda657e2b43512a2086eff6b0dc7db29384ef26cfe78540d17bf65f163d560",
+      "path": "source_folded_multiz_z1p7.npz",
+      "peak_rss_bytes": 883408896,
+      "sha256": "851b61f392939ceeece773214c95dc5d8d3dc184aa28b5de9186245cf349e9ff",
+      "source_chi_mpc": 4855.798469579331,
+      "source_lambda_mpc": 2094.9023866944794,
+      "source_snapshot_path": "source_folded_multiz_z1p7.source.py",
+      "source_snapshot_sha256": "47b855b1b438ca323f85e3bcf9fe9aee466d38dc9c5830423624eb7b70913424",
+      "z_source": 1.7
+    },
+    "2.5": {
+      "elapsed_seconds": 67.9111740840599,
+      "kk_at_first_angle": 0.00036477689107341886,
+      "metadata_path": "source_folded_multiz_z2p5.json",
+      "metadata_sha256": "0adde46141f1e715b7e8c47cd2db35d3f6a9ac930e2094675f29dfe389d6aafe",
+      "path": "source_folded_multiz_z2p5.npz",
+      "peak_rss_bytes": 865583104,
+      "sha256": "b55d30f128db2649a5b98a8114ace8d159ccbd58f2af378673ce04c1cca2c7b1",
+      "source_chi_mpc": 5989.922522963986,
+      "source_lambda_mpc": 2216.8017129787445,
+      "source_snapshot_path": "source_folded_multiz_z2p5.source.py",
+      "source_snapshot_sha256": "47b855b1b438ca323f85e3bcf9fe9aee466d38dc9c5830423624eb7b70913424",
+      "z_source": 2.5
+    },
+    "3.2": {
+      "elapsed_seconds": 67.51635820895899,
+      "kk_at_first_angle": 0.0005120482444450935,
+      "metadata_path": "source_folded_multiz_z3p2.json",
+      "metadata_sha256": "17b6669cc181a67fd7e36ab4b3d0192016e0921cc2a01d4aded569c4faabd2b6",
+      "path": "source_folded_multiz_z3p2.npz",
+      "peak_rss_bytes": 881278976,
+      "sha256": "9b13642eae19b1a091540ee77e59b7d4e53d547f5195124c9b7f8791aa654f6f",
+      "source_chi_mpc": 6715.990936290299,
+      "source_lambda_mpc": 2266.590169124188,
+      "source_snapshot_path": "source_folded_multiz_z3p2.source.py",
+      "source_snapshot_sha256": "47b855b1b438ca323f85e3bcf9fe9aee466d38dc9c5830423624eb7b70913424",
+      "z_source": 3.2
+    },
+    "4.0": {
+      "elapsed_seconds": 68.18266929092351,
+      "kk_at_first_angle": 0.0006693390384548204,
+      "metadata_path": "source_folded_multiz_z4.json",
+      "metadata_sha256": "f198d6aba900b71eea2294a146dc63c10b82bc2821206829e954df62307aef51",
+      "path": "source_folded_multiz_z4.npz",
+      "peak_rss_bytes": 855883776,
+      "sha256": "09d179edcebbfc567660c405feaf9cc8bd72d8015a52557c48a2598ce2996bf1",
+      "source_chi_mpc": 7356.080626903646,
+      "source_lambda_mpc": 2297.2976167427273,
+      "source_snapshot_path": "source_folded_multiz_z4.source.py",
+      "source_snapshot_sha256": "47b855b1b438ca323f85e3bcf9fe9aee466d38dc9c5830423624eb7b70913424",
+      "z_source": 4.0
+    }
+  },
+  "protocol": {
+    "angle_count": 40,
+    "channel": "full Ricci PP / convergence autocorrelation",
+    "cosine_taper_start": 4000.4,
+    "ell_range": [
+      2,
+      5000
+    ],
+    "limber_shift": 0.5,
+    "low_ell_k_range_inverse_mpc": [
+      0.0001,
+      10.0
+    ],
+    "low_ell_n_k": 1024,
+    "n_chi": 2048,
+    "physical_chi_min_mpc": 50.0,
+    "split_inclusive": 800
+  },
+  "scope": "Accepted numerical products for the five lower-source multiz Order-0 curves. Existing accepted z=5 data remain unchanged.",
+  "source_map": {
+    "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/source_map.json",
+    "sha256": "83a926ae4d52dc5435dbe9ab7d016dddbbbf25b149c5a640e419afcd842bdc2b"
+  },
+  "status": "accepted_for_multiz_order0",
+  "validation": {
+    "path": "source_folded_multiz_validation.json",
+    "sha256": "30ed67a6701c067274f2f875e6fa85134c73ec8f52eac6428fab372154203a37"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "bitwise_identical_to_uncached": {
+    "cl_pp": true,
+    "cl_pw": true,
+    "cl_ww": true
+  },
+  "source": "source_folded_direct_n4096_k1024.npz",
+  "cached": "source_folded_cached_n4096_k1024.npz"
+}

@@ -1,0 +1,91 @@
+{
+  "scope": "High-ell Weyl ID branch only, identical stored source and inner-radial grids. Source-continuum window numerically integrates the actual response factor before forming its covariance.",
+  "source_floor_chi_mpc": 447.33286887509945,
+  "chi_source_mpc": 7971.183639083942,
+  "results": {
+    "925": {
+      "linear": {
+        "cl_ee": 2.0501050703233757e-09,
+        "ratio_to_ccl": 1.0699578102312737,
+        "factorization_ratio_to_stored_table": 1.0
+      },
+      "cubic": {
+        "cl_ee": 1.9645701880237127e-09,
+        "ratio_to_ccl": 1.0253168224650702,
+        "factorization_ratio_to_stored_table": 1.0
+      },
+      "continuum_source": {
+        "cl_ee": 1.9218555002364347e-09,
+        "ratio_to_ccl": 1.0030238607670732
+      },
+      "continuum_source_no_artificial_floor": {
+        "cl_ee": 1.922256707368328e-09,
+        "ratio_to_ccl": 1.003233252329732
+      },
+      "continuum_source_ell_plus_half": {
+        "cl_ee": 1.9156355920808516e-09,
+        "ratio_to_ccl": 0.9997776665078992
+      },
+      "continuum_source_no_artificial_floor_ell_plus_half": {
+        "cl_ee": 1.9160353843483475e-09,
+        "ratio_to_ccl": 0.9999863196473258
+      }
+    },
+    "1992": {
+      "linear": {
+        "cl_ee": 4.072505175769075e-10,
+        "ratio_to_ccl": 1.0733298712380352,
+        "factorization_ratio_to_stored_table": 0.9999999999999999
+      },
+      "cubic": {
+        "cl_ee": 3.892695845588339e-10,
+        "ratio_to_ccl": 1.0259401892411693,
+        "factorization_ratio_to_stored_table": 1.0000000000000002
+      },
+      "continuum_source": {
+        "cl_ee": 3.7996103638180853e-10,
+        "ratio_to_ccl": 1.0014070275015456
+      },
+      "continuum_source_no_artificial_floor": {
+        "cl_ee": 3.8001662946835166e-10,
+        "ratio_to_ccl": 1.0015535459658464
+      },
+      "continuum_source_ell_plus_half": {
+        "cl_ee": 3.793686185878824e-10,
+        "ratio_to_ccl": 0.999845679665189
+      },
+      "continuum_source_no_artificial_floor_ell_plus_half": {
+        "cl_ee": 3.7942411954934944e-10,
+        "ratio_to_ccl": 0.9999919553290714
+      }
+    },
+    "4289": {
+      "linear": {
+        "cl_ee": 6.990344277946056e-11,
+        "ratio_to_ccl": 1.0760506431625505,
+        "factorization_ratio_to_stored_table": 1.0000000000000002
+      },
+      "cubic": {
+        "cl_ee": 6.668479535339313e-11,
+        "ratio_to_ccl": 1.0265047625131503,
+        "factorization_ratio_to_stored_table": 1.0
+      },
+      "continuum_source": {
+        "cl_ee": 6.500354585688787e-11,
+        "ratio_to_ccl": 1.000624640875382
+      },
+      "continuum_source_no_artificial_floor": {
+        "cl_ee": 6.501094462831453e-11,
+        "ratio_to_ccl": 1.0007385330162513
+      },
+      "continuum_source_ell_plus_half": {
+        "cl_ee": 6.49552427720934e-11,
+        "ratio_to_ccl": 0.999881092869831
+      },
+      "continuum_source_no_artificial_floor_ell_plus_half": {
+        "cl_ee": 6.496263581942576e-11,
+        "ratio_to_ccl": 0.9999948968975098
+      }
+    }
+  }
+}

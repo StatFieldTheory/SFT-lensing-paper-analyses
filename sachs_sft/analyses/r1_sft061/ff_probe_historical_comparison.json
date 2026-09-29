@@ -1,0 +1,165 @@
+{
+  "scope": "Two extreme angles only, matched historical inputs. Not a full-curve convergence test.",
+  "old": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/sftwick_outputs/2PCF/C_corr_op_K_limber_FF/xi_C_corr_op_K_limber_FF.npz",
+  "old_sha256": "cc3df79f8ea12427170f31af9c8d549f9c27cdf39d3d8ac228221b7ae921ac5a",
+  "new": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/ff_probe_historical_gl24/ff_main/xi_ff_main.npz",
+  "new_sha256": "5e8000eb3b3e22f7d82f55b2259afc7bee275481a8aaa0cf899f3ce8afcd5c33",
+  "rows": [
+    {
+      "key": [
+        0,
+        0,
+        2,
+        2313.0288751857356,
+        0.49999998691141617
+      ],
+      "old": 2.0102248229236914e-06,
+      "new": 2.0102248229236914e-06,
+      "difference": 0.0,
+      "difference_over_old_component_peak_percent": 0.0
+    },
+    {
+      "key": [
+        0,
+        0,
+        2,
+        2313.0288751857356,
+        5000.000000069409
+      ],
+      "old": 5.785253956361449e-07,
+      "new": 5.785253956361449e-07,
+      "difference": 0.0,
+      "difference_over_old_component_peak_percent": 0.0
+    },
+    {
+      "key": [
+        0,
+        1,
+        2,
+        2313.0288751857356,
+        0.49999998691141617
+      ],
+      "old": -9.580981527239495e-09,
+      "new": -9.580981527239495e-09,
+      "difference": 0.0,
+      "difference_over_old_component_peak_percent": 0.0
+    },
+    {
+      "key": [
+        0,
+        1,
+        2,
+        2313.0288751857356,
+        5000.000000069409
+      ],
+      "old": -2.5233559451583115e-12,
+      "new": -2.5233559451583115e-12,
+      "difference": 0.0,
+      "difference_over_old_component_peak_percent": 0.0
+    },
+    {
+      "key": [
+        0,
+        2,
+        2,
+        2313.0288751857356,
+        0.49999998691141617
+      ],
+      "old": 2.490022101947183e-33,
+      "new": 2.490022101947183e-33,
+      "difference": 0.0,
+      "difference_over_old_component_peak_percent": 0.0
+    },
+    {
+      "key": [
+        0,
+        2,
+        2,
+        2313.0288751857356,
+        5000.000000069409
+      ],
+      "old": -2.860410199621215e-40,
+      "new": -2.860410199621215e-40,
+      "difference": 0.0,
+      "difference_over_old_component_peak_percent": 0.0
+    },
+    {
+      "key": [
+        1,
+        1,
+        2,
+        2313.0288751857356,
+        0.49999998691141617
+      ],
+      "old": 6.487287585879029e-07,
+      "new": 6.487287585879029e-07,
+      "difference": 0.0,
+      "difference_over_old_component_peak_percent": 0.0
+    },
+    {
+      "key": [
+        1,
+        1,
+        2,
+        2313.0288751857356,
+        5000.000000069409
+      ],
+      "old": 4.757071631607278e-12,
+      "new": 4.757071631607278e-12,
+      "difference": 0.0,
+      "difference_over_old_component_peak_percent": 0.0
+    },
+    {
+      "key": [
+        1,
+        2,
+        2,
+        2313.0288751857356,
+        0.49999998691141617
+      ],
+      "old": 4.6573004463228725e-15,
+      "new": 4.6573004463228725e-15,
+      "difference": 0.0,
+      "difference_over_old_component_peak_percent": 0.0
+    },
+    {
+      "key": [
+        1,
+        2,
+        2,
+        2313.0288751857356,
+        5000.000000069409
+      ],
+      "old": -3.623608913135574e-20,
+      "new": -3.623608913135574e-20,
+      "difference": 0.0,
+      "difference_over_old_component_peak_percent": 0.0
+    },
+    {
+      "key": [
+        2,
+        2,
+        2,
+        2313.0288751857356,
+        0.49999998691141617
+      ],
+      "old": 6.486864852105917e-07,
+      "new": 6.486864852105917e-07,
+      "difference": 0.0,
+      "difference_over_old_component_peak_percent": 0.0
+    },
+    {
+      "key": [
+        2,
+        2,
+        2,
+        2313.0288751857356,
+        5000.000000069409
+      ],
+      "old": -5.0471000458980156e-12,
+      "new": -5.0471000458980156e-12,
+      "difference": 0.0,
+      "difference_over_old_component_peak_percent": 0.0
+    }
+  ]
+}

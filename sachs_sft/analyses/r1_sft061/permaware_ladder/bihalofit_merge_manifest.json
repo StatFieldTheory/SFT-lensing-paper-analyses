@@ -1,0 +1,149 @@
+{
+  "inputs": [
+    {
+      "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/corrected_kappa3_ladder52/pieces/band_bihalofit_r4_00060_00120_np512.npz",
+      "sha256": "5ca9e825fea894ddd315a48eb0293992966406445359a46eea7318a86395f554",
+      "bytes": 47625
+    },
+    {
+      "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/permaware_ladder/missing_pieces/band_bihalofit_missing22_00060_00120_np512.npz",
+      "sha256": "10018adbf3483c4e3ed054754cb8131d17e7d3aa3140a209795a3472288724a2",
+      "bytes": 23865
+    },
+    {
+      "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/corrected_kappa3_ladder52/pieces/band_bihalofit_r4_00120_00240_np512.npz",
+      "sha256": "43782a5e69afaff4cf77d28a7eb4b196c508819a8912b1b420843fddd4b55d52",
+      "bytes": 47627
+    },
+    {
+      "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/permaware_ladder/missing_pieces/band_bihalofit_missing22_00120_00240_np512.npz",
+      "sha256": "c2a318792cb8e98d15a5b3bc0a05eb1714b5b925f140692d921ba4e3226099ca",
+      "bytes": 23867
+    },
+    {
+      "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/corrected_kappa3_ladder52/pieces/band_bihalofit_r4_00240_00480_np512.npz",
+      "sha256": "fc32cb27cad9b4e5ced2a372f8954866ca20751d8bf5fc8be4cf8135db954178",
+      "bytes": 47627
+    },
+    {
+      "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/permaware_ladder/missing_pieces/band_bihalofit_missing22_00240_00480_np512.npz",
+      "sha256": "ae74fc5f605b69ca3b4f769350874e65001a2ef8ec3410ee3eff3c8abbbf1e07",
+      "bytes": 23867
+    },
+    {
+      "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/corrected_kappa3_ladder52/pieces/band_bihalofit_r4_00480_00960_np512.npz",
+      "sha256": "a268dbcac3840b5f181f792a8b4707d199a0526a455332037fbd77915d8f07f3",
+      "bytes": 47627
+    },
+    {
+      "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/permaware_ladder/missing_pieces/band_bihalofit_missing22_00480_00960_np512.npz",
+      "sha256": "b4cbeca906e77f19e3a81a971c13122c10a75a1e753f9b5fb8e19922a73bb7ae",
+      "bytes": 23867
+    },
+    {
+      "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/corrected_kappa3_ladder52/pieces/band_bihalofit_r4_00960_01920_np512.npz",
+      "sha256": "5779e2cbf2e0cdf752a0dfa4aff153e8dc5899b14c0085d50ee9e0f4dc612ad8",
+      "bytes": 47630
+    },
+    {
+      "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/permaware_ladder/missing_pieces/band_bihalofit_missing22_00960_01920_np512.npz",
+      "sha256": "196fa6d921fcce3094a98d2d71350027e5302db0f3ac79fd3e9558f39f379563",
+      "bytes": 23870
+    },
+    {
+      "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/corrected_kappa3_ladder52/pieces/band_bihalofit_r4_01920_03840_np512.npz",
+      "sha256": "a810c68294c6d4a2321d79549fc7450fbe04d23df6bf55efce4c24afa21b09ce",
+      "bytes": 47632
+    },
+    {
+      "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/permaware_ladder/missing_pieces/band_bihalofit_missing22_01920_03840_np512.npz",
+      "sha256": "76994608473c8bbd62eaa3b5de384e1cc9b5f39e2875b5aeddb1ca8a5e8050c0",
+      "bytes": 23872
+    },
+    {
+      "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/corrected_kappa3_ladder52/pieces/band_bihalofit_r4_03840_07680_np512.npz",
+      "sha256": "7d183a059423bc6507c743e5547cbd84d4a6230e9dbf0a7e02e0f17182674373",
+      "bytes": 47632
+    },
+    {
+      "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/permaware_ladder/missing_pieces/band_bihalofit_missing22_03840_07680_np512.npz",
+      "sha256": "6444578bb839fc0fc5b864677e120224f60a0d6b095f70fe3d865a4b69c34cb7",
+      "bytes": 23872
+    },
+    {
+      "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/corrected_kappa3_ladder52/pieces/band_bihalofit_r4_07680_15360_np512.npz",
+      "sha256": "0ca32441f0b6a7bc3b9ebd5a0b7a2ddbf91283c434e7383c98d9df7fd63f9db0",
+      "bytes": 47635
+    },
+    {
+      "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/permaware_ladder/missing_pieces/band_bihalofit_missing22_07680_15360_np512.npz",
+      "sha256": "c00143479b654f034624ec2e0939698c3398f8f57f775ac1a63d77790eff9c2a",
+      "bytes": 23875
+    }
+  ],
+  "contract": {
+    "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/permaware_ladder/contract.json",
+    "sha256": "ead17f4314037c6eeeb1310f7740440097da04cfd0e0f19dacb61f2675eb0f94",
+    "bytes": 14545
+  },
+  "outputs": [
+    {
+      "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/permaware_ladder/pieces/band_bihalofit_34_00060_00120_np512.npz",
+      "sha256": "d023d38acc1c202647a26cce2d07f82dbb2fcb5fd6c0e0872187e10a7662d18d",
+      "bytes": 34545
+    },
+    {
+      "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/permaware_ladder/pieces/band_bihalofit_34_00120_00240_np512.npz",
+      "sha256": "c200a2da6a7430396526177c4fabe48aa04994351af143c8cb74e2eccf12d594",
+      "bytes": 34547
+    },
+    {
+      "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/permaware_ladder/pieces/band_bihalofit_34_00240_00480_np512.npz",
+      "sha256": "0d6d66290d4b28cb6aa4ac3f554551aaac2048422ea3e1170cfff61e4772fbe5",
+      "bytes": 34547
+    },
+    {
+      "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/permaware_ladder/pieces/band_bihalofit_34_00480_00960_np512.npz",
+      "sha256": "f610e069a4eb2a9c68fe283469753342a54ba26d3de5328b3148e704efaae405",
+      "bytes": 34547
+    },
+    {
+      "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/permaware_ladder/pieces/band_bihalofit_34_00960_01920_np512.npz",
+      "sha256": "50fab90464794c64f5af4461dfd2b38f77ccc188cf118c1ad9bc5cad4785848b",
+      "bytes": 34550
+    },
+    {
+      "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/permaware_ladder/pieces/band_bihalofit_34_01920_03840_np512.npz",
+      "sha256": "2b4138c362d416d8bce2b602e6340da0015cfa668d7116f5a17eb2f26fb6c4f6",
+      "bytes": 34552
+    },
+    {
+      "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/permaware_ladder/pieces/band_bihalofit_34_03840_07680_np512.npz",
+      "sha256": "80eb52f5d69b307ff53b8dd1e62d35018361ea0059d57bdba223b781f98e08ce",
+      "bytes": 34552
+    },
+    {
+      "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/permaware_ladder/pieces/band_bihalofit_34_07680_15360_np512.npz",
+      "sha256": "3e87ad1e15f60b8bb53a33d09efb8c8e59638d487b2e9f3bbc19452efa381979",
+      "bytes": 34555
+    }
+  ],
+  "lambda_shells": [
+    396.62940263603133,
+    842.8799091499897,
+    1251.9137853399643,
+    1580.6026069066775,
+    1822.7200008805883,
+    2009.5400884695034,
+    2136.2944909779103,
+    2216.792401006907,
+    2261.2025775752886,
+    2284.239336517969,
+    2298.673394704284,
+    2308.2241328417667,
+    2313.9354863755607,
+    2317.9602946395657,
+    2322.079816011109,
+    2326.6125200093848
+  ]
+}

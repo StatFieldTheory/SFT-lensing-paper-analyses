@@ -1,0 +1,8 @@
+{
+  "status": "passed",
+  "source": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/analysis3/plot_analysis3_cl_decomposition.py",
+  "previous_sha256": "18a98cc23db4c18afb158fde649e3739980878f9bc93226c8d67afcbed47ba45",
+  "current_sha256": "46efcb23e2e92ce14bcc1aae1145536034a487ae5119ae4d4321c50d30d2d479",
+  "ast_equal": true,
+  "scope": "Two comment blocks changed. Numerical transform and pure-E control remain identical."
+}

@@ -19,18 +19,17 @@ are INACCURATE at low ell / large angles -- exactly where the FK enhancement
 sits -- so the curved-sky kernel is used here.  (The flat-sky transform is
 retained as ``forward_hankel`` for the fullsky-vs-flatsky probe.)
 
-The 2PCF is known only on [0.5', 83 deg], not the full sphere, so the transform
-truncates the cos(theta) integral.  The decaying terms (O0, FK) -> 0 by 83 deg
-and are unaffected; but the FF term has a flat large-angle floor (xi_inf~5.79e-7)
-that is a pure ell=0 monopole, and on the truncated range it would leak
-spuriously into low ell.  ``forward_curved`` removes it by DC subtraction (exact
-for ell>=1), NOT by an ad hoc taper.  This makes the Full C_ell truncation-robust
-to <2% for all ell>=2 (theta_max = 50/65/83 deg agree), validated against PyCCL.
+The 2PCF is sampled on [0.5', 83 deg], so interpolation and finite angular
+coverage affect the recovered spectra. Only the scalar channel uses endpoint
+subtraction to estimate its constant large-separation contribution. This is not
+an exact subtraction of the disconnected moment. Spin channels retain their
+endpoint values because a constant is not generally orthogonal to their
+Wigner-d kernels.
 
-Validation: (i) a built-in Wigner-d self-test checks orthonormality
-int (d^ell_{m n})^2 d(cos theta) = 2/(2 ell + 1); (ii) the Order-0 C_ell of all
-four panels is checked against PyCCL at low ell (at Order-0 they coincide:
-C_ell^{kappa kappa} = C_ell^{EE} = C_ell^{kappa E}, C_ell^{BB} = 0).
+The built-in Wigner-d self-test checks the kernel norms. A separate pure-E
+round trip in r1_sft061/pure_e_transform_check.py measures transform residuals
+for the accepted Order-0 spectrum on this angular grid. Those residuals are
+specific to that input and are not a universal error bound for FK spectra.
 
 Run with the PyCCL interpreter (needs pyccl + scipy + matplotlib):
   <PyCCL python> plot_analysis3_cl_decomposition.py
@@ -60,6 +59,13 @@ FF_NPZ = RUNS / "C_corr_op_K_limber_FF" / "xi_C_corr_op_K_limber_FF.npz"
 # The June cut1000 sweep in C_corr_op_K_limber_FK/ is superseded and about 4.5x low at 0.5'.
 FK_NPZ = RUNS / "C_corr_op_K_limber_FK_cut15360_permfix" / "xi_C_corr_op_K_limber_FK_cut15360_permfix.npz"
 OUT_STEM = HERE / "outputs" / "analysis3_cl_O0_FF_FK"
+
+sys.path.insert(0, str(HERE.parents[2] / "reproduce"))
+from product_paths import resolve_product  # noqa: E402
+
+O0_NPZ = resolve_product("order0", O0_NPZ)
+FF_NPZ = resolve_product("ff", FF_NPZ)
+FK_NPZ = resolve_product("fk", FK_NPZ)
 LOAD_KW: dict[str, Any] = {"allow_pickle": True}  # trusted local sft-wick output
 
 COLOR_O0, COLOR_FF, COLOR_FK = PALETTE[0], PALETTE[1], PALETTE[2]
@@ -82,10 +88,8 @@ Z_SOURCE = 5.0
 # ell range [3, 1500]: the source 2PCF spans gamma in [0.5', 5000'].  The
 # curved-sky transform must be evaluated at INTEGER ell (Legendre / Wigner-d);
 # ~30 log-spaced multipoles, rounded to unique integers, match the 2PCF figure.
-# The O0 curve matches PyCCL across the range; the finite gamma_max=5000' (83 deg)
-# truncation still biases the very lowest ell, suppressed by large-angle
-# apodisation.  Unlike the flat-sky Hankel, the curved-sky kernel is accurate at
-# low ell, which is where the FK enhancement sits.
+# Finite angular coverage and interpolation can bias the recovered spectra,
+# including E/B separation. The live transform applies no angular apodisation.
 ELL = np.array(sorted({int(round(v)) for v in np.geomspace(3.0, 1500.0, 30)}),
                dtype=float)
 
@@ -222,7 +226,7 @@ def wigner_d(ell_int, cos_theta, m, n):
 
 def _selftest_wigner(tol=1e-9):
     """Orthonormality int_{-1}^{1} (d^ell_{m n})^2 d(cos theta) = 2/(2 ell + 1)
-    -- a self-contained proof that the seed + recurrence are correct.
+    This checks the seed and recurrence at the listed multipoles.
 
     (d^ell_{m n})^2 is a polynomial of degree 2*ell in x = cos theta, so
     Gauss-Legendre quadrature integrates it EXACTLY (to machine precision)."""
@@ -247,9 +251,9 @@ def build_curved_matrix(gamma_arcmin, ell_int, m, n, n_fine=20000, apodise=False
     on a fine log-theta PCHIP grid (no extrapolation beyond the data range).
     Returns (lt_data, lt_fine, apod, D); reused for every 2PCF on the same grid.
 
-    ``apodise`` (default off) is retained only for the fullsky-vs-flatsky probe;
-    the figure removes the finite-range monopole leak by DC subtraction instead
-    (see ``forward_curved``), which is exact rather than a taper.
+    ``apodise`` (default off) is retained for the fullsky-vs-flatsky probe.
+    The live figure does not apply a taper. Scalar endpoint subtraction is
+    selected separately in ``forward_curved``.
     """
     theta = gamma_arcmin * (math.pi / 180.0 / 60.0)
     lt = np.log(theta)
@@ -266,18 +270,17 @@ def build_curved_matrix(gamma_arcmin, ell_int, m, n, n_fine=20000, apodise=False
 
 
 def forward_curved(xi_theta, setup, dc_subtract=True):
-    """C_ell (ell >= 1) = D @ xi_fine using the operator from ``build_curved_matrix``.
+    """Transform interpolated xi with the operator from ``build_curved_matrix``.
 
-    ``dc_subtract`` removes the large-angle asymptote xi(theta_max) before the
-    transform.  A 2PCF that tends to a constant xi_inf at large separation (here
-    the flat-floored FF term, xi_inf ~ 5.79e-7) carries that constant as a PURE
-    ell=0 monopole; over the FULL sphere int_{-1}^{1} d^ell_{m n} d(cos theta)=0
-    for ell>=1, so xi_inf does not affect ell>=1.  But on the TRUNCATED range
-    [0, 83 deg] the d-functions are not orthogonal and xi_inf leaks spuriously
-    into low ell (the dominant finite-range artifact, ~order-O0, sign-oscillating
-    in ell).  Subtracting xi_inf -- which is unobservable (the ell=0 mean) -- and
-    transforming the residual (which -> 0 at theta_max, hence truncation-robust to
-    <2% for all ell>=2, validated against PyCCL) is exact for ell>=1.
+    The legacy ``dc_subtract=True`` default is preserved for historical callers
+    and is appropriate only for the scalar (m, n) = (0, 0) endpoint convention.
+    Live callers set it explicitly and disable it for all spin kernels.
+
+    A known constant contributes only to the scalar monopole on the full
+    sphere. Subtracting the final sampled value estimates that constant and
+    also removes any connected correlation remaining at that angle. It is
+    therefore not an exact subtraction of the disconnected moment. A constant
+    can contribute to spin spectra, so the scalar argument does not apply.
     """
     lt, lt_f, _apod, D = setup
     xi = np.asarray(xi_theta, float)
@@ -339,15 +342,17 @@ def main() -> int:
         assert np.allclose(gff, g0) and np.allclose(gfk, g0), "gamma grids differ"
 
         # Cumulative C_ell: Order-0, Order-0+FF, and the TOTAL field (O0+FF+FK).
-        # A single curved-sky (Wigner-d) transform of each summed real-space 2PCF;
-        # the transform is linear and the operator D is shared across the sums.
+        # The quadrature matrix is shared, while each summed real-space
+        # curve is interpolated separately with shape-preserving PCHIP.
         setup = build_curved_matrix(g0, ELL, m, n)
-        Cl_o0 = forward_curved(o0, setup)
-        Cl_o0ff = forward_curved(o0 + ff, setup)
-        Cl_full = forward_curved(o0 + ff + fk, setup)
+        dc_subtract = (m, n) == (0, 0)
+        Cl_o0 = forward_curved(o0, setup, dc_subtract=dc_subtract)
+        Cl_o0ff = forward_curved(o0 + ff, setup, dc_subtract=dc_subtract)
+        Cl_full = forward_curved(o0 + ff + fk, setup, dc_subtract=dc_subtract)
 
-        # validation: at Order-0 every panel must reproduce PyCCL C_ell^{kk}
-        # (C^{kk} = C^{EE} = C^{kE}, C^{BB} = 0); print the low-ell ratio.
+        # Diagnostic against the conventional CCL convergence spectrum.
+        # Spin prefactors, Ricci operators and finite-angle recovery differ,
+        # so equality of every panel with this scalar reference is not required.
         if ckk_ccl is not None:
             lowm = ELL <= 60
             vr = np.nanmedian(np.abs(Cl_o0[lowm]) / np.abs(ckk_ccl[lowm]))
@@ -362,8 +367,7 @@ def main() -> int:
         # (Full -> signed line; Order-0 -> COLOR_O0/"o"; O0+FF -> COLOR_FF/"^").
         # PyCCL is used for the console validation only, not drawn here.
         plot_signed_line(ax, ELL, pref * Cl_full, label="Full (O0+FF+FK)")
-        # O0+FF coincides with O0 (FF -> negligible at ell>=1 once its ell=0
-        # monopole is removed); higher zorder keeps the requested curve visible.
+        # Higher zorder keeps O0+FF visible where it overlaps Order-0.
         plot_signed_markers(ax, ELL, pref * Cl_o0ff, color=COLOR_FF, marker=MARKER_FF, label="O0 + FF", zorder=4)
         plot_signed_markers(ax, ELL, pref * Cl_o0, color=COLOR_O0, marker=MARKER_O0, label="Order-0", zorder=3)
         ax.set_title(title)
@@ -377,10 +381,8 @@ def main() -> int:
         # --- ratio panel: fractional Order-2 correction (full - O0)/O0 ---
         # percent units so the strip reads directly as "size of the correction"
         corr = 100.0 * (Cl_full - Cl_o0) / Cl_o0
-        # The Order-2 correction is itself one to two percent of Order-0, so
-        # below ell ~ 50 it is comparable to the residual of the finite-range
-        # transform and to the unconverged large-separation tail of FK; the
-        # strip is drawn faint there and no ratio is quoted below it.
+        # Finite-angle recovery and the large-separation FK tail limit the
+        # interpretation at low ell. Draw the strip faint below ell ~ 50.
         plot_signed_line(axr, ELL, corr, color=COLOR_FK, lw=1.6, alpha=0.95,
                          sign_marker_size=4.0, sign_marker_alpha=0.75,
                          faint_outside=(50.0, None))

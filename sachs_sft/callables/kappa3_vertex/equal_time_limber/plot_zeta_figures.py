@@ -18,6 +18,7 @@ Run (PyCCL env has matplotlib):
 from __future__ import annotations
 
 from pathlib import Path
+import sys
 
 import matplotlib
 matplotlib.use("Agg")
@@ -29,12 +30,15 @@ _HERE = Path(__file__).resolve().parent
 # Converged cutoff (eight HIGH windows to ell = 15360, clipped at 85 arcmin), 2026-08-27;
 # the June cut1000 ell_band_decomp_results.npz next to this script is superseded.
 _NPZ = _HERE / "outputs" / "zeta_bands_cut15360_gmax85.npz"
+sys.path.insert(0, str(_HERE.parents[3] / "reproduce"))
+from product_paths import resolve_product  # noqa: E402
+
+_NPZ = resolve_product("zeta_slices", _NPZ)
 _FIGDIR = _HERE / "outputs"   # the paper copy is deployed by reproduce/deploy.py
 _FIGDIR.mkdir(parents=True, exist_ok=True)
-# Panels show the spin-0 channels (TTT, TTP) and, for the spin-2 sector, the
-# conjugate-helicity MODULUS channels Bmod=<Phi00 |Psi0|^2> and Dmod=<Psi0 |Psi0|^2>
-# that actually source the FK coupling (the all-+2 zeta_TPP/zeta_PPP are
-# gamma^4-suppressed; see Appendix D / derive_kappa3_spin2_helicity.wl).
+# Panels show TTT, TTP and the conjugate-helicity modulus channels
+# Bmod=<Phi00 |Psi0|^2> and Dmod=<Psi0 |Psi0|^2>, needed for the real
+# coupling tensor. The unconjugated TPP and PPP channels are not shown.
 _CHAN = ("TTT", "TTP", "Bmod", "Dmod")
 _CHAN_TEX = {"TTT": r"$\zeta_{TTT}=\langle\Phi_{00}^3\rangle$",
              "TTP": r"$\zeta_{TTP}=\langle\Phi_{00}^2\,\Psi_+\rangle$",
@@ -109,7 +113,7 @@ def fig_slices(g, z, lam, full):
             axr = ax.secondary_yaxis("right")
             axr.set_yticks(yi)
             axr.set_yticklabels([f"{z[k]:.2f}" for k in yi])
-            axr.set_ylabel(r"source redshift $z$", rotation=270, labelpad=16)
+            axr.set_ylabel(r"shell redshift $z$", rotation=270, labelpad=16)
 
     cbticks = [-1, -1e-1, -1e-3, -1e-5, 0, 1e-5, 1e-3, 1e-1, 1]
     cb = fig.colorbar(im, ax=axes, location="bottom", orientation="horizontal",

@@ -3,7 +3,8 @@
 The draft's low-multipole claim is a statement about C_ell, so it has to be
 checked in C_ell. This uses the paper's OWN curved-sky transform, imported
 from the figure generator rather than reimplemented, so the comparison
-inherits its Wigner-d kernels, apodisation and DC subtraction exactly.
+inherits its Wigner-d kernels. Endpoint subtraction is selected explicitly for
+the scalar channel only. Spin channels retain their endpoint values.
 
 Usage::
 
@@ -62,9 +63,10 @@ def main() -> int:
     cor = gen._combine(cor_groups, combos)
 
     setup = gen.build_curved_matrix(gamma, gen.ELL, m, n)
-    cl_o0 = gen.forward_curved(o0, setup)
-    cl_dep = gen.forward_curved(dep, setup)
-    cl_cor = gen.forward_curved(cor, setup)
+    dc_subtract = (m, n) == (0, 0)
+    cl_o0 = gen.forward_curved(o0, setup, dc_subtract=dc_subtract)
+    cl_dep = gen.forward_curved(dep, setup, dc_subtract=dc_subtract)
+    cl_cor = gen.forward_curved(cor, setup, dc_subtract=dc_subtract)
 
     print(f"\n{args.observable}: FK relative to Order-0, curved-sky transform")
     print(f"{'ell':>6} {'C_O0':>13} {'FK dep':>13} {'FK cor':>13} "

@@ -23,6 +23,7 @@ import subprocess
 import sys
 import time
 from pathlib import Path
+from product_paths import active_manifest, resolve_product
 
 PKG = Path(__file__).resolve().parents[1]
 PAPER = PKG.parent
@@ -72,6 +73,18 @@ FIGURES = {
 }
 #: figures 9 and 16 are the second outputs of rows 8 and 15.
 ALIASES = {9: 8, 16: 15}
+
+if active_manifest() is not None:
+    aligned = "sachs_sft/analyses/analysis1/r1_aligned"
+    FIGURES[1] = (
+        f"{aligned}/plot_comparison.py", "pyccl",
+        ["--sft", str(resolve_product("order0_comparison", Path())),
+         "--reference", str(resolve_product("pyccl_reference", Path())),
+         "--output-dir", str(PKG / aligned / "outputs/comparison_final"),
+         "--archive-existing"], False,
+        [f"{aligned}/outputs/comparison_final/analysis1_O0_vs_pyccl_aligned.pdf"],
+        ["analysis1_O0_vs_pyccl.pdf"],
+    )
 
 
 def run_one(n: int) -> tuple[int, float]:

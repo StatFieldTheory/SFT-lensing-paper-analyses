@@ -2,9 +2,9 @@
 
 One panel: the folded FK contribution to xi_kappa at gamma = 0.5', as a
 percentage of Order-0, against the vertex-table multipole cutoff ell_max,
-for the tree-level bispectrum (converging: successive ratios 2.00, 1.58,
-1.32, 1.14) and for BiHalofit (not converging on any scale the model
-controls).  Uses the same house style as the other validation figure.
+for the tree-level and BiHalofit bispectra. The selected products determine
+the amplitudes and cutoff dependence. Active-manifest products are hash
+verified. Uses the same house style as the other validation figure.
 
 Usage::
 
@@ -24,13 +24,18 @@ _REPO = Path(__file__).resolve().parents[5]
 _MC = _REPO / "SFT-lensing-paper-analyses" / "sachs_sft" / "analyses" / "mc_sachs_2pt"
 _LADDER = (_REPO / "SFT-lensing-paper-analyses" / "sachs_sft" / "sftwick_outputs"
            / "2PCF" / "cutoff_ladder")
+sys.path.insert(0, str(_REPO / "SFT-lensing-paper-analyses" / "reproduce"))
+from product_paths import resolve_product  # noqa: E402
+
+_LADDER = resolve_product("cutoff_ladder", _LADDER)
 
 CUTS = (960, 1920, 3840, 7680, 15360)
 
 
 def o0_at_half_arcmin() -> float:
     base = _REPO / "SFT-lensing-paper-analyses" / "sachs_sft" / "sftwick_outputs" / "2PCF"
-    d = np.load(base / "C_corr_op_O0" / "xi_C_corr_op_O0.npz", allow_pickle=True)
+    path = resolve_product("order0", base / "C_corr_op_O0" / "xi_C_corr_op_O0.npz")
+    d = np.load(path, allow_pickle=True)
     m = (d["a"] == 0) & (d["b"] == 0)
     g = []
     for x, y in zip(d["x"][m], d["y"][m]):
@@ -50,17 +55,26 @@ def main() -> int:
                     default=Path(__file__).resolve().parent / "outputs" / "fk_cutoff_convergence.pdf")
     a = ap.parse_args()
 
-    sys.path.insert(0, str(Path(__file__).resolve().parent))
-    from observables import load_observables
-
     o0 = o0_at_half_arcmin()
     series = {}
     for model in ("tree", "bihalofit"):
         vals = []
         for cut in CUTS:
-            _, obs = load_observables(
-                a.products / f"table_{model}_cut{cut}_r4_xi.npz", order=2)
-            vals.append(100.0 * float(obs["xi_kappa"][0]) / o0)
+            path = a.products / f"table_{model}_cut{cut}_r4_xi.npz"
+            with np.load(path, allow_pickle=True) as data:
+                mask = (data["a"] == 0) & (data["b"] == 0) & (data["order"] == 2)
+                angles = []
+                for x, y in zip(data["x"][mask], data["y"][mask], strict=True):
+                    x, y = np.asarray(x, float), np.asarray(y, float)
+                    cosine = np.dot(x / np.linalg.norm(x), y / np.linalg.norm(y))
+                    angles.append(np.degrees(np.arccos(np.clip(cosine, -1, 1))) * 60)
+                match = np.flatnonzero(np.isclose(angles, 0.5, rtol=0, atol=1e-6))
+                if len(match) != 1:
+                    raise ValueError(f"Expected one convergence sample at 0.5 arcmin: {path}")
+                value = float(data["value"][mask][match[0]])
+                if not np.isfinite(value):
+                    raise ValueError(f"Nonfinite convergence value: {path}")
+                vals.append(100.0 * value / o0)
         series[model] = np.array(vals)
         print(f"[{model}] " + "  ".join(f"{c}:{v:.2f}%"
                                         for c, v in zip(CUTS, vals)))

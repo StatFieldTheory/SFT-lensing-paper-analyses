@@ -1,0 +1,135 @@
+{
+  "accepted_z5_products_unchanged": {
+    "ccl_upperpad_n8192.npz": true,
+    "ccl_upperpad_probe_n4096.npz": true,
+    "source_folded_full_boundary_n4096_k2048.npz": true,
+    "source_folded_withheld_n2048_k1024.npz": true
+  },
+  "all_production_checks": {
+    "angles_byte_identical_to_z5": true,
+    "cl_kk_equals_cl_pp": true,
+    "finite_kk": true,
+    "metadata_matches_embedded_npz": true,
+    "no_run_warnings": true,
+    "observer_boundary_included": true,
+    "positive_finite_cl_pp": true,
+    "script_snapshots_match_run_hash": true,
+    "source_map_and_power_hash_match": true
+  },
+  "finalization_seconds": 1.8988715410232544,
+  "fine_five_ell_probes": {
+    "1.0": {
+      "ell": [
+        2,
+        10,
+        100,
+        500,
+        800
+      ],
+      "max_absolute_relative": 0.0002851235603191782,
+      "relative_production_minus_fine_probe": [
+        2.065101689652238e-08,
+        3.5025398348320635e-06,
+        1.59055057968871e-05,
+        -5.989777290404952e-05,
+        -0.0002851235603191782
+      ]
+    },
+    "1.7": {
+      "ell": [
+        2,
+        10,
+        100,
+        500,
+        800
+      ],
+      "max_absolute_relative": 0.0013732097207119764,
+      "relative_production_minus_fine_probe": [
+        1.8730812012535125e-07,
+        1.1898847989133543e-06,
+        3.4610878094643027e-06,
+        -7.320643125596771e-05,
+        0.0013732097207119764
+      ]
+    },
+    "2.5": {
+      "ell": [
+        2,
+        10,
+        100,
+        500,
+        800
+      ],
+      "max_absolute_relative": 0.002135392450448803,
+      "relative_production_minus_fine_probe": [
+        5.227152888309661e-08,
+        1.788636420751999e-06,
+        1.4121453144610996e-06,
+        0.00015172959169906797,
+        0.002135392450448803
+      ]
+    },
+    "3.2": {
+      "ell": [
+        2,
+        10,
+        100,
+        500,
+        800
+      ],
+      "max_absolute_relative": 0.00023229905545907314,
+      "relative_production_minus_fine_probe": [
+        -4.183315241101937e-06,
+        1.965700199280107e-06,
+        3.0006591635878266e-06,
+        0.00022949442375908014,
+        -0.00023229905545907314
+      ]
+    },
+    "4.0": {
+      "ell": [
+        2,
+        10,
+        100,
+        500,
+        800
+      ],
+      "max_absolute_relative": 0.0031061708291384438,
+      "relative_production_minus_fine_probe": [
+        6.695332010497879e-05,
+        1.3761172846571412e-05,
+        2.3466596746235524e-05,
+        4.5976914593737206e-05,
+        0.0031061708291384438
+      ]
+    }
+  },
+  "limitations": [
+    "Representative finite refinement at z=1 plus prior z=5 evidence, not a global convergence proof at every intermediate redshift or arbitrary angle.",
+    "Five fine spectral probes were checked at every source and are diagnostics, not a claim of 0.1 percent per-multipole precision.",
+    "Above ell=800 the projection uses ID-only Limber and omits Ricci radial-derivative atoms.",
+    "Fixed physical chi_min=50 Mpc and finite low-ell k interval [1e-4,10] Mpc^-1 are held constant; this check does not remove those physical/integration cutoffs.",
+    "Gaussian Order-0 only; no nonlinear optical F/K correction is included."
+  ],
+  "low_ell_only_record": "source_folded_multiz_z1_validation.json",
+  "method": "Insert fine 4096-chi/2048-k withheld and five-probe nodes into low-ell interpolation, replace all high-ell samples by independently evaluated 4096-chi Limber quadrature, and recompute the same 40-angle scalar full-sky sum. Production uses 2048 chi and 1024 k nodes.",
+  "prior_z5_gate": {
+    "kk_max_abs_over_peak": 3.6310250468496505e-05,
+    "path": "source_folded_final_validation.json",
+    "sha256": "aa0e95a14362aed9c86262a4f5c145b3bacaf3415852641bcbc36a40a5dc552e"
+  },
+  "profile_gate_max_abs_over_peak": 0.001,
+  "refined_product": {
+    "path": "source_folded_multiz_z1_refined_validation.npz",
+    "sha256": "5146cffed09a1fbf23f6e8a6b4446f5a65128f03232c5c73c9ee56a7041db617"
+  },
+  "representative_z1_fullband_refinement": {
+    "angle_count": 40,
+    "high_ell_max_relative": 5.367043128812199e-07,
+    "mask_count": 26,
+    "max_abs_over_peak": 7.1294462066017085e-06,
+    "max_relative_where_abs_coarse_above_1pct_peak": 2.117582928839381e-05,
+    "rms_over_peak": 4.067870530570345e-06
+  },
+  "status": "passed"
+}

@@ -52,6 +52,13 @@ FF_NPZ = RUNS / "C_corr_op_K_limber_FF" / "xi_C_corr_op_K_limber_FF.npz"
 FK_NPZ = RUNS / "C_corr_op_K_limber_FK_cut15360_permfix" / "xi_C_corr_op_K_limber_FK_cut15360_permfix.npz"
 OUT_STEM = HERE / "outputs" / "analysis3_nlo_O0_FF_FK"
 
+sys.path.insert(0, str(HERE.parents[2] / "reproduce"))
+from product_paths import resolve_product  # noqa: E402
+
+O0_NPZ = resolve_product("order0", O0_NPZ)
+FF_NPZ = resolve_product("ff", FF_NPZ)
+FK_NPZ = resolve_product("fk", FK_NPZ)
+
 # allow_pickle: x/y are object arrays of unit vectors in TRUSTED local sft-wick
 # outputs we just generated; no untrusted-source deserialization.
 LOAD_KW: dict[str, Any] = {"allow_pickle": True}

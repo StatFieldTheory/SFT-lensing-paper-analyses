@@ -1,0 +1,23 @@
+{
+  "kind": "Order-0 plot-format adapter",
+  "source": {
+    "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/analysis1/r1_aligned/source_folded_full_boundary_n4096_k2048.npz",
+    "sha256": "6dbc612cddd2e9e29591e6b3465ac71bddfe2dbf8cc2b3a45d4b4756b8945a14"
+  },
+  "config": {
+    "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/sftwick_outputs/2PCF/C_corr_op_O0/config_L2.yaml",
+    "sha256": "94f82602970b3a20ae5df41c8e03bacb2fba40812d17b627e6c7a65651c8958a"
+  },
+  "source_map": {
+    "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/source_map.json",
+    "sha256": "83a926ae4d52dc5435dbe9ab7d016dddbbbf25b149c5a640e419afcd842bdc2b"
+  },
+  "lambda_source_mpc": 2317.9695958203943,
+  "z_source": 5,
+  "parity_policy": "The scalar Gaussian reference has zero kappa-cross and plus-cross correlations.",
+  "calculation": "Continuous outer-response projection in the source product. This file is not a framework rerun.",
+  "output": {
+    "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/figure_products/order0.npz",
+    "sha256": "975bd9564e1d503d096fd9d57d291d0987f2e35df51f861a39ffb04e35115c87"
+  }
+}

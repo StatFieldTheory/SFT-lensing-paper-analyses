@@ -121,3 +121,15 @@ sachs_sft/callables/kappa3_vertex/rebuild/outputs/*.png
 # multiz_sweep.py's scratch area; the tracked multi-z deliverable is
 # pieces_nphi512/multiz_fk_np512_6planes.npz
 **/outputs/_multiz_scratch/
+
+# R1 revision: keep accepted numerical arrays, configurations and validation records.
+# Rendered previews, process caches and local rollback snapshots are regenerable.
+sachs_sft/analyses/r1_sft061/deployment_archive_2026-09-28/paper_snapshot/
+sachs_sft/analyses/r1_sft061/figure_previews/
+sachs_sft/analyses/r1_sft061/**/*.joblib
+sachs_sft/analyses/r1_sft061/**/*.lock
+sachs_sft/analyses/r1_sft061/**/*.log
+sachs_sft/analyses/analysis1/r1_aligned/**/*.pdf
+sachs_sft/analyses/analysis1/r1_aligned/**/*.png
+sachs_sft/analyses/analysis1/r1_aligned/**/*.log
+sachs_sft/analyses/analysis1/r1_aligned/outputs/comparison_final/archive_*/

@@ -1,0 +1,86 @@
+{
+  "fold_path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/true_redshift_fk_gl24_corrected_main/main/xi_main.npz",
+  "fold_sha256": "892e1eb5e4f2f71e0033c39dd8a189cb8633ded6b8ffd73de99937f1c7b2555f",
+  "fold_prepared_path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/true_redshift_fk_gl24_corrected_main/prepared.json",
+  "fold_prepared_sha256": "ab3d6312dcb508e704f6492ae362d0cc9b97fb8b79f3c913f5ffcfba1e8e5e05",
+  "fold_interpolation": "linear in angular separation, matching historical plotting convention",
+  "input_manifest_paths": [
+    "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/mc_update/block6010001/manifest.json",
+    "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/mc_update/block6020002/manifest.json",
+    "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/mc_update/block6030003/manifest.json",
+    "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/mc_update/block6040004/manifest.json"
+  ],
+  "input_manifest_sha256": {
+    "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/mc_update/block6010001/manifest.json": "627d8b47d8e7e38b2247102432d99e92e9f11d948e20bb316002fde8ab2ae806",
+    "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/mc_update/block6020002/manifest.json": "33d4e06ade70ddae23dfa94a367ff341b19ee3f1761b6f14998182566cf00a0d",
+    "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/mc_update/block6030003/manifest.json": "8be1500da22ddc29aa52cb647a9261210a78597b60b03152ac480f6de5da25ca",
+    "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/mc_update/block6040004/manifest.json": "bff23a980e0a204d4359c7bf61030d14d12cc87e5cad09b29204a2b0832bf283"
+  },
+  "row_sha256": {
+    "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/mc_update/block6010001/row_g00_s00.npz": "95257cf0a01a8586f0c412425ee656e5da5a0acd53efd4be6e03b3d51879d610",
+    "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/mc_update/block6010001/row_g00_s01.npz": "96474c0de0739a006752068d203480570c1914890de4ac04b45962cc84c805b0",
+    "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/mc_update/block6010001/row_g01_s00.npz": "c043f4f1727c8fc107959c02fe4297fd481d3a8de35ff946fd39cd708f68645f",
+    "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/mc_update/block6010001/row_g01_s01.npz": "b89ae7ca5ce405ca425d2fc3eddb2b2946ababee453b91664f738896cbbfd22e",
+    "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/mc_update/block6010001/row_g02_s00.npz": "4674fd7f4272591b3858d08a31c5803ff81d340637969f6217c7215a962ea3b3",
+    "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/mc_update/block6010001/row_g02_s01.npz": "247083bc0892bf27544a10fc6bb07c24a14e034d8a07c1dc791796cf46577101",
+    "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/mc_update/block6010001/row_g03_s00.npz": "930edb25e3bd377978c92520aed601b80f469ecb0ed1b67910ffd4e53e0fd872",
+    "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/mc_update/block6010001/row_g03_s01.npz": "e122c322c996cde3a95affedfb9f19166a253a2decb7057bc0bf7ee5f35a7352",
+    "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/mc_update/block6020002/row_g00_s00.npz": "f3c2347e0b67bc1dd2e817ffacfc899b590f3eab383e1008ec15f300828dc0cc",
+    "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/mc_update/block6020002/row_g00_s01.npz": "2676ebb7fc0c9a51c0269fc1aeb0023a7a595efe9b78dcb2749c7a33afdbe966",
+    "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/mc_update/block6020002/row_g01_s00.npz": "75319bd57801ca13fff1992fc435de81db058b40f69fa84e27e933bd4b14461f",
+    "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/mc_update/block6020002/row_g01_s01.npz": "825966303fe5fe1bf5115dd27b249637af5392e6acf88352f46b8ab25732d13b",
+    "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/mc_update/block6020002/row_g02_s00.npz": "3825b1be6a8b8df3a914e28f03058e1d49e98dcc14be9db25923189f2e3a6040",
+    "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/mc_update/block6020002/row_g02_s01.npz": "7e8bbf934b373d274dfb958318a3d41d01836d88103f83eae9260d1744fc76f0",
+    "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/mc_update/block6020002/row_g03_s00.npz": "6f455e29b670afbd408b7e9d5160a1ab20f8c492cac07ec4f24200b5a9c10998",
+    "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/mc_update/block6020002/row_g03_s01.npz": "211474c94bbebc9d83da041ec1b159dfbc04e92d7574bcc2188945e78aaeb4af",
+    "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/mc_update/block6030003/row_g00_s00.npz": "f6922b57a8153dc9d19bb3eb377313cecf41c753221689ed102a1251dd6a8a04",
+    "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/mc_update/block6030003/row_g00_s01.npz": "ce6cb222ccbbb1d9b642841b96bbb99e2a1852dda4ebdff32d586040a3d6b41c",
+    "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/mc_update/block6030003/row_g01_s00.npz": "6edabfbe7398045e952918a4166f247a93930320c7336203d1eb128b123aeaee",
+    "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/mc_update/block6030003/row_g01_s01.npz": "eeb437a8193cf34347c963cd2e2479f0e51f327e79dcf2aa07d673091e40eb7a",
+    "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/mc_update/block6030003/row_g02_s00.npz": "88bf05b1e48913deaa52117933ad104ef3db4478cfe6a868f8c3b88d8adf021e",
+    "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/mc_update/block6030003/row_g02_s01.npz": "f630eb9ce0dbf1db82f2cdfa7c50ae4d5a7226ab945f14ac493b0dc9eae1a42a",
+    "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/mc_update/block6030003/row_g03_s00.npz": "78dfdce808ab59b101e6a2a7457c4ee8c3bd92cd8c1e9b737e3d493f3ce3afcb",
+    "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/mc_update/block6030003/row_g03_s01.npz": "78695b8393a27d84a000c556e7334952cb43c481dd88e7ee6c64212caf3d3917",
+    "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/mc_update/block6040004/row_g00_s00.npz": "0db8174a3a98f6969cd81f09f7b1132b495de9c6b4de60a90ae9d7d99f51749a",
+    "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/mc_update/block6040004/row_g00_s01.npz": "edd61d76acdef03e18f2d3cd9c6e560f3b6ecde8e390dccdd339d3e84d1c6d9c",
+    "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/mc_update/block6040004/row_g01_s00.npz": "ef6f1a74f6ff4be00d6ac7f575f5a8aadd22a48a85c22309295ed2cd0779a96b",
+    "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/mc_update/block6040004/row_g01_s01.npz": "958ccfe84ff6925feb8b4cc7e078ec9962524c69bf55ad9e75904dc40b6b30ac",
+    "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/mc_update/block6040004/row_g02_s00.npz": "9dea819c07bd12469f317bbb3e10d42cb3937867be9645a66126f576ef0d39e8",
+    "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/mc_update/block6040004/row_g02_s01.npz": "9cf0cf9f055d199cb79865c142ad76bca7ecf2ce7c609790829f4e571f1d57c2",
+    "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/mc_update/block6040004/row_g03_s00.npz": "520e5993542584f4e89fb7267f3510168955c4246e8a9dbfe25ac7035bf34d8e",
+    "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/mc_update/block6040004/row_g03_s01.npz": "eb614bd80185ef75d8ce505381b7658ee70908b342a070505a90e1e08bf60dcd"
+  },
+  "runner_sha256": "b3085b8c206dbe9114574388874a0ac066209a053ef5d0f003974bda9489471b",
+  "error_scope": "Standard error from independent block means after paired linear sigma extrapolation",
+  "systematics": "Finite-lambda-step and finite-sigma errors are recorded separately from sampling error. The expectation uses population centering, unlike finite-batch MC.",
+  "ratio": [
+    1.0095870347557985,
+    1.0085957543515467,
+    1.0022586585159488,
+    0.9953020120842209
+  ],
+  "ratio_error": [
+    0.0036273076737485636,
+    0.004477237373109438,
+    0.009485167785649362,
+    0.021004505656114184
+  ],
+  "expectation_over_local_injected": [
+    1.0009240848778838,
+    1.0009448879820015,
+    1.0009148377041643,
+    1.000809450099123
+  ],
+  "injection_over_target": [
+    0.9987898999645045,
+    0.9981372762062076,
+    0.9967931935434201,
+    0.9929748911142235
+  ],
+  "local_target_over_fold": [
+    1.0014380274307588,
+    1.0023694817607438,
+    1.0041064212127426,
+    1.011447424877135
+  ]
+}

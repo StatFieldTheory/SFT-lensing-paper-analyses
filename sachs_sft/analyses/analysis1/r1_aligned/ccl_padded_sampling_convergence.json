@@ -1,0 +1,26 @@
+{
+  "max_cl_fractional_change": 0.00030732697347390925,
+  "ell_at_max_cl_change": 3,
+  "observables": {
+    "kk": {
+      "max_abs_difference_over_peak": 5.140432880572357e-07,
+      "max_fractional_difference": 0.0003662237640305277,
+      "fraction_at_smallest_angle": 5.140432881578505e-07
+    },
+    "xip": {
+      "max_abs_difference_over_peak": 5.079360957258e-07,
+      "max_fractional_difference": 0.0003813504603878707,
+      "fraction_at_smallest_angle": 5.079360956283807e-07
+    },
+    "xim": {
+      "max_abs_difference_over_peak": 5.970723519000506e-07,
+      "max_fractional_difference": 1.45281024516081e-05,
+      "fraction_at_smallest_angle": 8.558020958560064e-11
+    },
+    "kgt": {
+      "max_abs_difference_over_peak": 5.59112743906185e-07,
+      "max_fractional_difference": 0.0003112443146400928,
+      "fraction_at_smallest_angle": 4.844289858141337e-09
+    }
+  }
+}

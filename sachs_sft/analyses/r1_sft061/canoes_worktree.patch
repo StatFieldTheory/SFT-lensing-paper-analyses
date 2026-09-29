@@ -1,0 +1,181 @@
+diff --git a/.gitignore b/.gitignore
+index 9284fa7..fc70662 100644
+--- a/.gitignore
++++ b/.gitignore
+@@ -115,4 +115,7 @@ examples/**/figures/
+ scripts/**/figs/
+ 
+ # Research scratch (exploratory tests/analysis, not part of the CI suite)
+-tests/research/
+\ No newline at end of file
++tests/research/
++
++# Local agent handoffs and installation backups
++/.agent-state/
+diff --git a/src/canoes/sachs/kappa3.py b/src/canoes/sachs/kappa3.py
+index 134a918..da7a4ec 100644
+--- a/src/canoes/sachs/kappa3.py
++++ b/src/canoes/sachs/kappa3.py
+@@ -95,6 +95,12 @@ __all__ = [
+ 
+ 
+ PkCallable = Any
++#: ``b_delta_fn(k1, k2, k3, z) -> B``: an equal-time matter bispectrum in
++#: h-units (k in h/Mpc, B in (Mpc/h)^6), evaluated on the Limber quadrature
++#: grid of one shell. Supplying it replaces the internal tree-level SPT
++#: assembly AND its separable ``D(z)^4`` growth scaling, which a nonlinear
++#: model does not obey. See ``_eval_b_delta_fn``.
++BDeltaCallable = Any
+ RadialDiscretization = Literal["sample", "bin_averaged"]
+ RadialMeasure = Literal["lambda", "chi"]
+ Channel = Literal["TTT", "TTP", "TPP", "PPP"]
+@@ -1729,6 +1735,42 @@ def _f2_kernel_numpy(
+     ).astype(np.float64)
+ 
+ 
++def _eval_b_delta_fn(
++    b_delta_fn: BDeltaCallable,
++    k1: NDArray[np.float64],
++    k2: NDArray[np.float64],
++    k3: NDArray[np.float64],
++    z: float,
++) -> NDArray[np.float64]:
++    """Evaluate a user matter-bispectrum callable on one shell, fail loud.
++
++    The callable owns the full redshift dependence: callers must NOT apply
++    the tree-level ``D(z)^4`` scaling on top, because a nonlinear model is
++    not separable in that form.
++
++    Parameters
++    ----------
++    b_delta_fn
++        ``(k1, k2, k3, z) -> B`` with k in h/Mpc and B in (Mpc/h)^6, matter
++        (no Poisson factor: the response product applies A(a) per leg).
++    k1, k2, k3
++        Leg moduli on the Limber quadrature grid of the shell.
++    z
++        Shell redshift.
++    """
++    values = np.asarray(b_delta_fn(k1, k2, k3, z), dtype=np.float64)
++    if values.shape != k1.shape:
++        raise ValueError(
++            f"b_delta_fn returned shape {values.shape}, expected {k1.shape}"
++        )
++    if not np.all(np.isfinite(values)):
++        n_bad = int(np.count_nonzero(~np.isfinite(values)))
++        raise ValueError(
++            f"b_delta_fn returned {n_bad} non-finite values at z={z:.4f}"
++        )
++    return values
++
++
+ def _kappa3_flat_triangle_vertices(
+     theta_12: float,
+     theta_23: float,
+@@ -3487,6 +3529,7 @@ def compute_kappa3_sigma3_high(
+     lambda_convention: LambdaConvention = "project",
+     radial_discretization: RadialDiscretization | str = "sample",
+     radial_measure: RadialMeasure = "lambda",
++    b_delta_fn: BDeltaCallable | None = None,
+ ) -> Kappa3Output:
+     """Approximate the high-ell kappa3 tail above a dense exact low table.
+ 
+@@ -3649,18 +3692,23 @@ def compute_kappa3_sigma3_high(
+         k1 = safe_w / chi_float
+         k2 = safe_u / chi_float
+         k3 = safe_v / chi_float
+-        p1 = np.asarray(pk_matter_today(k1), dtype=np.float64)
+-        p2 = np.asarray(pk_matter_today(k2), dtype=np.float64)
+-        p3 = np.asarray(pk_matter_today(k3), dtype=np.float64)
+-        f12 = _f2_kernel_numpy(k1, k2, cos_12)
+-        f13 = _f2_kernel_numpy(k1, k3, cos_13)
+-        f23 = _f2_kernel_numpy(k2, k3, cos_23)
+-        b_delta_today = 2.0 * (f12 * p1 * p2 + f13 * p1 * p3 + f23 * p2 * p3)
+-        growth = float(lightcone.M[0, i_lam] / one_plus_z[i_lam])
++        if b_delta_fn is None:
++            p1 = np.asarray(pk_matter_today(k1), dtype=np.float64)
++            p2 = np.asarray(pk_matter_today(k2), dtype=np.float64)
++            p3 = np.asarray(pk_matter_today(k3), dtype=np.float64)
++            f12 = _f2_kernel_numpy(k1, k2, cos_12)
++            f13 = _f2_kernel_numpy(k1, k3, cos_13)
++            f23 = _f2_kernel_numpy(k2, k3, cos_23)
++            b_delta_today = 2.0 * (f12 * p1 * p2 + f13 * p1 * p3 + f23 * p2 * p3)
++            growth = float(lightcone.M[0, i_lam] / one_plus_z[i_lam])
++            b_delta_shell = (growth ** 4) * b_delta_today
++        else:
++            b_delta_shell = _eval_b_delta_fn(
++                b_delta_fn, k1, k2, k3, float(one_plus_z[i_lam]) - 1.0
++            )
+         radial_base = (
+             measure_weights
+-            * (growth ** 4)
+-            * b_delta_today
++            * b_delta_shell
+             / (chi_float ** 4)
+             * prefactor
+         )
+@@ -3719,6 +3767,11 @@ def compute_kappa3_sigma3_high(
+         ),
+         angular_kernel="flat_sky_2d_fourier_triangle",
+         angular_normalization="d2ell_a d2ell_b over (2pi)^4",
++        b_delta_source=(
++            "tree_spt_D4"
++            if b_delta_fn is None
++            else f"b_delta_fn:{getattr(b_delta_fn, 'model', 'user_callable')}"
++        ),
+         channels_filter=",".join(channels_norm),
+         lambda_convention=lambda_convention,
+         radial_discretization=radial_discretization_norm,
+@@ -3975,6 +4028,7 @@ def compute_kappa3_mod_sigma3_high(
+     units: Literal["h", "physical"] = "physical",
+     lambda_convention: LambdaConvention = "project",
+     radial_measure: RadialMeasure = "lambda",
++    b_delta_fn: BDeltaCallable | None = None,
+     _spin_weights_bmod: tuple[int, int, int] = (0, 2, -2),
+     _spin_weights_dmod: tuple[int, int, int] = (2, 2, -2),
+ ) -> tuple[NDArray[np.float64], NDArray[np.float64]]:
+@@ -4068,16 +4122,22 @@ def compute_kappa3_mod_sigma3_high(
+         k1 = safe_w / chi_float
+         k2 = safe_u / chi_float
+         k3 = safe_v / chi_float
+-        p1 = np.asarray(pk_matter_today(k1), dtype=np.float64)
+-        p2 = np.asarray(pk_matter_today(k2), dtype=np.float64)
+-        p3 = np.asarray(pk_matter_today(k3), dtype=np.float64)
+-        f12 = _f2_kernel_numpy(k1, k2, cos_12)
+-        f13 = _f2_kernel_numpy(k1, k3, cos_13)
+-        f23 = _f2_kernel_numpy(k2, k3, cos_23)
+-        b_delta_today = 2.0 * (f12 * p1 * p2 + f13 * p1 * p3 + f23 * p2 * p3)
+-        growth = float(lightcone.M[0, i_lam] / one_plus_z[i_lam])
++        if b_delta_fn is None:
++            p1 = np.asarray(pk_matter_today(k1), dtype=np.float64)
++            p2 = np.asarray(pk_matter_today(k2), dtype=np.float64)
++            p3 = np.asarray(pk_matter_today(k3), dtype=np.float64)
++            f12 = _f2_kernel_numpy(k1, k2, cos_12)
++            f13 = _f2_kernel_numpy(k1, k3, cos_13)
++            f23 = _f2_kernel_numpy(k2, k3, cos_23)
++            b_delta_today = 2.0 * (f12 * p1 * p2 + f13 * p1 * p3 + f23 * p2 * p3)
++            growth = float(lightcone.M[0, i_lam] / one_plus_z[i_lam])
++            b_delta_shell = (growth ** 4) * b_delta_today
++        else:
++            b_delta_shell = _eval_b_delta_fn(
++                b_delta_fn, k1, k2, k3, float(one_plus_z[i_lam]) - 1.0
++            )
+         radial_base = (
+-            measure_weights * (growth ** 4) * b_delta_today
++            measure_weights * b_delta_shell
+             / (chi_float ** 4) * prefactor
+         )
+         # Bmod uses TPP's response: phi00 × psi0 × psi0 (sign of third spin
+@@ -4156,6 +4216,12 @@ def kappa3_combine_low_high(
+         sigma3_low_high_combined=True,
+         low_producer=str(low.cosmo_meta.get("producer", "")),
+         high_producer=str(high.cosmo_meta.get("producer", "")),
++        # The two branches may use different bispectrum models by design:
++        # LOW's FFTlog machinery requires a separable (tree) bispectrum,
++        # while HIGH evaluates any callable pointwise. Record both, so a
++        # combined table is self-describing without its driver script.
++        low_b_delta_source=str(low.cosmo_meta.get("b_delta_source", "tree_spt_D4")),
++        high_b_delta_source=str(high.cosmo_meta.get("b_delta_source", "tree_spt_D4")),
+         low_ell_max=int(low.ell_max),
+         high_ell_max=int(high.ell_max),
+         ell_max=int(max(low.ell_max, high.ell_max)),

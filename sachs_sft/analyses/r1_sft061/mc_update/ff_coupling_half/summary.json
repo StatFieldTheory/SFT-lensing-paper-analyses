@@ -1,0 +1,12 @@
+{
+  "gamma": 1.0,
+  "strength": 0.5,
+  "baseline_mean": 1.950750799697955e-06,
+  "normalized_reduced_coupling_mean": 1.9469506954046426e-06,
+  "paired_mean_difference": 3.8001042933123435e-09,
+  "paired_difference_se": 1.7126119068497575e-11,
+  "difference_over_baseline": 0.0019480213945834257,
+  "difference_se_over_baseline": 8.779244930284945e-06,
+  "elapsed_seconds": 155.02401079190895,
+  "scope": "Selected-angle finite-coupling sensitivity. Both estimates include higher F orders and use the same finite Euler step."
+}

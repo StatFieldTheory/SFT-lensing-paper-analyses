@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "status": "candidate_pending_cutoff_ladder",
+  "source_redshift": 5.0,
+  "sft_wick_version": "0.6.1",
+  "sft_wick_commit": "6945815ad9e6efa2b9e768891d6bf92b1214670d",
+  "kappa3_input": "pair-phase corrected, n_phi=512, permutation-aware",
+  "products": {
+    "order0": {
+      "path": "../sachs_sft/analyses/r1_sft061/figure_products/order0.npz",
+      "sha256": "975bd9564e1d503d096fd9d57d291d0987f2e35df51f861a39ffb04e35115c87"
+    },
+    "ff": {
+      "path": "../sachs_sft/analyses/r1_sft061/true_redshift_ff_gl24_all/ff_main/xi_ff_main.npz",
+      "sha256": "9874f29bb69075c59701cdac530057e7d590a3def2767195c567d3e6466d8697"
+    },
+    "fk": {
+      "path": "../sachs_sft/analyses/r1_sft061/true_redshift_fk_gl24_corrected_main/main/xi_main.npz",
+      "sha256": "892e1eb5e4f2f71e0033c39dd8a189cb8633ded6b8ffd73de99937f1c7b2555f"
+    },
+    "multiz": {
+      "path": "../sachs_sft/analyses/r1_sft061/figure_products/multiz/multiz.npz",
+      "sha256": "67bef6007d2f5a19c14009ec4fe7001e0656d3ebc9435a2b2c2b5af4a9b690a4"
+    },
+    "multiz_ff": {
+      "path": "../sachs_sft/analyses/r1_sft061/figure_products/multiz/multiz_ff.npz",
+      "sha256": "fb3edd7fd2a7cd8350684ca693ec60f5151d4af6ab6c210003858989cbaf0c82"
+    },
+    "mc_markers": {
+      "path": "../sachs_sft/analyses/r1_sft061/mc_update/fk_markers.npz",
+      "sha256": "1bd5fff53ac780c2f2e67ed30fba98e900cfd8fb55fd44a3e4ec869b0a98875f"
+    },
+    "mc_cache": {
+      "path": "../sachs_sft/analyses/r1_sft061/mc_update/appendix_mc_curve.npz",
+      "sha256": "f1532e2239a205d725995e84f33029bdbff356341fde2bbf9f70dcff12606eb0"
+    },
+    "kernel_crosscheck": {
+      "path": "../sachs_sft/analyses/r1_sft061/mc_update/fk_quadrature.json",
+      "sha256": "87448aeebc30ad744f289b866fdced937fcef2784751ad1a8a519ebf19c122d0"
+    },
+    "zeta_slices": {
+      "path": "../sachs_sft/analyses/r1_sft061/figure_products/zeta_slices.npz",
+      "sha256": "1fbfaa20bec5c4d9d2e2988bd254234580b3d932366098a65640970360120f72"
+    },
+    "order0_comparison": {
+      "path": "../sachs_sft/analyses/analysis1/r1_aligned/source_folded_full_boundary_n4096_k2048.npz",
+      "sha256": "6dbc612cddd2e9e29591e6b3465ac71bddfe2dbf8cc2b3a45d4b4756b8945a14"
+    },
+    "pyccl_reference": {
+      "path": "../sachs_sft/analyses/analysis1/r1_aligned/ccl_upperpad_n8192.npz",
+      "sha256": "e8a4c15e540c9074f2749752d7d1db9a2e784ad433bb0d838506f1241ae82c86"
+    }
+  }
+}

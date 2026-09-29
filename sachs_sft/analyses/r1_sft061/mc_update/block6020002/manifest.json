@@ -1,0 +1,58 @@
+{
+  "source_redshift": 5.0,
+  "lambda_source_mpc": 2317.9695958203943,
+  "lower_support_mpc": 406.0,
+  "ell_max_K": 15360,
+  "table_path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/callables/kappa3_vertex/rebuild/products/pieces_nphi512/table_permclosed_np512.npz",
+  "table_sha256": "3a4e5e4ff4af56c23a151046e1cabc253e1eed854497b50c8688a3ee88effffe",
+  "response_path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/aligned_response.py",
+  "response_sha256": "888f1593e55342f088ac486e7709688853b6827506d8d43f90ec35ee10e1c5f4",
+  "covariance_path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/callables/C_propagator/corr_op/corr_op_table_zs5_21pt_stf_fid_omega03161_h06711.npz",
+  "covariance_sha256": "597d908dbef1520174d29848d79065bd090735c6e4526287e4de59b66774e33c",
+  "source_sha256": {
+    "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/mc_fk_complete/fk_expect_exact.py": "9beec070c607a5bb259f9a852db621f10c97992b01810084d774be25fb89ef8b",
+    "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/mc_fk_complete/fk_complete_core.py": "a7f4e575d4fac85e31a1e63c3e438101c7ff5db809a603d97d5e9d4cbc7bb89b",
+    "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/mc_fk_complete/inputmatch/ff_functional.py": "6702858882a17b0400ce5d129e0edb35552117614eca595e074f9385365c13bb",
+    "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/mc_fk_complete/inputmatch/ff_anti.py": "06a41e67176bdd3ca313f442abf08a25c742b069e80d7ef695549fed1ecec5c4",
+    "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/mc_sachs_2pt/sachs_mc_core.py": "656fa2c34e347670035d248d05a3e5572f3ea90c76db792a7a6bb954ad815069",
+    "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/mc_sachs_2pt/driver_stats.py": "336d158ec13f752544cc9a80932194e1864e386c92dc8a2b4d0ab2cc9085f269",
+    "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/callables/kappa3_vertex/equal_time_limber_cut15360_permaware/perm_aware_kappa3_callable.py": "4d7fefaa129e1f1e1947ad09bd3e1c3833b650cca225fd92fba0656316d54ce5",
+    "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/callables/C_propagator/corr_op/corr_op_C_callable.py": "0d757821f7603c36cf59b77319e5d8e65b8d8bdd0991a4c78112c224754a863e",
+    "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/aligned_response.py": "888f1593e55342f088ac486e7709688853b6827506d8d43f90ec35ee10e1c5f4",
+    "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/mc_update/runtime.py": "d287e1c78e3c57107760b0acbfcd6dd65e896991d9a0186a9c122432dfdb1958"
+  },
+  "Sigma2": "160-node cubic spline derivative of D^4 times equal-time corr_op, endpoint clipping, no anchor",
+  "units": "physical Mpc, Born/FLRW numerical convention E0=1",
+  "arguments": {
+    "table": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/callables/kappa3_vertex/rebuild/products/pieces_nphi512/table_permclosed_np512.npz",
+    "response": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/aligned_response.py",
+    "fold": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/true_redshift_fk_gl24_corrected_main/main/xi_main.npz",
+    "allow_missing_fold": false,
+    "lambda_source": 2317.9695958203943,
+    "gammas": [
+      1.0,
+      2.6,
+      6.7,
+      17.3
+    ],
+    "sigmas": [
+      8.0,
+      4.0
+    ],
+    "n_lambda": 1000,
+    "n_real": 24000,
+    "batch": 2000,
+    "seeds": 24,
+    "seed_base": 6020002,
+    "out": "block6020002",
+    "reference_only": false
+  },
+  "runner_sha256": "6c11fe3b99fe446ad60ca914cf90880038891bd61fa7dea323618b9ffb1c96c0",
+  "fold_path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/true_redshift_fk_gl24_corrected_main/main/xi_main.npz",
+  "fold_sha256": "892e1eb5e4f2f71e0033c39dd8a189cb8633ded6b8ffd73de99937f1c7b2555f",
+  "fold_prepared_path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/true_redshift_fk_gl24_corrected_main/prepared.json",
+  "fold_prepared_sha256": "ab3d6312dcb508e704f6492ae362d0cc9b97fb8b79f3c913f5ffcfba1e8e5e05",
+  "fold_interpolation": "linear in angular separation, matching historical plotting convention",
+  "response_max_abs_error": 0.0,
+  "expectation_scope": "Discrete polynomial expectation with population centering. MC uses finite-batch sample centering and covariance normalization, which can add O(1/batch) bias."
+}

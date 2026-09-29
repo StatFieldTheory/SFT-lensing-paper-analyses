@@ -1,0 +1,15 @@
+{
+  "elapsed_seconds": 177.7469654160086,
+  "result": {
+    "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/true_redshift_ff_gl24_all/ff_z1p0/xi_ff_z1p0.npz",
+    "sha256": "aeb5343753dcd5a97f442b0d0b4e00c5edda5686e7a5954639af87d6f8978653",
+    "bytes": 4853
+  },
+  "framework": {
+    "version": "0.6.1",
+    "commit": "6945815ad9e6efa2b9e768891d6bf92b1214670d",
+    "source": "/Users/zzhang/projects/SFT/sft-wick",
+    "python": "/opt/homebrew/Caskroom/miniconda/base/envs/sft-wick/bin/python"
+  },
+  "source_mode": "true-redshift"
+}

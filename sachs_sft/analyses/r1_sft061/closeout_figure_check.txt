@@ -1,0 +1,17 @@
+[fig  1] analysis1_O0_vs_pyccl.pdf              IDENTICAL(raw)           raster diff frac 0.0
+[fig  2] analysis3_NLO_FFFK.pdf                 IDENTICAL(content)       raster diff frac 0.0
+[fig  3] analysis3_cl_full_vs_O0.pdf            IDENTICAL(content)       raster diff frac 0.0
+[fig  4] cl_EB_polarization.pdf                 IDENTICAL(content)       raster diff frac 0.0
+[fig  5] multiz_kappa_xi_cl.pdf                 IDENTICAL(content)       raster diff frac 0.0
+[fig  6] appendix_mc_workflow.pdf               IDENTICAL(content)       raster diff frac 0.0
+[fig  7] zeta_driving_field_slices_draft.pdf    IDENTICAL(content)       raster diff frac 0.0
+[fig  8] corr_operator_slices_draft.pdf         IDENTICAL(content)       raster diff frac 0.0
+[fig  8] response_operator_draft.pdf            IDENTICAL(content)       raster diff frac 0.0
+[fig 10] screen_basis_spin2_pattern.pdf         IDENTICAL(content)       raster diff frac 0.0
+[fig 11] driving_field_portrait.pdf             IDENTICAL(content)       raster diff frac 0.0
+[fig 12] selection_rule_schematic.pdf           IDENTICAL(content)       raster diff frac 0.0
+[fig 13] null_geodesic_congruence.pdf           IDENTICAL(content)       raster diff frac 0.0
+[fig 14] cosmology_coord_maps.pdf               IDENTICAL(content)       raster diff frac 0.0
+[fig 15] FeynDiag_2pt_order2.pdf                IDENTICAL(content)       raster diff frac 0.0
+[fig 15] FeynDiag_3pt_order1.pdf                IDENTICAL(content)       raster diff frac 0.0
+[fig 17] fk_cutoff_convergence.pdf              IDENTICAL(content)       raster diff frac 0.0

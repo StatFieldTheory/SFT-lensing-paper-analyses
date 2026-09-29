@@ -1,0 +1,73 @@
+{
+  "z": [
+    1.0,
+    1.7,
+    2.5,
+    3.2,
+    4.0,
+    5.0
+  ],
+  "lambda_mpc": [
+    1822.7290713360132,
+    2094.9023866944794,
+    2216.8017129787445,
+    2266.590169124188,
+    2297.2976167427273,
+    2317.9695958203943
+  ],
+  "chi_mpc": [
+    3413.8078776661523,
+    4855.798469579331,
+    5989.922522963986,
+    6715.990936290299,
+    7356.080626903646,
+    7971.183639083942
+  ],
+  "D_mpc": [
+    1706.9039388330762,
+    1798.4438776219745,
+    1711.4064351325674,
+    1599.0454610214997,
+    1471.2161253807292,
+    1328.5306065139903
+  ],
+  "mapping_provenance": {
+    "cosmology": {
+      "Omega_m": 0.3160919980475834,
+      "h": 0.6711,
+      "geometry": "flat matter-plus-Lambda, without radiation"
+    },
+    "E0": 1.0,
+    "convention": "project",
+    "distance_unit": "physical Mpc",
+    "background_z_max": 1200.0,
+    "background_n_z": 5001,
+    "native_knots": 5001,
+    "max_affine_mpc": 2353.929874188644,
+    "source_mapping": "Same public canoes lambda_of_chi, chi_of_lambda and z_of_chi as the C-table build, cached on their native interpolation knots",
+    "canoes_root": "/Users/zzhang/projects/angular_statistics/canoes",
+    "canoes_commit": "077a64c86788add650ece263b054e7803ca0c644",
+    "source_sha256": {
+      "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/aligned_response.py": "888f1593e55342f088ac486e7709688853b6827506d8d43f90ec35ee10e1c5f4",
+      "/Users/zzhang/projects/angular_statistics/canoes/src/canoes/cosmo/lightcone.py": "69f57f5e95545c094a4ad95e70a603635f5a886178df5e82703191a849fb3d02",
+      "/Users/zzhang/projects/angular_statistics/canoes/src/canoes/cosmo/growth.py": "c931cca5f6d66b4b3082a6a0a11924604d12583219bbe31ca8df804cd371e08c",
+      "/Users/zzhang/projects/angular_statistics/canoes/src/canoes/sachs/sft_input/corr_op/table.py": "241d96bf8960517044061e5a2442d1761d2ba714fa4d7cf0ded989faffc77fd5",
+      "/Users/zzhang/projects/angular_statistics/canoes/src/canoes/sachs/sft_input/corr_op/_limber.py": "d558f2731ef7c8d765ea8af93a54adc85331b0b4c6f3fe65b85cfa725556084f"
+    },
+    "C_table_path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/callables/C_propagator/corr_op/corr_op_table_zs5_21pt_stf_fid_omega03161_h06711.npz",
+    "C_table_sha256": "597d908dbef1520174d29848d79065bd090735c6e4526287e4de59b66774e33c",
+    "jacobi_identity_source": "sections/appendix.tex, appendix D equals a chi, verified by mathematica/derive_jacobi_flat_flrw.wl"
+  },
+  "response_module": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/aligned_response.py",
+  "response_attr": "response_R",
+  "validation": {
+    "status": "passed",
+    "public_coordinate_maps": "Exact equality at observer, selected table nodes and all requested source planes",
+    "D_identity": "Exact equality to public chi/(1+z) at all probes",
+    "C_builder_response_max_abs_error": 2.220446049250313e-16,
+    "C_builder_helper": "canoes.sachs.sft_input.corr_op._limber._id_basis_windows with COEFS_PSI0, stripping its recorded growth and density factors",
+    "scalar_array_max_abs_error": 0.0,
+    "causal_and_observer_zero": "passed",
+    "coincident_positive_time_unity": "passed"
+  }
+}

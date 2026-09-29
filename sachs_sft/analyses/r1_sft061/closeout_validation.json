@@ -1,0 +1,22 @@
+{
+  "date": "2026-09-29",
+  "base_commit": "f58176f174acde957d5bd5faa3bd69afaa12e65b",
+  "checks": {
+    "active_product_keys": 12,
+    "active_product_members_tracked": 22,
+    "ast_python_files": 80,
+    "ruff": "E9,F63,F7,F82 passed",
+    "number_rows": 33,
+    "figure_regeneration": "all 17 passed",
+    "figure_comparison": "17 identical in content, zero raster differences",
+    "credential_patterns": "no matches",
+    "code_review": "approved; no blocking findings"
+  },
+  "limits": [
+    "No new numerical folds or vertex builds.",
+    "No clean-machine replay; original absolute paths require rebasing.",
+    "External canoes patch saved exactly; external repositories unchanged.",
+    "Local rollback copies, preview plots, execution logs and caches remain ignored."
+  ],
+  "canoes_patch_sha256": "c79ae10999b8a08023253c9c081d1df3aa81798cc3841a419458452e53fef4ad"
+}

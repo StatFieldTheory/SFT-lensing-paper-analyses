@@ -1,0 +1,241 @@
+{
+  "source_lambda_mpc": 2317.9695958203943,
+  "interpretation": "Alternative interpolation and extrapolation checks of a fixed covariance table, not physical predictions or convergence claims.",
+  "ccl_reference": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/analysis1/r1_aligned/ccl_padded_n4096.npz",
+  "methods": {
+    "linear": {
+      "kk": {
+        "small_angle": 0.0008991898976489914,
+        "change_from_linear_over_ccl_peak": 0.0059229858568101085,
+        "max_residual_over_ccl_peak": 0.062432224900841216,
+        "small_angle_ratio_to_ccl": 1.0624322249008413
+      },
+      "xip": {
+        "small_angle": 0.0008967098138601241,
+        "change_from_linear_over_ccl_peak": 0.005875594670201957,
+        "max_residual_over_ccl_peak": 0.05965434742255852,
+        "small_angle_ratio_to_ccl": 1.0596543474225586
+      },
+      "xim": {
+        "small_angle": 2.610214660909639e-08,
+        "change_from_linear_over_ccl_peak": 0.0032652495896211037,
+        "max_residual_over_ccl_peak": 0.070697238414319,
+        "small_angle_ratio_to_ccl": 1.0748887620873084
+      },
+      "kgt": {
+        "small_angle": 6.108988987861027e-06,
+        "change_from_linear_over_ccl_peak": 0.01400258956693728,
+        "max_residual_over_ccl_peak": 0.0743968904028787,
+        "small_angle_ratio_to_ccl": 1.0746369113331966
+      },
+      "spectral_ratio_to_ccl": {
+        "100": {
+          "cl_pp": 1.0404688575622278,
+          "cl_px": 1.0371079254387114,
+          "cl_xx": 1.035865778033723
+        },
+        "500": {
+          "cl_pp": 1.071455417750751,
+          "cl_px": 1.067443577362577,
+          "cl_xx": 1.0533044656361168
+        },
+        "800": {
+          "cl_pp": 1.049812668554873,
+          "cl_px": 1.121963418151309,
+          "cl_xx": 1.0787132613908117
+        },
+        "1000": {
+          "cl_pp": 1.0696158413106256,
+          "cl_px": 1.0696127528709465,
+          "cl_xx": 1.0696118289563794
+        },
+        "2000": {
+          "cl_pp": 1.0731924048550001,
+          "cl_px": 1.0731912575835667,
+          "cl_xx": 1.073190262014421
+        },
+        "4000": {
+          "cl_pp": 1.075245947721644,
+          "cl_px": 1.0752456485941781,
+          "cl_xx": 1.0752467519995281
+        }
+      }
+    },
+    "cubic": {
+      "kk": {
+        "small_angle": 0.0008645616276040558,
+        "change_from_linear_over_ccl_peak": 0.04491883154705854,
+        "max_residual_over_ccl_peak": 0.021517408036795943,
+        "small_angle_ratio_to_ccl": 1.021517408036796
+      },
+      "xip": {
+        "small_angle": 0.0008616879338535335,
+        "change_from_linear_over_ccl_peak": 0.04534065893942847,
+        "max_residual_over_ccl_peak": 0.018268509071865748,
+        "small_angle_ratio_to_ccl": 1.0182685090718657
+      },
+      "xim": {
+        "small_angle": 2.491327451810046e-08,
+        "change_from_linear_over_ccl_peak": 0.04628073673027978,
+        "max_residual_over_ccl_peak": 0.02487950286772928,
+        "small_angle_ratio_to_ccl": 1.0259309016741949
+      },
+      "kgt": {
+        "small_angle": 5.835542448894041e-06,
+        "change_from_linear_over_ccl_peak": 0.04714202017683232,
+        "max_residual_over_ccl_peak": 0.032532241588273614,
+        "small_angle_ratio_to_ccl": 1.0265347221437666
+      },
+      "spectral_ratio_to_ccl": {
+        "100": {
+          "cl_pp": 1.0114695808782697,
+          "cl_px": 1.007508723070448,
+          "cl_xx": 1.0057710334553354
+        },
+        "500": {
+          "cl_pp": 1.0303343660253559,
+          "cl_px": 1.026530327528426,
+          "cl_xx": 1.0129763817786175
+        },
+        "800": {
+          "cl_pp": 1.0075988413051324,
+          "cl_px": 1.0759914698504276,
+          "cl_xx": 1.0344278528234097
+        },
+        "1000": {
+          "cl_pp": 1.0249000535003587,
+          "cl_px": 1.0248971819051094,
+          "cl_xx": 1.0248958570377513
+        },
+        "2000": {
+          "cl_pp": 1.0257961022934463,
+          "cl_px": 1.0257950279111858,
+          "cl_xx": 1.0257940619325785
+        },
+        "4000": {
+          "cl_pp": 1.0258946510456388,
+          "cl_px": 1.0258943713757733,
+          "cl_xx": 1.0258950939266147
+        }
+      }
+    },
+    "linear_zero": {
+      "kk": {
+        "small_angle": 0.0009003688872327733,
+        "change_from_linear_over_ccl_peak": 0.004544820024994517,
+        "max_residual_over_ccl_peak": 0.06382525270276308,
+        "small_angle_ratio_to_ccl": 1.0638252527027632
+      },
+      "xip": {
+        "small_angle": 0.0008978474875370655,
+        "change_from_linear_over_ccl_peak": 0.004545838277045401,
+        "max_residual_over_ccl_peak": 0.06099875208846664,
+        "small_angle_ratio_to_ccl": 1.0609987520884667
+      },
+      "xim": {
+        "small_angle": 2.6110092973737274e-08,
+        "change_from_linear_over_ccl_peak": 0.0033933098702259015,
+        "max_residual_over_ccl_peak": 0.07114497079345472,
+        "small_angle_ratio_to_ccl": 1.0752159941031212
+      },
+      "kgt": {
+        "small_angle": 6.111085124285004e-06,
+        "change_from_linear_over_ccl_peak": 0.014065029490866793,
+        "max_residual_over_ccl_peak": 0.07484000523999457,
+        "small_angle_ratio_to_ccl": 1.075005644289971
+      },
+      "spectral_ratio_to_ccl": {
+        "100": {
+          "cl_pp": 1.0437431280173624,
+          "cl_px": 1.0403665460698055,
+          "cl_xx": 1.0391220491660071
+        },
+        "500": {
+          "cl_pp": 1.0722505562336784,
+          "cl_px": 1.0682157922563305,
+          "cl_xx": 1.0542428132911654
+        },
+        "800": {
+          "cl_pp": 1.0504299668482946,
+          "cl_px": 1.1225702386015204,
+          "cl_xx": 1.078704332446222
+        },
+        "1000": {
+          "cl_pp": 1.070136625622754,
+          "cl_px": 1.0701335371728695,
+          "cl_xx": 1.0701387159594393
+        },
+        "2000": {
+          "cl_pp": 1.0735784807357611,
+          "cl_px": 1.0735773333428935,
+          "cl_xx": 1.0735767653636235
+        },
+        "4000": {
+          "cl_pp": 1.0755548253570975,
+          "cl_px": 1.075554526205129,
+          "cl_xx": 1.0755595839490122
+        }
+      }
+    },
+    "linear_extrapolate": {
+      "kk": {
+        "small_angle": 0.0009024809825974458,
+        "change_from_linear_over_ccl_peak": 0.006520683770697617,
+        "max_residual_over_ccl_peak": 0.06632078583025794,
+        "small_angle_ratio_to_ccl": 1.066320785830258
+      },
+      "xip": {
+        "small_angle": 0.0008995540594124883,
+        "change_from_linear_over_ccl_peak": 0.006042841375859374,
+        "max_residual_over_ccl_peak": 0.06301543159729922,
+        "small_angle_ratio_to_ccl": 1.0630154315972993
+      },
+      "xim": {
+        "small_angle": 2.6120827942925812e-08,
+        "change_from_linear_over_ccl_peak": 0.003567381325198182,
+        "max_residual_over_ccl_peak": 0.07183363807143475,
+        "small_angle_ratio_to_ccl": 1.07565806110684
+      },
+      "kgt": {
+        "small_angle": 6.114041011301188e-06,
+        "change_from_linear_over_ccl_peak": 0.014153182268573197,
+        "max_residual_over_ccl_peak": 0.07548428449204285,
+        "small_angle_ratio_to_ccl": 1.0755256166290328
+      },
+      "spectral_ratio_to_ccl": {
+        "100": {
+          "cl_pp": 1.049630491413285,
+          "cl_px": 1.0459675942544227,
+          "cl_xx": 1.044556075012207
+        },
+        "500": {
+          "cl_pp": 1.0735060649275214,
+          "cl_px": 1.0694062936266828,
+          "cl_xx": 1.055356276637648
+        },
+        "800": {
+          "cl_pp": 1.051398895600363,
+          "cl_px": 1.1234769129584412,
+          "cl_xx": 1.080644168192193
+        },
+        "1000": {
+          "cl_pp": 1.070915698455074,
+          "cl_px": 1.0709126100020026,
+          "cl_xx": 1.0709063567236454
+        },
+        "2000": {
+          "cl_pp": 1.0741263381855446,
+          "cl_px": 1.0741251906226423,
+          "cl_xx": 1.0741238212520727
+        },
+        "4000": {
+          "cl_pp": 1.0759753119595394,
+          "cl_px": 1.075975012774687,
+          "cl_xx": 1.0759726628729323
+        }
+      }
+    }
+  },
+  "actual_low_affine_policy": "Zero when either source affine coordinate is below 406 Mpc. Earlier assumed extrapolation was incorrect.",
+  "batch_geometry_policy": "The current canoes batch implementation rounds cos(theta) to 8 decimals before angular-channel construction, unlike the scalar callable."
+}

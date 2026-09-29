@@ -1,0 +1,47 @@
+{
+  "source_rows": [
+    {
+      "z": 1,
+      "chi": 3413.8078776661523,
+      "lambda": 1822.7290713360132,
+      "recovered_z": 1.0,
+      "chi_roundtrip_error": 0.0
+    },
+    {
+      "z": 1.7,
+      "chi": 4855.798469579331,
+      "lambda": 2094.9023866944794,
+      "recovered_z": 1.7,
+      "chi_roundtrip_error": 0.0
+    },
+    {
+      "z": 2.5,
+      "chi": 5989.922522963986,
+      "lambda": 2216.8017129787445,
+      "recovered_z": 2.5,
+      "chi_roundtrip_error": 0.0
+    },
+    {
+      "z": 3.2,
+      "chi": 6715.990936290299,
+      "lambda": 2266.590169124188,
+      "recovered_z": 3.2,
+      "chi_roundtrip_error": 0.0
+    },
+    {
+      "z": 4,
+      "chi": 7356.080626903646,
+      "lambda": 2297.2976167427273,
+      "recovered_z": 4.0,
+      "chi_roundtrip_error": 0.0
+    },
+    {
+      "z": 5,
+      "chi": 7971.183639083942,
+      "lambda": 2317.9695958203943,
+      "recovered_z": 5.0,
+      "chi_roundtrip_error": 0.0
+    }
+  ],
+  "scalar_transform_bitwise_identical_to_accepted_z5": true
+}
