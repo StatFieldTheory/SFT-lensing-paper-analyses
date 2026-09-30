@@ -265,7 +265,7 @@ def build_plan(mode: str, source_map: Path | None, targets: list[str], n_jobs: i
         inputs += [Path(mapping["source_file"]), Path(mapping["response_module"])]
     if input_mode == "corrected-nphi512":
         inputs += [NP512 / "low_permclosed_r4_np512.npz",
-                   REPO / "HANDOFF_2026-09-06_nphi512_vertex_rebuild.md",
+                   REPO / "reproduce" / "provenance" / "vertex_rebuild_20260906.md",
                    REPO / "reorg_2026-09" / "nphi512_manifest_2026-09-06.txt"]
     if contract:
         inputs += [GUARD, RESTRICTED_LADDER / "query_contract.json"]

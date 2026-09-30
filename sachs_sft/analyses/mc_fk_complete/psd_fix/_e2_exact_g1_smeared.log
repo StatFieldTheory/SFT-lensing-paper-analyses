@@ -1,9 +1,0 @@
-sigma=8.0 N=1000 apply_c0=False calib=smeared
-  gamma         fold |     ref_true    /fold |  ref_inj base    /fold |    ref_inj R1    /fold |  R1/base
----------------------------------------------------------------------------------------------------------
-[perm-aware] 2142 unordered rows, 16 shells, key 12 decimals, permutation closure 99.8%, from table_permclosed_cut15360.npz
-      [expectation 0s]
-      [expectation 0s]
-   1.00 1.597716e-05 | 1.611188e-05   1.0084 |  1.597122e-05   0.9996 |  1.597122e-05   0.9996 |  1.00000
-  exact              |                       |  1.554705e-05   0.9731 |  1.554695e-05   0.9731 |  0.99999
-wrote psd_fix/_e2_exact_g1_smeared.npz

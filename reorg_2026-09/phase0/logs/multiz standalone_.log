@@ -1,4 +1,0 @@
-usage: p0_regen.py [-h] --figure
-                   {analysis1,cl,eb,mc,multiz,nlo,null,ops,screen,zeta}
-                   [--mode MODE]
-p0_regen.py: error: argument --figure: invalid choice: 'multiz standalone' (choose from 'analysis1', 'cl', 'eb', 'mc', 'multiz', 'nlo', 'null', 'ops', 'screen', 'zeta')

@@ -13,8 +13,9 @@ os.environ.setdefault("MPLBACKEND", "Agg")
 import numpy as np
 from product_paths import active_manifest, resolve_product
 
-REPO = Path("/Users/zzhang/Documents/MyDrafts/STF_lensing")
-SSA = REPO / "SFT-lensing-paper-analyses"; SACHS = SSA / "sachs_sft"
+SSA = Path(__file__).resolve().parents[1]
+REPO = SSA.parent
+SACHS = SSA / "sachs_sft"
 A3 = SACHS / "analyses" / "analysis3"; MC = SACHS / "analyses" / "mc_sachs_2pt"
 P = SACHS / "sftwick_outputs" / "2PCF" / "cutoff_ladder"
 MZ = SACHS / "sftwick_outputs" / "2PCF" / "multiz"
@@ -268,7 +269,8 @@ for ch in ("TTT", "TTP", "Bmod", "Dmod"):
 add("zeta slices: sign-change brackets in the driving-field shells", "channel-dependent sign changes, shell redshift rather than source redshift", " | ".join(out), rel(ZETA_SLICES))
 
 # linear n_eff crossing
-pk = np.loadtxt("/Users/zzhang/projects/angular_statistics/canoes/examples/data/PCAMBz0.txt")
+CANOES = Path(os.environ.get("CANOES_ROOT", "/Users/zzhang/projects/angular_statistics/canoes"))
+pk = np.loadtxt(CANOES / "examples" / "data" / "PCAMBz0.txt")
 k, pkv = pk[:, 0], pk[:, 1]
 neff = np.gradient(np.log(pkv), np.log(k))
 kc2 = k[np.flatnonzero(neff < -2)[0]]

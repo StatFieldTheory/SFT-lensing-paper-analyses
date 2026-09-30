@@ -1,58 +1,56 @@
-# sachs_sft — clean sft-wick driving pipeline (since 2026-05-30)
+# Sachs dynamics and SFT-Wick calculations
 
-Fresh start replacing the tangled `scripts/canoes_pipeline` (archived at
-`scripts/_archive/canoes_pipeline`). The organizing principle is **traceability by
-directory structure**: each callable implementation is a single self-contained
-folder, so there is no ambiguity about which products/conventions belong to which
-implementation.
+This directory contains optical callables, SFT-Wick run configurations, saved
+correlation functions and analysis drivers for the weak-lensing paper. Start
+with the repository's [reproduction guide](../REPRODUCE.md) for the supported
+figure and numerical-summary workflow.
 
-## What sft-wick consumes
+## Current revision
 
-sft-wick's config file is driven by exactly **two kinds of callable objects**:
+[../reproduce/active_products.json](../reproduce/active_products.json) selects
+the current R1 products and their hashes. Revision calculations live under
+`analyses/r1_sft061/`, with the aligned Order-0/PyCCL calculation under
+`analyses/analysis1/r1_aligned/`. Historical run folders remain available for
+comparison and as dependencies of the replay drivers.
 
-1. **Correlation propagator** `C` — the 2-point cumulant `⟨Φ Φ⟩`.
-2. **Non-local κ³ vertex** `K` — the 3-point driving-field cumulant.
-
-Each kind has **two validated implementations** (different folders under
-`callables/`). The config picks one folder per kind.
+The optical dynamics use the local quadratic Sachs couplings together with
+two kinds of callable input: the two-point correlation propagator `C` and the
+non-local three-point driving-field vertex `K`. Numerical configurations select
+specific callable implementations and data by path. The figure manifest selects
+the saved products read by the plotting tools; it does not replace those run
+configurations.
 
 ## Layout
 
-```
-sachs_sft/
-├── callables/
-│   ├── C_propagator/
-│   │   ├── corr_op/          # impl 1: canoes corr_op C_ell(λ',λ'') table → propagator
-│   │   └── limber/           # impl 2: canoes Limber-version C → propagator
-│   └── kappa3_vertex/
-│       ├── R_contracted/     # impl 1: R-contracted-already κ³ (windowed)
-│       └── equal_time_limber/# impl 2: (non-contracted) equal-time Limber κ³
-├── sftwick_outputs/          # one folder per concrete sft-wick RUN (L2 config + output)
-│   ├── 2PCF/                 # observable=[phi(x),phi(y)] 2-point; C-only O0 + F/K post-Born O[0,2]
-│   │   {C_corr_op_O0, C_limber_O0, C_corr_op_K_contracted_FF/FK, C_corr_op_K_limber_FK}/
-│   └── 3PCF/                 # (reserved) genuine 3-point observable [phi(x),phi(y),phi(z)]
-├── analyses/                 # one folder per analysis (like the old analysis_1/2/3/4)
-└── scripts/                  # ONLY necessary shared/common code (D_callable, kappa2_callable,
-                              # run_FF_single, gen_sftwick_configs, F_tensor + kappa2 NPZ)
-```
+| Path | Role |
+|---|---|
+| `callables/C_propagator/corr_op/` | Correlation-propagator implementation and stored table |
+| `callables/kappa3_vertex/equal_time_limber_cut15360_permaware/` | Permutation-aware vertex callable and historical table |
+| `callables/kappa3_vertex/equal_time_limber/` | Historical vertex inputs, build helpers and driving-field slice plotter |
+| `callables/kappa3_vertex/rebuild/` | Vertex assembly, variant folding, cutoff studies and saved tables |
+| `callables/kappa3_vertex/b_model/` | Matter-bispectrum models |
+| `analyses/r1_sft061/` | Corrected-input folds, source mapping, cutoff ladder, Monte Carlo controls and figure-product assembly |
+| `analyses/analysis1/r1_aligned/` | Continuous source-response Order-0 calculation and PyCCL benchmark |
+| `analyses/analysis3/` | Two-point correlation and angular-spectrum figure generators |
+| `analyses/mc_sachs_2pt/`, `analyses/mc_fk_complete/` | Monte Carlo implementations and historical controls |
+| `sftwick_outputs/2PCF/` | Historical per-run configurations and products |
+| `scripts/` | Shared response, covariance, geometry and sweep utilities |
 
-## Rules
+A folder's name or `PRODUCTION` marker alone does not identify the current
+figure inputs. Use the active manifest and its input provenance, especially when
+comparing historical and revised FK amplitudes. Record the source plane,
+multipole cutoff and input/runtime versions with every numerical result.
 
-- **One folder = one implementation.** ALL files an implementation needs (the
-  callable module, its product NPZ(s) or build recipe, its convention notes, its
-  validation) live inside that folder. Nothing shared implicitly across folders.
-- **No env-var product resolution.** A config points at a specific callable folder
-  by path; products are explicit, not resolved from `SFT_WICK_*` env defaults.
-- **Each callable folder carries its own README** stating: the sft-wick contract it
-  satisfies (coordinate, measure, units, already-R-contracted?), its provenance
-  (which archived build produced it), and its validation status.
-- `scripts/` holds only genuinely-shared utilities — not analysis logic, not
-  callable implementations.
+## Recomputing products
 
-## Status (2026-05-30)
+The revision drivers separate planning, preparation and execution where
+supported; saved `prepared.json` records identify the accepted settings.
+Some paths and guarded runtime hashes refer to the original workstation.
+Inspect those dependencies before moving a calculation, and retain original
+records alongside new manifests.
 
-Skeleton only. The four callable implementations are to be (re)built together,
-pulling validated pieces from `scripts/_archive/canoes_pipeline` as needed:
-- C_propagator: corr_op + canoes-Limber (both previously validated).
-- kappa3_vertex: R-contracted (windowed) + equal-time-Limber (both previously
-  provided/validated).
+Use fresh run directories and keep accepted outputs unchanged. Run folds and
+vertex builds sequentially; worker count is constrained by memory use.
+Regenerating the figures from saved products is much cheaper than repeating the
+folds, vertex integrations and Monte Carlo calculations. Neither operation
+modifies the manuscript unless the separate deployment tool is invoked.

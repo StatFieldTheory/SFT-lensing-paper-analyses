@@ -1,0 +1,51 @@
+{
+  "date": "2026-09-30",
+  "purpose": "Validate repository cleanup without local docs, agent notes or archived analyses",
+  "base_commit": "866ea12be1cb8c2957cf42e43ee19390912f1902",
+  "method": "Copied retained repository files to an isolated temporary package, supplied the separate manuscript figure PDFs, and ran the documented regeneration and comparison commands. Existing workstation dependency environments were reused.",
+  "regeneration": {
+    "command": "python reproduce/regen_figure.py --all",
+    "exit_code": 0,
+    "figure_count": 17
+  },
+  "figure_comparison": {
+    "command": "python reproduce/check_figures.py",
+    "exit_code": 0,
+    "verdict_counts": {
+      "IDENTICAL(raw)": 1,
+      "IDENTICAL(content)": 16
+    },
+    "all_raster_diff_fractions_zero": true
+  },
+  "number_check": {
+    "command": "python reproduce/check_numbers.py",
+    "exit_code": 0,
+    "rows": 33,
+    "identical_to_precleanup": true,
+    "external_power_spectrum": "canoes/examples/data/PCAMBz0.txt",
+    "external_power_spectrum_sha256": "8edfaefa56978e7a2c8e809094764ecc6d3b9becf4154668409b8b0490da5edd"
+  },
+  "active_product_selections_verified": 12,
+  "active_product_file_members_verified": 22,
+  "python_compile": "passed for both changed entry points",
+  "replay_help": "passed",
+  "review": "Independent read-only dependency audit and Python review completed; no functional regression found.",
+  "source_sha256": {
+    "reproduce/check_numbers.py": "a109be84acffbb8dc63fedfe65ee1d78aa0f4c4f63069d1f66e15d402f5d179f",
+    "sachs_sft/analyses/r1_sft061/replay_suite.py": "526c3a632c135edace44da33129f6a1eb3d4b0637af9d506d2b83c809906201f",
+    "reproduce/active_products.json": "2d27cfbc4125645e4746539c291a9a94f935b170645917e0f09816574f06c570",
+    "reproduce/provenance/vertex_rebuild_20260906.md": "b4ac3d4d07aa11952e756413787b075081ffdf8b19d663696669205cc9736084"
+  },
+  "cleanup": {
+    "archived_files": 575,
+    "archived_previously_tracked_files": 548,
+    "untracked_in_place_files": 74,
+    "local_archive": "_archive/cleanup_2026-09-30/",
+    "historical_changelog_unchanged": true
+  },
+  "limits": [
+    "Not a fresh-machine installation test.",
+    "Expensive vertex builds, Sachs/SFT folds, Monte Carlo simulations and symbolic proofs were not rerun.",
+    "Historical run manifests retain original workstation paths and must be rebased through new manifests when relocated."
+  ]
+}

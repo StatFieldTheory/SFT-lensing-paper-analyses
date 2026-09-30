@@ -1,6 +1,6 @@
 # .gitignore for the SFT-lensing-paper-analyses repository.
 # This folder is its own git repo (separate from the parent paper repo, which
-# git-ignores it). Keep the repo lean: code + small live data + docs only.
+# git-ignores it). Keep reproduction code, selected data and user documentation.
 
 # Python / tooling caches (regenerable)
 __pycache__/
@@ -17,9 +17,7 @@ __pycache__/
 **/.cache_expand_*/
 **/.cache_propagators_*/
 
-# Frozen local archives — large, NOT for GitHub.
-# _archive/ holds the 773 MB superseded limber C-table and the 161 MB canoes
-# pipeline; both exceed GitHub's 100 MB per-file limit. Kept locally only.
+# Local archives retain superseded files and cleanup manifests outside Git.
 _archive/
 **/_cleanup_archive_*/
 
@@ -28,52 +26,23 @@ _archive/
 
 # Agent-generated scratch/handoff/prompt docs (kept locally, not for GitHub).
 # These are working notes from agent sessions, not pipeline artifacts.
+AGENTS.md
+CLAUDE.md
+.agents/
+.agent-state/
+.codex/
+.claude/
+**/*HANDOFF*.md
+**/PLAN.md
+**/*_PLAN.md
+**/RUN_STATE.md
+**/SESSION_STATE*.md
+**/TASKS.md
 
 # Agent prompts and working notes co-located with analysis code.
 **/PROMPT*.md
 **/*_NOTES.md
 **/*_notes*.md
-sachs_sft/analyses/shear3pcf_fastnc/scripts
-# driver_field_emulators, imported 2026-09-02 during the reproducibility reorganisation.
-# Large regenerable products, exploratory variants and private material stay out of git;
-# every excluded file is listed with its md5 in reorg_2026-09/dfe_manifest_2026-09-02.txt.
-driver_field_emulators/products/pieces/
-driver_field_emulators/products/_ff_caches/
-driver_field_emulators/products/_ff_dt1/
-driver_field_emulators/products/cutoff_vertex.npz
-driver_field_emulators/products/cutoff_vertex_tree.npz
-driver_field_emulators/products/cutoff_study_partial.npz
-driver_field_emulators/products/_variant_collapsed_dense_*/
-driver_field_emulators/products/collapsed_dense_*
-driver_field_emulators/products/collapsed_triples_dense.npz
-driver_field_emulators/products/_low_cache_collapsed_dense.npz
-driver_field_emulators/products/table_tree_cut1000_r*
-driver_field_emulators/products/_variant_table_tree_cut1000_*/
-driver_field_emulators/products/table_permclosed_cut1000*
-driver_field_emulators/products/_variant_table_permclosed_cut1000_*/
-driver_field_emulators/products/table_reproduce_deployed*
-driver_field_emulators/products/_variant_table_reproduce_deployed/
-driver_field_emulators/products/triples_full_r1.npz
-driver_field_emulators/products/triples_full_r2.npz
-driver_field_emulators/products/triples_permclosed_r1.npz
-driver_field_emulators/products/triples_permclosed_r2.npz
-driver_field_emulators/products/triples_collapsed_only.npz
-driver_field_emulators/products/triples_production_only.npz
-driver_field_emulators/products/triples_permutation_probe.npz
-driver_field_emulators/products/xi_FF_dt1.npz
-driver_field_emulators/products/_l2_lambda_grid_*.npz
-driver_field_emulators/products/xi_kappa_channels_preRevision.pdf
-driver_field_emulators/products/multiz_kappa_2pcf_5z_preRevision.npz
-driver_field_emulators/figures/corrected/
-driver_field_emulators/papers/
-driver_field_emulators/revision_plan/
-driver_field_emulators/code/mc_fk_complete/psd_fix/**/*.npz
-driver_field_emulators/note/*.aux
-driver_field_emulators/note/*.log
-driver_field_emulators/note/*.fdb_latexmk
-driver_field_emulators/note/*.fls
-driver_field_emulators/note/*.out
-driver_field_emulators/note/*.toc
 **/.benchmarks/
 
 # vertex-rebuild intermediates (octave-band pieces, hours of canoes builds; regenerable, listed with md5 in reorg_2026-09/dfe_manifest_2026-09-02.txt)
@@ -83,11 +52,13 @@ driver_field_emulators/note/*.toc
 # vertex-level cutoff study (audit-note data, 6 MB, regenerable from the band pieces)
 **/fk_audit_2026-08/products/cutoff_*.npz
 
-# docs/: the agent briefs are tracked here although PROMPT*.md is ignored elsewhere;
-# the arXiv PDFs and the editor correspondence stay out of git.
-!docs/agent_briefs/*.md
-docs/papers/
-docs/private/
+# Local research notes and correspondence. Public reproduction instructions live
+# in README.md and REPRODUCE.md; essential run provenance stays with its products.
+/docs/
+
+# Regenerated logs and retired analyses (preserved in local _archive/).
+/reproduce/logs/
+/sachs_sft/callables/kappa3_vertex/rebuild/logs/
 
 # Rendered figures produced by reproduce/regen_figure.py. They are rewritten on every
 # run and duplicate the deployed copies in the manuscript's figures/, whose md5 sums are

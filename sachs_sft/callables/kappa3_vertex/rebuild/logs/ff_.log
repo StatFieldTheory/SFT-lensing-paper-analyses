@@ -1,2 +1,0 @@
-usage: run_ff_one_lambda.py [-h] --lam LAM --tag TAG
-run_ff_one_lambda.py: error: argument --lam: invalid float value: '2313.0288751857356 z5p0ctl'

@@ -1,5 +1,19 @@
 # MOVED_PATHS.md
 
+## 2026-09-30 cleanup
+
+Paths in this paragraph are relative to the analysis repository. Retired
+reorganization phases, independent audit/backup analyses and generated logs were
+moved to `_archive/cleanup_2026-09-30/<original-path>` and removed from tracking.
+The local archive's `manifest.json` records each original path, destination and
+SHA256. Files tracked before cleanup remain recoverable from commit `866ea12`.
+The root `docs/` and agent notes remain at their original local paths, now ignored.
+The operational copy of `HANDOFF_2026-09-06_nphi512_vertex_rebuild.md` is preserved
+byte-for-byte at `reproduce/provenance/vertex_rebuild_20260906.md`.
+See [CHANGELOG.md](CHANGELOG.md) for the retained and archived scope.
+
+## 2026-09-02 reorganization
+
 Old path to new path for the 2026-09-02 reproducibility reorganisation of
 `~/Documents/MyDrafts/STF_lensing`. Written for the sessions of `SFT-WL-B` and `rezeta`,
 which vendor files from this tree and pin them by SHA-256, and for anything else holding

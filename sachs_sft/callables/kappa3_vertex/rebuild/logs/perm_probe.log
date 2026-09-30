@@ -1,9 +1,0 @@
-[low] triples=314  shells=16  ell_cut=60  Nmax=128  measure=lambda
-[low] four channels in 166.4s
-[low] Bmod/Dmod in 40.0s
-[low] total 206.4s -> /Users/zzhang/Documents/MyDrafts/STF_lensing/driver_field_emulators/products/pieces/low_perm.npz (0.3 MB)
-[band] (60, 1000]  model=internal_tree  n_ell=96  n_phi=64  triples=314
-[band]   rows 0-160 (1/2) at 161s
-[band]   rows 160-314 (2/2) at 332s
-[band] all rows in 332.4s
-[band] total 332.4s -> win_perm_00060_01000.npz

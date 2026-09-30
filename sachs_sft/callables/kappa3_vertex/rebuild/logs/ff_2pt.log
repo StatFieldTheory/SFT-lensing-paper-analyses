@@ -1,8 +1,0 @@
-[ff-ext] cache has markers at [5.0000e-01 8.0000e-01 1.3000e+00 2.0000e+00 3.2000e+00 5.0000e+00
- 6.7000e+00 1.7300e+01 4.4400e+01 1.1430e+02 2.9390e+02 3.7220e+02
- 4.7130e+02 5.9690e+02 7.5590e+02 9.5720e+02 1.2122e+03 1.5352e+03
- 1.9441e+03]
-  gamma=     1.0  FF_mc=+1.573e-06 +/-3.0e-07
-  gamma=     2.6  FF_mc=+1.396e-06 +/-2.6e-07
-[ff-ext] cache -> /Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/mc_sachs_2pt/outputs/appendix_mc_curve.npz
-[ff-ext] done (no replot)

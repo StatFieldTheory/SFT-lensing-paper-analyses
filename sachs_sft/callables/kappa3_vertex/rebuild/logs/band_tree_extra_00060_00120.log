@@ -1,5 +1,0 @@
-[band] (60, 120]  model=tree  n_ell=96  n_phi=64  triples=314
-[band]   rows 0-160 (1/2) at 149s
-[band]   rows 160-314 (2/2) at 277s
-[band] all rows in 277.4s
-[band] total 277.4s -> band_tree_extra_00060_00120.npz

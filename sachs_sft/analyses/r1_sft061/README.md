@@ -1,8 +1,8 @@
 # Referee R1: sft-wick 0.6.1 numerical alignment
 
 The accepted numerical products are now selected by `reproduce/active_products.json`.
-See the completion entry in `RUN_STATE.md` and the revision section of the
-root `REPRODUCE.md`; the original execution narrative below is historical.
+See `closeout_validation.json` and the root `REPRODUCE.md`; the original
+execution narrative below is historical. Agent run-state notes remain local.
 
 The user requested alignment with the latest sft-wick after the Order-0
 comparison was started. On 2026-09-28, a live `git ls-remote origin HEAD`
@@ -35,7 +35,8 @@ than proving that one commit alone explains it.
 
 ## Separate input-table issue
 
-`HANDOFF_2026-09-06_nphi512_vertex_rebuild.md` records a rebuilt K input with a
+`reproduce/provenance/vertex_rebuild_20260906.md` (relative to the repository
+root) records a rebuilt K input with a
 pair-phase correction and improved angular quadrature. That is a separate
 change from the framework upgrade. The controlled replay above deliberately
 keeps the old table so the two effects can be distinguished. The corrected

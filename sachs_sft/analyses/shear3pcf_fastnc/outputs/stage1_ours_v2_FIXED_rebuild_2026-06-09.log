@@ -1,6 +1,0 @@
-[FIXED] z_s=5.0, chi_s=7971.18 Mpc, lam_s=2317.96 Mpc
-[FIXED]  gamma=  10.00' done  |G3(phi120)|=1.1405e-08
-[FIXED]  gamma=  50.00' done  |G3(phi120)|=1.4689e-08
-[FIXED]  gamma= 150.00' done  |G3(phi120)|=1.0680e-09
-
-[FIXED] saved -> /Users/zzhang/Documents/MyDrafts/STF_lensing/scripts/sachs_sft/analyses/shear3pcf_fastnc/outputs/stage1_ours_v2_FIXED.npz

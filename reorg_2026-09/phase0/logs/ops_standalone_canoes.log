@@ -1,8 +1,0 @@
-'created' timestamp seems very low; regarding as unix timestamp
-'modified' timestamp seems very low; regarding as unix timestamp
-wrote figures/response_operator_draft.pdf
-wrote figures/response_operator_draft.png
-wrote figures/corr_operator_slices_draft.pdf
-wrote figures/corr_operator_slices_draft.png
-[harness] OUTPUT /private/tmp/claude-501/-Users-zzhang-Documents-MyDrafts-STF-lensing/58fd681a-480f-4860-a212-3d176f65b575/scratchpad/p0/env_pyccl_canoes/ops/response_operator_draft.pdf exists=True
-[harness] OUTPUT /private/tmp/claude-501/-Users-zzhang-Documents-MyDrafts-STF-lensing/58fd681a-480f-4860-a212-3d176f65b575/scratchpad/p0/env_pyccl_canoes/ops/corr_operator_slices_draft.pdf exists=True

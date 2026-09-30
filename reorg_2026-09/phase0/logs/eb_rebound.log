@@ -1,6 +1,0 @@
-[harness] FK_NPZ = /Users/zzhang/Documents/MyDrafts/STF_lensing/driver_field_emulators/products/table_permclosed_cut15360_permfix_xi.npz
-=== Order-2 polarization C_ell (z_s=5) ===
-  FF: max|D_EE|=3.87e-07  max|D_BB|=1.44e-08  max|D_EB|=4.52e-15  raw|<g+gx>|max=4.66e-15
-  FK: max|D_EE|=3.69e-06  max|D_BB|=1.73e-06  max|D_EB|=0.00e+00  raw|<g+gx>|max=0.00e+00
--> /private/tmp/claude-501/-Users-zzhang-Documents-MyDrafts-STF-lensing/58fd681a-480f-4860-a212-3d176f65b575/scratchpad/p0/env_pyccl/eb_rebound/cl_EB_polarization.png
-[harness] OUTPUT /private/tmp/claude-501/-Users-zzhang-Documents-MyDrafts-STF-lensing/58fd681a-480f-4860-a212-3d176f65b575/scratchpad/p0/env_pyccl/eb_rebound/cl_EB_polarization.pdf exists=True
