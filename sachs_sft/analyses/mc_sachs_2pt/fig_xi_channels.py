@@ -1,8 +1,9 @@
 """Convergence reference curves and matched stochastic-Sachs Monte Carlo checks.
 
-Lines use the selected O0 and FK products. In the active revision, the FF line
-is the matched local-covariance reference, as its legend states. The historical
-fallback retains its original analysis-3 inputs.
+Lines use the selected O0 and FK products. The FF line is the matched
+local-covariance reference, as its legend states. The curves and markers are
+read from the cache selected by reproduce/active_products.json; the isolated
+Monte Carlo adapters that build it live in analyses/r1_sft061/mc_update/.
 Markers show direct stochastic-Sachs estimates, including the FF full moment.
 The FULL FF moment is compared directly (no connected/disconnected split).
 O0 is shown as the independently calculated linear reference. The active
@@ -22,87 +23,26 @@ They are restored from a different estimator:
 three legs of the deformation reach the vertex; proved as a symbolic identity)
 and variance-controlled, and whose sigma_lambda -> 0 extrapolation reproduces
 the folded FK channel to about a percent.  `_plot` draws FK markers only when
-the caller supplies g_fk/fk_mc/fk_se; since 2026-09-02 `_compute` takes
-`--fk-markers` (default: the pooled markers) so a fresh run reproduces the deployed
-figure; the August deployment went through
-`analyses/revision_2026-08/make_val_figure.py`.
+the cache supplies g_fk/fk_mc/fk_se. The cache is built by
+`analyses/r1_sft061/mc_update/`; this script only draws it, and `--from-cache`
+is accepted but no longer changes anything.
 
 Output: figures/xi_kappa_channels.pdf
 """
 from __future__ import annotations
 
 import argparse
-import math
 from pathlib import Path
 import sys
 
 import numpy as np
 
-import driver_stats as ds
-import sachs_mc_core as mc
-
-_BASE = ds._SACHS_SFT / "sftwick_outputs" / "2PCF"
-LF = 2313.0288751857356
-# FF Monte-Carlo sample points (on the analytic [0.5',5000'] grid nodes),
-# spanning Figure 11's displayed range; the FF comparison stays clean over the
-# whole grid.
-FK_MARKERS_DEFAULT = Path(__file__).resolve().parents[1] / "mc_fk_complete" / "_markers_pooled.npz"
 sys.path.insert(0, str(Path(__file__).resolve().parents[3] / "reproduce"))
-from product_paths import active_manifest, resolve_product  # noqa: E402
-
-FK_MARKERS_DEFAULT = resolve_product("mc_markers", FK_MARKERS_DEFAULT)
-GAMMA_MC = (1.0, 2.6, 6.7, 17.3, 44.4, 114.3, 293.9,
-            372.2, 471.3, 596.9, 755.9, 957.2, 1212.2, 1535.2, 1944.1)
-
-
-def _load_kk(name: str):
-    d = np.load(_BASE / name / f"xi_{name}.npz", allow_pickle=True)  # trusted
-    m = (d["a"] == 0) & (d["b"] == 0)
-    xs, ys = d["x"][m], d["y"][m]
-    vs = np.asarray(d["value"], float)[m]
-    g = []
-    for xi, yi in zip(xs, ys):
-        xi = np.asarray(xi, float); yi = np.asarray(yi, float)
-        g.append(math.degrees(math.acos(float(np.clip(
-            np.dot(xi / np.linalg.norm(xi), yi / np.linalg.norm(yi)), -1, 1)))) * 60)
-    o = np.argsort(g)
-    return np.asarray(g)[o], vs[o]
+from product_paths import resolve_product  # noqa: E402
 
 
 def _cache_path() -> Path:
-    p = Path(__file__).resolve().parent / "outputs"
-    p.mkdir(parents=True, exist_ok=True)
-    return resolve_product("mc_cache", p / "appendix_mc_curve.npz")
-
-
-def _compute(ff_real: int, ff_nl: int, fk_markers: Path | None = None) -> dict:
-    """Run the FF Monte-Carlo (deterministic given the fixed seed) plus the
-    analysis-3 analytic channels, and cache the result so the figure can be
-    restyled without recomputation (see ``--from-cache``)."""
-    g, o0 = _load_kk("C_corr_op_O0")
-    _, ff_mom = _load_kk("C_corr_op_K_limber_FF")
-    _, fk3 = _load_kk("C_corr_op_K_limber_FK_cut15360_permfix")
-
-    ffc_mc = np.zeros(len(GAMMA_MC)); ffc_se = np.zeros(len(GAMMA_MC))
-    for i, gv in enumerate(GAMMA_MC):
-        cfg_ff = mc.MCConfig(n_real=ff_real, batch_size=3_000, n_lambda=ff_nl,
-                             use_f_vertex=True, apply_anchor=False, seed=11)
-        r = mc.simulate_ff_crn(cfg_ff, gv)
-        ffc_mc[i] = r.ff_moment[0, 0]; ffc_se[i] = r.ff_moment_err[0, 0]
-        print(f"  gamma={gv:7.2f}: FF_mc(full)={ffc_mc[i]:.3e} "
-              f"+/-{ffc_se[i]:.1e}", flush=True)
-
-    D = dict(g=g, o0=o0, ff_mom=ff_mom, fk3=fk3, g_mc=np.array(GAMMA_MC),
-             ffc_mc=ffc_mc, ffc_se=ffc_se)
-    if fk_markers is not None and Path(fk_markers).exists():
-        # Placement-complete FK Monte-Carlo markers (analyses/mc_fk_complete/).
-        m = np.load(fk_markers)
-        D.update(g_fk=np.asarray(m["gamma"], float), fk_mc=np.asarray(m["fk"], float),
-                 fk_se=np.asarray(m["err"], float))
-        print(f"[fk markers <- {fk_markers}]")
-    np.savez(_cache_path(), **D)
-    print(f"[cache -> {_cache_path()}]")
-    return D
+    return resolve_product("mc_cache")
 
 
 def _plot(D: dict) -> None:
@@ -137,7 +77,7 @@ def _plot(D: dict) -> None:
     # direct Monte-Carlo overlay (positive in range -> filled markers, matching colour)
     ax.errorbar(g_mc, np.abs(ffc_mc), yerr=ffc_se, fmt="s", color=C_FF, ms=6.5,
                 mfc=C_FF, mec=C_FF, capsize=2.5, lw=1.1, zorder=5,
-                label="FF (local MC)" if active_manifest() is not None else "FF (MC)")
+                label="FF (local MC)")
     # Matched FK Monte Carlo estimates and their measured standard errors.
     if D.get("g_fk") is not None and len(np.atleast_1d(D["g_fk"])):
         ax.errorbar(np.asarray(D["g_fk"], float), np.abs(np.asarray(D["fk_mc"], float)),
@@ -159,26 +99,16 @@ def _plot(D: dict) -> None:
     print(f"[fig -> {out_dir / 'xi_kappa_channels.pdf'}]")
 
 
-def main(ff_real: int, ff_nl: int, from_cache: bool, fk_markers=None) -> None:
-    if active_manifest() is not None and not from_cache:
-        raise ValueError("The active revision uses isolated MC adapters. Regenerate its explicit cache before plotting.")
-    if from_cache and _cache_path().exists():
-        D = dict(np.load(_cache_path(), allow_pickle=True))  # our own cache, safe
-        print(f"[from cache {_cache_path()}]")
-    else:
-        D = _compute(ff_real, ff_nl, fk_markers)
+def main() -> None:
+    D = dict(np.load(_cache_path(), allow_pickle=True))  # our own cache, safe
+    print(f"[from cache {_cache_path()}]")
     _plot(D)
 
 
 if __name__ == "__main__":
-    ap = argparse.ArgumentParser()
-    ap.add_argument("--ff_real", type=int, default=48_000)
-    ap.add_argument("--ff_nl", type=int, default=4000)
+    ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--from-cache", action="store_true",
-                    help="skip the MC and re-plot from outputs/appendix_mc_curve.npz "
-                         "(for fast figure-style iteration)")
-    ap.add_argument("--fk-markers", type=Path, default=FK_MARKERS_DEFAULT,
-                    help="pooled FK Monte-Carlo markers npz (gamma, fk, err); "
-                         "default: analyses/mc_fk_complete/_markers_pooled.npz")
-    a = ap.parse_args()
-    main(a.ff_real, a.ff_nl, a.from_cache, a.fk_markers)
+                    help="accepted for compatibility; the figure is always drawn "
+                         "from the cache selected by reproduce/active_products.json")
+    ap.parse_args()
+    main()

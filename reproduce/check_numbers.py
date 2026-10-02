@@ -7,38 +7,28 @@ Writes reproduce/numbers.json beside it. Each row names the claim, what the pape
 says, what the products give today, and which files it came from. Run it after any
 change to a product: a row that moves is a stop-and-report item for the operator,
 not a licence to edit the manuscript."""
-import json, math, os, subprocess, sys
+import json, math, os, sys
 from pathlib import Path
 os.environ.setdefault("MPLBACKEND", "Agg")
 import numpy as np
-from product_paths import active_manifest, resolve_product
+from product_paths import resolve_product
 
 SSA = Path(__file__).resolve().parents[1]
 REPO = SSA.parent
 SACHS = SSA / "sachs_sft"
-A3 = SACHS / "analyses" / "analysis3"; MC = SACHS / "analyses" / "mc_sachs_2pt"
-P = SACHS / "sftwick_outputs" / "2PCF" / "cutoff_ladder"
-MZ = SACHS / "sftwick_outputs" / "2PCF" / "multiz"
-PERM = SACHS / "callables" / "kappa3_vertex" / "equal_time_limber_cut15360_permaware"
-RB = SACHS / "callables" / "kappa3_vertex" / "rebuild"
-MCF = SACHS / "analyses" / "mc_fk_complete"
-ETL = SACHS / "callables" / "kappa3_vertex" / "equal_time_limber"
-RUNS = SACHS / "sftwick_outputs" / "2PCF"
-O0 = RUNS / "C_corr_op_O0" / "xi_C_corr_op_O0.npz"
-FF = RUNS / "C_corr_op_K_limber_FF" / "xi_C_corr_op_K_limber_FF.npz"
-FK_DEP = RUNS / "C_corr_op_K_limber_FK" / "xi_C_corr_op_K_limber_FK.npz"
-FK_CONV = (RUNS / "C_corr_op_K_limber_FK_cut15360_permfix"
-           / "xi_C_corr_op_K_limber_FK_cut15360_permfix.npz")
-O0 = resolve_product("order0", O0)
-FF = resolve_product("ff", FF)
-FK_CONV = resolve_product("fk", FK_CONV)
-P = resolve_product("cutoff_ladder", P)
-MULTIZ = resolve_product("multiz", A3 / "outputs" / "multiz_kappa_2pcf_5z.npz")
-MULTIZ_FF = resolve_product("multiz_ff", MZ / "multiz_ff_real_all5.npz")
-MC_MARKERS = resolve_product("mc_markers", MCF / "_markers_pooled.npz")
-MC_CACHE = resolve_product("mc_cache", MC / "outputs" / "appendix_mc_curve.npz")
-KERNEL_CHECK = resolve_product("kernel_crosscheck", RB / "products" / "fk_kernel_crosscheck.npz")
-ZETA_SLICES = resolve_product("zeta_slices", ETL / "outputs" / "zeta_bands_cut15360_gmax85.npz")
+A3 = SACHS / "analyses" / "analysis3"
+# Every input comes from reproduce/active_products.json. The superseded arrays
+# these names once fell back to were archived on 2026-10-02.
+O0 = resolve_product("order0")
+FF = resolve_product("ff")
+FK_CONV = resolve_product("fk")
+P = resolve_product("cutoff_ladder")
+MULTIZ = resolve_product("multiz")
+MULTIZ_FF = resolve_product("multiz_ff")
+MC_MARKERS = resolve_product("mc_markers")
+MC_CACHE = resolve_product("mc_cache")
+KERNEL_CHECK = resolve_product("kernel_crosscheck")
+ZETA_SLICES = resolve_product("zeta_slices")
 ARCMIN = 180 * 60 / np.pi
 OBS = {"xi_kappa": [((0, 0), 1.0)], "xi_plus": [((1, 1), 1.0), ((2, 2), 1.0)],
        "xi_minus": [((1, 1), 1.0), ((2, 2), -1.0)], "xi_kappa_gamma_t": [((0, 1), -1.0)]}
@@ -80,7 +70,7 @@ def add(claim, quoted, value, src):
 
 lin = lambda g, arr, x: float(np.interp(x, g, arr))
 BAND = np.array([2.0, 5.0, 8.0, 12.0])
-ACTIVE = active_manifest() is not None
+ACTIVE = True  # the manifest is required, see product_paths.py
 
 
 def quoted(current, historical):
@@ -100,16 +90,11 @@ def first_crossing(test, gamma):
 print("| claim | quoted in paper | recomputed today | source products |")
 print("|---|---|---|---|")
 
-g, o0 = obs(O0, 0); gff, ff = obs(FF, 2); gfk, fk = obs(FK_CONV, 2); _, fkd = obs(FK_DEP, 2)
+g, o0 = obs(O0, 0); gff, ff = obs(FF, 2); gfk, fk = obs(FK_CONV, 2)
 if not (np.allclose(g, gff) and np.allclose(g, gfk)):
     raise ValueError("Order-0, FF and FK angular grids differ")
 assert abs(g[0] - 0.5) < 1e-6
 kk = "xi_kappa"
-historical_fk_value = f"{fkd[kk][0]:+.4e} (historical source plane)"
-if active_manifest() is None:
-    historical_fk_value += f" = {100*fkd[kk][0]/o0[kk][0]:.3f}% of historical O0"
-add("Historical FK(0.5') sweep (cut1000, old callable), kk", "historical baseline only, not the active prediction",
-    historical_fk_value, rel(FK_DEP))
 add("FK(0.5') finite-cutoff fold (ell_max=15360, perm-aware), kk", quoted("1.91% of O0", "2.31% of O0 (insights, cutoff subsec.)"),
     f"{fk[kk][0]:+.4e} = {100*fk[kk][0]/o0[kk][0]:.2f}% of O0", rel(FK_CONV))
 add("FF(0.5') vs O0, kk", quoted("2.28e-6, about 0.27% of Order-0", "few x1e-6, about 0.2% of Order-0"),
@@ -220,20 +205,13 @@ add("Recovered C_EE+BB total Order-2 correction over 50<=ell<=1500", quoted("abo
 
 # validation numbers
 mk = np.load(MC_MARKERS)
-if active_manifest() is None:
-    fold_at = np.exp(np.interp(np.log(mk["gamma"]), np.log(g), np.log(fk[kk])))
-else:
-    fold_at = np.interp(mk["gamma"], g, fk[kk])
+fold_at = np.interp(mk["gamma"], g, fk[kk])
 add("FK Monte-Carlo markers / fold", quoted("ratios within about 1%, including finite-sample and discretization effects", "about a percent at 1' (CHANGES: 1.012+/-0.005, 1.012+/-0.008, 1.008+/-0.014, 0.999+/-0.033)"),
     "; ".join(f"{gm:g}': {f/a:.3f}+/-{e/a:.3f}" for gm, f, e, a in zip(mk["gamma"], mk["fk"], mk["err"], mk["analytic"])) +
     f" (markers' stored analytic vs today's fold interp: {np.max(np.abs(mk['analytic']/fold_at-1)):.1e})",
     rel(MC_MARKERS))
-if active_manifest() is None:
-    hl = subprocess.run([sys.executable, "headline.py"], cwd=MCF, capture_output=True, text=True).stdout
-    pooled_headline = hl.strip().splitlines()[-2].strip()
-else:
-    first = int(np.argmin(np.abs(mk["gamma"] - 1.0)))
-    pooled_headline = f"{mk['fk'][first] / mk['analytic'][first]:.4f} +/- {mk['err'][first] / mk['analytic'][first]:.4f}"
+first = int(np.argmin(np.abs(mk["gamma"] - 1.0)))
+pooled_headline = f"{mk['fk'][first] / mk['analytic'][first]:.4f} +/- {mk['err'][first] / mk['analytic'][first]:.4f}"
 add("Pooled sigma_lambda->0 MC/analytic FK at 1'", "reproduces to about a percent", pooled_headline, rel(MC_MARKERS))
 cache = np.load(MC_CACHE, allow_pickle=True)
 ffm = np.interp(cache["g_mc"], cache["g_ff"] if "g_ff" in cache.files else cache["g"], cache["ff_mom"])

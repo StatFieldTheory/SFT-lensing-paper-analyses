@@ -10,7 +10,7 @@ Each panel shows ONLY Order-0 (blue markers) and Full = O0+FF+FK (grey line),
 in the marker/colour convention of Fig. 11 / Fig. 12.  No FF/FK breakdown, no
 fractional-residual sub-panels.
 
-Input : outputs/multiz_kappa_2pcf_5z.npz  (from compute_multiz_kappa_2pcf.py)
+Input : the "multiz" and "multiz_ff" products of reproduce/active_products.json
 Output: outputs/multiz_kappa_xi_cl_2x5.{png,pdf}
 
 Run with the PyCCL interpreter (needs scipy + matplotlib).
@@ -31,17 +31,13 @@ from _plot_style import (  # noqa: E402
 )
 import plot_analysis3_cl_decomposition as C  # noqa: E402
 
-NPZ = HERE / "outputs" / "multiz_kappa_2pcf_5z.npz"
 OUT_STEM = HERE / "outputs" / "multiz_kappa_xi_cl_2x5"
 
 sys.path.insert(0, str(HERE.parents[2] / "reproduce"))
 from product_paths import resolve_product  # noqa: E402
 
-NPZ = resolve_product("multiz", NPZ)
-FF_REAL = resolve_product(
-    "multiz_ff", HERE.parents[1] / "sftwick_outputs" / "2PCF"
-    / "multiz" / "multiz_ff_real_all5.npz",
-)
+NPZ = resolve_product("multiz")
+FF_REAL = resolve_product("multiz_ff")
 LOAD_KW: dict[str, Any] = {"allow_pickle": True}
 
 COLOR_O0 = PALETTE[0]

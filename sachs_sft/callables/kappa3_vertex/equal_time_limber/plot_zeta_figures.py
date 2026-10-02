@@ -27,13 +27,11 @@ import numpy as np
 from matplotlib.colors import SymLogNorm
 
 _HERE = Path(__file__).resolve().parent
-# Converged cutoff (eight HIGH windows to ell = 15360, clipped at 85 arcmin), 2026-08-27;
-# the June cut1000 ell_band_decomp_results.npz next to this script is superseded.
-_NPZ = _HERE / "outputs" / "zeta_bands_cut15360_gmax85.npz"
 sys.path.insert(0, str(_HERE.parents[3] / "reproduce"))
 from product_paths import resolve_product  # noqa: E402
 
-_NPZ = resolve_product("zeta_slices", _NPZ)
+# Collapsed slices of the n_phi = 512 table, selected by reproduce/active_products.json.
+_NPZ = resolve_product("zeta_slices")
 _FIGDIR = _HERE / "outputs"   # the paper copy is deployed by reproduce/deploy.py
 _FIGDIR.mkdir(parents=True, exist_ok=True)
 # Panels show TTT, TTP and the conjugate-helicity modulus channels

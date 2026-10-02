@@ -1,11 +1,5 @@
 [
  {
-  "claim": "Historical FK(0.5') sweep (cut1000, old callable), kk",
-  "quoted": "historical baseline only, not the active prediction",
-  "recomputed": "+4.2877e-06 (historical source plane)",
-  "source": "SFT-lensing-paper-analyses/sachs_sft/sftwick_outputs/2PCF/C_corr_op_K_limber_FK/xi_C_corr_op_K_limber_FK.npz"
- },
- {
   "claim": "FK(0.5') finite-cutoff fold (ell_max=15360, perm-aware), kk",
   "quoted": "1.91% of O0",
   "recomputed": "+1.6187e-05 = 1.91% of O0",

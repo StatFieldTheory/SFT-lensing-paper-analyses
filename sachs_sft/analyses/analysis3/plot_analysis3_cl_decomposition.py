@@ -52,20 +52,15 @@ from _plot_style import (  # noqa: E402
     plot_signed_markers,
 )
 
-RUNS = HERE.parent.parent / "sftwick_outputs" / "2PCF"
-O0_NPZ = RUNS / "C_corr_op_O0" / "xi_C_corr_op_O0.npz"
-FF_NPZ = RUNS / "C_corr_op_K_limber_FF" / "xi_C_corr_op_K_limber_FF.npz"
-# The manuscript's FK: ell_max = 15360 with the permutation-aware vertex (2026-08-26).
-# The June cut1000 sweep in C_corr_op_K_limber_FK/ is superseded and about 4.5x low at 0.5'.
-FK_NPZ = RUNS / "C_corr_op_K_limber_FK_cut15360_permfix" / "xi_C_corr_op_K_limber_FK_cut15360_permfix.npz"
 OUT_STEM = HERE / "outputs" / "analysis3_cl_O0_FF_FK"
 
 sys.path.insert(0, str(HERE.parents[2] / "reproduce"))
 from product_paths import resolve_product  # noqa: E402
 
-O0_NPZ = resolve_product("order0", O0_NPZ)
-FF_NPZ = resolve_product("ff", FF_NPZ)
-FK_NPZ = resolve_product("fk", FK_NPZ)
+# Order-0, FF and FK all come from reproduce/active_products.json.
+O0_NPZ = resolve_product("order0")
+FF_NPZ = resolve_product("ff")
+FK_NPZ = resolve_product("fk")
 LOAD_KW: dict[str, Any] = {"allow_pickle": True}  # trusted local sft-wick output
 
 COLOR_O0, COLOR_FF, COLOR_FK = PALETTE[0], PALETTE[1], PALETTE[2]

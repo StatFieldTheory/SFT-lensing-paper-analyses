@@ -1,8 +1,8 @@
-"""Resolve reviewed numerical products without replacing historical arrays.
+"""Resolve the reviewed numerical products selected by active_products.json.
 
-An explicit active_products.json selects a complete revision bundle. With no
-active bundle, historical generators retain their recorded inputs. A partial
-or modified active bundle fails rather than falling back to historical data.
+The manifest is required. The historical arrays that readers once fell back to
+were archived on 2026-10-02 (reproduce/archived_inputs.json), so a missing,
+partial or modified bundle fails instead of selecting older data.
 """
 
 from __future__ import annotations
@@ -17,9 +17,13 @@ ACTIVE = HERE / "active_products.json"
 
 
 @lru_cache(maxsize=1)
-def active_manifest() -> dict | None:
+def active_manifest() -> dict:
     if not ACTIVE.exists():
-        return None
+        raise FileNotFoundError(
+            f"Numerical product manifest is missing: {ACTIVE}. There is no "
+            "historical fallback: those inputs were archived on 2026-10-02. "
+            "Restore the manifest from Git."
+        )
     manifest = json.loads(ACTIVE.read_text())
     if manifest.get("schema_version") != 1 or not manifest.get("products"):
         raise ValueError(f"Invalid numerical product manifest: {ACTIVE}")
@@ -32,12 +36,9 @@ def _digest(path: Path) -> str:
 
 
 @lru_cache(maxsize=None)
-def resolve_product(key: str, historical: Path) -> Path:
+def resolve_product(key: str) -> Path:
     """Return the selected file or directory after checking recorded hashes."""
-    manifest = active_manifest()
-    if manifest is None:
-        return historical
-    record = manifest["products"][key]
+    record = active_manifest()["products"][key]
     path = Path(record["path"])
     if not path.is_absolute():
         path = HERE / path

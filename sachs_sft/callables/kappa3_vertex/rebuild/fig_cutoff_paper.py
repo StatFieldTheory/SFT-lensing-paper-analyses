@@ -22,19 +22,16 @@ import numpy as np
 
 _REPO = Path(__file__).resolve().parents[5]
 _MC = _REPO / "SFT-lensing-paper-analyses" / "sachs_sft" / "analyses" / "mc_sachs_2pt"
-_LADDER = (_REPO / "SFT-lensing-paper-analyses" / "sachs_sft" / "sftwick_outputs"
-           / "2PCF" / "cutoff_ladder")
 sys.path.insert(0, str(_REPO / "SFT-lensing-paper-analyses" / "reproduce"))
 from product_paths import resolve_product  # noqa: E402
 
-_LADDER = resolve_product("cutoff_ladder", _LADDER)
+_LADDER = resolve_product("cutoff_ladder")
 
 CUTS = (960, 1920, 3840, 7680, 15360)
 
 
 def o0_at_half_arcmin() -> float:
-    base = _REPO / "SFT-lensing-paper-analyses" / "sachs_sft" / "sftwick_outputs" / "2PCF"
-    path = resolve_product("order0", base / "C_corr_op_O0" / "xi_C_corr_op_O0.npz")
+    path = resolve_product("order0")
     d = np.load(path, allow_pickle=True)
     m = (d["a"] == 0) & (d["b"] == 0)
     g = []

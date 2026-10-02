@@ -23,7 +23,7 @@ import subprocess
 import sys
 import time
 from pathlib import Path
-from product_paths import active_manifest, resolve_product
+from product_paths import resolve_product
 
 PKG = Path(__file__).resolve().parents[1]
 PAPER = PKG.parent
@@ -31,6 +31,7 @@ PYCCL = os.environ.get("STF_PYCCL", "/opt/homebrew/Caskroom/miniconda/base/envs/
 SFTW = os.environ.get("STF_SFTWICK", "/opt/homebrew/Caskroom/miniconda/base/envs/sft-wick/bin/python")
 CANOES = os.environ.get("CANOES_ROOT", "/Users/zzhang/projects/angular_statistics/canoes")
 
+ALIGNED = "sachs_sft/analyses/analysis1/r1_aligned"
 A3 = "sachs_sft/analyses/analysis3"
 MC = "sachs_sft/analyses/mc_sachs_2pt"
 ETL = "sachs_sft/callables/kappa3_vertex/equal_time_limber"
@@ -38,8 +39,13 @@ RB = "sachs_sft/callables/kappa3_vertex/rebuild"
 
 #: figure number -> (generator, interpreter key, extra args, needs canoes, output(s), paper file(s))
 FIGURES = {
-    1: (f"sachs_sft/analyses/analysis1/plot_analysis1_O0_vs_pyccl_fkem.py", "sftw", [], False,
-        ["sachs_sft/analyses/analysis1/outputs/analysis1_O0_vs_pyccl_fkem.pdf"], ["analysis1_O0_vs_pyccl.pdf"]),
+    1: (f"{ALIGNED}/plot_comparison.py", "pyccl",
+        ["--sft", str(resolve_product("order0_comparison")),
+         "--reference", str(resolve_product("pyccl_reference")),
+         "--output-dir", str(PKG / ALIGNED / "outputs/comparison_final"),
+         "--archive-existing"], False,
+        [f"{ALIGNED}/outputs/comparison_final/analysis1_O0_vs_pyccl_aligned.pdf"],
+        ["analysis1_O0_vs_pyccl.pdf"]),
     2: (f"{A3}/plot_analysis3_nlo_decomposition.py", "pyccl", [], False,
         [f"{A3}/outputs/analysis3_nlo_O0_FF_FK.pdf"], ["analysis3_NLO_FFFK.pdf"]),
     3: (f"{A3}/plot_analysis3_cl_decomposition.py", "pyccl", [], False,
@@ -73,19 +79,6 @@ FIGURES = {
 }
 #: figures 9 and 16 are the second outputs of rows 8 and 15.
 ALIASES = {9: 8, 16: 15}
-
-if active_manifest() is not None:
-    aligned = "sachs_sft/analyses/analysis1/r1_aligned"
-    FIGURES[1] = (
-        f"{aligned}/plot_comparison.py", "pyccl",
-        ["--sft", str(resolve_product("order0_comparison", Path())),
-         "--reference", str(resolve_product("pyccl_reference", Path())),
-         "--output-dir", str(PKG / aligned / "outputs/comparison_final"),
-         "--archive-existing"], False,
-        [f"{aligned}/outputs/comparison_final/analysis1_O0_vs_pyccl_aligned.pdf"],
-        ["analysis1_O0_vs_pyccl.pdf"],
-    )
-
 
 def run_one(n: int) -> tuple[int, float]:
     n = ALIASES.get(n, n)
