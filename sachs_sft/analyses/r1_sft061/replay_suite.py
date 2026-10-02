@@ -3,6 +3,9 @@
 Planning and preparation never start a fold. The run subcommand is explicit,
 requires a fresh prepared batch, and refuses to overlap another fold. All writes
 stay inside a new batch directory. Historical production files remain inputs.
+Those archived on 2026-10-02 are read through reproduce/archived_inputs.py,
+which checks each archived copy against its recorded hash; a record keeps the
+original path.
 """
 
 from __future__ import annotations
@@ -27,6 +30,8 @@ import yaml
 HERE = Path(__file__).resolve().parent
 SACHS = HERE.parents[1]
 REPO = SACHS.parent
+sys.path.insert(0, str(REPO / "reproduce"))
+from archived_inputs import locate  # noqa: E402
 PRODUCTS = SACHS / "sftwick_outputs" / "2PCF"
 REBUILD = SACHS / "callables" / "kappa3_vertex" / "rebuild"
 PERM = SACHS / "callables" / "kappa3_vertex" / "equal_time_limber_cut15360_permaware"
@@ -55,10 +60,10 @@ def digest(path: Path) -> str:
 
 
 def file_record(path: Path) -> dict:
+    """Record a file under its recorded path, hashing an archived input in the archive."""
     path = path.resolve()
-    if not path.is_file():
-        raise FileNotFoundError(f"Required historical input is missing: {path}")
-    return {"path": str(path), "sha256": digest(path), "bytes": path.stat().st_size}
+    stored = locate(path)
+    return {"path": str(path), "sha256": digest(stored), "bytes": stored.stat().st_size}
 
 
 def dump_new(path: Path, value: dict) -> None:
@@ -104,7 +109,7 @@ def nominal_specs() -> list[dict]:
     """Trace the figure inputs rather than the superseded compute defaults."""
     main_config = MAIN / "config_L2.yaml"
     baseline = yaml.safe_load(main_config.read_text())["sweep"]["t_final_grid"]
-    with np.load(MULTIZ, allow_pickle=False) as data:
+    with np.load(locate(MULTIZ), allow_pickle=False) as data:
         multi_lam = np.asarray(data["lam"], float).tolist()
         multi_z = np.asarray(data["z"], float).tolist()
     specs = [{
@@ -183,7 +188,7 @@ def select_corrected_input(spec: dict, contract: dict | None = None) -> None:
             f"Corrected input has not been prepared: {table}. "
             "See CORRECTED_INPUTS.md. Historical tables are never substituted."
         )
-    with np.load(table, allow_pickle=False) as corrected, np.load(historical_table, allow_pickle=False) as old:
+    with np.load(table, allow_pickle=False) as corrected, np.load(locate(historical_table), allow_pickle=False) as old:
         meta = json.loads(np.asarray(corrected["cosmo_meta"], dtype=np.uint8).tobytes().decode())
         if meta.get("band_quadrature") != [[96, 512]]:
             raise ValueError(f"Expected n_ell=96 and n_phi=512 in every HIGH band: {table}")
@@ -356,8 +361,23 @@ def validate_config_paths(config: dict, work: Path) -> None:
             raise FileNotFoundError(f"Generated config has an unresolved input: {path}")
 
 
+def require_tables_in_place(plan: dict) -> None:
+    """Refuse targets whose vertex table is archived.
+
+    A generated callable opens its table by path at run time, so the archive
+    resolver cannot serve it. Checked before anything is written.
+    """
+    absent = sorted({target["table"] for target in plan["targets"]
+                     if not Path(target["table"]).is_file()})
+    if absent:
+        raise FileNotFoundError(
+            "These vertex tables are archived and must be restored in place "
+            "before this batch is prepared or run: " + ", ".join(absent))
+
+
 def prepare(plan: dict, work: Path) -> None:
     work = work.resolve()
+    require_tables_in_place(plan)
     work.mkdir(parents=True, exist_ok=False)
     helper = variant_module()
     generated = []
@@ -424,6 +444,7 @@ def run_batch(work: Path) -> None:
     for entry in plan["inputs"] + plan["generated_inputs"]:
         if file_record(Path(entry["path"])) != entry:
             raise RuntimeError(f"Input changed after preparation: {entry['path']}")
+    require_tables_in_place(plan)
     # A shared advisory lock prevents two suite batches from running together.
     # The process check also catches historical drivers that do not use the lock.
     with (HERE / ".replay_suite.lock").open("a") as lock:

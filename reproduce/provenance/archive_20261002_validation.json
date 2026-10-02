@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-02",
+  "scope": "Superseded arrays and tables moved to the local archive; readers made manifest-only; R1 drivers made archive-aware. No scientific input or formula changed.",
+  "package_commit_before": "ac7ff248608352697524247b83e17aa8582e2e82",
+  "archived": {
+    "files": 53,
+    "bytes": 17076018,
+    "index": "reproduce/archived_inputs.json",
+    "archive_root": "_archive/cleanup_2026-10-02 (local, untracked)"
+  },
+  "figures": {
+    "regenerated": 17,
+    "identical_to_deployed": 17,
+    "command": "regen_figure.py --all, check_figures.py",
+    "run_three_times": "untouched tree, after the reader change, after the archive",
+    "note": "All 17 matched in the three runs listed. In a later run on the same day figure 8 (corr_operator_slices_draft.pdf) differed in 0.14% of pixels because the canoes working tree had meanwhile been edited elsewhere (corr_op/table.py, cache-key rounding). Regenerated against a scratch copy of the pinned canoes state (077a64c plus the recorded patch) it matched again; the other 16 matched in that run as well."
+  },
+  "numbers": {
+    "rows_before": 33,
+    "rows_after": 32,
+    "dropped": [
+      "Historical FK(0.5') sweep (cut1000, old callable), kk"
+    ],
+    "changed": []
+  },
+  "driver_checks": {
+    "identical_before_and_after": [
+      "replay_suite plan: main, multiz, ladder (contract52), historical inputs, historical source",
+      "assemble_figure_products ladder --validate-only"
+    ],
+    "identical_except_own_script_hashes": [
+      "companion_suite plan: ff all, o0-diagnostic all"
+    ],
+    "mc_update": "runtime.configure and runtime.fold_values pass",
+    "failing_before_and_after": {
+      "assemble_figure_products multiz": "the FF plan pins a replay_suite.py hash that the 2026-09-30 edit already changed",
+      "verify_restricted_ladder": "true_redshift_fk_gl24_corrected_tree52/prepared.json is not in the tree"
+    },
+    "after_review_fixes": "Replay and companion plans rebuilt in memory with the canoes working-state check bypassed, because that check had started to refuse the edited canoes tree. Results identical to the untouched-tree baseline, apart from the two edited drivers' own hashes."
+  },
+  "pinned_records": {
+    "prepared_json_inputs_matching": 254,
+    "of_which_read_from_archive": 51,
+    "not_matching": {
+      "replay_suite.py": "5 plans, predates this change",
+      "companion_suite.py": "5 plans, edited here"
+    },
+    "other_records_checked": 547,
+    "other_records_not_matching": {
+      "assemble_figure_products.py": "3, edited here",
+      "companion_suite.py": "1, edited here",
+      "replay_suite.py": "1, predates this change",
+      "true_redshift_fk_gl24_corrected_tree52/prepared.json": "1 missing, predates this change"
+    }
+  },
+  "kept_in_place": [
+    "run configurations under sftwick_outputs/2PCF (replay templates)",
+    "equal_time_limber cut1000 table and callable (imported by the accepted FF configurations)",
+    "rebuild/products/pieces (untracked n_phi = 64 band pieces)"
+  ],
+  "scripts_needing_restored_inputs": 37,
+  "limits": "Reuses the workstation environments. Not a clean-machine test. No fold, vertex build or Monte Carlo run was repeated.",
+  "review": {
+    "independent_code_review": "no critical or high finding; one medium and three low, all addressed",
+    "fixes": [
+      "replay_suite.require_tables_in_place runs before prepare creates its folder and before run_batch writes started.json",
+      "archived_inputs.locate checks a listed file against the index when it is found in place too, including behind a link",
+      "unused import and stale docstrings removed in the edited readers"
+    ],
+    "resolver_cases_exercised": [
+      "archived and absent in place",
+      "relative path",
+      "unlisted file",
+      "missing file",
+      "directory",
+      "link to the genuine copy",
+      "different bytes in place (refused)",
+      "genuine file restored in place"
+    ]
+  }
+}

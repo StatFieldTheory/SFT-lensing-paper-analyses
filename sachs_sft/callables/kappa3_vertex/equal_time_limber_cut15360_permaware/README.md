@@ -1,5 +1,11 @@
 # Corrected kappa3 vertex callable
 
+> **Table archived on 2026-10-02.** `table_permclosed.npz`, the August table (n_phi = 64, pair phase
+> dropped) that `perm_aware_kappa3_callable.py` opens by default, was moved to
+> `_archive/cleanup_2026-10-02/` (index: `reproduce/archived_inputs.json`). The callable is unchanged and
+> is still the production callable; set `TABLE_PATH` before the first call. The manuscript's table is
+> `../rebuild/products/pieces_nphi512/table_permclosed_np512.npz`.
+
 Fixes the two defects the note reports in the production callable,
 `sachs_sft/callables/kappa3_vertex/equal_time_limber/equal_time_limber_kappa3_callable.py`.
 Nothing here overwrites the production file; the replacement is exercised

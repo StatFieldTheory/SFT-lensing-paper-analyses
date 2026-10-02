@@ -21,9 +21,19 @@ corresponding affine endpoints.
 
 The manifest contains 12 selections and 22 hashed file members, including the
 cutoff-ladder directory. Readers check the selected products before use. A
-missing or modified member causes an error. Keep the manifest in place to use
-the revised results; without it, the readers select historical inputs. A
-candidate manifest is not an activation record.
+missing or modified member causes an error. The manifest is required: without
+it the readers stop with an error, because the historical inputs they once
+fell back to were archived on 2026-10-02. A candidate manifest is not an
+activation record.
+
+[reproduce/archived_inputs.json](reproduce/archived_inputs.json) lists the 53
+archived files with their SHA256 hashes and the commit that still holds them.
+The copies live under the local, untracked `_archive/cleanup_2026-10-02/`. The
+referee-revision run records pin 31 of them by path and hash, so the
+recomputation drivers read them through `reproduce/archived_inputs.py`, which
+checks each archived copy against its recorded hash and keeps the recorded
+path. On a machine without the archive those drivers stop and name the commit
+to recover from. Figure regeneration and the number check do not need it.
 
 Useful records:
 
@@ -31,6 +41,9 @@ Useful records:
   17 figures regenerated without local notes or archived analyses, matching
   figure content and 33 unchanged numerical summaries. Existing dependency
   environments were reused.
+- [Archive validation](reproduce/provenance/archive_20261002_validation.json):
+  the same 17 figures and the 32 remaining numerical summaries after the
+  superseded inputs were archived, with the driver checks that were run.
 - [Framework provenance](sachs_sft/analyses/r1_sft061/framework_provenance.json):
   external commits, working-state hashes and selected input hashes.
 - [Source map](sachs_sft/analyses/r1_sft061/source_map.json): source redshifts,
@@ -109,7 +122,7 @@ With the environments and paths configured:
 The figure command runs generators sequentially, reusing the accepted arrays and
 Monte Carlo cache. It writes each generator's output directory and execution
 logs. It does not run new vertex builds or SFT folds. The number command prints
-33 summaries and writes `reproduce/numbers.json`; it is a claim-versus-product
+32 summaries and writes `reproduce/numbers.json`; it is a claim-versus-product
 check, not an automatic comparison with the current manuscript text or a proof
 of numerical convergence.
 

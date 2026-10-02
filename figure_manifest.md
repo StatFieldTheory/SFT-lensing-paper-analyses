@@ -39,8 +39,9 @@ found identical content and zero raster differences for all 17 PDFs after
 regeneration. PDF date metadata can prevent raw-byte equality on another run;
 font metrics and external environment changes can affect rendering.
 
-Historical arrays under `sachs_sft/sftwick_outputs/2PCF/` remain as comparison
-inputs and dependencies of numerical replay. The active manifest replaces their
-role in the affected figure readers; their presence does not mean they are the
-current plotted results. Do not remove historical inputs without checking the
-replay configurations and recorded provenance.
+The historical arrays that used to sit under `sachs_sft/sftwick_outputs/2PCF/`
+and beside the vertex callables were archived on 2026-10-02 and are listed in
+`reproduce/archived_inputs.json`. The figure readers take every input from the
+active manifest and have no fallback. The run configurations remain in place as
+templates for numerical replay, whose drivers read the archived arrays through
+`reproduce/archived_inputs.py`.

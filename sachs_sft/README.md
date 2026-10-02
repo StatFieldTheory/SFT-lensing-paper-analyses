@@ -25,7 +25,7 @@ configurations.
 | Path | Role |
 |---|---|
 | `callables/C_propagator/corr_op/` | Correlation-propagator implementation and stored table |
-| `callables/kappa3_vertex/equal_time_limber_cut15360_permaware/` | Permutation-aware vertex callable and historical table |
+| `callables/kappa3_vertex/equal_time_limber_cut15360_permaware/` | Permutation-aware vertex callable; its historical table is archived |
 | `callables/kappa3_vertex/equal_time_limber/` | Historical vertex inputs, build helpers and driving-field slice plotter |
 | `callables/kappa3_vertex/rebuild/` | Vertex assembly, variant folding, cutoff studies and saved tables |
 | `callables/kappa3_vertex/b_model/` | Matter-bispectrum models |
@@ -33,7 +33,7 @@ configurations.
 | `analyses/analysis1/r1_aligned/` | Continuous source-response Order-0 calculation and PyCCL benchmark |
 | `analyses/analysis3/` | Two-point correlation and angular-spectrum figure generators |
 | `analyses/mc_sachs_2pt/`, `analyses/mc_fk_complete/` | Monte Carlo implementations and historical controls |
-| `sftwick_outputs/2PCF/` | Historical per-run configurations and products |
+| `sftwick_outputs/2PCF/` | Historical per-run configurations; their arrays are archived |
 | `scripts/` | Shared response, covariance, geometry and sweep utilities |
 
 A folder's name or `PRODUCTION` marker alone does not identify the current

@@ -1,0 +1,221 @@
+{
+  "schema_version": 1,
+  "archived_on": "2026-10-02",
+  "recover_from_commit": "ac7ff248608352697524247b83e17aa8582e2e82",
+  "archive_root": "../_archive/cleanup_2026-10-02",
+  "note": "Superseded arrays and tables moved out of the working tree. archived_inputs.py reads them for the R1 provenance guards.",
+  "files": {
+    "sachs_sft/analyses/analysis1/build_pyccl_fkem_reference.py": {
+      "sha256": "ad7762130e5e2beb50228d42e23eec0ad6792571aec093d59efb6b596c117b8d",
+      "bytes": 6929
+    },
+    "sachs_sft/analyses/analysis1/plot_analysis1_O0_vs_pyccl_fkem.py": {
+      "sha256": "32af3bb707ce3e0da4e138270f66d904c9e04b297e58a665ee763537d9505ae1",
+      "bytes": 7832
+    },
+    "sachs_sft/analyses/analysis1/pyccl_xi_shear_reference_fkem.npz": {
+      "sha256": "8a4a151089550681bbaec8b2991fbd56872a976d613e05507fb4bcf9db1256ce",
+      "bytes": 77502
+    },
+    "sachs_sft/analyses/analysis3/outputs/multiz_kappa_2pcf_5z.npz": {
+      "sha256": "e549a41a0d3e3642f9330bebce6fb9cd6b1e7cfa20d9f73db35466d73a826584",
+      "bytes": 6644
+    },
+    "sachs_sft/analyses/mc_fk_complete/_markers_pooled.npz": {
+      "sha256": "654d7b7425c97b275566d64146df7e5fabfb21cef7543d6c42c8b93fe9aa39d4",
+      "bytes": 1640
+    },
+    "sachs_sft/analyses/mc_sachs_2pt/outputs/appendix_mc_curve.npz": {
+      "sha256": "7aeba82c9aeb33b96865cfe7f476ae2abb6ab456135792fb459e1fc666534759",
+      "bytes": 4162
+    },
+    "sachs_sft/callables/kappa3_vertex/equal_time_limber/outputs/zeta_bands_cut15360.npz": {
+      "sha256": "7a6dba3bb749dc846046eb9c887c8a40b2102be1d22a3fd1f2808bdc0fb49e80",
+      "bytes": 179202
+    },
+    "sachs_sft/callables/kappa3_vertex/equal_time_limber/outputs/zeta_bands_cut15360_gmax85.npz": {
+      "sha256": "e46c1a51488ceb6fcb49e65b9b5918a1f79317bd7f3fba9c45a0cea7cf60aa3f",
+      "bytes": 108450
+    },
+    "sachs_sft/callables/kappa3_vertex/equal_time_limber_cut15360_permaware/table_permclosed.npz": {
+      "sha256": "b400dc5b11e1033bc53c3d59371208de1a54816ac7cd6a270c114487a91c9feb",
+      "bytes": 1702886
+    },
+    "sachs_sft/callables/kappa3_vertex/rebuild/products/fk_kernel_crosscheck.npz": {
+      "sha256": "b711fbae9d199cb0f055270f96a601ab8cf2977281f7f60f66a0d71a307ee528",
+      "bytes": 1624
+    },
+    "sachs_sft/callables/kappa3_vertex/rebuild/products/mean_kappa_plateaus.npz": {
+      "sha256": "c7226c1596b873d875fb7a6cb885850b2c7060ad328a75cc4995d019a39f4b40",
+      "bytes": 1172
+    },
+    "sachs_sft/callables/kappa3_vertex/rebuild/products/pieces_nphi512/ladder/table_tree_np512_cut1920_xi.npz": {
+      "sha256": "3322c2dd78e46a6a613a7f97e019e84cbfd4591aa04ad9a80eb2fbfda95d250e",
+      "bytes": 13653
+    },
+    "sachs_sft/callables/kappa3_vertex/rebuild/products/pieces_nphi512/ladder/table_tree_np512_cut3840_xi.npz": {
+      "sha256": "597529090a0b2d053334e17f2ab29df702b1390887c70a3d9af08e0f7a8c10f3",
+      "bytes": 13653
+    },
+    "sachs_sft/callables/kappa3_vertex/rebuild/products/pieces_nphi512/ladder/table_tree_np512_cut7680_xi.npz": {
+      "sha256": "2c11b9cac022f1c5e2d8906c5294f125b1507c59477474dccd03774bfa17d272",
+      "bytes": 13653
+    },
+    "sachs_sft/callables/kappa3_vertex/rebuild/products/pieces_nphi512/ladder/table_tree_np512_cut960_xi.npz": {
+      "sha256": "997193c28ab854a1fff2711a4caae8e3596d25e52779d2205d610a9cb2426e6a",
+      "bytes": 13653
+    },
+    "sachs_sft/callables/kappa3_vertex/rebuild/products/pieces_nphi512/multiz_fk_np512_6planes.npz": {
+      "sha256": "b393fddc7872f754064431c7fa1b74db3c6d4531310639c2990363271bae912d",
+      "bytes": 5412
+    },
+    "sachs_sft/callables/kappa3_vertex/rebuild/products/pieces_nphi512/table_deployed_plaincall_xi.npz": {
+      "sha256": "adc20b9cfb7cf4c9ad698b87dfbc62c941925bbeb1029c30ee9d17c26c4d2a1f",
+      "bytes": 13653
+    },
+    "sachs_sft/callables/kappa3_vertex/rebuild/products/pieces_nphi512/table_permclosed_np512_permaware_xi.npz": {
+      "sha256": "866651302f53e640fdce871370717c70c7df6b7bd39859b81e5a9ce92d34bbac",
+      "bytes": 13653
+    },
+    "sachs_sft/callables/kappa3_vertex/rebuild/products/pieces_nphi512/table_permclosed_np512_xi.npz": {
+      "sha256": "7b473cc0464f81eda5afb071cbd8c6f78ad2184049752e57dcc71bf31cc288bd",
+      "bytes": 13653
+    },
+    "sachs_sft/callables/kappa3_vertex/rebuild/products/table_bihalofit_cut15360_r4.npz": {
+      "sha256": "61c1f44b5ba9d75d650081efeb8a7f872156b08e7c3b72f20b69af204abff8a2",
+      "bytes": 1454197
+    },
+    "sachs_sft/callables/kappa3_vertex/rebuild/products/table_bihalofit_cut1920_r4.npz": {
+      "sha256": "c3790900465751ea497cb128b5126fb9be617191c03f2c69d1282e55d2794187",
+      "bytes": 1454105
+    },
+    "sachs_sft/callables/kappa3_vertex/rebuild/products/table_bihalofit_cut3840_r4.npz": {
+      "sha256": "e9d1017b6f3850226bc114d0701ed2fe59f8310edbb21bb5de22a2db08b43699",
+      "bytes": 1454134
+    },
+    "sachs_sft/callables/kappa3_vertex/rebuild/products/table_bihalofit_cut7680_r4.npz": {
+      "sha256": "ed1fc1acb41d823a942a416ef76f1d6c982efc4005688712db84e834fd9406b4",
+      "bytes": 1454163
+    },
+    "sachs_sft/callables/kappa3_vertex/rebuild/products/table_bihalofit_cut960_r4.npz": {
+      "sha256": "52cf790d02e856900ccde102b26f661921b0af7f97b3927afb56d6cdde3d75c6",
+      "bytes": 1454075
+    },
+    "sachs_sft/callables/kappa3_vertex/rebuild/products/table_tree_cut15360_r4.npz": {
+      "sha256": "5ee5a0ece58318e6a5818f5f81dd9ba0727e72e350eff3dc263c683fff6c94a0",
+      "bytes": 1454187
+    },
+    "sachs_sft/callables/kappa3_vertex/rebuild/products/table_tree_cut1920_r4.npz": {
+      "sha256": "2accc9de90ee112785de9c7b92274eb34a416fd1a5502e17ceabf6a66d3e15f0",
+      "bytes": 1454095
+    },
+    "sachs_sft/callables/kappa3_vertex/rebuild/products/table_tree_cut3840_r4.npz": {
+      "sha256": "95cc1f51e64e981e5f56acd43a8ef86c0d3c61963df92e3d06b42fb7100f73f2",
+      "bytes": 1454124
+    },
+    "sachs_sft/callables/kappa3_vertex/rebuild/products/table_tree_cut7680_r4.npz": {
+      "sha256": "300b83bf75368013458116431e97fdfc0debd8791ad56fa2311df7abc0c94704",
+      "bytes": 1454153
+    },
+    "sachs_sft/callables/kappa3_vertex/rebuild/products/table_tree_cut960_r4.npz": {
+      "sha256": "5c36bbc8113adfd417475e34310bd7b4e780973c682438da9c57102b4ccdecb7",
+      "bytes": 1454065
+    },
+    "sachs_sft/sftwick_outputs/2PCF/C_corr_op_K_limber_FF/xi_C_corr_op_K_limber_FF.npz": {
+      "sha256": "cc3df79f8ea12427170f31af9c8d549f9c27cdf39d3d8ac228221b7ae921ac5a",
+      "bytes": 13653
+    },
+    "sachs_sft/sftwick_outputs/2PCF/C_corr_op_K_limber_FK/xi_C_corr_op_K_limber_FK.npz": {
+      "sha256": "c3eae8cbe8515668f33da5b6a0f5aa7fc6888380d188b0e35930853aa892f34a",
+      "bytes": 13653
+    },
+    "sachs_sft/sftwick_outputs/2PCF/C_corr_op_K_limber_FK_cut15360_permfix/xi_C_corr_op_K_limber_FK_cut15360_permfix.npz": {
+      "sha256": "ef4e198ed6bb27903c483f5975a8510a53e5377fbfd23f81a97d12dd275d4a5e",
+      "bytes": 13653
+    },
+    "sachs_sft/sftwick_outputs/2PCF/C_corr_op_O0/xi_C_corr_op_O0.npz": {
+      "sha256": "517d19aa55c36aabc55488da0ee327e4b017ff158b4e5a6a96b840bd7c9d53f2",
+      "bytes": 13653
+    },
+    "sachs_sft/sftwick_outputs/2PCF/cutoff_ladder/table_bihalofit_cut15360_r4_xi.npz": {
+      "sha256": "0f65af3f915ccb044b6baa5cc46afe3ca1d7a594b38596eb9bab048b8e4fefa3",
+      "bytes": 13653
+    },
+    "sachs_sft/sftwick_outputs/2PCF/cutoff_ladder/table_bihalofit_cut1920_r4_xi.npz": {
+      "sha256": "72ac86e2f6c6794d0f6fd8935b186210232508d8b0cc6add3a7cf63827acf1df",
+      "bytes": 13653
+    },
+    "sachs_sft/sftwick_outputs/2PCF/cutoff_ladder/table_bihalofit_cut3840_r4_xi.npz": {
+      "sha256": "b6329adde7aba4e8311574e8125cab93b521243cbcc2e69c0978bbd650e8c0c6",
+      "bytes": 13653
+    },
+    "sachs_sft/sftwick_outputs/2PCF/cutoff_ladder/table_bihalofit_cut7680_r4_xi.npz": {
+      "sha256": "63703ba303bf94f3c861b69516acbb6255096b4e993b0a794f7c21db9e9feae7",
+      "bytes": 13653
+    },
+    "sachs_sft/sftwick_outputs/2PCF/cutoff_ladder/table_bihalofit_cut960_r4_xi.npz": {
+      "sha256": "b15c952ad175c690686e77b91ccb57fb1be2ca6e3fbec1b051a0054847c17fc0",
+      "bytes": 13653
+    },
+    "sachs_sft/sftwick_outputs/2PCF/cutoff_ladder/table_tree_cut15360_r4_xi.npz": {
+      "sha256": "f8c712347729dd4a0b78ae49904585b91abab12634f0b35b8a15922260c65943",
+      "bytes": 13653
+    },
+    "sachs_sft/sftwick_outputs/2PCF/cutoff_ladder/table_tree_cut1920_r4_xi.npz": {
+      "sha256": "81da3f4f4aea7e315f65c697d401e3a9f45738977c4fe2b9bf60aa9d30310e18",
+      "bytes": 13653
+    },
+    "sachs_sft/sftwick_outputs/2PCF/cutoff_ladder/table_tree_cut3840_r4_xi.npz": {
+      "sha256": "816cb1ae553f0f239b4b224cfe6c8b3ec72c1f831ce79c8b788c8f54bb5caf41",
+      "bytes": 13653
+    },
+    "sachs_sft/sftwick_outputs/2PCF/cutoff_ladder/table_tree_cut7680_r4_xi.npz": {
+      "sha256": "b1b2a40cae666a341fd353e0f2091b6191b57dd37662d3dc6ec022896f88ec9e",
+      "bytes": 13653
+    },
+    "sachs_sft/sftwick_outputs/2PCF/cutoff_ladder/table_tree_cut960_r4_xi.npz": {
+      "sha256": "bbb5b28ee38d8b99ec97149f797fe2096953e26fba05794015d4969a8feb1295",
+      "bytes": 13653
+    },
+    "sachs_sft/sftwick_outputs/2PCF/multiz/multiz_ff_real.npz": {
+      "sha256": "80a52668243153977cde42a1fd09bcc66406f5a0843e0be9c2ed5de39f1d776e",
+      "bytes": 1386
+    },
+    "sachs_sft/sftwick_outputs/2PCF/multiz/multiz_ff_real_all5.npz": {
+      "sha256": "8e6ec3ea1fdc2b82530aaee05eeb42005d2f2d038258c715111213c72d6e30c5",
+      "bytes": 2694
+    },
+    "sachs_sft/sftwick_outputs/2PCF/multiz/multiz_ff_real_z1p7.npz": {
+      "sha256": "3afeb8ff602fbcd855dea5eaf485d6df4f54da3f718ddc81e6cd821ae9237847",
+      "bytes": 1386
+    },
+    "sachs_sft/sftwick_outputs/2PCF/multiz/multiz_ff_real_z2p5.npz": {
+      "sha256": "55720895e196ffc099166aa5af5465f7c6ce4ef19bd3f3c4d39e6ca48e1af46f",
+      "bytes": 1386
+    },
+    "sachs_sft/sftwick_outputs/2PCF/multiz/multiz_ff_real_z3p2.npz": {
+      "sha256": "2c92cac8c496ec6a2c961abd5bcacdec89a7c6b64f6f0a88ad403520fd4f36f9",
+      "bytes": 1386
+    },
+    "sachs_sft/sftwick_outputs/2PCF/multiz/multiz_ff_real_z4p0.npz": {
+      "sha256": "8b6b2b90aab5f1c7a6d0b8d3df41646871790e7a65838f42d355832e526e3ec8",
+      "bytes": 1386
+    },
+    "sachs_sft/sftwick_outputs/2PCF/multiz/multiz_ff_real_z5p0ctl.npz": {
+      "sha256": "740339b83325ecfa9a4d313d70237f50cd6b37636f19011c90aa5be8f8ec196b",
+      "bytes": 1386
+    },
+    "sachs_sft/sftwick_outputs/2PCF/multiz/order0_5planes_figure_lambdas_xi.npz": {
+      "sha256": "1de28c408aba8c691a9354dd51333fdf0e12a6b8b24f9af044b6b1652eafa102",
+      "bytes": 55899
+    },
+    "sachs_sft/sftwick_outputs/2PCF/multiz/order0_multiz_xi.npz": {
+      "sha256": "41ecc5a360d5ddf8278b455b50a206a73eaa0717d6831af8e931accfa257cb7f",
+      "bytes": 77019
+    },
+    "sachs_sft/sftwick_outputs/2PCF/multiz/source_distances.npz": {
+      "sha256": "54d71a19930c0f935857833698ef22f6f6f985ba031d9e9f73a165e2efd715e4",
+      "bytes": 624
+    }
+  }
+}

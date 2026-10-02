@@ -1,5 +1,11 @@
 # 2PCF / multiz
 
+> **Result arrays archived on 2026-10-02.** The arrays of this run are superseded and were moved to
+> `_archive/cleanup_2026-10-02/` (index: `reproduce/archived_inputs.json`). The configuration stays here
+> because the referee-revision drivers in `sachs_sft/analyses/r1_sft061/` use it as their template. The
+> manuscript's products are the ones selected by `reproduce/active_products.json`. The text below
+> describes the run as it stood and is kept as a record.
+
 Source-redshift sweeps behind figure 5 (`multiz_kappa_xi_cl.pdf`) and the redshift-trend notes.
 
 * `order0_multiz_xi.npz` + `source_distances.npz`: exact Order-0 at seven source planes

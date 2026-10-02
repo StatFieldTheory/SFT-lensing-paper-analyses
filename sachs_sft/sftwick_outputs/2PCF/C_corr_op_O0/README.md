@@ -1,5 +1,11 @@
 # 2PCF / C_corr_op_O0
 
+> **Result arrays archived on 2026-10-02.** The arrays of this run are superseded and were moved to
+> `_archive/cleanup_2026-10-02/` (index: `reproduce/archived_inputs.json`). The configuration stays here
+> because the referee-revision drivers in `sachs_sft/analyses/r1_sft061/` use it as their template. The
+> manuscript's products are the ones selected by `reproduce/active_products.json`. The text below
+> describes the run as it stood and is kept as a record.
+
 **Observable**: lensing 2-point correlation `ξ(γ)` (κκ, κγ±, γ±γ±) at **Order-0**
 (Born/tree level), using the **corr_op** correlation propagator C = ⟨Φ Φ⟩.
 This is the sachs_sft re-creation of the old `analysis_1b` corr_op-L2 Order-0 run.

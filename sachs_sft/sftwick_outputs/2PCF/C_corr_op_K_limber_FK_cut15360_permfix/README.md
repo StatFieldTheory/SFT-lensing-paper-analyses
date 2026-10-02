@@ -1,5 +1,11 @@
 # 2PCF / C_corr_op_K_limber_FK_cut15360_permfix
 
+> **Result arrays archived on 2026-10-02.** The arrays of this run are superseded and were moved to
+> `_archive/cleanup_2026-10-02/` (index: `reproduce/archived_inputs.json`). The configuration stays here
+> because the referee-revision drivers in `sachs_sft/analyses/r1_sft061/` use it as their template. The
+> manuscript's products are the ones selected by `reproduce/active_products.json`. The text below
+> describes the run as it stood and is kept as a record.
+
 **The FK two-point sweep of the manuscript** (figures 2, 3, 4, 6 and every FK number, ell_max = 15360).
 
 * `xi_C_corr_op_K_limber_FK_cut15360_permfix.npz`: byte-identical to

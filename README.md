@@ -26,7 +26,7 @@ Run the following from this repository's root in the configured Python environme
 python reproduce/regen_figure.py --list     # inspect current generators and interpreters
 python reproduce/regen_figure.py --all      # regenerate 17 figure PDFs from saved products
 python reproduce/check_figures.py          # compare with the manuscript's ../figures/
-python reproduce/check_numbers.py          # print 33 numerical summaries and update numbers.json
+python reproduce/check_numbers.py          # print 32 numerical summaries and update numbers.json
 ```
 
 These commands reuse the saved scientific products. They do not rerun the full
@@ -36,16 +36,21 @@ callables. The comparison step requires the separate manuscript's deployed PDFs.
 
 The current R1 results are selected by
 [reproduce/active_products.json](reproduce/active_products.json). It pins 12
-product selections, including their SHA256 hashes. Keep this manifest in place:
-removing it selects the historical inputs. Missing or altered selected products
-cause an error rather than a silent fallback.
+product selections, including their SHA256 hashes. The manifest is required: a
+missing manifest, or a missing or altered selected product, stops the readers
+with an error. There is no fallback. The superseded arrays and tables that the
+readers once fell back to were archived on 2026-10-02 and are listed with their
+hashes in [reproduce/archived_inputs.json](reproduce/archived_inputs.json).
 
 The [cleanup validation](reproduce/provenance/cleanup_20260930_validation.json)
 on 2026-09-30 regenerated all 17 figures in an isolated copy without local notes
 or archived analyses. All figure contents matched, with zero raster differences;
 all 33 numerical summaries were unchanged. This test reused the workstation's
 dependency environments, so it is not a clean-machine installation test or a
-new numerical convergence proof.
+new numerical convergence proof. After the 2026-10-02 archive the same 17
+figures matched again and the 32 remaining summaries were unchanged
+([record](reproduce/provenance/archive_20261002_validation.json)); the summary
+that was dropped reported the archived June FK sweep.
 
 ## Where to look
 

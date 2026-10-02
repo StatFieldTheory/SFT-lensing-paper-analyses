@@ -1,5 +1,10 @@
 # analysis1 — Order-0 lensing 2PCFs: SFT corr_op (non-Limber) vs PyCCL FKEM
 
+> **Superseded and archived on 2026-10-02.** `plot_analysis1_O0_vs_pyccl_fkem.py`,
+> `build_pyccl_fkem_reference.py` and `pyccl_xi_shear_reference_fkem.npz` were moved to
+> `_archive/cleanup_2026-10-02/` (index: `reproduce/archived_inputs.json`). The manuscript's Order-0
+> comparison is in `r1_aligned/`. The text below describes the earlier comparison and is kept as a record.
+
 **Question.** Does the sft-wick L2 expansion's **Order-0** lensing 2-point
 functions reproduce PyCCL when *both sides are non-Limber*? Earlier the PyCCL
 reference was pure Limber, so the corr_op (full non-Limber) curve could only

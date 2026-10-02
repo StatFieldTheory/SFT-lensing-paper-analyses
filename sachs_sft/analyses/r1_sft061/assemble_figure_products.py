@@ -12,11 +12,15 @@ import hashlib
 import json
 from pathlib import Path
 
+import sys
+
 import numpy as np
 import yaml
 
 HERE = Path(__file__).resolve().parent
 ALIGNED = HERE.parent / "analysis1" / "r1_aligned"
+sys.path.insert(0, str(HERE.parents[2] / "reproduce"))
+from archived_inputs import locate  # noqa: E402
 REDSHIFTS = np.asarray([1.0, 1.7, 2.5, 3.2, 4.0])
 CUTS = (960, 1920, 3840, 7680, 15360)
 FRAMEWORK_COMMIT = "6945815ad9e6efa2b9e768891d6bf92b1214670d"
@@ -30,9 +34,10 @@ class Inputs:
 
     def record(self, path: Path, expected: dict | None = None) -> dict:
         path = path.resolve()
-        with path.open("rb") as stream:
+        stored = locate(path)  # an archived input is hashed in the archive
+        with stored.open("rb") as stream:
             digest = hashlib.file_digest(stream, "sha256").hexdigest()
-        record = {"path": str(path), "sha256": digest, "bytes": path.stat().st_size}
+        record = {"path": str(path), "sha256": digest, "bytes": stored.stat().st_size}
         if expected is not None and (expected["sha256"] != digest or
                                     expected.get("bytes", record["bytes"]) != record["bytes"]):
             raise ValueError(f"Input hash or size mismatch: {path}")

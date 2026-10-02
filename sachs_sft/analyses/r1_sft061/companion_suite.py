@@ -42,17 +42,17 @@ def source_specs() -> list[dict]:
         "historical_product": str(FF_DIR / "xi_C_corr_op_K_limber_FF.npz"),
         "group": "main", "component_pairs": main_config["sweep"]["component_pairs"],
     }]
-    with np.load(replay.MULTIZ, allow_pickle=False) as data:
+    with np.load(replay.locate(replay.MULTIZ), allow_pickle=False) as data:
         redshifts = np.asarray(data["z"], float)
         fk_lambdas = np.asarray(data["lam"], float)
-    with np.load(MULTIZ_DIR / "multiz_ff_real_all5.npz", allow_pickle=False) as real:
+    with np.load(replay.locate(MULTIZ_DIR / "multiz_ff_real_all5.npz"), allow_pickle=False) as real:
         if not np.array_equal(real["z"], redshifts):
             raise ValueError("Actual plotted FF and figure redshift arrays disagree")
         for index, redshift in enumerate(redshifts):
             if float(redshift) not in FF_SIDECARS:
                 raise ValueError(f"No traced historical FF sidecar for z={redshift}")
             product = MULTIZ_DIR / FF_SIDECARS[float(redshift)]
-            with np.load(product, allow_pickle=False) as source:
+            with np.load(replay.locate(product), allow_pickle=False) as source:
                 old_lam = np.asarray(source["lam"], float).reshape(-1)
                 ff = np.asarray(source["ff"], float).reshape(-1)
                 if old_lam.size != 1:

@@ -1,5 +1,11 @@
 # 2PCF / C_corr_op_K_limber_FK
 
+> **Result arrays archived on 2026-10-02.** The arrays of this run are superseded and were moved to
+> `_archive/cleanup_2026-10-02/` (index: `reproduce/archived_inputs.json`). The configuration stays here
+> because the referee-revision drivers in `sachs_sft/analyses/r1_sft061/` use it as their template. The
+> manuscript's products are the ones selected by `reproduce/active_products.json`. The text below
+> describes the run as it stood and is kept as a record.
+
 **Observable**: lensing 2-point ξ(γ) at **Order-[0,2]**, **FK sweep**, with the **corr_op**
 C propagator and the **equal-time-Limber** κ³ vertex. This is the run that reproduces
 the validated **FK κκ ≈ +3.086e-5** baseline (γ=0.5′, z_s=5).

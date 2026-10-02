@@ -1,5 +1,11 @@
 # 2PCF / cutoff_ladder
 
+> **Result arrays archived on 2026-10-02.** The arrays of this run are superseded and were moved to
+> `_archive/cleanup_2026-10-02/` (index: `reproduce/archived_inputs.json`). The configuration stays here
+> because the referee-revision drivers in `sachs_sft/analyses/r1_sft061/` use it as their template. The
+> manuscript's products are the ones selected by `reproduce/active_products.json`. The text below
+> describes the run as it stood and is kept as a record.
+
 The ten folded FK sweeps behind figure 17 (`fk_cutoff_convergence.pdf`) and the convergence numbers of the
 cutoff subsection: `table_<model>_cut<N>_r4_xi.npz` for model = tree, bihalofit and N = 960, 1920, 3840,
 7680, 15360. Each is the production FK fold (sorting callable, 40-point gamma grid, t_final = 2313.029,
