@@ -1,27 +1,12 @@
-"""What actually carries E minus B in the FK term.
+"""Historical single-placement channel diagnostic, not a current FK validation.
 
-The paper's claim is that the FK power splits equally between the two
-shear polarizations, Delta C_EE = Delta C_BB, because the difference
-<Phi_00 Psi_+ Psi_+> - <Phi_00 Psi_x Psi_x> vanishes for a statistically
-isotropic driving field.
+The algebra below retains the historical K111=(PPP+3Dmod)/4 fill at one
+placement. The current v2 callable instead reconstructs K111 using Dmod
+at three cyclic leg placements. This script does not implement or validate
+that reconstruction or the folded xi_plus/xi_minus and E/B spectra.
 
-That difference is a specific vertex channel. In the production callable's
-real-basis reconstruction the coupling tensor is filled as
-
-    K011 = (zeta_TPP + zeta_Bmod) / 2
-    K022 = (zeta_Bmod - zeta_TPP) / 2
-    K111 = (zeta_PPP + 3 zeta_Dmod) / 4
-    K122 = (zeta_Dmod - zeta_PPP) / 4
-
-so the combinations that matter are read off directly rather than derived:
-the SUM K011 + K022 and K111 + K122 feed xi_+ (that is C_EE + C_BB), and
-the DIFFERENCE K011 - K022 and K111 - K122 feed xi_- (that is
-C_EE - C_BB). This script verifies those combinations numerically, then
-measures the channels that survive in the difference, as a function of
-separation.
-
-If the difference channel vanishes only at zero separation, the equal split
-is a zero-separation identity and not a property of the plotted range.
+Printed channel combinations and raw ratios are descriptive diagnostics
+only. They do not establish equal E/B power in an accepted FK fold.
 """
 
 from __future__ import annotations
@@ -35,7 +20,7 @@ ARCMIN = 180.0 * 60.0 / np.pi
 
 
 def verify_combinations() -> None:
-    """Check the sum and difference combinations on random channel values."""
+    """Check only the historical single-placement algebra on random values."""
     rng = np.random.default_rng(0)
     tpp, bmod, ppp, dmod = rng.normal(size=4)
     k011 = 0.5 * (tpp + bmod)
@@ -49,10 +34,27 @@ def verify_combinations() -> None:
         "K111 - K122 = (zeta_PPP + zeta_Dmod)/2": (k111 - k122,
                                                    0.5 * (ppp + dmod)),
     }
-    print("Combination check (exact arithmetic on the callable's own fill):")
+    print("Historical single-placement algebra check (not current callable validation):")
     for label, (lhs, rhs) in checks.items():
         print(f"  {label:42s} residual {abs(lhs - rhs):.3e}")
     print()
+
+
+def collapsed_slot0_rows(triples):
+    """Select slot0 with exact 12-decimal keys, refusing duplicate rows."""
+    t = np.asarray(triples, dtype=float)
+    if t.ndim != 2 or t.shape[1] != 3 or not np.isfinite(t).all():
+        raise ValueError("Expected finite cosine triples (n,3)")
+    keys = np.round(t, 12)
+    if len(np.unique(keys, axis=0)) != len(keys):
+        raise ValueError("Duplicate 12-decimal geometry keys")
+    mask = (keys[:, 0] == 1.0) & (keys[:, 1] == keys[:, 2])
+    idx = np.flatnonzero(mask)
+    if not idx.size:
+        raise ValueError("No collapsed slot0 rows")
+    if len(np.unique(keys[idx, 1])) != len(idx):
+        raise ValueError("Duplicate slot0 separations")
+    return idx
 
 
 def main() -> int:
@@ -67,8 +69,7 @@ def main() -> int:
     d = np.load(args.table, allow_pickle=False)
     triples = np.asarray(d["cosine_triples"], float)
     lam = np.asarray(d["lambda_shells_Mpc"], float)
-    collapsed = np.isclose(triples[:, 0], 1.0) & np.isclose(triples[:, 1], triples[:, 2])
-    idx = np.flatnonzero(collapsed)
+    idx = collapsed_slot0_rows(triples)
     gamma = np.degrees(np.arccos(np.clip(triples[idx, 1], -1, 1))) * 60.0
     order = np.argsort(gamma)
     idx, gamma = idx[order], gamma[order]
@@ -80,9 +81,9 @@ def main() -> int:
     sum_pure = ch["Dmod"]
     diff_pure = 0.5 * (ch["PPP"] + ch["Dmod"])
 
-    print(f"collapsed family on shell lambda = {lam[args.shell]:.1f} Mpc\n")
-    print(f"{'gamma':>9} {'E+B: Bmod':>13} {'E-B: TPP':>13} {'|TPP/Bmod|':>12}"
-          f" {'E+B: Dmod':>13} {'E-B: (PPP+Dmod)/2':>19}")
+    print(f"Raw-channel slot0 diagnostic on shell lambda = {lam[args.shell]:.1f} Mpc\n")
+    print(f"{'gamma':>9} {'raw Bmod':>13} {'raw TPP':>13} {'|TPP/Bmod|':>12}"
+          f" {'raw Dmod':>13} {'historical (PPP+Dmod)/2':>19}")
     for i, g in enumerate(gamma):
         if g > 400:
             continue
@@ -97,9 +98,8 @@ def main() -> int:
     if mid.any():
         print(f"  |TPP/Bmod| median over 10' to 60': "
               f"{np.median(np.abs(diff_spin[mid]/sum_spin[mid])):.3f}")
-    print("\nThe difference channel is the one the equal-split claim needs to "
-          "vanish.\nIf it is small only as gamma -> 0, the claim is a "
-          "zero-separation identity.")
+    print("\nRaw-channel ratios are descriptive only; the historical single-placement "
+          "algebra does not validate current FK xi_plus/xi_minus or equal E/B power.")
     return 0
 
 

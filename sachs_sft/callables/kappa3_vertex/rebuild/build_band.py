@@ -31,9 +31,10 @@ from pathlib import Path
 
 import numpy as np
 
-from _common import (ARCHIVED_L2, CHANNELS, bootstrap_paths, dump_meta,
+from _common import (ARCHIVED_L2, CHANNELS, LEG_ORDERS, PK_TABLE_DEFAULT,
+                     PK_TABLES, bootstrap_paths, canoes_record, dump_meta,
                      grid_fingerprint, load_cosmology, load_lambda_grid,
-                     load_triples)
+                     load_triples, pk_table_record)
 
 
 def main() -> int:
@@ -48,6 +49,14 @@ def main() -> int:
     ap.add_argument("--radial-measure", choices=("lambda", "chi"), default="lambda")
     ap.add_argument("--b-model", default="internal_tree",
                     choices=("internal_tree", "tree", "bihalofit", "bihalofit_baryon"))
+    ap.add_argument("--pk-table", default=PK_TABLE_DEFAULT, choices=PK_TABLES,
+                    help="linear P(k) table (canoes examples/data) for the "
+                         "bispectrum model, pk_matter_today and the BiHalofit "
+                         "sigma8; recorded with its sha256 in the build metadata")
+    ap.add_argument("--leg-order", default="auto", choices=LEG_ORDERS,
+                    help="canoes leg_order: 'auto' evaluates spin-sum-zero channels "
+                         "(TTT, Bmod) of rows whose closest pair is points 2 and 3 "
+                         "in the cyclic order; 'given' keeps the given order")
     ap.add_argument("--chunk-rows", type=int, default=256,
                     help="rows per call into canoes. The HIGH branch holds a "
                          "(rows, n_ell, n_ell, n_phi) working array, which at "
@@ -61,23 +70,29 @@ def main() -> int:
     from canoes.sachs import compute_kappa3_sigma3_high
     from canoes.sachs.kappa3 import compute_kappa3_mod_sigma3_high
 
-    cosmo, pk = load_cosmology()
+    cosmo, pk = load_cosmology(args.pk_table)
     lam_phys, lam_h = load_lambda_grid(args.l2_npz, cosmo.h)
     triples = load_triples(args.triples_npz)
 
     b_delta_fn = None
     if args.b_model != "internal_tree":
         from b_model import make_b_delta_fn
-        b_delta_fn = make_b_delta_fn(args.b_model)
+        from b_model.cosmology import fiducial_for_table
+        b_delta_fn = make_b_delta_fn(args.b_model, cosmo=fiducial_for_table(args.pk_table),
+                                     pk_table=args.pk_table)
 
-    print(f"[band] ({args.lo}, {args.hi}]  model={args.b_model}  "
-          f"n_ell={args.n_ell}  n_phi={args.n_phi}  triples={triples.shape[0]}")
+    canoes_state = canoes_record()
+    print(f"[band] ({args.lo}, {args.hi}]  model={args.b_model}  pk={args.pk_table}  "
+          f"leg_order={args.leg_order}  n_ell={args.n_ell}  n_phi={args.n_phi}  "
+          f"triples={triples.shape[0]}  canoes={canoes_state['canoes_commit'][:7]}"
+          f"{'' if canoes_state['canoes_src_clean'] else ' (src modified)'}")
 
     shared = dict(pk_matter_today=pk, cosmo=cosmo, ell_min=float(args.ell_min),
                   n_ell=int(args.n_ell), n_phi=int(args.n_phi),
                   units="physical", lambda_convention="project",
                   radial_discretization="sample",
-                  radial_measure=args.radial_measure, b_delta_fn=b_delta_fn)
+                  radial_measure=args.radial_measure, b_delta_fn=b_delta_fn,
+                  leg_order=args.leg_order)
 
     mod_shared = {k: v for k, v in shared.items() if k != "radial_discretization"}
     chunk = max(1, int(args.chunk_rows))
@@ -130,6 +145,8 @@ def main() -> int:
             n_ell=int(args.n_ell), n_phi=int(args.n_phi),
             chunk_rows=chunk,
             b_model=args.b_model, radial_measure=args.radial_measure,
+            **pk_table_record(args.pk_table),
+            leg_order=args.leg_order, **canoes_state,
             l2_lambda_grid_npz=args.l2_npz.name,
             triples_npz=args.triples_npz.name)),
     )

@@ -386,7 +386,7 @@ def draw_field_pattern(ax: plt.Axes) -> None:
             if r2 < r2_min or r2 > r2_max:
                 continue
             local_amp = shear_amp(r2)
-            local_theta = np.arctan2(yy0, xx0) + 0.5 * np.pi
+            local_theta = np.arctan2(yy0, xx0)
             re_val = local_amp * np.cos(2.0 * local_theta)
             im_val = local_amp * np.sin(2.0 * local_theta)
             cells.append((xx0, yy0, re_val, im_val))

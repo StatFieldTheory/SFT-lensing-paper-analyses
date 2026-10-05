@@ -1,5 +1,33 @@
 # Changelog
 
+## 2026-10-05: accepted sign correction and public saved-product selection
+
+- Select the accepted C23 main FF/FK products, corrected FK at five redshifts,
+  native vertex inputs, and explicit tree/auto and BiHalofit auto/given cutoff
+  series. The selected C callable now binds its table inside the package.
+- Compact non-scientific session metadata in new public derivatives. Every
+  scientific NPY member retains its original bytes; a separate lineage record
+  distinguishes accepted-original and public-file hashes.
+- Preserve the author-selected approximate diagonal panels and four historical
+  reference PDFs while using corrected main products for the cross panel.
+  Current calculated values and retained approximate quotes remain distinct.
+- These products have finite-amplitude and sampled-sign acceptance. Global
+  accuracy, new multiz FF folds, and a full numerical replay are not certified.
+
+## 2026-10-03: vertex band builds take the P(k) table as an option
+
+- `kappa3_vertex/rebuild/build_band.py --pk-table` chooses between
+  `PCAMBz0.txt` (the default, used by every existing piece) and
+  `PCAMB_pyccl_stf_fid_z0.txt` (the two-point side's table). The choice feeds
+  the bispectrum model, `pk_matter_today` and the BiHalofit sigma8
+  (`b_model.cosmology.fiducial_for_table`), and the build metadata records the
+  table with its sha256. `merge_bands.py` and `assemble.py` refuse to combine
+  bands built on different tables; an assembled table records `pk_table_low`
+  and `pk_table_high`.
+- The P(k) default is unchanged. BiHalofit leg ordering now defaults to `auto`;
+  use `--leg-order given` for the historical ordering. The T-001 vertex rebuild
+  uses the two-point power table, and mixed P(k) or leg-order bands are rejected.
+
 ## 2026-10-02: superseded products archived
 
 - Moved 53 superseded files (17 MB) out of the working tree into the local,

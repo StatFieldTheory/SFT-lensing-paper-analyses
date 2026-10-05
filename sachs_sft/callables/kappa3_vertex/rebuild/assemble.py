@@ -30,7 +30,8 @@ from pathlib import Path
 
 import numpy as np
 
-from _common import CHANNELS, bootstrap_paths, dump_meta, load_meta
+from _common import (CHANNELS, bootstrap_paths, build_leg_order, build_pk_identity,
+                     dump_meta, load_meta)
 
 MOD_KEYS = ("bmod", "dmod")
 
@@ -83,8 +84,9 @@ def main() -> int:
 
     low = np.load(args.low, allow_pickle=False)
     fingerprint = load_meta(low["fingerprint"])
+    low_table, low_sha = build_pk_identity(load_meta(low["build"]))
 
-    kept, models, quadrature = [], set(), set()
+    kept, models, quadrature, pk_identities, leg_orders = [], set(), set(), set(), set()
     for path in paths:
         piece = np.load(path, allow_pickle=False)
         build = load_meta(piece["build"])
@@ -95,10 +97,17 @@ def main() -> int:
         kept.append((int(build["lo"]), int(build["hi"]), piece, build))
         models.add(build["b_model"])
         quadrature.add((int(build["n_ell"]), int(build["n_phi"])))
+        pk_identities.add(build_pk_identity(build))
+        leg_orders.add(build_leg_order(build))
     if not kept:
         raise SystemExit(f"no band with upper edge <= {args.cutoff}")
     if len(models) != 1:
         raise SystemExit(f"bands mix bispectrum models: {sorted(models)}")
+    if len(pk_identities) != 1:
+        raise SystemExit(f"bands mix P(k) table identities: {sorted(pk_identities, key=repr)}")
+    high_table, high_sha = next(iter(pk_identities))
+    if len(leg_orders) != 1:
+        raise SystemExit(f"bands mix leg orders: {sorted(leg_orders)}")
     kept.sort()
 
     # The kept windows must tile (ell_cut, cutoff] exactly: a gap silently
@@ -151,6 +160,10 @@ def main() -> int:
         ell_cut=int(load_meta(low["build"])["ell_cut"]),
         ell_high_max=int(args.cutoff),
         b_delta_model=sorted(models)[0],
+        # LOW is reused across P(k) choices; a table may carry two (FIX_LIST N11)
+        pk_table_high=high_table,
+        pk_table_low=low_table,
+        leg_order_high=sorted(leg_orders)[0],
         band_windows=[(lo, hi) for lo, hi, _, _ in kept],
         band_quadrature=sorted(quadrature),
         n_rows=int(triples_out.shape[0]),
@@ -158,6 +171,11 @@ def main() -> int:
                             bands=[f"({lo},{hi}]" for lo, hi, _, _ in kept]),
         has_modulus_channels=True,
     )
+    for branch, digest in (("high", high_sha), ("low", low_sha)):
+        key = f"pk_table_{branch}_sha256"
+        meta.pop(key, None)
+        if digest is not None:
+            meta[key] = digest
     combined = replace(combined, cosmo_meta=meta)
 
     args.out.parent.mkdir(parents=True, exist_ok=True)

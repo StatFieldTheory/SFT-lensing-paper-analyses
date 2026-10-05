@@ -1,0 +1,88 @@
+{
+  "accepted_original_manifest_sha256": "1ddeac02f84bb9f0d448e9c5558518c09e01feb99e5d536d8875454f59e6214c",
+  "author_scope": "Retain the original approximate amplitudes and reference displays, while keeping the corrected positive kappa-gamma_t panel. This selection does not change the accepted computational products.",
+  "computational_manifest_sha256": "8deae326a091bccf60a4a494b563aa6de838647c5995d19982c4fba53e282af2",
+  "main_panels": {
+    "accepted_original_main_receipt_sha256": "2876ecd7802b788882b127a83cb5e2d37e4b2e588117e11db4c2b3047827281c",
+    "current_cross_pair": [
+      0,
+      1
+    ],
+    "current_ff_fk_scope": "CURRENT_CORRECTED_C23_MAIN_CROSS_ONLY",
+    "current_source_sha256": {
+      "ff": "340aff7ae5688b5e135af7769c1809f97ef03de6701f22f84a2ffb8ee3a44fae",
+      "fk": "d2c6f5c434c2ab6970cea7e42091e3e7ab9f0424a9c63e7efb801124809137e3",
+      "order0": "975bd9564e1d503d096fd9d57d291d0987f2e35df51f861a39ffb04e35115c87"
+    },
+    "figures": [
+      2,
+      3
+    ],
+    "grid_policy": "EXACT_DERIVED_ANGLE_EQUALITY_NO_INTERPOLATION",
+    "historical_sources": {
+      "ff": {
+        "path": "../sachs_sft/analyses/r1_sft061/true_redshift_ff_gl24_all/ff_main/xi_ff_main.npz",
+        "scope": "HISTORICAL_R1_C21_FF_DISPLAY",
+        "sha256": "9874f29bb69075c59701cdac530057e7d590a3def2767195c567d3e6466d8697"
+      },
+      "fk": {
+        "path": "../sachs_sft/analyses/r1_sft061/true_redshift_fk_gl24_corrected_main/main/xi_main.npz",
+        "scope": "HISTORICAL_R1_FK_DISPLAY",
+        "sha256": "892e1eb5e4f2f71e0033c39dd8a189cb8633ded6b8ffd73de99937f1c7b2555f"
+      },
+      "order0": {
+        "path": "../sachs_sft/analyses/r1_sft061/figure_products/order0.npz",
+        "scope": "HISTORICAL_R1_ORDER0",
+        "sha256": "975bd9564e1d503d096fd9d57d291d0987f2e35df51f861a39ffb04e35115c87"
+      }
+    },
+    "retained_pairs": [
+      [
+        0,
+        0
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        2,
+        2
+      ]
+    ]
+  },
+  "manuscript_baseline_commit": "a6fc06237772c6abd2477d615af3282d96a47e39",
+  "package_baseline_commit": "de4baf232eed9f88a935fc5faa25752868b13f97",
+  "policy": "AUTHOR_RETAINED_APPROXIMATE_DISPLAY",
+  "retained_pdf_figures": {
+    "17": {
+      "output": "sachs_sft/callables/kappa3_vertex/rebuild/outputs/fk_cutoff_convergence.pdf",
+      "paper_file": "fk_cutoff_convergence.pdf",
+      "path": "publication_display_assets/fk_cutoff_convergence.pdf",
+      "scope": "HISTORICAL_R1_CUTOFF_REFERENCE_DISPLAY",
+      "sha256": "fa5d64672b681285f418da212abf735581fec7315fb6adb239b4005ca76b5870"
+    },
+    "4": {
+      "output": "sachs_sft/analyses/analysis3/outputs/cl_EB_polarization.pdf",
+      "paper_file": "cl_EB_polarization.pdf",
+      "path": "publication_display_assets/cl_EB_polarization.pdf",
+      "scope": "HISTORICAL_R1_EB_REFERENCE_DISPLAY",
+      "sha256": "fa1c2efb27e1e1c2126d2cc6e9dea5f43f2e96db707a9a1afd7e0774af94340c"
+    },
+    "5": {
+      "output": "sachs_sft/analyses/analysis3/outputs/multiz_kappa_xi_cl_2x5.pdf",
+      "paper_file": "multiz_kappa_xi_cl.pdf",
+      "path": "publication_display_assets/multiz_kappa_xi_cl.pdf",
+      "scope": "HISTORICAL_R1_MULTIZ_REFERENCE_DISPLAY",
+      "sha256": "dbafcdde59f377d1ad0dd1dfea9768c0d4713c80056dcfd0bc513c2549e36bac"
+    },
+    "6": {
+      "output": "sachs_sft/analyses/mc_sachs_2pt/figures/xi_kappa_channels.pdf",
+      "paper_file": "appendix_mc_workflow.pdf",
+      "path": "publication_display_assets/appendix_mc_workflow.pdf",
+      "scope": "HISTORICAL_R1_MONTE_CARLO_REFERENCE_DISPLAY",
+      "sha256": "fd2d58a489c95ad1213cda4d715bc9731eddfe1387de29553139f77ce008528b"
+    }
+  },
+  "schema_version": 1
+}

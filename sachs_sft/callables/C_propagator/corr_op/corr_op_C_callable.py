@@ -156,9 +156,9 @@ def C_fn_batch(
     Thin re-export of the canoes grouped-batch path
     (``make_C_fn_lambda_project(...).batch``): it groups samples by the rounded
     ``(cos γ, ψ₁, ψ₂)`` triple to evaluate the per-direction angular sum once,
-    then does a single batched grid interpolation. Verified **bit-identical** to
-    the per-sample scalar ``C_fn`` (rel-err = 0) and ~1.5e3× faster — so a sweep
-    can set ``c_closed_form_vectorized: true`` with no change in result.
+    then does a single batched grid interpolation. Scalar/batch agreement and
+    timing depend on the declared table, geometry, runtime and cache state.
+    This wrapper does not establish cold-cache precision or performance.
     """
     t1a = np.atleast_1d(np.asarray(t1, dtype=np.float64))
     t2a = np.atleast_1d(np.asarray(t2, dtype=np.float64))
@@ -184,7 +184,10 @@ for _a in ("query_coordinate", "query_units", "component_order", "source_coord",
 __all__ = ["C_fn", "C_fn_batch", "TABLE_PATH", "QUERY_COORDINATE", "COMPONENT_ORDER"]
 
 
-if __name__ == "__main__":  # self-check
+# Wiring self-check only: scalar queries warm this instance's cache before batch.
+# Its printed relative error is not independent cold-cache precision evidence
+# or an accepted numerical tolerance.
+if __name__ == "__main__":  # warm-cache wiring self-check
     lam = np.asarray(_TABLE.cl_table.lambda_grid, dtype=np.float64)
     print(f"[corr_op C_fn] table: {TABLE_PATH.name}")
     print(f"  source_coord = {C_fn.source_coord}  (must be lambda_project_mpc)")
@@ -196,7 +199,7 @@ if __name__ == "__main__":  # self-check
     C = C_fn(n, t, n, t)
     print(f"  C_fn(equal n, t={t:.1f}) shape={C.shape}, finite={np.all(np.isfinite(C))}")
     print(f"  diag = {np.diag(C)}")
-    # Vectorized path: must be bit-identical to the per-sample scalar loop.
+    # Compare wiring after scalar calls populate the shared instance cache.
     zhat = np.array([0.0, 0.0, 1.0])
     ts = lam[[2, len(lam) // 2, -3]]
     n1s, t1s, n2s, t2s = [], [], [], []

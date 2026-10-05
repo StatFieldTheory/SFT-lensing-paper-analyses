@@ -1,46 +1,94 @@
 {
-  "schema_version": 1,
-  "status": "accepted_for_revised_figures",
-  "source_redshift": 5.0,
-  "sft_wick_version": "0.6.1",
-  "sft_wick_commit": "6945815ad9e6efa2b9e768891d6bf92b1214670d",
-  "kappa3_input": "pair-phase corrected, n_phi=512, permutation-aware",
+  "accepted_original_manifest_sha256": "1ddeac02f84bb9f0d448e9c5558518c09e01feb99e5d536d8875454f59e6214c",
+  "canoes_sign_fix_commit": "810b1332a7421aaa15eaf5991609c951879d3be9",
+  "kappa3_input": "../sachs_sft/analyses/r1_sft061/t001_accepted/inputs/table_permclosed_np512_t001_refined.npz",
   "products": {
+    "corr_op_callable": {
+      "path": "../sachs_sft/analyses/r1_sft061/t001_accepted/corr_op_C_callable.py",
+      "scope": "SELECTED_C23_OPERATOR_FIGURE_INPUT_NO_GLOBAL_ACCURACY_GRANT",
+      "sha256": "46a89577b25d958187315b4387e0eb3ac2ce70e3d8eae2285baabdd0a9cd28bf"
+    },
+    "corr_op_table": {
+      "path": "../sachs_sft/analyses/r1_sft061/t001_accepted/inputs/corr_op_table_zs5_23pt.npz",
+      "scope": "SELECTED_C23_OPERATOR_FIGURE_INPUT_NO_GLOBAL_ACCURACY_GRANT",
+      "sha256": "5b371f8632fd4c24c829a23d5ae0d946223c2fbddcba63b8c7c42a109037aba2"
+    },
+    "cutoff_ladder": {
+      "files": {
+        "bihalofit_auto/table_bihalofit_cut15360_r4_xi.npz": "eb504b9fa7bd66fdda1b64cff3d9c7fd1aeef4b99372c7fcb37762a45794f792",
+        "bihalofit_auto/table_bihalofit_cut1920_r4_xi.npz": "0db567c18ee763eb38ef1a3e9a2ca4e7ae0d78de1fe3af23832058f1f857f5e5",
+        "bihalofit_auto/table_bihalofit_cut3840_r4_xi.npz": "3d1ae26e4b89a2f0fb53d20a202ad80bd6baf3f5f14c94320a2acfd4ec4bcb91",
+        "bihalofit_auto/table_bihalofit_cut7680_r4_xi.npz": "c0033c497ca95843f8563f627fb63b36f7a2f05d009555dfa258875313474fce",
+        "bihalofit_auto/table_bihalofit_cut960_r4_xi.npz": "8369fe28ea226d4929bfc1c6b586dec024ac25be8505b6b9e786c41f00eb6cf3",
+        "bihalofit_given/table_bihalofit_cut15360_r4_xi.npz": "893a256c030c2c354ec62cd09096d7948059d6911bc171f36d4d8e262e48d94f",
+        "bihalofit_given/table_bihalofit_cut1920_r4_xi.npz": "56782b9579992fa637f0bf1bef053eb3ee5b4c3171313e7e5d6fdd0019896e6f",
+        "bihalofit_given/table_bihalofit_cut3840_r4_xi.npz": "74c32502ef9cc737a2e267dfc3097e3ff958156717373ad5602daabee1a49c58",
+        "bihalofit_given/table_bihalofit_cut7680_r4_xi.npz": "852f4b3fffb05894f05ee781cefdf077b7335dd5be04bdd04e40c3203b33ec7e",
+        "bihalofit_given/table_bihalofit_cut960_r4_xi.npz": "5ed157da1c896d8b05e45e9018f70dbda6f8452b33e2d1e4bee33681cfaed4dc",
+        "tree_auto/table_tree_cut15360_r4_xi.npz": "e89b13a65e0608d6f65df5588a1c503f97891dd0920fd6458a572b1bd911d5eb",
+        "tree_auto/table_tree_cut1920_r4_xi.npz": "2eab171a843d6af0052cf30d49ff14cefdcbdd64ff7f2e99b18924c64cda9d79",
+        "tree_auto/table_tree_cut3840_r4_xi.npz": "1eb7439edac269e4ab75b63a5da28e4612c0b6136ee0a0f6c9ae4f26f9c6d384",
+        "tree_auto/table_tree_cut7680_r4_xi.npz": "cddd936c711f0de6cef7535b884885d54df6966ce78c8473d151b7ae38c77d1c",
+        "tree_auto/table_tree_cut960_r4_xi.npz": "225d284c57d04e4650f1cfda35661f54b9e5decc742bbc426972193f8284a48c"
+      },
+      "path": "../sachs_sft/analyses/r1_sft061/t001_accepted/cutoff_ladder",
+      "scope": "FINITE_CUTOFF_C23_WITH_ACCEPTED_MAIN_TOP_TREE_SUBSET",
+      "series": [
+        {
+          "directory": "tree_auto",
+          "leg_order": "auto",
+          "model": "tree"
+        },
+        {
+          "directory": "bihalofit_auto",
+          "leg_order": "auto",
+          "model": "bihalofit"
+        },
+        {
+          "directory": "bihalofit_given",
+          "leg_order": "given",
+          "model": "bihalofit"
+        }
+      ]
+    },
+    "ff": {
+      "path": "../sachs_sft/analyses/r1_sft061/t001_accepted/products/main_ff.npz",
+      "scope": "CURRENT_CORRECTED_C23_MAIN",
+      "sha256": "340aff7ae5688b5e135af7769c1809f97ef03de6701f22f84a2ffb8ee3a44fae"
+    },
+    "fk": {
+      "path": "../sachs_sft/analyses/r1_sft061/t001_accepted/products/main_fk.npz",
+      "scope": "CURRENT_CORRECTED_C23_MAIN",
+      "sha256": "d2c6f5c434c2ab6970cea7e42091e3e7ab9f0424a9c63e7efb801124809137e3"
+    },
+    "kernel_crosscheck": {
+      "path": "../sachs_sft/analyses/r1_sft061/t001_accepted/products/fk_quadrature.json",
+      "scope": "MIXED_HISTORICAL_LOCAL_C21_FF_ORDER0_WITH_CURRENT_C23_FK",
+      "sha256": "aba8a89b41309f101cbc01be21e3f6516ed250c53a847dce1e80b8358bbf9d4c"
+    },
+    "mc_cache": {
+      "path": "../sachs_sft/analyses/r1_sft061/t001_accepted/products/appendix_mc_curve.npz",
+      "scope": "MIXED_HISTORICAL_LOCAL_C21_FF_ORDER0_WITH_CURRENT_C23_FK",
+      "sha256": "a343d4dbbe6fa9ed6901c172be013bc98b91e470846b1ea44ffbd33176f41fa7"
+    },
+    "mc_markers": {
+      "path": "../sachs_sft/analyses/r1_sft061/t001_accepted/products/fk_markers.npz",
+      "scope": "GENUINE_RECOVERED_C23_FK_MARKERS_WITH_PRESERVED_ORIGINAL_FAILURE",
+      "sha256": "69cc3d392d2632be000ab8b160c182db64bed570d19befd55d7b0e623fcc24de"
+    },
+    "multiz": {
+      "path": "../sachs_sft/analyses/r1_sft061/t001_accepted/products/multiz.npz",
+      "scope": "CURRENT_CORRECTED_C23_FK_ALL_FIVE_REDSHIFTS_WITH_HISTORICAL_ORDER0",
+      "sha256": "4bc94805b5c57939a55454a1c706ec8f718d848c8872a5ecffaabed8b22f71cb"
+    },
+    "multiz_ff": {
+      "path": "../sachs_sft/analyses/r1_sft061/t001_accepted/products/multiz_ff.npz",
+      "scope": "HISTORICAL_R1_C21_FF_REFERENCE_ONLY_NO_CURRENT_C23_FF_ACCURACY_CLAIM",
+      "sha256": "c5cc80b8b82260b069d346ca8dc544dcc26cdd3219289c51bbbdf701d238c0b2"
+    },
     "order0": {
       "path": "../sachs_sft/analyses/r1_sft061/figure_products/order0.npz",
       "sha256": "975bd9564e1d503d096fd9d57d291d0987f2e35df51f861a39ffb04e35115c87"
-    },
-    "ff": {
-      "path": "../sachs_sft/analyses/r1_sft061/true_redshift_ff_gl24_all/ff_main/xi_ff_main.npz",
-      "sha256": "9874f29bb69075c59701cdac530057e7d590a3def2767195c567d3e6466d8697"
-    },
-    "fk": {
-      "path": "../sachs_sft/analyses/r1_sft061/true_redshift_fk_gl24_corrected_main/main/xi_main.npz",
-      "sha256": "892e1eb5e4f2f71e0033c39dd8a189cb8633ded6b8ffd73de99937f1c7b2555f"
-    },
-    "multiz": {
-      "path": "../sachs_sft/analyses/r1_sft061/figure_products/multiz/multiz.npz",
-      "sha256": "67bef6007d2f5a19c14009ec4fe7001e0656d3ebc9435a2b2c2b5af4a9b690a4"
-    },
-    "multiz_ff": {
-      "path": "../sachs_sft/analyses/r1_sft061/figure_products/multiz/multiz_ff.npz",
-      "sha256": "fb3edd7fd2a7cd8350684ca693ec60f5151d4af6ab6c210003858989cbaf0c82"
-    },
-    "mc_markers": {
-      "path": "../sachs_sft/analyses/r1_sft061/mc_update/fk_markers.npz",
-      "sha256": "1bd5fff53ac780c2f2e67ed30fba98e900cfd8fb55fd44a3e4ec869b0a98875f"
-    },
-    "mc_cache": {
-      "path": "../sachs_sft/analyses/r1_sft061/mc_update/appendix_mc_curve.npz",
-      "sha256": "f1532e2239a205d725995e84f33029bdbff356341fde2bbf9f70dcff12606eb0"
-    },
-    "kernel_crosscheck": {
-      "path": "../sachs_sft/analyses/r1_sft061/mc_update/fk_quadrature.json",
-      "sha256": "87448aeebc30ad744f289b866fdced937fcef2784751ad1a8a519ebf19c122d0"
-    },
-    "zeta_slices": {
-      "path": "../sachs_sft/analyses/r1_sft061/figure_products/zeta_slices.npz",
-      "sha256": "1fbfaa20bec5c4d9d2e2988bd254234580b3d932366098a65640970360120f72"
     },
     "order0_comparison": {
       "path": "../sachs_sft/analyses/analysis1/r1_aligned/source_folded_full_boundary_n4096_k2048.npz",
@@ -50,21 +98,26 @@
       "path": "../sachs_sft/analyses/analysis1/r1_aligned/ccl_upperpad_n8192.npz",
       "sha256": "e8a4c15e540c9074f2749752d7d1db9a2e784ad433bb0d838506f1241ae82c86"
     },
-    "cutoff_ladder": {
-      "path": "../sachs_sft/analyses/r1_sft061/figure_products/cutoff_ladder",
-      "files": {
-        "assembly_manifest.json": "2a98fb3ce850ec531d3a77cf7c6992044b29c6c37d885d6af16c865b53c6638c",
-        "table_bihalofit_cut15360_r4_xi.npz": "813638a2c7f0a016c2532471f326287302a72a4f4e33268f6ccba45ec63403de",
-        "table_bihalofit_cut1920_r4_xi.npz": "c7a53d22ac6db908786a6e617820ded61adf08b90ead6d2cff5de6c9705157dc",
-        "table_bihalofit_cut3840_r4_xi.npz": "2de2dd26e864bbbc311d2c6a6e9613efdc4ef241f01a1909b7217e0fd99c904f",
-        "table_bihalofit_cut7680_r4_xi.npz": "059f4b9828f873aaeb43540aa9d14c100c57f4dc826be3b2a36eb2c135991fc9",
-        "table_bihalofit_cut960_r4_xi.npz": "27573b53170e4a1396e4a43337f5992daa3857c947446c933e43350ee44b86c3",
-        "table_tree_cut15360_r4_xi.npz": "3364bd185729bb68b47b896f2294706bfdc9e83caf611f70b2e4297197cc866c",
-        "table_tree_cut1920_r4_xi.npz": "d2eea68ca7366caf2f91de07655953c2d9b237106b266656447215a87ff7bade",
-        "table_tree_cut3840_r4_xi.npz": "453855f93d32302766c3da18348a4b5508a5199fedfd75740e4e00c0904c8cc0",
-        "table_tree_cut7680_r4_xi.npz": "5b154503d8817ae3d1f3b829132ace584d20d2dc6922e793cb911667d94f7866",
-        "table_tree_cut960_r4_xi.npz": "b5fafaa7bc630573b3ac2ed6d18a8cfb821768f211f3b217b29ee840213ee032"
-      }
+    "zeta_slices": {
+      "path": "../sachs_sft/analyses/r1_sft061/t001_accepted/products/zeta_slices.npz",
+      "scope": "EXACT_NATIVE_SIX_CHANNEL_SAVED_EXTRACTION",
+      "sha256": "f531a8e2b4037fbb85a5bc540f333e1d024335d02386e686118c264102d5bd46"
     }
-  }
+  },
+  "public_lineage": "public_product_lineage.json",
+  "public_lineage_sha256": "8dda59a2be51b92d34127da5adf2aa9e23bbb5dceceeccbb0582d58bc55c0f64",
+  "schema_version": 1,
+  "scope": {
+    "N4_fixed": false,
+    "acceptance": "Finite-amplitude and sampled-sign acceptance only",
+    "current_main_FF": "genuinely recomputed C23",
+    "global_accuracy_granted": false,
+    "new_multiz_FF_folds_used": false,
+    "precise_zero_crossing_required": false,
+    "scientific_acceptance": false
+  },
+  "sft_wick_commit": "5198fb9845334982d103059ac7b84f7afb2228ca",
+  "sft_wick_version": "0.6.1",
+  "source_redshift": 5.0,
+  "status": "ACCEPTED_FINITE_PUBLIC_SAVED_PRODUCT_SELECTION"
 }

@@ -1,0 +1,58 @@
+{
+  "accepted_original_manifest_sha256": "1ddeac02f84bb9f0d448e9c5558518c09e01feb99e5d536d8875454f59e6214c",
+  "author_display_policy": "Historical diagonal panels and four pinned R1 reference PDFs; corrected current main FF/FK cross panel; approximate quoted values retained.",
+  "baseline_package_commit": "de4baf232eed9f88a935fc5faa25752868b13f97",
+  "checks": {
+    "final_whitespace_repair": {
+      "all_public_and_manifest_hashes_rechecked": true,
+      "callable_ast_unchanged": true
+    },
+    "independent_python_and_code_review": "APPROVE",
+    "isolated_copy": {
+      "external_dependency_environments_reused": true,
+      "private_candidate_directories_present": false,
+      "prospective_tracked_files": 1297
+    },
+    "preserved_raw_npy_members_verified": 380,
+    "public_file_hashes_verified": 44,
+    "saved_figure_comparison": {
+      "all_raster_difference_fractions_zero": true,
+      "all_raw_or_content_identical": true,
+      "command": "python reproduce/check_figures.py",
+      "figures": 17,
+      "isolated_copy_verified": true
+    },
+    "saved_figure_regeneration": {
+      "command": "python reproduce/regen_figure.py --all",
+      "primary_and_isolated_copy_exit_code": 0
+    },
+    "saved_number_check": {
+      "accepted_computed_and_quoted_fields_identical": true,
+      "command": "python reproduce/check_numbers.py",
+      "relocated_output_identical": true,
+      "rows": 33
+    },
+    "targeted_tests": {
+      "command": "python -m pytest reproduce/tests sachs_sft/callables/kappa3_vertex/equal_time_limber_cut15360_permaware/tests/test_perm_aware_v2.py sachs_sft/callables/kappa3_vertex/equal_time_limber_cut15360_permaware/tests/test_perm_aware_pchip.py sachs_sft/callables/kappa3_vertex/rebuild/test_assemble_refined_overlay_owned.py sachs_sft/callables/kappa3_vertex/rebuild/tests/test_pk_identity.py -q",
+      "passed": 141
+    }
+  },
+  "date": "2026-10-05",
+  "limitations": {
+    "N4_fixed": false,
+    "clean_machine_dependency_installation_verified": false,
+    "global_accuracy_granted": false,
+    "new_multiz_FF_folds_used": false,
+    "new_numerical_folds_run": false,
+    "symbolic_proofs_rerun": false
+  },
+  "public_lineage_sha256": "8dda59a2be51b92d34127da5adf2aa9e23bbb5dceceeccbb0582d58bc55c0f64",
+  "public_manifest_sha256": "8deae326a091bccf60a4a494b563aa6de838647c5995d19982c4fba53e282af2",
+  "publication_displays_sha256": "4b15ad7b5fd151b38248f5be47bfd1702a857ba7b084bd6befff0cb36f0914ca",
+  "runtime_commits": {
+    "canoes": "53850f3423ee25b9c1813cff8c2a2b282c017c70",
+    "sft_wick": "5198fb9845334982d103059ac7b84f7afb2228ca"
+  },
+  "schema_version": 1,
+  "scope": "Saved-product publication closure, not a new numerical or clean-machine scientific replay"
+}

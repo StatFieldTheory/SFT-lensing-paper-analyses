@@ -1,16 +1,10 @@
-"""Generate the 5 sachs_sft sft-wick L2 configs from the verified +3.08e-5 baseline.
+"""Generate historical five-run YAML recipes into an explicit fresh directory.
 
-Loads the archived config_FK_LIMBER_z5.yaml (the +3.08e-5 geometry), then for each
-run produces a complete standalone YAML with ONLY the wiring changed (which C, which
-K, FF vs FK). The shared geometry (40-pt positions_grid, t_final=2313.029,
-component_pairs, n_gauss=24) is therefore byte-identical across all configs — any
-diff between them is the intended physics wiring, nothing else.
-
-Callable modules point at ABSOLUTE sachs_sft paths (the new self-describing callables
-with bundled tables), sidestepping sft-wick's dual path-resolution (CWD vs YAML-parent).
+Historical geometry and wiring are preserved, not accepted current candidates.
+No science callables are imported. --dry-run performs validation without writes.
 """
 from __future__ import annotations
-import copy
+import copy, argparse, hashlib, json, os
 from pathlib import Path
 import yaml
 
@@ -32,8 +26,7 @@ D_CALLABLE = SCRIPTS / "D_callable.py"
 KAPPA2_CALLABLE = SCRIPTS / "kappa2_callable.py"
 F_TENSOR = SCRIPTS / "inputs" / "F_tensor.npy"
 
-with BASE.open() as f:
-    base = yaml.safe_load(f)
+base = None  # Loaded only by explicit main(), never at import.
 
 
 def make_config(*, c_module, k_module=None, k_already_R, k_equal_time,
@@ -44,11 +37,8 @@ def make_config(*, c_module, k_module=None, k_already_R, k_equal_time,
     cfg["system"]["noise"]["kappa2"]["module"] = str(KAPPA2_CALLABLE)
     cfg["system"]["vertices"][0]["coupling_path"] = str(F_TENSOR)
     # --- C propagator (absolute sachs_sft callable) ---
-    # c_closed_form_vectorized MUST be False: the sachs_sft C_fn wrappers expose a
-    # SCALAR coupling_fn (C_fn(n1,t1,n2,t2) -> (3,3)); they do NOT re-export the
-    # underlying .batch attribute, so a vectorized array-t call would crash on
-    # float(t_array). The C propagator is cached once, so the per-sample loop cost
-    # is paid once.
+    # Historical scalar recipe is retained, not a claim about modern batch support.
+    # Reviewed current FK/FF candidates bind C_fn_batch/vectorized true separately.
     cfg["propagators"]["c_closed_form_module"] = str(c_module)
     cfg["propagators"]["c_closed_form_attr"] = "C_fn"
     cfg["propagators"]["c_closed_form_only"] = True
@@ -113,9 +103,75 @@ runs = {
         out_npz=OUT / "2PCF/C_corr_op_K_limber_FK/xi_C_corr_op_K_limber_FK.npz"),
 }
 
-for sub, kw in runs.items():
-    cfg = make_config(**kw)
-    dest = OUT / sub / "config_L2.yaml"
-    with dest.open("w") as f:
-        yaml.safe_dump(cfg, f, sort_keys=False, default_flow_style=False, width=100)
-    print(f"wrote {dest}")
+def sha(path):
+    return hashlib.sha256(Path(path).read_bytes()).hexdigest()
+
+
+def main(argv=None):
+    global base, D_CALLABLE, KAPPA2_CALLABLE, F_TENSOR
+    ap = argparse.ArgumentParser(description=__doc__)
+    ap.add_argument("--base", type=Path, required=True)
+    ap.add_argument("--sachs-root", type=Path, required=True)
+    ap.add_argument("--out-root", type=Path, required=True)
+    ap.add_argument("--dry-run", action="store_true")
+    args = ap.parse_args(argv)
+    template = args.base.resolve()
+    sachs = args.sachs_root.resolve()
+    output = args.out_root.absolute()
+    if not template.is_file() or not sachs.is_dir():
+        raise ValueError("Missing base template or Sachs root")
+    if os.path.lexists(output):
+        raise ValueError("Output root must be fresh, including dry-run")
+    if not output.parent.is_dir():
+        raise ValueError("Output parent must exist")
+    template_raw = template.read_bytes()
+    template_digest = hashlib.sha256(template_raw).hexdigest()
+    base = yaml.safe_load(template_raw)
+    if not isinstance(base, dict) or any(k not in base for k in ("system", "expand", "propagators", "sweep", "output")):
+        raise ValueError("Invalid five-block historical template")
+    D_CALLABLE = sachs / "scripts/D_callable.py"
+    KAPPA2_CALLABLE = sachs / "scripts/kappa2_callable.py"
+    F_TENSOR = sachs / "scripts/inputs/F_tensor.npy"
+    required = [template, D_CALLABLE, KAPPA2_CALLABLE, F_TENSOR, Path(__file__).resolve()]
+    prepared = []
+    for sub, old in runs.items():
+        kw = dict(old)
+        for key in ("c_module", "k_module"):
+            if kw[key] is not None:
+                kw[key] = sachs / kw[key].relative_to(SACHS)
+                required.append(kw[key])
+        kw["out_npz"] = output / sub / old["out_npz"].name
+        cfg = make_config(**kw)
+        prepared.append((output / sub / "config_L2.yaml", cfg))
+    for path in required:
+        if not path.is_file():
+            raise ValueError("Missing explicit dependency: " + str(path))
+    pins = {str(path): sha(path) for path in required if path != template}
+    pins[str(template)] = template_digest
+    # Bind parsed content to the initial capture, before any output reservation.
+    for path, expected in pins.items():
+        if sha(path) != expected:
+            raise RuntimeError("Input drift before reservation: " + path)
+    record = dict(recipe="historical five-run geometry and scalar C wiring; not current candidate acceptance",
+                  base=str(template), out_root=str(output), pins=pins,
+                  destinations=[str(dest) for dest, _ in prepared])
+    if args.dry_run:
+        print(json.dumps(record, indent=2))
+        return 0
+    output.mkdir()  # Exclusive fresh root; never reuse production run folders.
+    for dest, cfg in prepared:
+        dest.parent.mkdir(parents=True, exist_ok=False)
+        with dest.open("x") as f:
+            yaml.safe_dump(cfg, f, sort_keys=False, default_flow_style=False, width=100)
+    for path, expected in pins.items():
+        if sha(path) != expected:
+            raise RuntimeError("Input drift; retain partial output, no prepared record: " + path)
+    record["config_hashes"] = {str(dest): sha(dest) for dest, _ in prepared}
+    with (output / "prepared_configs.json").open("x") as f:
+        json.dump(record, f, indent=2)
+        f.write("\n")
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

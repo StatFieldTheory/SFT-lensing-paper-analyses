@@ -14,12 +14,16 @@ Note the documented split of P(k) tables between the two- and three-point
 sides of the pipeline: the 3-point vertex is built from ``PCAMBz0.txt``
 (sigma8 = 0.808988), the corr_op 2-point side from
 ``PCAMB_pyccl_stf_fid_z0.txt`` (sigma8 = 0.810000). This module defaults to
-the 3-point table because that is what the vertex rebuild must match.
+the 3-point table because the deployed pieces were built from it. The
+T-001 rebuild (2026-10-03) passes the two-point table explicitly
+(``rebuild/build_band.py --pk-table``) together with
+``fiducial_for_table``, so that the vertex and the two-point side share one
+P(k).
 """
 
 from __future__ import annotations
 
-from dataclasses import dataclass
+from dataclasses import dataclass, replace
 from pathlib import Path
 
 import numpy as np
@@ -75,6 +79,20 @@ class Fiducial:
 
 
 FIDUCIAL = Fiducial()
+
+#: sigma8 of each known table.
+SIGMA8_OF_TABLE = {PK_TABLE_3PT: SIGMA8_3PT, PK_TABLE_2PT: SIGMA8_2PT}
+
+
+def fiducial_for_table(name: str) -> Fiducial:
+    """FIDUCIAL with the sigma8 of one P(k) table.
+
+    BiHalofit renormalises its linear spectrum to ``cosmo.sigma8``, so the
+    cosmology passed with a table must carry that table's sigma8.
+    """
+    if name not in SIGMA8_OF_TABLE:
+        raise ValueError(f"no sigma8 recorded for P(k) table {name!r}")
+    return replace(FIDUCIAL, sigma8=SIGMA8_OF_TABLE[name])
 
 
 def load_pk_table(

@@ -24,6 +24,7 @@ import sys
 import time
 from pathlib import Path
 from product_paths import resolve_product
+from publication_displays import stage_retained_pdf
 
 PKG = Path(__file__).resolve().parents[1]
 PAPER = PKG.parent
@@ -83,6 +84,13 @@ ALIASES = {9: 8, 16: 15}
 def run_one(n: int) -> tuple[int, float]:
     n = ALIASES.get(n, n)
     gen, key, args, canoes, outs, _ = FIGURES[n]
+    t0 = time.perf_counter()
+    retained = stage_retained_pdf(n, outs)
+    if retained is not None:
+        log = PKG / "reproduce" / "logs"
+        log.mkdir(exist_ok=True)
+        (log / f"fig{n:02d}.log").write_text(retained + "\n")
+        return 0, time.perf_counter() - t0
     py = PYCCL if key == "pyccl" else SFTW
     env = dict(os.environ, MPLBACKEND="Agg")
     if canoes:

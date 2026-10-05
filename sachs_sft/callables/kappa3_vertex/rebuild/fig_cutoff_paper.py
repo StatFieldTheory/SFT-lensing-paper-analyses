@@ -23,7 +23,7 @@ import numpy as np
 _REPO = Path(__file__).resolve().parents[5]
 _MC = _REPO / "SFT-lensing-paper-analyses" / "sachs_sft" / "analyses" / "mc_sachs_2pt"
 sys.path.insert(0, str(_REPO / "SFT-lensing-paper-analyses" / "reproduce"))
-from product_paths import resolve_product  # noqa: E402
+from product_paths import cutoff_series, resolve_cutoff_member, resolve_product  # noqa: E402
 
 _LADDER = resolve_product("cutoff_ladder")
 
@@ -54,10 +54,12 @@ def main() -> int:
 
     o0 = o0_at_half_arcmin()
     series = {}
-    for model in ("tree", "bihalofit"):
+    selections = cutoff_series()
+    for selection in selections:
+        model = selection['model']
         vals = []
         for cut in CUTS:
-            path = a.products / f"table_{model}_cut{cut}_r4_xi.npz"
+            path = resolve_cutoff_member(selection, cut, root=a.products)
             with np.load(path, allow_pickle=True) as data:
                 mask = (data["a"] == 0) & (data["b"] == 0) & (data["order"] == 2)
                 angles = []
@@ -72,8 +74,8 @@ def main() -> int:
                 if not np.isfinite(value):
                     raise ValueError(f"Nonfinite convergence value: {path}")
                 vals.append(100.0 * value / o0)
-        series[model] = np.array(vals)
-        print(f"[{model}] " + "  ".join(f"{c}:{v:.2f}%"
+        series[selection['key']] = np.array(vals)
+        print(f"[{selection['label']}] " + "  ".join(f"{c}:{v:.2f}%"
                                         for c, v in zip(CUTS, vals)))
 
     sys.path.insert(0, str(_MC))
@@ -83,13 +85,17 @@ def main() -> int:
 
     fig, ax = plt.subplots(figsize=(6.4, 4.4), constrained_layout=True)
     cuts = np.array(CUTS, float)
-    ax.plot(cuts, series["tree"], "o-", color=PALETTE[2], lw=1.7, ms=6.5,
-            label="tree-level bispectrum")
-    ax.plot(cuts, series["bihalofit"], "s--", color=PALETTE[3], lw=1.5, ms=6.0,
-            mfc="none", label="BiHalofit (uncontrolled)")
-    ax.axhline(series["tree"][-1], color=PALETTE[2], lw=0.8, ls=":", alpha=0.6)
-    ax.annotate(f"{series['tree'][-1]:.2f}%",
-                xy=(cuts[0] * 1.05, series["tree"][-1] * 1.12),
+    for selection in selections:
+        tree = selection['model'] == 'tree'
+        given = selection['leg_order'] == 'given'
+        ax.plot(cuts, series[selection['key']], 'o-' if tree else '^:' if given else 's--',
+                color=PALETTE[2] if tree else PALETTE[0] if given else PALETTE[3],
+                lw=1.7 if tree else 1.5, ms=6.5 if tree else 6.0,
+                mfc=None if tree else 'none', label=selection['label'])
+    tree_key = next(item['key'] for item in selections if item['model'] == 'tree')
+    ax.axhline(series[tree_key][-1], color=PALETTE[2], lw=0.8, ls=":", alpha=0.6)
+    ax.annotate(f"{series[tree_key][-1]:.2f}%",
+                xy=(cuts[0] * 1.05, series[tree_key][-1] * 1.12),
                 color=PALETTE[2], fontsize=10)
     ax.set_xscale("log"); ax.set_yscale("log")
     ax.set_xlabel(r"$\ell_{\max}$")

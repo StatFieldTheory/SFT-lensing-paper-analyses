@@ -6,6 +6,36 @@
 > is still the production callable; set `TABLE_PATH` before the first call. The manuscript's table is
 > `../rebuild/products/pieces_nphi512/table_permclosed_np512.npz`.
 
+## Version 2 (2026-10, paper task T-001)
+
+`perm_aware_kappa3_callable_v2.py` differs from `perm_aware_kappa3_callable.py`
+(version 1, unchanged; its sha256 `4d7fefaa...` is pinned by
+`r1_sft061/permaware_ladder/guard.py` and recorded in the R1 run records) in
+two places:
+
+* **K_111.** Version 1 set the entry with three `Re Psi_0` legs to
+  `(zeta_PPP + 3 zeta_Dmod)/4` at the given ordering. `zeta_Dmod` conjugates
+  its third leg, so that entry is `K_111 + (K_122 + K_212)/2 - K_221`, which
+  is K_111 only when the three legs are equivalent (the "any ordering" row in
+  the table below holds at one point only). Version 2 averages the conjugated
+  leg over the three legs, `(zeta_PPP + D[0] + D[1] + D[2])/4`, using the
+  three cyclic orderings. sft-wick (>= 0.5) folds the sum over the six leg
+  assignments, which is the same for both versions; a consumer that reads one
+  leg order is affected.
+* **Strict lookup.** Version 1 answered a query that is not a tabulated row
+  with an inverse-distance blend of the four nearest rows, without a warning.
+  Version 2 raises `ValueError` (tolerance 1e-10 in cosine space; the
+  production FK placements sit at 9.7e-15 to 3.4e-11) unless the module
+  attribute `ALLOW_INTERPOLATION` is set to `True`.
+
+Tests: `tests/test_perm_aware_v2.py` (synthetic cumulants for every leg
+order; version 1 differs only at K_111; equal six-order sums; strict lookup
+on the R1 table, including all 240 placements of the R1 FK sweep).
+`tests/test_perm_aware.py` passes on version 2 with `ALLOW_INTERPOLATION =
+True`; without it, its parity test stops on an off-grid query, as intended.
+
+## Version 1
+
 Fixes the two defects the note reports in the production callable,
 `sachs_sft/callables/kappa3_vertex/equal_time_limber/equal_time_limber_kappa3_callable.py`.
 Nothing here overwrites the production file; the replacement is exercised

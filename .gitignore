@@ -104,3 +104,14 @@ sachs_sft/analyses/analysis1/r1_aligned/**/*.pdf
 sachs_sft/analyses/analysis1/r1_aligned/**/*.png
 sachs_sft/analyses/analysis1/r1_aligned/**/*.log
 sachs_sft/analyses/analysis1/r1_aligned/outputs/comparison_final/archive_*/
+
+# Local T-001 candidates and acceptance workspaces; public selection is t001_accepted.
+sachs_sft/analyses/r1_sft061/t001_candidate_inputs/
+sachs_sft/analyses/r1_sft061/t001_candidate_folds/
+sachs_sft/analyses/r1_sft061/true_redshift_fk_gl24_spin2fix_main/
+sachs_sft/callables/kappa3_vertex/rebuild/logs_t001/
+sachs_sft/callables/kappa3_vertex/rebuild/products/pieces_t001/
+sachs_sft/callables/kappa3_vertex/rebuild/jobs_t001_np512.json
+sachs_sft/callables/kappa3_vertex/rebuild/products/pieces_nphi512/table_permclosed_np512_spin2fix.npz
+**/outputs_archive_*/
+**/source_archive_*/

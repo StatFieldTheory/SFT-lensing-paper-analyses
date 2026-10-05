@@ -24,7 +24,23 @@ sftwick_outputs/
 └── 3PCF/                            # (reserved) genuine 3-point: observable [phi(x),phi(y),phi(z)]
 ```
 
-## How a run is wired (the L2 config contract)
+## Historical templates and current candidate wiring
+
+The following May/June configuration descriptions are historical templates, not
+current accepted products or safe replay commands. Current figures resolve the
+hash-checked selections in `reproduce/active_products.json`. The accepted T-001 saved-product selection is now published separately under
+`analyses/r1_sft061/t001_accepted/`; these historical templates retain their
+original input bindings and are not corrected-fold replay configurations.
+
+Reviewed corr_op FF/FK candidate configurations bind `C_fn_batch` with
+`c_closed_form_vectorized: true`; the historical scalar-only wiring below does
+not describe those configurations. Use each frozen candidate's actual config
+and provenance, not this prose, to establish its source endpoint and callable.
+Do not run `gen_sftwick_configs.py` in place: it can overwrite hash-pinned
+historical configs and targets absent folders. Prepare new configs in a fresh,
+reviewed output directory; keep historical prepared/run records unchanged.
+
+## How a historical run was wired (the L2 config contract)
 
 Every `config_L2.yaml` has 5 top-level blocks (`system`, `expand`, `propagators`,
 `sweep`, `output`). The sachs_sft-specific choices:

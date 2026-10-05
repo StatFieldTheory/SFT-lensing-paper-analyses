@@ -142,6 +142,10 @@ def main() -> int:
     g0, o0g = load_sweep_order(O0_NPZ, 0)
     gff, ffg = load_sweep_order(FF_NPZ, 2)
     gfk, fkg = load_sweep_order(FK_NPZ, 2)
+    from publication_displays import select_main_display
+    g0, o0g, gff, ffg, gfk, fkg = select_main_display(
+        2, load_sweep_order, _gamma_arcmin, (O0_NPZ, FF_NPZ, FK_NPZ),
+        ((g0, o0g), (gff, ffg), (gfk, fkg)))
     for gx, nm in ((gff, "FF"), (gfk, "FK")):
         if not np.allclose(g0, gx, rtol=1e-6):
             print(f"[analysis3] WARNING: {nm} gamma grid differs from O0")

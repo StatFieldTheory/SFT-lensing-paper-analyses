@@ -2,182 +2,188 @@
  {
   "claim": "FK(0.5') finite-cutoff fold (ell_max=15360, perm-aware), kk",
   "quoted": "1.91% of O0",
-  "recomputed": "+1.6187e-05 = 1.91% of O0",
-  "source": "SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/true_redshift_fk_gl24_corrected_main/main/xi_main.npz"
+  "recomputed": "+1.3823e-05 = 1.63% of O0",
+  "source": "SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/t001_accepted/products/main_fk.npz"
  },
  {
   "claim": "FF(0.5') vs O0, kk",
   "quoted": "2.28e-6, about 0.27% of Order-0",
-  "recomputed": "FF=+2.282e-06, O0=+8.465e-04, FF/O0=0.27%",
-  "source": "SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/true_redshift_ff_gl24_all/ff_main/xi_ff_main.npz"
+  "recomputed": "FF=+2.238e-06, O0=+8.465e-04, FF/O0=0.26%",
+  "source": "SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/t001_accepted/products/main_ff.npz"
  },
  {
   "claim": "FF overtakes |O0| (kk)",
   "quoted": "first sampled crossing near 183'",
   "recomputed": "first grid point: 183.3' (previous grid point 144.7')",
-  "source": "SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/true_redshift_ff_gl24_all/ff_main/xi_ff_main.npz + SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/figure_products/order0.npz"
+  "source": "SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/t001_accepted/products/main_ff.npz + SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/figure_products/order0.npz"
  },
  {
   "claim": "FF overtakes |FK| (kk)",
   "quoted": "first sampled crossing near 44'",
   "recomputed": "first grid point: 44.4' (previous grid point 35.1')",
-  "source": "SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/true_redshift_ff_gl24_all/ff_main/xi_ff_main.npz + SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/true_redshift_fk_gl24_corrected_main/main/xi_main.npz"
+  "source": "SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/t001_accepted/products/main_ff.npz + SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/t001_accepted/products/main_fk.npz"
  },
  {
   "claim": "FF plateau at large gamma (kk)",
   "quoted": "varies by < 1% out to largest separation",
-  "recomputed": "FF over last 8 grid points: 6.548e-07..6.549e-07 (spread 0.02%)",
-  "source": "SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/true_redshift_ff_gl24_all/ff_main/xi_ff_main.npz"
+  "recomputed": "FF over last 8 grid points: 7.261e-07..7.262e-07 (spread 0.01%)",
+  "source": "SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/t001_accepted/products/main_ff.npz"
  },
  {
   "claim": "FK/O0 over 2'-12', xi_kappa",
   "quoted": "about 1.5-1.6%",
-  "recomputed": "interp at 2,5,8,12: 1.55/1.57/1.53/1.52%; grid pts in band: 2.06':1.55%, 2.61':1.54%, 3.31':1.58%, 4.19':1.59%, 5.30':1.56%, 6.72':1.52%, 8.51':1.54%, 10.77':1.51%",
-  "source": "SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/true_redshift_fk_gl24_corrected_main/main/xi_main.npz / SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/figure_products/order0.npz"
+  "recomputed": "interp at 2,5,8,12: 1.35/1.38/1.37/1.37%; grid pts in band: 2.06':1.34%, 2.61':1.34%, 3.31':1.38%, 4.19':1.40%, 5.30':1.37%, 6.72':1.35%, 8.51':1.38%, 10.77':1.36%",
+  "source": "SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/t001_accepted/products/main_fk.npz / SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/figure_products/order0.npz"
  },
  {
   "claim": "FK/O0 over 2'-12', xi_+",
-  "quoted": "about 0.45-0.75%",
-  "recomputed": "interp at 2,5,8,12: 0.75/0.60/0.51/0.45%; grid pts in band: 2.06':0.75%, 2.61':0.70%, 3.31':0.68%, 4.19':0.64%, 5.30':0.58%, 6.72':0.53%, 8.51':0.50%, 10.77':0.46%",
-  "source": "SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/true_redshift_fk_gl24_corrected_main/main/xi_main.npz / SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/figure_products/order0.npz"
+  "quoted": "about 0.5-0.8%",
+  "recomputed": "interp at 2,5,8,12: 0.66/0.53/0.46/0.40%; grid pts in band: 2.06':0.65%, 2.61':0.61%, 3.31':0.60%, 4.19':0.56%, 5.30':0.52%, 6.72':0.47%, 8.51':0.45%, 10.77':0.41%",
+  "source": "SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/t001_accepted/products/main_fk.npz / SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/figure_products/order0.npz"
  },
  {
   "claim": "FK/O0 over 2'-12', xi_-",
-  "quoted": "about 14% at 2', about 1% beyond 5'",
-  "recomputed": "interp at 2,5,8,12: 14.32/1.39/1.27/1.05%; grid pts in band: 2.06':13.20%, 2.61':5.76%, 3.31':3.21%, 4.19':1.78%, 5.30':1.28%, 6.72':1.23%, 8.51':1.28%, 10.77':1.07%",
-  "source": "SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/true_redshift_fk_gl24_corrected_main/main/xi_main.npz / SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/figure_products/order0.npz"
+  "quoted": "about 13.2% at 2', about 1.1-1.3% beyond 5'",
+  "recomputed": "interp at 2,5,8,12: 11.75/1.16/1.07/0.90%; grid pts in band: 2.06':10.83%, 2.61':4.75%, 3.31':2.66%, 4.19':1.48%, 5.30':1.07%, 6.72':1.04%, 8.51':1.09%, 10.77':0.91%",
+  "source": "SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/t001_accepted/products/main_fk.npz / SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/figure_products/order0.npz"
  },
  {
   "claim": "FK/O0 over 2'-12', xi_kappa_gamma_t",
-  "quoted": "negative, about -2.4% to -1.2%",
-  "recomputed": "interp at 2,5,8,12: -2.39/-1.39/-1.29/-1.20%; grid pts in band: 2.06':-2.29%, 2.61':-1.81%, 3.31':-1.44%, 4.19':-1.36%, 5.30':-1.40%, 6.72':-1.40%, 8.51':-1.25%, 10.77':-1.23%",
-  "source": "SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/true_redshift_fk_gl24_corrected_main/main/xi_main.npz / SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/figure_products/order0.npz"
+  "quoted": "positive, about 1.2-2.3%",
+  "recomputed": "interp at 2,5,8,12: 1.98/1.17/1.10/1.03%; grid pts in band: 2.06':1.90%, 2.61':1.51%, 3.31':1.21%, 4.19':1.14%, 5.30':1.18%, 6.72':1.19%, 8.51':1.07%, 10.77':1.06%",
+  "source": "SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/t001_accepted/products/main_fk.npz / SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/figure_products/order0.npz"
  },
  {
   "claim": "FK/FF over 2'-12', xi_kappa",
   "quoted": "several times the FF term",
-  "recomputed": "at 2/5/8/12': 5.5/4.8/4.1/3.4",
-  "source": "SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/true_redshift_fk_gl24_corrected_main/main/xi_main.npz / SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/true_redshift_ff_gl24_all/ff_main/xi_ff_main.npz"
+  "recomputed": "at 2/5/8/12': 4.8/4.2/3.5/2.9",
+  "source": "SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/t001_accepted/products/main_fk.npz / SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/t001_accepted/products/main_ff.npz"
  },
  {
   "claim": "FK/FF over 2'-12', xi_+",
   "quoted": "several times the FF term",
-  "recomputed": "at 2/5/8/12': 4.5/3.8/3.3/3.0",
-  "source": "SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/true_redshift_fk_gl24_corrected_main/main/xi_main.npz / SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/true_redshift_ff_gl24_all/ff_main/xi_ff_main.npz"
+  "recomputed": "at 2/5/8/12': 4.1/3.5/3.1/2.8",
+  "source": "SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/t001_accepted/products/main_fk.npz / SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/t001_accepted/products/main_ff.npz"
  },
  {
   "claim": "Signed FK/FF in xi_minus over the band",
   "quoted": "FK magnitude exceeds FF in all four observables",
-  "recomputed": "FK/FF at 2/5/8/12': 69.3/8.0/7.5/6.4",
-  "source": "SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/true_redshift_fk_gl24_corrected_main/main/xi_main.npz / SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/true_redshift_ff_gl24_all/ff_main/xi_ff_main.npz"
+  "recomputed": "FK/FF at 2/5/8/12': 61.8/7.2/6.8/5.8",
+  "source": "SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/t001_accepted/products/main_fk.npz / SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/t001_accepted/products/main_ff.npz"
  },
  {
   "claim": "Signed FK/FF in xi_kappa_gamma_t over the band",
   "quoted": "FK magnitude exceeds FF in all four observables",
-  "recomputed": "FK/FF at 2/5/8/12': -12.1/-7.5/-7.2/-6.8",
-  "source": "SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/true_redshift_fk_gl24_corrected_main/main/xi_main.npz / SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/true_redshift_ff_gl24_all/ff_main/xi_ff_main.npz"
+  "recomputed": "FK/FF at 2/5/8/12': 10.9/6.9/6.6/6.4",
+  "source": "SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/t001_accepted/products/main_fk.npz / SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/t001_accepted/products/main_ff.npz"
  },
  {
   "claim": "Cutoff ladder, tree, FK/O0 at 0.5'",
   "quoted": "measured finite-cutoff values, ell_max 960 to 15360",
-  "recomputed": "960:0.36% -> 1920:0.74% -> 3840:1.20% -> 7680:1.63% -> 15360:1.91%; successive ratios [2.07, 1.63, 1.36, 1.17]",
-  "source": "SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/figure_products/cutoff_ladder/table_tree_cut*_r4_xi.npz"
+  "recomputed": "960:0.32% -> 1920:0.65% -> 3840:1.04% -> 7680:1.40% -> 15360:1.63%; successive ratios [2.02, 1.6, 1.34, 1.17]",
+  "source": "SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/t001_accepted/cutoff_ladder/tree_auto/table_tree_cut*_r4_xi.npz"
  },
  {
   "claim": "Final doubling adds (0.5')",
   "quoted": "measured change from ell_max=7680 to 15360",
-  "recomputed": "17.1%",
+  "recomputed": "16.8%",
   "source": "same"
  },
  {
   "claim": "Final doubling adds across 2'-12'",
   "quoted": "finite-cutoff sensitivity, not an infinite-cutoff bound",
-  "recomputed": "2':9.8%, 5':9.5%, 8':9.1%, 12':8.8%",
+  "recomputed": "2':9.8%, 5':9.7%, 8':9.5%, 12':9.6%",
   "source": "same"
  },
  {
   "claim": "BiHalofit ladder at 0.5'",
   "quoted": "measured finite-cutoff sensitivity",
-  "recomputed": "960:0.53% -> 1920:1.72% -> 3840:5.30% -> 7680:14.40% -> 15360:29.63%",
-  "source": "SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/figure_products/cutoff_ladder/table_bihalofit_cut*_r4_xi.npz"
+  "recomputed": "960:0.49% -> 1920:1.62% -> 3840:5.08% -> 7680:13.80% -> 15360:28.06%",
+  "source": "SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/t001_accepted/cutoff_ladder/bihalofit_auto/table_bihalofit_cut*_r4_xi.npz"
+ },
+ {
+  "claim": "BiHalofit given/auto leg-order diagnostic at 0.5'",
+  "quoted": "Finite leg-order sensitivity; no nonlinear-model error bound",
+  "recomputed": "960: given=0.495%, auto=0.495%, difference=+0.000 percentage points; 1920: given=1.624%, auto=1.624%, difference=+0.000 percentage points; 3840: given=5.080%, auto=5.078%, difference=+0.002 percentage points; 7680: given=13.806%, auto=13.795%, difference=+0.010 percentage points; 15360: given=28.087%, auto=28.059%, difference=+0.028 percentage points",
+  "source": "SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/t001_accepted/cutoff_ladder/bihalofit_given and /bihalofit_auto"
  },
  {
   "claim": "Multi-z FK/O0 at 0.5' (z_s=1,1.7,2.5,3.2,4)",
-  "quoted": "1.09/1.44/1.66/1.77/1.85%, increasing toward 1.91% at z_s=5",
-  "recomputed": "1.09/1.44/1.66/1.77/1.85%",
-  "source": "SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/figure_products/multiz/multiz.npz"
+  "quoted": "increasing toward about 1.91% at z_s=5 (retained approximate estimate)",
+  "recomputed": "0.96/1.26/1.43/1.52/1.58%",
+  "source": "SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/t001_accepted/products/multiz.npz"
  },
  {
   "claim": "Multi-z FK/O0 over 2'-12' by z_s",
   "quoted": "about 0.86-0.94% at z_s=1, increasing with source redshift",
-  "recomputed": "z=1: 0.86-0.94%; z=1.7: 1.13-1.21%; z=2.5: 1.30-1.38%; z=3.2: 1.39-1.46%; z=4: 1.46-1.52%",
+  "recomputed": "z=1: 0.80-0.84%; z=1.7: 1.04-1.08%; z=2.5: 1.19-1.22%; z=3.2: 1.27-1.29%; z=4: 1.31-1.34%",
   "source": "same"
  },
  {
-  "claim": "Multi-z FF plateaus (real per-z sweeps)",
-  "quoted": "large-separation plateau, without an independent mean-square accuracy claim",
+  "claim": "Multi-z FF plateaus (retained historical per-z reference sweeps)",
+  "quoted": "retained historical FF reference; no current covariance-table accuracy claim",
   "recomputed": "z=1: 3.557e-09; z=1.7: 3.112e-08; z=2.5: 1.140e-07; z=3.2: 2.300e-07; z=4: 4.049e-07 (mean over last 5 gammas)",
-  "source": "SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/figure_products/multiz/multiz_ff.npz"
+  "source": "SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/t001_accepted/products/multiz_ff.npz"
  },
  {
   "claim": "FK recovered BB/EE numerical residual at ell=60 and ell=1500",
   "quoted": "physical FK BB vanishes at this order, finite-grid recovery leaves a residual",
-  "recomputed": "ell=60.0: 0.276; ell=1500.0: -0.039; median over 50<=ell<=1500: -0.013",
-  "source": "SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/true_redshift_fk_gl24_corrected_main/main/xi_main.npz via plot_analysis3_cl_decomposition transform"
+  "recomputed": "ell=60.0: 0.254; ell=1500.0: -0.039; median over 50<=ell<=1500: -0.014",
+  "source": "SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/t001_accepted/products/main_fk.npz via plot_analysis3_cl_decomposition transform"
  },
  {
   "claim": "FF recovered polarization diagnostic",
   "quoted": "FF can generate BB, the recovered ratio is not an accuracy-certified physical amplitude",
-  "recomputed": "median EE/BB over band: 31.4 (BB/EE median 0.0319)",
-  "source": "SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/true_redshift_ff_gl24_all/ff_main/xi_ff_main.npz"
+  "recomputed": "median EE/BB over band: 33.5 (BB/EE median 0.0299)",
+  "source": "SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/t001_accepted/products/main_ff.npz"
  },
  {
   "claim": "EB parity null",
   "quoted": "parity-even inputs give zero EB, recovered FF residual is numerical",
-  "recomputed": "max|EB_FK|=0.00e+00; max|EB_FF|/max|EE_FF|=3.9e-09",
+  "recomputed": "max|EB_FK|=0.00e+00; max|EB_FF|/max|EE_FF|=2.0e-13",
   "source": "same"
  },
  {
   "claim": "Recovered C_kk total Order-2 correction over 50<=ell<=1500",
-  "quoted": "about 1.5-2.0%, finite-angle transform diagnostic",
-  "recomputed": "1.51% (ell=75.0) .. 2.01% (ell=115.0)",
+  "quoted": "about 1.4-1.8%, finite-angle transform diagnostic",
+  "recomputed": "1.42% (ell=75.0) .. 1.76% (ell=93.0)",
   "source": "same"
  },
  {
   "claim": "Recovered C_EE+BB total Order-2 correction over 50<=ell<=1500",
-  "quoted": "about 0.4-1.4%, finite-angle transform diagnostic",
-  "recomputed": "0.39% .. 1.43%",
+  "quoted": "about 0.4-1.2%, finite-angle transform diagnostic",
+  "recomputed": "0.36% .. 1.24%",
   "source": "same"
  },
  {
   "claim": "FK Monte-Carlo markers / fold",
   "quoted": "ratios within about 1%, including finite-sample and discretization effects",
-  "recomputed": "1': 1.010+/-0.004; 2.6': 1.009+/-0.004; 6.7': 1.002+/-0.009; 17.3': 0.995+/-0.021 (markers' stored analytic vs today's fold interp: 8.1e-12)",
-  "source": "SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/mc_update/fk_markers.npz"
+  "recomputed": "1': 1.008+/-0.003; 2.6': 1.007+/-0.004; 6.7': 1.005+/-0.007; 17.3': 1.002+/-0.013 (markers' stored analytic vs today's fold interp: 7.7e-12)",
+  "source": "SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/t001_accepted/products/fk_markers.npz"
  },
  {
   "claim": "Pooled sigma_lambda->0 MC/analytic FK at 1'",
   "quoted": "reproduces to about a percent",
-  "recomputed": "1.0096 +/- 0.0036",
-  "source": "SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/mc_update/fk_markers.npz"
+  "recomputed": "1.0084 +/- 0.0028",
+  "source": "SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/t001_accepted/products/fk_markers.npz"
  },
  {
   "claim": "Local-covariance FF Monte-Carlo diagnostic",
   "quoted": "subpercent agreement, maximum pull about 2.4 standard errors at N=4000",
   "recomputed": "max pull 2.31 at 1' against the interpolated dense reference",
-  "source": "SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/mc_update/appendix_mc_curve.npz"
+  "source": "SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/t001_accepted/products/appendix_mc_curve.npz"
  },
  {
   "claim": "Kernel quadrature cross-check / fold",
   "quoted": "within 1% at the four sampled angles (1', 2.6', 6.7', 17.3')",
-  "recomputed": "1':1.000, 2.6':1.001, 6.7':1.003, 17.3':1.010",
-  "source": "SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/mc_update/fk_quadrature.json"
+  "recomputed": "1':1.001, 2.6':1.001, 6.7':1.002, 17.3':1.002",
+  "source": "SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/t001_accepted/products/fk_quadrature.json"
  },
  {
   "claim": "zeta slices: sign-change brackets in the driving-field shells",
   "quoted": "channel-dependent sign changes, shell redshift rather than source redshift",
-  "recomputed": "TTT: z=4.5 between 56' and 71', z=4.8 between 56' and 71', z=5.0 between 56' and 71', z=5.3 between 56' and 71', z=5.7 between 56' and 71' | TTP: no sign change | Bmod: z=4.1 between 56' and 71', z=4.5 between 56' and 71', z=4.8 between 56' and 71', z=5.0 between 56' and 71', z=5.3 between 56' and 71', z=5.7 between 56' and 71' | Dmod: z=3.6 between 44' and 56', z=4.1 between 44' and 56', z=4.5 between 44' and 56', z=4.8 between 44' and 56', z=5.0 between 44' and 56', z=5.3 between 44' and 56', z=5.7 between 44' and 56'",
-  "source": "SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/figure_products/zeta_slices.npz"
+  "recomputed": "TTT: z=4.5 between 56' and 71', z=4.8 between 56' and 71', z=5.0 between 56' and 71', z=5.3 between 56' and 71', z=5.7 between 56' and 71' | TTP: no sign change | Bmod: z=4.1 between 56' and 71', z=4.5 between 56' and 71', z=4.8 between 56' and 71', z=5.0 between 56' and 71', z=5.3 between 56' and 71', z=5.7 between 56' and 71' | Dmod: z=3.6 between 44' and 56', z=4.1 between 44' and 56', z=4.5 between 44' and 56', z=4.8 between 44' and 56', z=5.0 between 44' and 56', z=5.3 between 44' and 56', z=5.7 between 35' and 44'",
+  "source": "SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/t001_accepted/products/zeta_slices.npz"
  },
  {
   "claim": "linear P(k): n_eff crosses -2 at",

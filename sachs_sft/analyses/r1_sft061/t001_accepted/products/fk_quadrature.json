@@ -1,0 +1,35 @@
+{
+  "current_marker_original_sha256": "f437a814d1251e67a4ab0f22d99d21c8dd1fba74a90d404ac8f451f4df0b8bee",
+  "fold_interpolation": "Original linear angular interpolation of accepted main scalar rows",
+  "fold_values": [
+    1.1767207991072652e-05,
+    8.506030188516381e-06,
+    5.119150228738896e-06,
+    2.2911694137646087e-06
+  ],
+  "gamma": [
+    1.0,
+    2.6,
+    6.7,
+    17.3
+  ],
+  "global_accuracy_granted": false,
+  "grid_refinement_certified": false,
+  "input_bindings_original_sha256": "a0498d590a8c0a14f66d081b4e3e91cfc2ff2c78e03acf5a841c4dee4e7ccace",
+  "local_fk": [
+    [
+      1.1781652621597264e-05,
+      8.518511826213004e-06,
+      5.12848055604056e-06,
+      2.296050596298857e-06
+    ]
+  ],
+  "main_result_original_sha256": "d4bbc17d26db1ca50c27c8316238edcca02c998e8882ab88116be371b1d10e3a",
+  "n_lambda": [
+    1000
+  ],
+  "product_activated": false,
+  "reference_kind": "Original corrected MC target-cumulant ref_true, independent of sampling",
+  "scientific_acceptance": false,
+  "scope": "ONE_GENUINE_1000_NODE_GRID_FOUR_ANGLES_ONLY"
+}

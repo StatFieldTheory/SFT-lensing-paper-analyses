@@ -1,6 +1,8 @@
 from __future__ import annotations
 
 import sys
+import hashlib
+import json
 from pathlib import Path
 
 import matplotlib.pyplot as plt
@@ -19,7 +21,18 @@ for path in (SACHS_SCRIPT_DIR, CORR_OP_DIR):
         sys.path.insert(0, str(path))
 
 from D_callable import D_at, _CACHE as D_CACHE, z_of_lambda  # noqa: E402
-from corr_op_C_callable import C_fn_batch, TABLE_PATH  # noqa: E402
+sys.path.insert(0, str(ROOT / 'SFT-lensing-paper-analyses' / 'reproduce'))
+from product_paths import active_manifest, resolve_product  # noqa: E402
+from operator_inputs import selected_c_callable  # noqa: E402
+
+
+def _legacy_corr_callable():
+    import corr_op_C_callable
+    return corr_op_C_callable
+
+
+C_fn_batch, TABLE_PATH, C_INPUT_PROVENANCE = selected_c_callable(
+    active_manifest, resolve_product, _legacy_corr_callable)
 
 
 LAM_SOURCE_Z5 = 2318.0
@@ -434,6 +447,15 @@ def main() -> None:
     FIG_DIR.mkdir(exist_ok=True)
     make_response_figure()
     make_corr_operator_figure()
+    response_source = Path(sys.modules['D_callable'].__file__).resolve()
+    (FIG_DIR / 'operator_input_provenance.json').write_text(json.dumps({
+        'correlation_operator': C_INPUT_PROVENANCE,
+        'response_source': {'path': str(response_source),
+                            'sha256': hashlib.sha256(response_source.read_bytes()).hexdigest()},
+        'response_input_scope': 'UNCHANGED_PACKAGE_LOCAL_RESPONSE_SOURCE',
+        'generator_sha256': hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
+        'scientific_accuracy_granted': False,
+    }, indent=2) + '\n')
     print("wrote figures/response_operator_draft.pdf")
     print("wrote figures/response_operator_draft.png")
     print("wrote figures/corr_operator_slices_draft.pdf")

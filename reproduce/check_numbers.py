@@ -11,7 +11,7 @@ import json, math, os, sys
 from pathlib import Path
 os.environ.setdefault("MPLBACKEND", "Agg")
 import numpy as np
-from product_paths import resolve_product
+from product_paths import cutoff_series, resolve_cutoff_member, resolve_product
 
 SSA = Path(__file__).resolve().parents[1]
 REPO = SSA.parent
@@ -113,9 +113,9 @@ for name, label in (("xi_kappa", "xi_kappa"), ("xi_plus", "xi_+"), ("xi_minus", 
     inband = (g >= 2.0) & (g <= 12.0)
     rg = 100 * fk[name][inband] / o0[name][inband]
     add(f"FK/O0 over 2'-12', {label}",
-        quoted({"xi_kappa": "about 1.5-1.6%", "xi_plus": "about 0.45-0.75%",
-                "xi_minus": "about 14% at 2', about 1% beyond 5'",
-                "xi_kappa_gamma_t": "negative, about -2.4% to -1.2%"}[name],
+        quoted({"xi_kappa": "about 1.5-1.6%", "xi_plus": "about 0.5-0.8%",
+                "xi_minus": "about 13.2% at 2', about 1.1-1.3% beyond 5'",
+                "xi_kappa_gamma_t": "positive, about 1.2-2.3%"}[name],
         {"xi_kappa": "1.3-1.7%", "xi_plus": "1.3-1.7% (nearly equal to xi_kappa)",
          "xi_minus": "~9% at 2' edge, near 1% above 3' (8.60/3.91/2.19% at 2.06/2.61/3.31')",
          "xi_kappa_gamma_t": "1-2%"}[name]),
@@ -134,16 +134,25 @@ for name in ("xi_minus", "xi_kappa_gamma_t"):
 # cutoff ladder
 CUTS = (960, 1920, 3840, 7680, 15360)
 lad = {}
-for model in ("tree", "bihalofit"):
+lad_sources = {}
+selections = cutoff_series()
+for selection in selections:
     vals, band_vals = [], []
     for cut in CUTS:
-        gg, ob = obs(P / f"table_{model}_cut{cut}_r4_xi.npz", 2)
+        gg, ob = obs(resolve_cutoff_member(selection, cut), 2)
         vals.append(100 * ob[kk][0] / o0[kk][0])
         band_vals.append([100 * lin(gg, ob[kk], x) / lin(g, o0[kk], x) for x in BAND])
-    lad[model] = (np.array(vals), np.array(band_vals))
+    lad[selection['key']] = (np.array(vals), np.array(band_vals))
+    lad_sources[selection['key']] = resolve_cutoff_member(selection, CUTS[0]).parent
+if any(item['leg_order'] is not None for item in selections):
+    # Keep the quoted fiducial series explicit; retain the given-order diagnostic.
+    lad['tree'] = lad['tree_auto']
+    lad['bihalofit'] = lad['bihalofit_auto']
+    lad_sources['tree'] = lad_sources['tree_auto']
+    lad_sources['bihalofit'] = lad_sources['bihalofit_auto']
 v = lad["tree"][0]; inc = np.diff(v); ratios = v[1:] / v[:-1]
 add("Cutoff ladder, tree, FK/O0 at 0.5'", quoted("measured finite-cutoff values, ell_max 960 to 15360", "0.48% -> 2.31% for ell_max 960 -> 15360"),
-    " -> ".join(f"{c}:{x:.2f}%" for c, x in zip(CUTS, v)) + f"; successive ratios {np.round(ratios,2).tolist()}", rel(P) + "/table_tree_cut*_r4_xi.npz")
+    " -> ".join(f"{c}:{x:.2f}%" for c, x in zip(CUTS, v)) + f"; successive ratios {np.round(ratios,2).tolist()}", rel(lad_sources['tree']) + "/table_tree_cut*_r4_xi.npz")
 add("Final doubling adds (0.5')", quoted("measured change from ell_max=7680 to 15360", "14%"), f"{100*(v[-1]/v[-2]-1):.1f}%", "same")
 bv = lad["tree"][1]
 add("Final doubling adds across 2'-12'", quoted("finite-cutoff sensitivity, not an infinite-cutoff bound", "8-9%"), ", ".join(f"{x:.0f}':{100*(bv[-1][i]/bv[-2][i]-1):.1f}%" for i, x in enumerate(BAND)), "same")
@@ -153,7 +162,14 @@ if not ACTIVE:
     add("Historical geometric extrapolation (0.5')", "historical estimate, not a verified bound",
         f"last-increment ratio {r_last:.2f}: {extrap:.2f}% (= {100*(extrap/v[-1]-1):.0f}% above the final finite-cutoff value)", "same")
 vb = lad["bihalofit"][0]
-add("BiHalofit ladder at 0.5'", quoted("measured finite-cutoff sensitivity", "keeps growing, no turnover"), " -> ".join(f"{c}:{x:.2f}%" for c, x in zip(CUTS, vb)), rel(P) + "/table_bihalofit_cut*_r4_xi.npz")
+add("BiHalofit ladder at 0.5'", quoted("measured finite-cutoff sensitivity", "keeps growing, no turnover"), " -> ".join(f"{c}:{x:.2f}%" for c, x in zip(CUTS, vb)), rel(lad_sources['bihalofit']) + "/table_bihalofit_cut*_r4_xi.npz")
+if 'bihalofit_given' in lad:
+    given = lad['bihalofit_given'][0]
+    add('BiHalofit given/auto leg-order diagnostic at 0.5\'',
+        'Finite leg-order sensitivity; no nonlinear-model error bound',
+        '; '.join(f'{cut}: given={left:.3f}%, auto={right:.3f}%, difference={left-right:+.3f} percentage points'
+                  for cut, left, right in zip(CUTS, given, vb, strict=True)),
+        rel(P) + '/bihalofit_given and /bihalofit_auto')
 
 # multi-z
 d = np.load(MULTIZ, allow_pickle=True)
@@ -161,13 +177,13 @@ ffr = np.load(MULTIZ_FF, allow_pickle=True)
 z = np.asarray(d["z"], float); gz = np.asarray(d["gamma"], float)
 o0z, fkz = np.asarray(d["o0"], float), np.asarray(d["fk"], float); ffz = np.asarray(ffr["ff"], float)
 half = [100 * fkz[i, 0] / o0z[i, 0] for i in range(len(z))]
-add("Multi-z FK/O0 at 0.5' (z_s=1,1.7,2.5,3.2,4)", quoted("1.09/1.44/1.66/1.77/1.85%, increasing toward 1.91% at z_s=5", "session note: 1.36/1.77/2.04/2.14/2.24%, monotone toward 2.31% at z=5"),
+add("Multi-z FK/O0 at 0.5' (z_s=1,1.7,2.5,3.2,4)", quoted("increasing toward about 1.91% at z_s=5 (retained approximate estimate)", "session note: 1.36/1.77/2.04/2.14/2.24%, monotone toward 2.31% at z=5"),
     "/".join(f"{x:.2f}" for x in half) + "%", rel(MULTIZ))
 bz = [[100 * lin(gz, fkz[i], x) / lin(gz, o0z[i], x) for x in BAND] for i in range(len(z))]
 add("Multi-z FK/O0 over 2'-12' by z_s", quoted("about 0.86-0.94% at z_s=1, increasing with source redshift", "0.9-1.1% at z_s=1 (intro); grows with source redshift"),
     "; ".join(f"z={z[i]:g}: {min(b):.2f}-{max(b):.2f}%" for i, b in enumerate(bz)), "same")
 ffplat = [ffz[i, -5:].mean() for i in range(len(z))]
-add("Multi-z FF plateaus (real per-z sweeps)", quoted("large-separation plateau, without an independent mean-square accuracy claim", "plateau = <kappa>^2(z_s) to 0.1-2.2%"),
+add("Multi-z FF plateaus (retained historical per-z reference sweeps)", quoted("retained historical FF reference; no current covariance-table accuracy claim", "plateau = <kappa>^2(z_s) to 0.1-2.2%"),
     "; ".join(f"z={z[i]:g}: {ffplat[i]:.3e}" for i in range(len(z))) + " (mean over last 5 gammas)", rel(MULTIZ_FF))
 
 # harmonic space: B/E, EB, C_kk correction
@@ -196,12 +212,12 @@ o0kk = C._combine(o0g, [((0, 0), 1.0)]); ffkk = C._combine(ffg, [((0, 0), 1.0)])
 cl0 = C.forward_curved(o0kk, s00, dc_subtract=True)
 clf = C.forward_curved(o0kk + ffkk + fkkk, s00, dc_subtract=True)
 corr = 100 * (clf - cl0) / cl0
-add("Recovered C_kk total Order-2 correction over 50<=ell<=1500", quoted("about 1.5-2.0%, finite-angle transform diagnostic", "slowly rising one to two percent"),
+add("Recovered C_kk total Order-2 correction over 50<=ell<=1500", quoted("about 1.4-1.8%, finite-angle transform diagnostic", "slowly rising one to two percent"),
     f"{corr[band].min():.2f}% (ell={ELL[band][np.argmin(corr[band])]}) .. {corr[band].max():.2f}% (ell={ELL[band][np.argmax(corr[band])]})", "same")
 pbb0 = C.forward_curved(C._combine(o0g, [((1, 1), 1.0), ((2, 2), 1.0)]), s22, dc_subtract=False)
 pbbf = C.forward_curved(C._combine(o0g, [((1, 1), 1.0), ((2, 2), 1.0)]) + C._combine(ffg, [((1, 1), 1.0), ((2, 2), 1.0)]) + C._combine(fkg, [((1, 1), 1.0), ((2, 2), 1.0)]), s22, dc_subtract=False)
 corr2 = 100 * (pbbf - pbb0) / pbb0
-add("Recovered C_EE+BB total Order-2 correction over 50<=ell<=1500", quoted("about 0.4-1.4%, finite-angle transform diagnostic", "one to two percent"), f"{corr2[band].min():.2f}% .. {corr2[band].max():.2f}%", "same")
+add("Recovered C_EE+BB total Order-2 correction over 50<=ell<=1500", quoted("about 0.4-1.2%, finite-angle transform diagnostic", "one to two percent"), f"{corr2[band].min():.2f}% .. {corr2[band].max():.2f}%", "same")
 
 # validation numbers
 mk = np.load(MC_MARKERS)

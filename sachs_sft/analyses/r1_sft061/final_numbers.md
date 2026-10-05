@@ -1,4 +1,11 @@
-| claim | quoted in paper | recomputed today | source products |
+This is the retained R1 numerical summary, not a fresh T-001 recomputation.
+Its historical entries, sign conventions, numbers and row-count transcript are
+preserved below. Current accepted T-001 values are recorded in
+`reproduce/numbers.json`, using the verified selection in
+`reproduce/active_products.json`. Do not use the dated transcript as a current
+validation record.
+
+| claim | quoted in paper | recorded R1 recomputation | source products |
 |---|---|---|---|
 | Historical FK(0.5') sweep (cut1000, old callable), kk | historical baseline only, not the active prediction | +4.2877e-06 (historical source plane) | SFT-lensing-paper-analyses/sachs_sft/sftwick_outputs/2PCF/C_corr_op_K_limber_FK/xi_C_corr_op_K_limber_FK.npz |
 | FK(0.5') finite-cutoff fold (ell_max=15360, perm-aware), kk | 1.91% of O0 | +1.6187e-05 = 1.91% of O0 | SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/true_redshift_fk_gl24_corrected_main/main/xi_main.npz |

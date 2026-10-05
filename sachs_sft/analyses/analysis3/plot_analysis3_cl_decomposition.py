@@ -306,6 +306,10 @@ def main() -> int:
     g0, o0g = load_sweep_order(O0_NPZ, 0)
     gff, ffg = load_sweep_order(FF_NPZ, 2)
     gfk, fkg = load_sweep_order(FK_NPZ, 2)
+    from publication_displays import select_main_display
+    g0, o0g, gff, ffg, gfk, fkg = select_main_display(
+        3, load_sweep_order, _gamma_arcmin, (O0_NPZ, FF_NPZ, FK_NPZ),
+        ((g0, o0g), (gff, ffg), (gfk, fkg)))
     print(f"gamma grid: {g0.min():.3f}..{g0.max():.1f} arcmin ({g0.size} pts)")
 
     ckk_ccl = _pyccl_ckk()

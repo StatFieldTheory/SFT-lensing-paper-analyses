@@ -189,8 +189,8 @@ def make_fields(
     phi = np.fft.irfftn(phi_k, s=(n_pix, n_pix, n_pix), axes=(0, 1, 2))
 
     ricci = -poisson_a * delta
-    gamma1_k = -0.5 * (kx * kx - ky * ky) * phi_k
-    gamma2_k = -(kx * ky) * phi_k
+    gamma1_k = (ky * ky - kx * kx) * phi_k
+    gamma2_k = 2.0 * (kx * ky) * phi_k
     gamma1 = np.fft.irfftn(gamma1_k, s=(n_pix, n_pix, n_pix), axes=(0, 1, 2))
     gamma2 = np.fft.irfftn(gamma2_k, s=(n_pix, n_pix, n_pix), axes=(0, 1, 2))
 
@@ -339,8 +339,8 @@ def render(seed: int, out_stem: Path, *, n_pix: int, box_mpc: float, redshift: f
          _robust_symmetric_norm(fields["delta"]), "δₘ"),
         ("B  potential Φ", "Φ(k) = -A δₘ(k)/k²", fields["phi"] / 1e-5, "RdBu_r",
          _robust_symmetric_norm(fields["phi"] / 1e-5), "Φ [10⁻⁵]"),
-        ("C  Ricci Φ₀₀", "Φ₀₀ ≃ -A δₘ", fields["ricci"] / 1e-8, "RdBu_r",
-         _robust_symmetric_norm(fields["ricci"] / 1e-8), "Φ₀₀ [10⁻⁸ Mpc⁻²]"),
+        ("C  Ricci Φ₀₀", "Φ₀₀/(E²/a²) ≃ -A δₘ", fields["ricci"] / 1e-8, "RdBu_r",
+         _robust_symmetric_norm(fields["ricci"] / 1e-8), "Φ₀₀/(E²/a²) [10⁻⁸ Mpc⁻²]"),
     ]
 
     for i, (label, formula, field, cmap, norm, cbar_label) in enumerate(panels):
@@ -400,9 +400,9 @@ def render(seed: int, out_stem: Path, *, n_pix: int, box_mpc: float, redshift: f
     )
     axes[3].add_patch(Circle((peak_x, peak_y), 17.5, fill=False,
                              edgecolor="0.12", linewidth=0.85, zorder=7))
-    _panel_label(axes[3], "D  Weyl Ψ₀", "Re/Im Ψ₀ component samples")
+    _panel_label(axes[3], "D  Weyl Ψ₀", "Re/Im Ψ₀/(E²/a²)")
     cb = fig.colorbar(im_psi, cax=caxes[3], orientation="horizontal")
-    cb.set_label("|Ψ₀| [10⁻⁸ Mpc⁻²]", fontsize=13.5, labelpad=2.5)
+    cb.set_label("|Ψ₀|/(E²/a²) [10⁻⁸ Mpc⁻²]", fontsize=13.5, labelpad=2.5)
     cb.set_ticks([0, 2, 4, 6, 8])
     cb.ax.tick_params(labelsize=12.0, length=3.2, pad=2.0)
 

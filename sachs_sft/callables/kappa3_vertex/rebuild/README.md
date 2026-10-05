@@ -75,6 +75,7 @@ sh sweep_cutoff.sh tree 960 1920 3840 7680 15360
 | `build_low.py` | the LOW exact-Wigner-3j branch, once per grid |
 | `build_band.py` | one HIGH multipole window, chunked over rows |
 | `assemble.py` | LOW + selected windows + row subset -> deployed-format table |
+| `assemble_flip_odd_high.py` | the same sum with the spin-2 sign convention of every band checked; `--flip-odd-high` reverses the odd HIGH channels of old bands |
 | `run_queue.py` | concurrency and free-memory guarded job runner |
 | `observables.py` | the four plotted observables from a folded sweep |
 | `analyse_cutoff.py` | partial sums against cutoff, and the k-space mapping |
@@ -87,6 +88,26 @@ sh sweep_cutoff.sh tree 960 1920 3840 7680 15360
 | `cl_ratio.py` | FK relative to Order-0 in harmonic space |
 | `fig_*.py`, `plotstyle.py` | the note's figures |
 | `sweep_cutoff.sh` | assemble and fold a series of cutoffs, one fold at a time |
+
+## Spin-2 sign convention (2026-10)
+
+canoes before commit 810b133 built the HIGH branch with `response_psi =
+-response_phi`. In the `exp(2 i phi_l)` basis that branch uses, `Psi0(l) =
++exp(2 i phi_l) Phi00(l)`, so every HIGH band built before that commit has
+`zeta_TTP`, `zeta_PPP` and `dmod` (one or three spin-2 legs) with the wrong sign;
+`zeta_TTT`, `zeta_TPP` and `bmod` are right, and the LOW (exact) branch is not
+affected. A band's convention is in `cosmo_meta["potential_convention"]`:
+`Psi0=-A(a)` is the old one, `Psi0=+A(a)` the corrected one. Every table in
+`products/` and in `r1_sft061/` assembled before 2026-10-03 carries the old
+sign in its odd channels, through its HIGH part.
+
+`assemble.py` cannot tell the two kinds apart; `assemble_flip_odd_high.py`
+reads the label of every band and stops on a mixture or an unknown label.
+`pieces_nphi512/table_permclosed_np512_spin2fix.npz` is the stored production
+table with the odd HIGH channels reversed (`--flip-odd-high`, no new
+quadrature): the control that isolates the sign fix (paper task T-001). Bands
+rebuilt with canoes 810b133 or later are assembled with the same script
+without the flag.
 
 ## Traps
 
@@ -102,3 +123,13 @@ sh sweep_cutoff.sh tree 960 1920 3840 7680 15360
   to run if the output resolves into production.
 * P(k) stops at k = 206 h/Mpc and canoes refuses to extrapolate, so the
   innermost usable shell is `chi_h = 2 ell_max / k_max`.
+* Two linear P(k) tables exist in canoes `examples/data`: `PCAMBz0.txt`
+  (sigma8 0.808988, no header), which every piece built before 2026-10-03
+  used, and `PCAMB_pyccl_stf_fid_z0.txt` (sigma8 0.810000, cosmology in its
+  header), which the C table, FF, Order 0 and the PyCCL reference use. Both
+  share one k grid. `build_band.py --pk-table` selects the table for the
+  bispectrum model, `pk_matter_today` and the BiHalofit sigma8, and records
+  its name and sha256 in the build metadata; a piece without that record was
+  built on `PCAMBz0.txt`. `merge_bands.py` and `assemble.py` refuse bands on
+  different tables. The LOW piece is reused across choices, so an assembled
+  table records `pk_table_low` and `pk_table_high` separately.
