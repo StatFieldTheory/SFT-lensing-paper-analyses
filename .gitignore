@@ -115,3 +115,7 @@ sachs_sft/callables/kappa3_vertex/rebuild/jobs_t001_np512.json
 sachs_sft/callables/kappa3_vertex/rebuild/products/pieces_nphi512/table_permclosed_np512_spin2fix.npz
 **/outputs_archive_*/
 **/source_archive_*/
+
+# Generated operator binding reports and author-display render archives.
+figures/outputs/*_input_provenance.json
+**/figures_archive_*/
