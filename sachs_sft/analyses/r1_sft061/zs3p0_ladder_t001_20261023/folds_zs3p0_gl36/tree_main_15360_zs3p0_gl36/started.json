@@ -1,0 +1,51 @@
+{
+  "schema": 1,
+  "status": "STARTED_NOT_COMPLETED",
+  "target_id": "tree_main_15360_zs3p0_gl36",
+  "pid": 93668,
+  "start_unix": 1792786289.268064,
+  "plan_sha256": "01278821ac5d1b6e10bf30cc70631aeb57500c64d9036ed1f01cd74885ea9599",
+  "prepared": {
+    "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/zs3p0_ladder_t001_20261023/folds_zs3p0_gl36/prepared.json",
+    "sha256": "4ccd967dcbc349fbe7eb044506c923514cc87de4b8f73f3ab90c06a205769954"
+  },
+  "lock": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/.replay_suite.lock",
+  "n_jobs": 4,
+  "gl": 36,
+  "orders": "0,2",
+  "memory": {
+    "method": "vm_stat free+inactive, observation not reservation",
+    "available_bytes": 61066297344,
+    "required_bytes": 40428978176,
+    "rule": "measured peak + 12 GiB"
+  },
+  "gate": {
+    "gate_report": {
+      "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/zs3p0_ladder_t001_20261023/gates_zs5_gl36/gate_report.json",
+      "sha256": "d7c711739ab348fa55ea7c00dab2566f90736d0f284e62e81a87fbd4de9094ed"
+    },
+    "status": "PASS",
+    "bitwise_all": true,
+    "workers": {
+      "bihalofit_auto_15360": {
+        "used": 4,
+        "source": "cli"
+      },
+      "tree_main_15360": {
+        "used": 4,
+        "source": "cli"
+      }
+    },
+    "gate_plan_sha256": "2325540bcda09545c01d49738d3e7d5cebcf6b3a74bdc25622a7785a5517d6fc"
+  },
+  "environment": {
+    "PYTHONPATH": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/t001_candidate_inputs/main_fk_gl36_optimized_v6/framework_export/src:/Users/zzhang/projects/angular_statistics/canoes/src",
+    "CANOES_ROOT": "/Users/zzhang/projects/angular_statistics/canoes",
+    "PYTHONNOUSERSITE": "1",
+    "MPLCONFIGDIR": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/zs3p0_ladder_t001_20261023/folds_zs3p0_gl36/tree_main_15360_zs3p0_gl36/mpl_cache",
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "VECLIB_MAXIMUM_THREADS": "1"
+  }
+}

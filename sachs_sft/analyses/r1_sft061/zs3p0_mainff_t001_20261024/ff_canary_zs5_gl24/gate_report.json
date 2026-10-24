@@ -1,0 +1,55 @@
+{
+  "schema": 1,
+  "status": "PASS",
+  "pipeline": "ff",
+  "criterion": "max |value/reference - 1| <= 1e-12",
+  "bitwise_all": true,
+  "prepared": {
+    "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/zs3p0_mainff_t001_20261024/ff_canary_zs5_gl24/prepared.json",
+    "sha256": "7442c66aa3e46c63309abe9a6268c9eb7b15eaefed090bd6be65b80355f5a2af"
+  },
+  "plan_sha256": "65fe86e9335c2676e7b5576a4f5dcec4de997874438f255e62033b42a9aaff98",
+  "completions": {
+    "ff_canary_zs5": {
+      "completed": {
+        "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/zs3p0_mainff_t001_20261024/ff_canary_zs5_gl24/ff_canary_zs5_gl24/completed.json",
+        "sha256": "d74a29d7657e83bee9f495e3fccfe248cc3a76c7475fe96536a8105ed0c79f73"
+      },
+      "started": {
+        "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/zs3p0_mainff_t001_20261024/ff_canary_zs5_gl24/ff_canary_zs5_gl24/started.json",
+        "sha256": "29b2e82eb49393aa10d9dd3a5a624bb8ebd52d4223622a1a5180003b3d84f80b"
+      },
+      "result": {
+        "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/zs3p0_mainff_t001_20261024/ff_canary_zs5_gl24/ff_canary_zs5_gl24/xi_ff_canary_zs5_gl24.npz",
+        "sha256": "71b81564ffd13bf775742a3f8b2ef9bfb48e3704cd3438084ef38adb97aab3ed"
+      },
+      "elapsed_seconds": 41.490874332841486
+    }
+  },
+  "workers": {
+    "ff_canary_zs5_gl24": {
+      "used": 4,
+      "source": "accepted:ff_main_release",
+      "gl": 24
+    }
+  },
+  "checks": {
+    "F1_ff_canary_zs5": [
+      {
+        "label": "accepted main FF (0,0) at main indices [0, 6]",
+        "reference": {
+          "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/t001_accepted/products/main_ff.npz",
+          "sha256": "340aff7ae5688b5e135af7769c1809f97ef03de6701f22f84a2ffb8ee3a44fae"
+        },
+        "rows": 2,
+        "same_row_order": true,
+        "max_abs_diff": 0.0,
+        "max_rel_diff": 0.0,
+        "bitwise": true,
+        "tolerance_rel": 1e-12,
+        "pass": true
+      }
+    ]
+  },
+  "scientific_acceptance": false
+}

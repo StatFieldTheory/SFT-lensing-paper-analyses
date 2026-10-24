@@ -1,0 +1,51 @@
+{
+  "schema": 1,
+  "status": "completed",
+  "target_id": "o0_prod_zs3p0",
+  "plan_sha256": "2fda8e9b3c1b61881a779eac803814a85d20b753a72ec671ee9812c97034ff20",
+  "prepared": {
+    "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/zs3p0_mainff_t001_20261024/order0_production_zs3p0/prepared.json",
+    "sha256": "819d596adcb262c23444a4d08b84c0fbeeed0e3d9fbd23080c56c3e83f8ce7ed"
+  },
+  "started": {
+    "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/zs3p0_mainff_t001_20261024/order0_production_zs3p0/o0_prod_zs3p0/started.json",
+    "sha256": "22d63baf6e31b541194c11646e31d92d1c2e515cc52106f42d3ec75c062c86a6"
+  },
+  "elapsed_seconds": 61.47272904170677,
+  "returncode": 0,
+  "outputs": [
+    {
+      "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/zs3p0_mainff_t001_20261024/order0_production_zs3p0/o0_prod_zs3p0/o0_prod_zs3p0.npz",
+      "sha256": "703dc15a273925814add535ecb7dd0b07d3187fbb4a431926d87a2278eeeb798"
+    },
+    {
+      "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/zs3p0_mainff_t001_20261024/order0_production_zs3p0/o0_prod_zs3p0/o0_prod_zs3p0.json",
+      "sha256": "81161a290ffa9335effd720f096714a631e95b29541667ab7c2b9bc2cebd1e3d"
+    },
+    {
+      "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/zs3p0_mainff_t001_20261024/order0_production_zs3p0/o0_prod_zs3p0/o0_prod_zs3p0.source.py",
+      "sha256": "47b855b1b438ca323f85e3bcf9fe9aee466d38dc9c5830423624eb7b70913424"
+    }
+  ],
+  "log": {
+    "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/zs3p0_mainff_t001_20261024/order0_production_zs3p0/o0_prod_zs3p0/o0_prod_zs3p0.log",
+    "sha256": "eb0a4876452112f208050ced7fb63b938c61a58ede9a4a63f54f793dd78fd0bf"
+  },
+  "output_validation": {
+    "settings_match": true,
+    "warnings": [],
+    "source_lambda_mpc": 2255.3607197066854,
+    "source_redshift": 3.0,
+    "metadata_sha256": "c6c7dc450a1197e023a8a4b3edc28781e50db2d6af0a3a1a9d154c9f32b16fea",
+    "array_sha256": {
+      "cl_pp": "d9c9d7d48676093ae0c382687a5984a0043241e7e5abe20b37e75cd930dbf430",
+      "ell": "a6abd2c1768c9b1260451f0612439d364b2bbb990ddb6a1431fbea1ff514ea4a",
+      "ell_taper": "7d6283e4b73c513aaffc9ebdc3b1424face72f4771057ecae16a684073aaaffa",
+      "kk": "f15317cd49544f30bf6d46127b40dc85907f32289087f892067f1a10edc3649d",
+      "sampled_cl_pp": "6da2cf4b152b66b8f9eaf9779d740a1ecba28f44669a1755ebe9a5ed1cd0a542",
+      "sampled_ell": "d097d353e62fd861648f9de407737a9ba6d9f06ca057ec64e94704b7598a3c61",
+      "theta_arcmin": "df01562fa69b8ec811c36a44ad45b255e064ca2ca8c0e3d9b24c71a425a176ff"
+    }
+  },
+  "scientific_acceptance": false
+}

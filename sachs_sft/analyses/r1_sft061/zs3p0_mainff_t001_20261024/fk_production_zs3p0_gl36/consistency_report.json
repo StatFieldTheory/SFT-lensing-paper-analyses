@@ -1,0 +1,59 @@
+{
+  "schema": 1,
+  "status": "PASS",
+  "criterion": "max |value/v1 - 1| <= 1e-12",
+  "bitwise": true,
+  "prepared": {
+    "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/zs3p0_mainff_t001_20261024/fk_production_zs3p0_gl36/prepared.json",
+    "sha256": "63bc40aaf9040a51b11d48447ce03821d71b74ddc73efd08a5bc795f1caab2ff"
+  },
+  "plan_sha256": "b1e8e7cbbcd9e1fe4fb17e6bc9866bce3462fe65c48723e269d12c8904c4d8cb",
+  "completion": {
+    "completed": {
+      "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/zs3p0_mainff_t001_20261024/fk_production_zs3p0_gl36/fk_main_zs3p0_gl36/completed.json",
+      "sha256": "2439e2b5d66b38759e0b18cc84ed311a7c9a7d9405636ae912a67821b6dbee35"
+    },
+    "started": {
+      "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/zs3p0_mainff_t001_20261024/fk_production_zs3p0_gl36/fk_main_zs3p0_gl36/started.json",
+      "sha256": "a27cee8e8938d1784afa6324e614bf6f3f12ef20679c2d23f9868caa2ba0522e"
+    },
+    "result": {
+      "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/zs3p0_mainff_t001_20261024/fk_production_zs3p0_gl36/fk_main_zs3p0_gl36/xi_fk_main_zs3p0_gl36.npz",
+      "sha256": "c1fa1ab9e3ab7f78d04d6d1c9a388724e2ecf63d845c4c5881b1dbc8cdd648e1"
+    },
+    "elapsed_seconds": 2058.751363332849
+  },
+  "v1": {
+    "completed": {
+      "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/zs3p0_ladder_t001_20261023/folds_zs3p0_gl36/tree_main_15360_zs3p0_gl36/completed.json",
+      "sha256": "048c767558080d96fe235a33a26d0ee093b054586a52a286216bb9cc481c6d3f"
+    },
+    "result": {
+      "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/zs3p0_ladder_t001_20261023/folds_zs3p0_gl36/tree_main_15360_zs3p0_gl36/xi_tree_main_15360_zs3p0_gl36.npz",
+      "sha256": "5cc27a56bdd87258a4742ae857f22b3cf790341380bfabb77ddab1d28729a681"
+    },
+    "ladder_member": {
+      "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/zs3p0_ladder_t001_20261023/cutoff_ladder_zs3p0/tree_auto/table_tree_cut15360_r4_xi.npz",
+      "sha256": "799b7c9ec2211443eb120c267b6646b8594fa9081380dd4c8898abfbddf34775"
+    }
+  },
+  "checks": {
+    "C1_v1_tree_main_15360": [
+      {
+        "label": "v1 z_s=3.0 tree_main_15360 fold at main indices [0, 5..14]",
+        "reference": {
+          "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/zs3p0_ladder_t001_20261023/folds_zs3p0_gl36/tree_main_15360_zs3p0_gl36/xi_tree_main_15360_zs3p0_gl36.npz",
+          "sha256": "5cc27a56bdd87258a4742ae857f22b3cf790341380bfabb77ddab1d28729a681"
+        },
+        "rows": 11,
+        "same_row_order": true,
+        "max_abs_diff": 0.0,
+        "max_rel_diff": 0.0,
+        "bitwise": true,
+        "tolerance_rel": 1e-12,
+        "pass": true
+      }
+    ]
+  },
+  "scientific_acceptance": false
+}

@@ -1,0 +1,53 @@
+{
+  "schema": 1,
+  "status": "STARTED_NOT_COMPLETED",
+  "target_id": "fk_main_zs3p0_gl36",
+  "pid": 18255,
+  "start_unix": 1792801964.162696,
+  "plan_sha256": "b1e8e7cbbcd9e1fe4fb17e6bc9866bce3462fe65c48723e269d12c8904c4d8cb",
+  "prepared": {
+    "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/zs3p0_mainff_t001_20261024/fk_production_zs3p0_gl36/prepared.json",
+    "sha256": "63bc40aaf9040a51b11d48447ce03821d71b74ddc73efd08a5bc795f1caab2ff"
+  },
+  "lock": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/.replay_suite.lock",
+  "memory": {
+    "method": "vm_stat free+inactive, observation not reservation",
+    "available_bytes": 59422228480,
+    "required_bytes": 40428978176,
+    "key": [
+      "fk",
+      4
+    ],
+    "rule": "recorded peak + 12 GiB"
+  },
+  "gate": {
+    "gate_report": {
+      "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/zs3p0_mainff_t001_20261024/fk_regression_zs3p2_gl36/gate_report.json",
+      "sha256": "2cae10bcb02f46cd1252165b450a4a3b08acf821d87b3ea8cfab4cec8be93992"
+    },
+    "status": "PASS",
+    "bitwise_all": true,
+    "workers": {
+      "fk_regress_zs3p2_gl36": {
+        "used": 4,
+        "source": "accepted:main_fk_gl36",
+        "gl": 36
+      }
+    },
+    "gate_plan_sha256": "2a1ffc5b4243ae888e1119dab2ceccff5a8305afea279c68bb789ce31565f513"
+  },
+  "environment": {
+    "CANOES_ROOT": "/Users/zzhang/projects/angular_statistics/canoes",
+    "MKL_NUM_THREADS": "1",
+    "MPLCONFIGDIR": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/zs3p0_mainff_t001_20261024/fk_production_zs3p0_gl36/fk_main_zs3p0_gl36/mpl_cache",
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "PYTHONNOUSERSITE": "1",
+    "PYTHONPATH": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/t001_candidate_inputs/main_fk_gl36_optimized_v6/framework_export/src:/Users/zzhang/projects/angular_statistics/canoes/src",
+    "VECLIB_MAXIMUM_THREADS": "1"
+  },
+  "n_jobs": 4,
+  "gl": 36,
+  "orders": "0,2"
+}

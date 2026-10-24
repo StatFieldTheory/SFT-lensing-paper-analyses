@@ -1,0 +1,46 @@
+{
+  "schema": 1,
+  "status": "completed",
+  "target_id": "o0_probe5_zs3p0",
+  "plan_sha256": "2fda8e9b3c1b61881a779eac803814a85d20b753a72ec671ee9812c97034ff20",
+  "prepared": {
+    "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/zs3p0_mainff_t001_20261024/order0_production_zs3p0/prepared.json",
+    "sha256": "819d596adcb262c23444a4d08b84c0fbeeed0e3d9fbd23080c56c3e83f8ce7ed"
+  },
+  "started": {
+    "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/zs3p0_mainff_t001_20261024/order0_production_zs3p0/o0_probe5_zs3p0/started.json",
+    "sha256": "048d1a47aedbcf739ca053e64e2552de3f6dba7ea65f6abd97970dfce1e5933c"
+  },
+  "elapsed_seconds": 22.035171000286937,
+  "returncode": 0,
+  "outputs": [
+    {
+      "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/zs3p0_mainff_t001_20261024/order0_production_zs3p0/o0_probe5_zs3p0/o0_probe5_zs3p0.npz",
+      "sha256": "42379066660f9d246352e414c40a2cef10242c47104da882860e9bd8cf50ba7a"
+    },
+    {
+      "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/zs3p0_mainff_t001_20261024/order0_production_zs3p0/o0_probe5_zs3p0/o0_probe5_zs3p0.json",
+      "sha256": "07e42ff177c8bd2687022e329985ae2f83f278389d8652c560beb7f8968f006d"
+    },
+    {
+      "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/zs3p0_mainff_t001_20261024/order0_production_zs3p0/o0_probe5_zs3p0/o0_probe5_zs3p0.source.py",
+      "sha256": "47b855b1b438ca323f85e3bcf9fe9aee466d38dc9c5830423624eb7b70913424"
+    }
+  ],
+  "log": {
+    "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/zs3p0_mainff_t001_20261024/order0_production_zs3p0/o0_probe5_zs3p0/o0_probe5_zs3p0.log",
+    "sha256": "9f18123cc458be73fb44cdc55fa926e40c3d509a69aa03cd386f381b18159677"
+  },
+  "output_validation": {
+    "settings_match": true,
+    "warnings": [],
+    "source_lambda_mpc": 2255.3607197066854,
+    "source_redshift": 3.0,
+    "metadata_sha256": "18a96298aa2df0d6e126d33f8d77ab539d1663e2acfe1192542a417f59189fc1",
+    "array_sha256": {
+      "cl_pp": "9185bc642ae44d25b572efbe8389dcda47c8b6cd3d232a5529f43c357e99f414",
+      "ell": "0b4395980c5a69acb72367723273c3de436362db414885324e2149291130f9a4"
+    }
+  },
+  "scientific_acceptance": false
+}

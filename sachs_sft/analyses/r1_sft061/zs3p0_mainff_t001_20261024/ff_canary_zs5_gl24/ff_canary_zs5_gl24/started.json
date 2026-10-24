@@ -1,0 +1,38 @@
+{
+  "schema": 1,
+  "status": "STARTED_NOT_COMPLETED",
+  "target_id": "ff_canary_zs5_gl24",
+  "pid": 15794,
+  "start_unix": 1792800961.341333,
+  "plan_sha256": "65fe86e9335c2676e7b5576a4f5dcec4de997874438f255e62033b42a9aaff98",
+  "prepared": {
+    "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/zs3p0_mainff_t001_20261024/ff_canary_zs5_gl24/prepared.json",
+    "sha256": "7442c66aa3e46c63309abe9a6268c9eb7b15eaefed090bd6be65b80355f5a2af"
+  },
+  "lock": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/.replay_suite.lock",
+  "memory": {
+    "method": "vm_stat free+inactive, observation not reservation",
+    "available_bytes": 59820376064,
+    "required_bytes": 30064771072,
+    "key": [
+      "ff",
+      4
+    ],
+    "rule": "recorded peak + 12 GiB"
+  },
+  "gate": null,
+  "environment": {
+    "CANOES_ROOT": "/Users/zzhang/projects/angular_statistics/canoes",
+    "MKL_NUM_THREADS": "1",
+    "MPLCONFIGDIR": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/zs3p0_mainff_t001_20261024/ff_canary_zs5_gl24/ff_canary_zs5_gl24/mpl_cache",
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "PYTHONNOUSERSITE": "1",
+    "PYTHONPATH": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/t001_candidate_inputs/main_fk_gl36_optimized_v6/framework_export/src:/Users/zzhang/projects/angular_statistics/canoes/src",
+    "VECLIB_MAXIMUM_THREADS": "1"
+  },
+  "n_jobs": 4,
+  "gl": 24,
+  "orders": "0,2"
+}

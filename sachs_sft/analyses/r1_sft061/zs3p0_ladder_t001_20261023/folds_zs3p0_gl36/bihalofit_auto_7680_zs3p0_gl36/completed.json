@@ -1,0 +1,35 @@
+{
+  "schema": 1,
+  "status": "completed",
+  "target_id": "bihalofit_auto_7680_zs3p0_gl36",
+  "plan_sha256": "01278821ac5d1b6e10bf30cc70631aeb57500c64d9036ed1f01cd74885ea9599",
+  "prepared": {
+    "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/zs3p0_ladder_t001_20261023/folds_zs3p0_gl36/prepared.json",
+    "sha256": "4ccd967dcbc349fbe7eb044506c923514cc87de4b8f73f3ab90c06a205769954"
+  },
+  "started": {
+    "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/zs3p0_ladder_t001_20261023/folds_zs3p0_gl36/bihalofit_auto_7680_zs3p0_gl36/started.json",
+    "sha256": "58394c9166ce0d4d424daccded0da104ec8a941b862392b9f89ba3209ff3c466"
+  },
+  "elapsed_seconds": 598.2625306663103,
+  "returncode": 0,
+  "result": {
+    "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/zs3p0_ladder_t001_20261023/folds_zs3p0_gl36/bihalofit_auto_7680_zs3p0_gl36/xi_bihalofit_auto_7680_zs3p0_gl36.npz",
+    "sha256": "cd8cd6b2936e894f51dccc7279a4bcd87b8829672019b7f53ccb49ee54620f8f"
+  },
+  "output_validation": {
+    "rows": 11,
+    "order": 2,
+    "geometry": "pinned config exact",
+    "object_loading": "restricted NumPy reconstruction only",
+    "t_final": 2255.3607197066854,
+    "pair": [
+      0,
+      0
+    ],
+    "value_sha256": "2b0e42656e7d72b9234277ee041ddad99e97fe1e0d25fb64ed7d0f30d935522c"
+  },
+  "scientific_acceptance": false,
+  "max_single_process_rss_bytes": 7324418048,
+  "rss_note": "getrusage(RUSAGE_CHILDREN).ru_maxrss: the largest single reaped descendant, in bytes on macOS; not the summed process-group RSS quoted in the T-001 memory records"
+}

@@ -1,0 +1,311 @@
+{
+  "schema": 1,
+  "status": "PASS",
+  "pipeline": "order0",
+  "criterion": "bitwise grids; max |difference|/peak <= 1e-05 for kk (and xip, xim, kgt)",
+  "bitwise_all": false,
+  "prepared": {
+    "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/zs3p0_mainff_t001_20261024/order0_parity/prepared.json",
+    "sha256": "f8294b245c69239952e6da1c21bebdaef8ed98f20de88fd51e88d2443dc7bf77"
+  },
+  "plan_sha256": "9a275d1ca5582556eba866ad230aab5dd48140c1fec6aaa420b714fc89678ccf",
+  "completions": {
+    "o0_parity_zs3p2": {
+      "completed": {
+        "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/zs3p0_mainff_t001_20261024/order0_parity/o0_parity_zs3p2/completed.json",
+        "sha256": "78d0f8c1b3bce2017762e4a2b0e5900c54f50d59f3925076a2d5665987231b0e"
+      },
+      "started": {
+        "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/zs3p0_mainff_t001_20261024/order0_parity/o0_parity_zs3p2/started.json",
+        "sha256": "e6e924d60c146c34048ee13298b6591ccb3477ac058e65d50e1031d97e13ced9"
+      },
+      "outputs": [
+        {
+          "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/zs3p0_mainff_t001_20261024/order0_parity/o0_parity_zs3p2/o0_parity_zs3p2.npz",
+          "sha256": "441a6a46058c861aaa9ec676ce167a9a878653ad2eb624da2bce203baadebea4"
+        },
+        {
+          "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/zs3p0_mainff_t001_20261024/order0_parity/o0_parity_zs3p2/o0_parity_zs3p2.json",
+          "sha256": "fe04ce29e2c13fc4b6a3e55fcccd30f5755e61d2ddedac694704515d47f1d79c"
+        },
+        {
+          "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/zs3p0_mainff_t001_20261024/order0_parity/o0_parity_zs3p2/o0_parity_zs3p2.source.py",
+          "sha256": "47b855b1b438ca323f85e3bcf9fe9aee466d38dc9c5830423624eb7b70913424"
+        }
+      ],
+      "elapsed_seconds": 61.858975749928504
+    },
+    "o0_parity_full_zs5": {
+      "completed": {
+        "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/zs3p0_mainff_t001_20261024/order0_parity/o0_parity_full_zs5/completed.json",
+        "sha256": "dc1937eb2db5b6d962cf3ec45621f40a64b50c76e894388002a4e51d22906f90"
+      },
+      "started": {
+        "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/zs3p0_mainff_t001_20261024/order0_parity/o0_parity_full_zs5/started.json",
+        "sha256": "71a7d1497854a494dcd331d62ac2c84a9ce0ba864e2d7dd30b30e508b0283e42"
+      },
+      "outputs": [
+        {
+          "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/zs3p0_mainff_t001_20261024/order0_parity/o0_parity_full_zs5/o0_parity_full_zs5.npz",
+          "sha256": "36d8abc7f064297fed00ea37c8546e5830abd47a1937fd6133dc005a73bd1cc3"
+        },
+        {
+          "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/zs3p0_mainff_t001_20261024/order0_parity/o0_parity_full_zs5/o0_parity_full_zs5.json",
+          "sha256": "8d57c8b6b97a62ff06d9e895907209118848280e8be6b509f0234985384efc0f"
+        },
+        {
+          "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/zs3p0_mainff_t001_20261024/order0_parity/o0_parity_full_zs5/o0_parity_full_zs5.source.py",
+          "sha256": "47b855b1b438ca323f85e3bcf9fe9aee466d38dc9c5830423624eb7b70913424"
+        }
+      ],
+      "elapsed_seconds": 265.91048400010914
+    }
+  },
+  "workers": {
+    "o0_parity_zs3p2": {
+      "processes": 1
+    },
+    "o0_parity_full_zs5": {
+      "processes": 1
+    }
+  },
+  "checks": {
+    "o0_parity_zs3p2": [
+      {
+        "label": "o0_parity_zs3p2 against source_folded_multiz_z3p2.npz",
+        "reference": {
+          "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/analysis1/r1_aligned/source_folded_multiz_z3p2.npz",
+          "sha256": "9b13642eae19b1a091540ee77e59b7d4e53d547f5195124c9b7f8791aa654f6f"
+        },
+        "exact_arrays": [
+          "theta_arcmin",
+          "ell_taper",
+          "ell",
+          "sampled_ell"
+        ],
+        "tolerance_arrays": [
+          "kk"
+        ],
+        "arrays": {
+          "theta_arcmin": {
+            "shape_equal": true,
+            "shape": [
+              40
+            ],
+            "bitwise": true,
+            "max_abs_diff": 0.0,
+            "max_abs_over_peak": 0.0,
+            "max_rel_pointwise": 0.0
+          },
+          "ell_taper": {
+            "shape_equal": true,
+            "shape": [
+              4999
+            ],
+            "bitwise": true,
+            "max_abs_diff": 0.0,
+            "max_abs_over_peak": 0.0,
+            "max_rel_pointwise": 0.0
+          },
+          "ell": {
+            "shape_equal": true,
+            "shape": [
+              4999
+            ],
+            "bitwise": true,
+            "max_abs_diff": 0.0,
+            "max_abs_over_peak": 0.0,
+            "max_rel_pointwise": 0.0
+          },
+          "sampled_ell": {
+            "shape_equal": true,
+            "shape": [
+              4278
+            ],
+            "bitwise": true,
+            "max_abs_diff": 0.0,
+            "max_abs_over_peak": 0.0,
+            "max_rel_pointwise": 0.0
+          },
+          "kk": {
+            "shape_equal": true,
+            "shape": [
+              40
+            ],
+            "bitwise": false,
+            "max_abs_diff": 5.421010862427522e-18,
+            "max_abs_over_peak": 1.0586914262936826e-14,
+            "max_rel_pointwise": 1.8905464719210292e-13
+          },
+          "cl_pp": {
+            "shape_equal": true,
+            "shape": [
+              4999
+            ],
+            "bitwise": false,
+            "max_abs_diff": 1.9587636905255695e-21,
+            "max_abs_over_peak": 2.1341333096112314e-14,
+            "max_rel_pointwise": 2.4974122020104684e-14
+          },
+          "sampled_cl_pp": {
+            "shape_equal": true,
+            "shape": [
+              4278
+            ],
+            "bitwise": false,
+            "max_abs_diff": 1.7867101231145398e-21,
+            "max_abs_over_peak": 1.9466756540372716e-14,
+            "max_rel_pointwise": 2.005558455217787e-14
+          }
+        },
+        "bitwise": false,
+        "pass": true
+      }
+    ],
+    "o0_parity_full_zs5": [
+      {
+        "label": "o0_parity_full_zs5 against source_folded_full_boundary_n4096_k2048.npz",
+        "reference": {
+          "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/analysis1/r1_aligned/source_folded_full_boundary_n4096_k2048.npz",
+          "sha256": "6dbc612cddd2e9e29591e6b3465ac71bddfe2dbf8cc2b3a45d4b4756b8945a14"
+        },
+        "exact_arrays": [
+          "theta_arcmin",
+          "ell_taper",
+          "ell",
+          "sampled_ell"
+        ],
+        "tolerance_arrays": [
+          "kk",
+          "xip",
+          "xim",
+          "kgt"
+        ],
+        "arrays": {
+          "theta_arcmin": {
+            "shape_equal": true,
+            "shape": [
+              40
+            ],
+            "bitwise": true,
+            "max_abs_diff": 0.0,
+            "max_abs_over_peak": 0.0,
+            "max_rel_pointwise": 0.0
+          },
+          "ell_taper": {
+            "shape_equal": true,
+            "shape": [
+              4999
+            ],
+            "bitwise": true,
+            "max_abs_diff": 0.0,
+            "max_abs_over_peak": 0.0,
+            "max_rel_pointwise": 0.0
+          },
+          "ell": {
+            "shape_equal": true,
+            "shape": [
+              4999
+            ],
+            "bitwise": true,
+            "max_abs_diff": 0.0,
+            "max_abs_over_peak": 0.0,
+            "max_rel_pointwise": 0.0
+          },
+          "sampled_ell": {
+            "shape_equal": true,
+            "shape": [
+              4278
+            ],
+            "bitwise": true,
+            "max_abs_diff": 0.0,
+            "max_abs_over_peak": 0.0,
+            "max_rel_pointwise": 0.0
+          },
+          "kk": {
+            "shape_equal": true,
+            "shape": [
+              40
+            ],
+            "bitwise": false,
+            "max_abs_diff": 7.426784881525705e-17,
+            "max_abs_over_peak": 8.773902504122456e-14,
+            "max_rel_pointwise": 4.496651923936046e-13
+          },
+          "xip": {
+            "shape_equal": true,
+            "shape": [
+              40
+            ],
+            "bitwise": false,
+            "max_abs_diff": 7.41594285980085e-17,
+            "max_abs_over_peak": 8.763604758690744e-14,
+            "max_rel_pointwise": 3.520779292470957e-12
+          },
+          "xim": {
+            "shape_equal": true,
+            "shape": [
+              40
+            ],
+            "bitwise": false,
+            "max_abs_diff": 1.0794587879808804e-17,
+            "max_abs_over_peak": 1.6396203205487622e-13,
+            "max_rel_pointwise": 2.9334032690258607e-13
+          },
+          "kgt": {
+            "shape_equal": true,
+            "shape": [
+              40
+            ],
+            "bitwise": false,
+            "max_abs_diff": 1.9136168344369153e-17,
+            "max_abs_over_peak": 1.4481411396473832e-13,
+            "max_rel_pointwise": 2.351895282318055e-13
+          },
+          "cl_pp": {
+            "shape_equal": true,
+            "shape": [
+              4999
+            ],
+            "bitwise": false,
+            "max_abs_diff": 1.8674429508997153e-20,
+            "max_abs_over_peak": 1.6687855235571644e-13,
+            "max_rel_pointwise": 1.7399067272558268e-13
+          },
+          "cl_pw": {
+            "shape_equal": true,
+            "shape": [
+              4999
+            ],
+            "bitwise": false,
+            "max_abs_diff": 1.860825505999291e-20,
+            "max_abs_over_peak": 1.669783894865314e-13,
+            "max_rel_pointwise": 1.7416008869717848e-13
+          },
+          "cl_ww": {
+            "shape_equal": true,
+            "shape": [
+              4999
+            ],
+            "bitwise": false,
+            "max_abs_diff": 1.8502375941586123e-20,
+            "max_abs_over_peak": 1.667058216276964e-13,
+            "max_rel_pointwise": 1.7408965162805133e-13
+          }
+        },
+        "bitwise": false,
+        "pass": true
+      }
+    ],
+    "precondition": [
+      {
+        "label": "accepted z=3.2 Order-0 equals multiz o0[3]",
+        "accepted_z3p2_kk_equals_multiz_o0_row3_bitwise": true,
+        "multiz_row3_z": 3.2,
+        "bitwise": true,
+        "pass": true
+      }
+    ]
+  },
+  "scientific_acceptance": false
+}

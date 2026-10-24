@@ -1,0 +1,55 @@
+{
+  "schema": 1,
+  "status": "PASS",
+  "pipeline": "fk",
+  "criterion": "max |value/reference - 1| <= 1e-12",
+  "bitwise_all": true,
+  "prepared": {
+    "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/zs3p0_mainff_t001_20261024/fk_regression_zs3p2_gl36/prepared.json",
+    "sha256": "63bb85297716252fe54d78c33df37cfd74f104188e8e0cc02f1fb33d1cb19460"
+  },
+  "plan_sha256": "2a1ffc5b4243ae888e1119dab2ceccff5a8305afea279c68bb789ce31565f513",
+  "completions": {
+    "fk_regress_zs3p2": {
+      "completed": {
+        "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/zs3p0_mainff_t001_20261024/fk_regression_zs3p2_gl36/fk_regress_zs3p2_gl36/completed.json",
+        "sha256": "c6a2b6b48fc007f0cee19f3b595b1be3406af4c6cd1e20d05007826f93ce6420"
+      },
+      "started": {
+        "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/zs3p0_mainff_t001_20261024/fk_regression_zs3p2_gl36/fk_regress_zs3p2_gl36/started.json",
+        "sha256": "471ab1012712a6373ec8004ac7d4c4ce55a674987458d46b803214342e3390e6"
+      },
+      "result": {
+        "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/zs3p0_mainff_t001_20261024/fk_regression_zs3p2_gl36/fk_regress_zs3p2_gl36/xi_fk_regress_zs3p2_gl36.npz",
+        "sha256": "54096af01aa713c6ad34a76b2dee908778847378db644ad6ae4b1c90d3da24ad"
+      },
+      "elapsed_seconds": 380.7634592503309
+    }
+  },
+  "workers": {
+    "fk_regress_zs3p2_gl36": {
+      "used": 4,
+      "source": "accepted:main_fk_gl36",
+      "gl": 36
+    }
+  },
+  "checks": {
+    "K1_fk_regression_zs3p2": [
+      {
+        "label": "accepted multiz fk[3] (z=3.2) at main indices [0, 5, 10, 15, 25, 35]",
+        "reference": {
+          "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/t001_accepted/products/multiz.npz",
+          "sha256": "4bc94805b5c57939a55454a1c706ec8f718d848c8872a5ecffaabed8b22f71cb"
+        },
+        "rows": 6,
+        "same_row_order": true,
+        "max_abs_diff": 0.0,
+        "max_rel_diff": 0.0,
+        "bitwise": true,
+        "tolerance_rel": 1e-12,
+        "pass": true
+      }
+    ]
+  },
+  "scientific_acceptance": false
+}

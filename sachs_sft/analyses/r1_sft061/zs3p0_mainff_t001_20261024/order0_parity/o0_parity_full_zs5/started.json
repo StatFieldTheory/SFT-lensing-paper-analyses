@@ -1,0 +1,58 @@
+{
+  "schema": 1,
+  "status": "STARTED_NOT_COMPLETED",
+  "target_id": "o0_parity_full_zs5",
+  "pid": 15711,
+  "start_unix": 1792800693.6692522,
+  "plan_sha256": "9a275d1ca5582556eba866ad230aab5dd48140c1fec6aaa420b714fc89678ccf",
+  "prepared": {
+    "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/zs3p0_mainff_t001_20261024/order0_parity/prepared.json",
+    "sha256": "f8294b245c69239952e6da1c21bebdaef8ed98f20de88fd51e88d2443dc7bf77"
+  },
+  "lock": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/.replay_suite.lock",
+  "memory": {
+    "method": "vm_stat free+inactive, observation not reservation",
+    "available_bytes": 59819556864,
+    "required_bytes": 14013005824,
+    "key": [
+      "order0",
+      1
+    ],
+    "rule": "recorded peak + 12 GiB"
+  },
+  "gate": null,
+  "environment": {
+    "CANOES_ROOT": "/Users/zzhang/projects/angular_statistics/canoes",
+    "CANOES_SUPPRESS_METAL_WARNING": "1",
+    "MPLCONFIGDIR": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/zs3p0_mainff_t001_20261024/order0_parity/o0_parity_full_zs5/mpl_cache",
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "PYTHONDONTWRITEBYTECODE": "1"
+  },
+  "argv": [
+    "/opt/homebrew/Caskroom/miniconda/base/envs/PyCCL/bin/python",
+    "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/analysis1/r1_aligned/source_folded_reference.py",
+    "--z-source",
+    "5",
+    "--source-map",
+    "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/source_map.json",
+    "--ells",
+    "sparse",
+    "--n-chi",
+    "4096",
+    "--low-ell-n-k",
+    "2048",
+    "--ell-block",
+    "4",
+    "--cached-direct",
+    "--observer-boundary",
+    "--channels",
+    "cl_pp,cl_pw,cl_ww",
+    "--split",
+    "800",
+    "--limber-shift",
+    "0.5",
+    "--out",
+    "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/zs3p0_mainff_t001_20261024/order0_parity/o0_parity_full_zs5/o0_parity_full_zs5.npz"
+  ]
+}

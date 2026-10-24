@@ -1,0 +1,94 @@
+{
+  "schema": 1,
+  "status": "PASS",
+  "criterion": "max |value/reference - 1| <= 1e-12",
+  "bitwise_all": true,
+  "prepared": {
+    "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/zs3p0_ladder_t001_20261023/gates_zs5_gl36/prepared.json",
+    "sha256": "e818c717c361d65c0a37d8e6370b90e211335c8d2f3f76d20e3bdc755f2faaeb"
+  },
+  "plan_sha256": "2325540bcda09545c01d49738d3e7d5cebcf6b3a74bdc25622a7785a5517d6fc",
+  "completions": {
+    "bihalofit_auto_15360": {
+      "completed": {
+        "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/zs3p0_ladder_t001_20261023/gates_zs5_gl36/bihalofit_auto_15360_zs5_gl36/completed.json",
+        "sha256": "e8f0b711c11c218bc7fca60f760b8009643806b564187ba1226dd6eb6bb6f7bf"
+      },
+      "result": {
+        "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/zs3p0_ladder_t001_20261023/gates_zs5_gl36/bihalofit_auto_15360_zs5_gl36/xi_bihalofit_auto_15360_zs5_gl36.npz",
+        "sha256": "18c566c190c943c67cc37ee85c57eb29d749c4136cdb6c8d79f0f8d364b84921"
+      },
+      "elapsed_seconds": 760.6182402088307
+    },
+    "tree_main_15360": {
+      "completed": {
+        "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/zs3p0_ladder_t001_20261023/gates_zs5_gl36/tree_main_15360_zs5_gl36/completed.json",
+        "sha256": "089373bb6856f1fd999f3d102163fbbd54182b0aab5c8b328dc5d8b9d2950dd1"
+      },
+      "result": {
+        "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/zs3p0_ladder_t001_20261023/gates_zs5_gl36/tree_main_15360_zs5_gl36/xi_tree_main_15360_zs5_gl36.npz",
+        "sha256": "813f38b752fdc5791a39c9be5e05df0e878d9301fc0fa7a2814872b7f3e471ef"
+      },
+      "elapsed_seconds": 773.4936870001256
+    }
+  },
+  "workers": {
+    "bihalofit_auto_15360": {
+      "used": 4,
+      "source": "cli"
+    },
+    "tree_main_15360": {
+      "used": 4,
+      "source": "cli"
+    }
+  },
+  "checks": {
+    "G1_bihalofit_auto_15360": [
+      {
+        "label": "accepted bihalofit_auto l_max=15360 rung",
+        "reference": {
+          "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/t001_accepted/cutoff_ladder/bihalofit_auto/table_bihalofit_cut15360_r4_xi.npz",
+          "sha256": "eb504b9fa7bd66fdda1b64cff3d9c7fd1aeef4b99372c7fcb37762a45794f792"
+        },
+        "rows": 11,
+        "same_row_order": true,
+        "max_abs_diff": 0.0,
+        "max_rel_diff": 0.0,
+        "bitwise": true,
+        "tolerance_rel": 1e-12,
+        "pass": true
+      }
+    ],
+    "G2_tree_main_15360": [
+      {
+        "label": "accepted main FK (0,0) at [0,5..14]",
+        "reference": {
+          "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/t001_accepted/products/main_fk.npz",
+          "sha256": "d2c6f5c434c2ab6970cea7e42091e3e7ab9f0424a9c63e7efb801124809137e3"
+        },
+        "rows": 11,
+        "same_row_order": true,
+        "max_abs_diff": 0.0,
+        "max_rel_diff": 0.0,
+        "bitwise": true,
+        "tolerance_rel": 1e-12,
+        "pass": true
+      },
+      {
+        "label": "accepted tree_auto l_max=15360 rung",
+        "reference": {
+          "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/t001_accepted/cutoff_ladder/tree_auto/table_tree_cut15360_r4_xi.npz",
+          "sha256": "e89b13a65e0608d6f65df5588a1c503f97891dd0920fd6458a572b1bd911d5eb"
+        },
+        "rows": 11,
+        "same_row_order": true,
+        "max_abs_diff": 0.0,
+        "max_rel_diff": 0.0,
+        "bitwise": true,
+        "tolerance_rel": 1e-12,
+        "pass": true
+      }
+    ]
+  },
+  "scientific_acceptance": false
+}

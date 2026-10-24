@@ -1,0 +1,56 @@
+{
+  "schema": 1,
+  "status": "completed",
+  "target_id": "o0_parity_full_zs5",
+  "plan_sha256": "9a275d1ca5582556eba866ad230aab5dd48140c1fec6aaa420b714fc89678ccf",
+  "prepared": {
+    "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/zs3p0_mainff_t001_20261024/order0_parity/prepared.json",
+    "sha256": "f8294b245c69239952e6da1c21bebdaef8ed98f20de88fd51e88d2443dc7bf77"
+  },
+  "started": {
+    "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/zs3p0_mainff_t001_20261024/order0_parity/o0_parity_full_zs5/started.json",
+    "sha256": "71a7d1497854a494dcd331d62ac2c84a9ce0ba864e2d7dd30b30e508b0283e42"
+  },
+  "elapsed_seconds": 265.91048400010914,
+  "returncode": 0,
+  "outputs": [
+    {
+      "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/zs3p0_mainff_t001_20261024/order0_parity/o0_parity_full_zs5/o0_parity_full_zs5.npz",
+      "sha256": "36d8abc7f064297fed00ea37c8546e5830abd47a1937fd6133dc005a73bd1cc3"
+    },
+    {
+      "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/zs3p0_mainff_t001_20261024/order0_parity/o0_parity_full_zs5/o0_parity_full_zs5.json",
+      "sha256": "8d57c8b6b97a62ff06d9e895907209118848280e8be6b509f0234985384efc0f"
+    },
+    {
+      "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/zs3p0_mainff_t001_20261024/order0_parity/o0_parity_full_zs5/o0_parity_full_zs5.source.py",
+      "sha256": "47b855b1b438ca323f85e3bcf9fe9aee466d38dc9c5830423624eb7b70913424"
+    }
+  ],
+  "log": {
+    "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/zs3p0_mainff_t001_20261024/order0_parity/o0_parity_full_zs5/o0_parity_full_zs5.log",
+    "sha256": "51c91a8983f1511441ddd9685dc1ae756887fa166c9cae65096fd9cf0a3359d0"
+  },
+  "output_validation": {
+    "settings_match": true,
+    "warnings": [],
+    "source_lambda_mpc": 2317.9695958203943,
+    "source_redshift": 5.0,
+    "metadata_sha256": "d21e1af76a7539e541ce0071d166f3bcbca4b23fb396a378e88e7c4bdd6fe3ef",
+    "array_sha256": {
+      "cl_pp": "f8d464201a8df5ce8d6154a52bdaa4176da8788cb60cbd231e1c3b41f574a90f",
+      "cl_pw": "438932da73752f1bb32a25a722e5904d92c27bcb05f306934f87da4844bf8f55",
+      "cl_ww": "d375a3b2d086a8c87707a9114060f695d4261b4bd4a5a6c8ee7b150fcd16d834",
+      "ell": "a6abd2c1768c9b1260451f0612439d364b2bbb990ddb6a1431fbea1ff514ea4a",
+      "ell_taper": "7d6283e4b73c513aaffc9ebdc3b1424face72f4771057ecae16a684073aaaffa",
+      "kgt": "ea236f380919629ad3db3f121a098805e4daae52d0b55ba24122d399dcdf3144",
+      "kk": "a6cd30064ac63cf8eb26117d905583310f8dd979d6e70f345c1b384e401bbe30",
+      "sampled_cl_pp": "9112c118db9d3e9638bd06abf13663d1acfae132ea1eff3172f9362fbab7d70f",
+      "sampled_ell": "d097d353e62fd861648f9de407737a9ba6d9f06ca057ec64e94704b7598a3c61",
+      "theta_arcmin": "df01562fa69b8ec811c36a44ad45b255e064ca2ca8c0e3d9b24c71a425a176ff",
+      "xim": "d1c7fe1865068e71adc4dd2fbc8cd2de2c3ea2395c596fb877e72e69068c2454",
+      "xip": "8698f685bd7f1c6ceb42d1666fdb7f707dacdb93131359b33e0f1485546dfea1"
+    }
+  },
+  "scientific_acceptance": false
+}

@@ -1,0 +1,88 @@
+{
+  "z": [
+    3.0
+  ],
+  "lambda_mpc": [
+    2255.3607197066854
+  ],
+  "chi_mpc": [
+    6527.445062845665
+  ],
+  "D_mpc": [
+    1631.8612657114163
+  ],
+  "target_tag": "zs3p0",
+  "mapping_provenance": {
+    "cosmology": {
+      "Omega_m": 0.3160919980475834,
+      "h": 0.6711,
+      "geometry": "flat matter-plus-Lambda, without radiation"
+    },
+    "E0": 1.0,
+    "convention": "project",
+    "distance_unit": "physical Mpc",
+    "background_z_max": 1200.0,
+    "background_n_z": 5001,
+    "native_knots": 5001,
+    "max_affine_mpc": 2353.929874188644,
+    "source_mapping": "lambda_s = np.interp(z, _Z, _LAMBDA) on the cached canoes knots, the rule of aligned_response.write_source_map",
+    "canoes_root": "/Users/zzhang/projects/angular_statistics/canoes",
+    "canoes_commit": "53850f3423ee25b9c1813cff8c2a2b282c017c70",
+    "source_sha256": {
+      "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/aligned_response.py": "888f1593e55342f088ac486e7709688853b6827506d8d43f90ec35ee10e1c5f4",
+      "/Users/zzhang/projects/angular_statistics/canoes/src/canoes/cosmo/lightcone.py": "69f57f5e95545c094a4ad95e70a603635f5a886178df5e82703191a849fb3d02",
+      "/Users/zzhang/projects/angular_statistics/canoes/src/canoes/cosmo/growth.py": "c931cca5f6d66b4b3082a6a0a11924604d12583219bbe31ca8df804cd371e08c",
+      "/Users/zzhang/projects/angular_statistics/canoes/src/canoes/sachs/sft_input/corr_op/table.py": "4d1ae7159288823d3a743ccb7f58558e607f9793565d183976332461cab04c50",
+      "/Users/zzhang/projects/angular_statistics/canoes/src/canoes/sachs/sft_input/corr_op/_limber.py": "cc58c95983ec44c0016938f55d246efdb91aaeca53cd6c7d06e688ec41048c63"
+    },
+    "C_table_path": "/Users/zzhang/projects/angular_statistics/canoes/docs/handoff/2026_10_03_T-001_delivery/corr_op_table_zs5_23pt_stf_fid_t001.npz",
+    "C_table_sha256": "d487c51b9dcf1d87520d82eac7d37aee17b872b3c83356f8007ff82d472562ee",
+    "jacobi_identity_source": "sections/appendix.tex, appendix D equals a chi, verified by mathematica/derive_jacobi_flat_flrw.wl",
+    "canoes_tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "C_wrapper": {
+      "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/t001_candidate_inputs/corr_op_C_callable.py",
+      "sha256": "1d0c80839d7a3f3866b5fff36d07b9e08d945d7005cc5b5ec5183b2c21906dd2"
+    },
+    "reviewed_source_map": {
+      "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/source_map.json",
+      "sha256": "83a926ae4d52dc5435dbe9ab7d016dddbbbf25b149c5a640e419afcd842bdc2b"
+    }
+  },
+  "response_module": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/aligned_response.py",
+  "response_attr": "response_R",
+  "validation": {
+    "reviewed_six_bitwise": {
+      "z": true,
+      "lambda_mpc": true,
+      "chi_mpc": true,
+      "D_mpc": true
+    },
+    "max_affine_mpc": 2353.929874188644,
+    "z_roundtrip": 3.0,
+    "z_roundtrip_abs_error": 0.0,
+    "public_map_parity": "exact",
+    "expected_lambda_mpc": 2255.3607197066854,
+    "vertex_shell_bracket_mpc": [
+      2216.792401006907,
+      2261.2025775752886
+    ],
+    "aligned_response_validate": {
+      "status": "passed",
+      "public_coordinate_maps": "Exact equality at observer, selected table nodes and all requested source planes",
+      "D_identity": "Exact equality to public chi/(1+z) at all probes",
+      "C_builder_response_max_abs_error": 2.220446049250313e-16,
+      "C_builder_helper": "canoes.sachs.sft_input.corr_op._limber._id_basis_windows with COEFS_PSI0, stripping its recorded growth and density factors",
+      "scalar_array_max_abs_error": 0.0,
+      "causal_and_observer_zero": "passed",
+      "coincident_positive_time_unity": "passed"
+    }
+  },
+  "producer": {
+    "driver": {
+      "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/zs3p0_ladder_t001_20261023/driver.py",
+      "sha256": "dd6ae0af0b598cb374d6a5e4e131ada1cb8a7da234208e17ed020ac81f2c642b"
+    },
+    "command": "source-map"
+  },
+  "scope": "Candidate source endpoint for the T-001 ladder replay. The reviewed source_map.json is unchanged and remains pinned by its own contracts."
+}

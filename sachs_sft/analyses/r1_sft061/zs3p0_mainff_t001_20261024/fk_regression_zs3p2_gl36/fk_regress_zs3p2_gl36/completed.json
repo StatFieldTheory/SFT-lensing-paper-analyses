@@ -1,0 +1,35 @@
+{
+  "schema": 1,
+  "status": "completed",
+  "target_id": "fk_regress_zs3p2_gl36",
+  "plan_sha256": "2a1ffc5b4243ae888e1119dab2ceccff5a8305afea279c68bb789ce31565f513",
+  "prepared": {
+    "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/zs3p0_mainff_t001_20261024/fk_regression_zs3p2_gl36/prepared.json",
+    "sha256": "63bb85297716252fe54d78c33df37cfd74f104188e8e0cc02f1fb33d1cb19460"
+  },
+  "started": {
+    "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/zs3p0_mainff_t001_20261024/fk_regression_zs3p2_gl36/fk_regress_zs3p2_gl36/started.json",
+    "sha256": "471ab1012712a6373ec8004ac7d4c4ce55a674987458d46b803214342e3390e6"
+  },
+  "elapsed_seconds": 380.7634592503309,
+  "returncode": 0,
+  "result": {
+    "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/zs3p0_mainff_t001_20261024/fk_regression_zs3p2_gl36/fk_regress_zs3p2_gl36/xi_fk_regress_zs3p2_gl36.npz",
+    "sha256": "54096af01aa713c6ad34a76b2dee908778847378db644ad6ae4b1c90d3da24ad"
+  },
+  "output_validation": {
+    "rows": 6,
+    "order": 2,
+    "geometry": "pinned config exact",
+    "object_loading": "restricted NumPy reconstruction only",
+    "t_final": 2266.590169124188,
+    "pair": [
+      0,
+      0
+    ],
+    "value_sha256": "4ee72821d90622eba77ef816d6f77f86023ba45aacca29f2f3f492099d7c60f0"
+  },
+  "scientific_acceptance": false,
+  "max_single_process_rss_bytes": 7275397120,
+  "rss_note": "getrusage(RUSAGE_CHILDREN).ru_maxrss: the largest single reaped descendant, in bytes on macOS; not the summed process-group RSS quoted in the T-001 memory records"
+}

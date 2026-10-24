@@ -1,0 +1,74 @@
+{
+  "schema": 1,
+  "status": "STARTED_NOT_COMPLETED",
+  "target_id": "o0_prod_zs3p0",
+  "pid": 16173,
+  "start_unix": 1792801433.609662,
+  "plan_sha256": "2fda8e9b3c1b61881a779eac803814a85d20b753a72ec671ee9812c97034ff20",
+  "prepared": {
+    "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/zs3p0_mainff_t001_20261024/order0_production_zs3p0/prepared.json",
+    "sha256": "819d596adcb262c23444a4d08b84c0fbeeed0e3d9fbd23080c56c3e83f8ce7ed"
+  },
+  "lock": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/.replay_suite.lock",
+  "memory": {
+    "method": "vm_stat free+inactive, observation not reservation",
+    "available_bytes": 59398979584,
+    "required_bytes": 14013005824,
+    "key": [
+      "order0",
+      1
+    ],
+    "rule": "recorded peak + 12 GiB"
+  },
+  "gate": {
+    "gate_report": {
+      "path": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/zs3p0_mainff_t001_20261024/order0_parity/gate_report.json",
+      "sha256": "aefcae63b1d2ad737061c9eb9eca02b01726a952ca757fe16f96f9ef23152fb5"
+    },
+    "status": "PASS",
+    "bitwise_all": false,
+    "workers": {
+      "o0_parity_zs3p2": {
+        "processes": 1
+      },
+      "o0_parity_full_zs5": {
+        "processes": 1
+      }
+    },
+    "gate_plan_sha256": "9a275d1ca5582556eba866ad230aab5dd48140c1fec6aaa420b714fc89678ccf"
+  },
+  "environment": {
+    "CANOES_ROOT": "/Users/zzhang/projects/angular_statistics/canoes",
+    "CANOES_SUPPRESS_METAL_WARNING": "1",
+    "MPLCONFIGDIR": "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/zs3p0_mainff_t001_20261024/order0_production_zs3p0/o0_prod_zs3p0/mpl_cache",
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "PYTHONDONTWRITEBYTECODE": "1"
+  },
+  "argv": [
+    "/opt/homebrew/Caskroom/miniconda/base/envs/PyCCL/bin/python",
+    "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/analysis1/r1_aligned/source_folded_reference.py",
+    "--z-source",
+    "3",
+    "--source-map",
+    "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/zs3p0_ladder_t001_20261023/source_map_zs3p0.json",
+    "--ells",
+    "sparse",
+    "--n-chi",
+    "2048",
+    "--low-ell-n-k",
+    "1024",
+    "--ell-block",
+    "8",
+    "--cached-direct",
+    "--observer-boundary",
+    "--channels",
+    "cl_pp",
+    "--split",
+    "800",
+    "--limber-shift",
+    "0.5",
+    "--out",
+    "/Users/zzhang/Documents/MyDrafts/STF_lensing/SFT-lensing-paper-analyses/sachs_sft/analyses/r1_sft061/zs3p0_mainff_t001_20261024/order0_production_zs3p0/o0_prod_zs3p0/o0_prod_zs3p0.npz"
+  ]
+}
